@@ -1,0 +1,4 @@
+[submodule "efl"]
+	path = efl
+	url = git://git.enlightenment.org/core/efl.git
+	branch = master
