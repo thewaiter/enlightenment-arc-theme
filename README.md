@@ -3,7 +3,7 @@ Original arc design from [horst3180](https://github.com/horst3180/arc-theme). Th
 
 ### Install
 
-To install just save [arc-dark.edj](https://raw.githubusercontent.com/LeBlue/enligthenment-arc-theme/master/arc-dark.edj) to the themes directory `$HOME/.elementary/themes/` or `make install`.
+To install just save [arc-dark.edj](https://raw.githubusercontent.com/LeBlue/enlightenment-arc-theme/master/arc-dark.edj?raw=true) to the themes directory `$HOME/.elementary/themes/` or `make install`.
 
 ### Building
 
