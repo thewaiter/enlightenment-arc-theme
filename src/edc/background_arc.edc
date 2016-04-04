@@ -1,0 +1,15 @@
+group { name: "e/desktop/background";
+   alias: "elm/ews/background/default";
+   images.image: "background_arc.jpg" COMP;
+   parts {
+      part { name: "bg";
+         description { state: "default" 0.0;
+            image.normal: "background_arc.jpg";
+            image.scale_hint: STATIC;
+            fill.smooth: 0;
+            ASPECT_FILL((1920/1280))
+         }
+      }
+   }
+}
+

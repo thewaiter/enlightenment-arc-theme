@@ -1,0 +1,221 @@
+group { name: "e/theme/about";
+   min: 320 220;
+   styles {
+      style { name: "about-theme-style";
+         base: "font="FN" font_size="FNSIZE" text_class=label_style align=center color="FN_COL_DEFAULT_BASIC_HEX" wrap=word";
+         tag: "br"      "\n";
+         tag: "b"       "+ font="FNBD"";
+         tag: "hilight" "+ font="FNBD" text_class=tb_light";
+      }
+   }
+   parts {
+      part { name: "sizer"; type: SPACER;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: 320 320;
+         }
+      }
+      part { name: "bg"; type: RECT; mouse_events: 0;
+         description { state: "default" 0.0;
+            color: COL_BG;
+         }
+      }
+      part { name: "name"; type: TEXT; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            fixed: 1 1;
+            color: FN_COL_HIGHLIGHT;
+            rel1.relative: 0.0 0.5;
+            rel2.relative: 1.0 0.5;
+            text { font: FNBD; size: 250;
+               text: "Arc Dark";
+               min: 1 1;
+               ellipsis: -1;
+               align: 0.5 1.0;
+            }
+         }
+         description { state: "end" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 0.1;
+            rel2.relative: 1.0 0.2;
+            text { font: FNBD; size: 50;
+               text: "Arc Dark";
+               min: 1 1;
+               ellipsis: -1;
+               align: 0.5 1.0;
+            }
+         }
+      }
+      part { name: "subtitle"; type: TEXT; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            fixed: 1 1;
+            color: FN_COL_HIGHLIGHT;
+            rel1.relative: 0.0 1.0;
+            rel1.offset: 0 10;
+            rel1.to: "name";
+            rel2.to: "name";
+            align: 0.5 1.0;
+            text { font: FN; size: FNSIZE;
+               text: "The arc-dark theme for Enlightenment";
+               min: 1 1;
+               ellipsis: -1;
+               align: 0.5 1.0;
+            }
+         }
+      }
+      part { name: "orig-arc-theme"; type: TEXTBLOCK; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            fixed: 1 1;
+            rel1.relative: 0.1 1.0;
+            rel1.to: "subtitle";
+            rel1.offset: 0 10;
+            rel2.to: "subtitle";
+            rel2.relative: 0.9 1.0;
+            align: 0.5 0.0;
+            text {  style: "about-theme-style";
+               text: "Original arc theme design from github.com/horst3180, based on the default Enlightenment theme";
+               min: 0 1;
+               ellipsis: -1;
+               align: 0.5 0.0;
+            }
+            color: FN_COL_TRANSPARENT;
+         }
+         desc { "visible";
+            inherit: "default";
+            color: FN_COL_DEFAULT;
+         }
+      }
+      part { name: "contributors"; type: TEXTBLOCK; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            fixed: 1 1;
+            rel1.relative: 0.0 1.0;
+            rel1.to: "orig-arc-theme";
+            rel1.offset: 0 10;
+            rel2.to: "orig-arc-theme";
+            text {  style: "about-theme-style";
+               min: 0 1;
+               text: "contributors: LeBlue, leiflm (T_UNIX)";
+               ellipsis: -1;
+               align: 0.5 0.5;
+            }
+            color: FN_COL_TRANSPARENT;
+         }
+         desc { "visible";
+            inherit: "default";
+            color: FN_COL_DEFAULT;
+         }
+      }
+
+      part { name: "copyright"; type: TEXTBLOCK; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            fixed: 1 1;
+            rel1.relative: 0.0 1.0;
+            rel1.to: "contributors";
+            rel1.offset: 0 10;
+            rel2.to: "contributors";
+            text {  style: "about-theme-style";
+               min: 0 1;
+               text: "GPL 3.0";
+               ellipsis: -1;
+               align: 0.5 0.5;
+            }
+            color: FN_COL_TRANSPARENT;
+         }
+         desc { "visible";
+            inherit: "default";
+            color: FN_COL_DEFAULT;
+         }
+      }
+      text { "theme_spacer"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.offset: 13 -14;
+            rel1.relative: 0.0 1.0;
+            rel2.offset: 13 -14;
+            rel2.relative: 0.0 1.0;
+            color: 0 0 0 0;
+            color_class: "button_text";
+            align: 0.0 1.0;
+            min: 85 0;
+            text { font: FN; size: FNSIZE;
+               min: 1 1;
+               ellipsis: -1;
+               align: 0.5 0.5;
+               text_class: "button";
+               text_source: "e.text.theme";
+            }
+            fixed: 1 1;
+         }
+      }
+      group { "btn_theme"; source: "e/widgets/button";
+         desc { "default";
+            rel1.to: "theme_spacer";
+            rel2.to: "theme_spacer";
+            min: SOURCE;
+         }
+      }
+      alias: "e.text.theme" "btn_theme:e.text.label";
+
+      text { "close_spacer";  mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.offset: -14 -14;
+            rel1.relative: 1.0 1.0;
+            rel2.offset: -14 -14;
+            rel2.relative: 1.0 1.0;
+            color: 0 0 0 0;
+            align: 1.0 1.0;
+            min: 85 0;
+            text { font: FN; size: FNSIZE;
+               min: 1 1;
+               ellipsis: -1;
+               align: 0.5 0.5;
+               text_class: "button";
+               text_source: "e.text.label";
+            }
+            fixed: 1 1;
+         }
+      }
+      group { "btn_close"; source: "e/widgets/button";
+         desc { "default";
+            rel1.to: "close_spacer";
+            rel2.to: "close_spacer";
+         }
+      }
+      alias: "e.text.label" "btn_close:e.text.label";
+   }
+   programs {
+      program {
+         signal: "mouse,clicked,1*"; source: "btn_close";
+         action: SIGNAL_EMIT "e,action,close" "";
+      }
+      program {
+         signal: "mouse,clicked,1*"; source: "btn_theme";
+         action: SIGNAL_EMIT "e,action,settings,theme" "";
+      }
+      program {
+         signal: "show"; source: "";
+         action: STATE_SET "end" 0.0;
+         target: "name";
+         in: 0.2 0.0;
+         transition: SIN 1.5;
+         after: "text_show";
+      }
+      program {
+         name: "text_show";
+         action: STATE_SET "visible";
+         target: "copyright";
+         target: "orig-arc-theme";
+         target: "contributors";
+         in: 0.2 0.0;
+         transition: SIN 1.0;
+      }
+
+   }
+}
+#undef PRESSED
+#undef HOVER

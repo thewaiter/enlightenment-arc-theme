@@ -1,0 +1,78 @@
+group { name: "e/modules/start/main";
+   alias: "e/gadget/start/main";
+   images.image: "dot-small@2.png" COMP;
+   max: 128 128;
+   parts {
+      rect { name: "base";
+         desc { "default";
+            color: 0 0 0 0;
+         }
+         desc { "active";
+            color_class: "button_bg_pressed";
+         }
+      }
+      part { name: "spacer";
+         type: SPACER;
+         description { state: "default" 0.0;
+            rel1.offset: 0 1;
+            rel1.relative: 0.3 0.5;
+            rel2.offset: -1 0;
+            rel2.relative: 0.7 0.5;
+            aspect: 1 4;
+            align: 0.5 0.5;
+         }
+      }
+      image { name: "circle1";
+         desc { "default";
+            image.normal: "dot-small@2.png";
+            rel.to: "spacer";
+            rel1.relative: 0.0 0.0;
+            rel2.relative: 0.0 1.0;
+            align: 0.5 0.5;
+            aspect: 1 1;
+            color_class: "button_icon";
+         }
+      }
+      image { name: "circle2";
+         inherit: "circle1";
+         desc { "default";
+            align: 0.5 0.5;
+            rel1.relative: 0.5 0.0;
+            rel2.relative: 0.5 1.0;
+         }
+      }
+      image { name: "circle3";
+         inherit: "circle1";
+         desc { "default";
+            align: 0.5 0.5;
+            rel1.relative: 1.0 0.0;
+            rel2.relative: 1.0 1.0;
+         }
+      }
+      part { name: "events"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "e,state,focused";
+         source: "e";
+         action: STATE_SET "active" 0.0;
+         target: "base";
+         // target: "circle1";
+         // target: "circle2";
+         // target: "circle3";
+      }
+      program {
+         signal: "e,state,unfocused";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "base";
+         // target: "circle1";
+         // target: "circle2";
+         // target: "circle3";
+      }
+   }
+}

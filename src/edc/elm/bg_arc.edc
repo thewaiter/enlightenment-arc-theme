@@ -1,0 +1,32 @@
+/* bg widget style information
+
+   [SWALLOW]
+      elm.swallow.rectangle: Used for elm_bg_color_set()
+      elm.swallow.background: Used for elm_bg_file_set()
+      elm.swallow.content: Used for elm_layout_part_content_set(bg, "overlay", content).
+*/
+
+group { name: "elm/bg/base/default";
+   images.image: "bevel_dark_out.png" COMP;
+   parts {
+      part { name: "base"; type: RECT;
+         description { state: "default" 0.0;
+            color_class: "background";
+            //color: 56 60 74 250;
+            // color: COL_BG;
+         }
+      }
+      part { name: "elm.swallow.rectangle"; type: SWALLOW;
+         description { state: "default" 0.0;
+         }
+      }
+      part { name: "elm.swallow.background"; type: SWALLOW;
+         description { state: "default" 0.0;
+         }
+      }
+      part { name: "elm.swallow.content"; type: SWALLOW;
+         description { state: "default" 0.0;
+         }
+      }
+   }
+}

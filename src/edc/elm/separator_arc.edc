@@ -1,0 +1,25 @@
+group { name: "elm/separator/horizontal/default";
+   parts {
+      rect { name: "base";
+         description { state: "default" 0.0;
+            min: 1 1;
+            max: 99999 1;
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
+            color: COL_BG_DARK;
+
+         }
+      }
+   }
+}
+group { name: "elm/separator/vertical/default";
+   inherit: "elm/separator/horizontal/default";
+   parts {
+      part { name: "base";
+         description { state: "default" 0.0;
+            max: 1 99999;
+         }
+      }
+   }
+}
+

@@ -1,0 +1,368 @@
+group { name:"e/modules/tasks/item";
+   images.image: "button_normal_arc.png" COMP;
+   images.image: "button_clicked_arc.png" COMP;
+   images.image: "button_hover_arc.png" COMP;
+   images.image: "button_bg_arc.png" COMP;
+   images.image: "button_border_arc" COMP;
+#define PRESSED 1
+#define HOVER   2
+   script {
+      public btmode;
+      public eval_mode(m) {
+         new p = m & PRESSED;
+         new h = m & HOVER;
+         if (!p) {
+            if (!h) {
+               set_state(PART:"base", "default", 0.0);
+            }
+            else {
+               set_state(PART:"base", "hover", 0.0);
+            }
+           }
+         else {
+              set_state(PART:"base", "pressed", 0.0);
+         }
+      }
+   }
+   parts {
+      part { name: "sel_base"; mouse_events: 0; type: RECT;
+         clip_to: "sel_clip";
+         description { state: "default" 0.0;
+            rel1.offset: 3 3;
+            rel2.offset: -4 -4;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "sel_label"; type: TEXT; mouse_events: 0;
+         clip_to: "sel_clip";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.offset: -2 -3;
+            rel1.to: "e.text.label";
+            rel2.offset: 3 1;
+            rel2.to: "e.text.label";
+            color_class: "ilist_item_selected";
+            color2: 255 255 255 255;
+            color3: 255 255 255 255;
+            text { font: FN; size: FNSIZE;
+               text_source: "e.text.label";
+               align: 0.0 0.5;
+               text_class: "ilist_item";
+            }
+         }
+         description { state: "clicked" 0.0;
+            inherit: "default" 0.0;
+            color: FN_COL_HIGHLIGHT_CLICKED;
+         }
+      }
+      image { "base";
+         clip_to: "clip";
+         desc { "default";
+
+            image.normal: "button_bg_arc.png";
+            image.border: 2 2 2 2;
+            image.middle: SOLID;
+            rel.to: "sel_base";
+            rel1.offset: -3 -2;
+            rel2.offset: 2 4;
+            fill.smooth: 0;
+            color_class: "button_bg";
+         }
+         desc { "pressed";
+            inherit: "default" ;
+            color_class: "button_bg_pressed";
+         }
+         desc { "hover";
+            inherit: "default";
+            color_class: "button_bg_hover";
+         }
+      }
+      image { "border";
+         clip_to: "clip";
+         desc { "default";
+            image.normal: "button_border_arc.png";
+            image.border: 2 2 2 2;
+            image.middle: 0;
+            rel.to: "base";
+            fill.smooth: 0;
+            color_class: "button_border";
+         }
+      }
+      part { name: "e.text.label"; type: TEXT; mouse_events: 0;
+         clip_to: "clip";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel1.offset: 2 3;
+            rel1.to_x: "icon2";
+            rel1.to_y: "sel_base";
+            rel2.offset: -5 -5;
+            rel2.to: "sel_base";
+            color: FN_COL_DEFAULT;
+            color_class: "tasks_text";
+            text { font: FN; size: FNSIZE;
+               min: 0 1;
+               align: 0.0 0.5;
+               text_class: "tasks_text";
+            }
+         }
+         description { state: "iconic" 0.0;
+            inherit: "default" 0.0;
+            color: FN_COL_DISABLE;
+         }
+      }
+      part { name: "icon"; type: SPACER;
+         description { state: "default" 0.0;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
+            align: 0.0 0.5;
+            rel1.offset: 3 3;
+            rel1.to: "sel_base";
+            rel2.relative: 0.0 1.0;
+            rel2.offset: 3 -4;
+            rel2.to: "sel_base";
+         }
+         description { state: "icon_only" 0.0;
+            inherit: "default" 0.0;
+            align: 0.5 0.5;
+            rel1.offset: 2 2;
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -3 -3;
+         }
+         description { state: "text_only" 0.0;
+            inherit: "default" 0.0;
+            fixed: 1 1;
+         }
+      }
+      part { name: "icon2"; type: SPACER;
+         description { state: "default" 0.0;
+            rel1.to: "icon";
+            rel2.to: "icon";
+         }
+         description { state: "icon_only" 0.0;
+            inherit: "default" 0.0;
+         }
+         description { state: "text_only" 0.0;
+            inherit: "default" 0.0;
+            fixed: 1 1;
+            rel2.relative: 0.0 1.0;
+         }
+      }
+      part { name: "icon_clip"; type: RECT;
+         description { state: "default" 0.0;
+         }
+         description { state: "iconic" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 64;
+         }
+      }
+      part { name: "e.swallow.icon"; type: SWALLOW; mouse_events: 0;
+         clip_to: "icon_clip";
+         description { state: "default" 0.0;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
+            align: 0.0 0.5;
+            rel1.to: "icon";
+            rel2.to: "icon";
+            color: 255 0 0 128;
+         }
+         description { state: "bounce1" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 0.15;
+            rel2.relative: 1.0 1.15;
+         }
+         description { state: "bounce2" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 -0.15;
+            rel2.relative: 1.0 0.85;
+         }
+      }
+      part { name: "event"; type: RECT;
+         ignore_flags: ON_HOLD;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "clip"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.offset: -20 -20;
+            rel2.offset: 19 19;
+            visible: 1;
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+         description { state: "iconic" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+      part { name: "sel_clip"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.offset: -20 -20;
+            rel2.offset: 19 19;
+            visible: 0;
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "iconic" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "mouse,in"; source: "event";
+         after: "hoverin";
+      }
+      program {name: "hoverin";
+         script {
+            new m = get_int(btmode);
+            m |= HOVER ; set_int(btmode, m);
+            eval_mode(m);
+         }
+      }
+      program {
+         signal: "mouse,out"; source: "event";
+         after: "hoverout";
+      }
+      program { name: "hoverout";
+         script {
+            new m = get_int(btmode);
+            m &= ~HOVER; set_int(btmode, m);
+            eval_mode(m);
+         }
+      }
+      program { name: "button_click_anim";
+         script {
+            new m = get_int(btmode);
+            m |= PRESSED; set_int(btmode, m);
+            eval_mode(m);
+         }
+      }
+      program { name: "button_unclick_anim";
+         script {
+            new m = get_int(btmode);
+            m &= ~PRESSED; set_int(btmode, m);
+            eval_mode(m);
+         }
+      }
+      program {
+         signal: "mouse,down,1"; source: "event";
+         action: STATE_SET "clicked" 0.0;
+         target: "e.text.label";
+         target: "sel_label";
+         after: "button_click_anim";
+      }
+      program {
+         signal: "mouse,up,1"; source: "event";
+         action: STATE_SET "default" 0.0;
+         target: "e.text.label";
+         target: "sel_label";
+         after: "button_unclick_anim";
+      }
+      program {
+         signal: "mouse,up,clicked,1*"; source: "event";
+         action: SIGNAL_EMIT "e,action,click" "";
+      }
+      program {
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "selected" 0.0;
+         target: "clip";
+         target: "sel_clip";
+      }
+      program {
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "clip";
+         target: "sel_clip";
+      }
+      program {
+         signal: "e,state,urgent"; source: "e";
+         action: STATE_SET "bounce1" 0.0;
+         target: "e.swallow.icon";
+         after: "urg1";
+      }
+      program { name: "urg1";
+         action: STATE_SET "bounce2" 0.0;
+         transition: DECELERATE 0.2;
+         target: "e.swallow.icon";
+         after: "urg2";
+      }
+      program { name: "urg2";
+         action: STATE_SET "bounce1" 0.0;
+         transition: ACCELERATE 0.2;
+         target: "e.swallow.icon";
+         after: "urg1";
+      }
+      program {
+         signal: "e,state,not_urgent"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.swallow.icon";
+      }
+      program {
+         signal: "e,state,iconified"; source: "e";
+         action: STATE_SET "iconic" 0.0;
+         target: "e.text.label";
+         target: "icon_clip";
+      }
+      program {
+         signal: "e,state,uniconified"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.text.label";
+         target: "icon_clip";
+      }
+      program {
+         signal: "e,state,icon_only"; source: "e";
+         action: STATE_SET "icon_only" 0.0;
+         target: "icon";
+         target: "icon2";
+      }
+      program {
+         signal: "e,state,text_only"; source: "e";
+         action: STATE_SET "text_only" 0.0;
+         target: "icon";
+         target: "icon2";
+      }
+   }
+}
+
+group { name:"e/modules/tasks/item_vert";
+   inherit: "e/modules/tasks/item";
+   parts {
+      part { name: "sel_label";
+         description { state: "default" 0.0;
+            rel1.offset: 0 0;
+            rel1.to: "icon";
+            rel2.offset: -1 -1;
+            rel2.to: "icon";
+            visible: 0;
+         }
+         description { state: "clicked" 0.0;
+            inherit: "default" 0.0;
+         }
+      }
+      part { name: "e.text.label";
+         description { state: "default" 0.0;
+            rel1.offset: 0 0;
+            rel1.to: "icon";
+            rel2.offset: -1 -1;
+            rel2.to: "icon";
+            visible: 0;
+         }
+         description { state: "clicked" 0.0;
+            inherit: "default" 0.0;
+         }
+      }
+      part { name: "icon";
+         description { state: "default" 0.0;
+            align: 0.5 0.5;
+            rel1.offset: 2 2;
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -3 -3;
+         }
+      }
+   }
+}
