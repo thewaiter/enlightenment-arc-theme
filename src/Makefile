@@ -1,12 +1,10 @@
 EDJE_CC=edje_cc
 
-ARC_SRC=arc.edc colorclasses_arc.edc
-ARC_DARK_SRC=arc-dark.edc colorclasses_arc-dark.edc
-ARC_DARKER_SRC=arc-darker.edc colorclasses_arc-darker.edc
+ARC_SRC=arc.edc colorclasses_arc.edc fonts_arc.edc
+ARC_DARK_SRC=arc-dark.edc colorclasses_arc-dark.edc fonts_arc-dark.edc
+ARC_DARKER_SRC=arc-darker.edc colorclasses_arc-darker.edc fonts_arc-darker.edc
 
 ARC_COMMON_SRC=common_includes_arc.edc \
-fonts_arc.edc \
-colorclasses_arc.edc \
 edc/textclasses_arc.edc \
 edc/elm/bg_arc.edc \
 edc/elm/button_arc.edc \
@@ -18,7 +16,6 @@ edc/elm/separator_arc.edc \
 edc/elm/check_arc.edc \
 edc/elm/radio_arc.edc \
 edc/elm/list_arc.edc \
-edc/elm/focus_arc.edc \
 edc/elm/ctxpopup_arc.edc \
 edc/elm/notify_arc.edc \
 edc/elm/popup_arc.edc \
