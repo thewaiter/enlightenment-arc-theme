@@ -1,0 +1,16 @@
+toggle-background
+toggle
+checkmark
+checkmark-selection
+dot-small
+rect-border
+rect-background-big
+rect-background-small
+checkmark-large
+largerect-background-big
+largerect-background-small
+round-background-small
+round-background-big
+minimize
+maximize
+cross
