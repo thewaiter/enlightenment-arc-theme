@@ -2,18 +2,18 @@ SRC_DIR=src
 
 
 
-.PHONY: all assets clean arc arc-dark arc-darker %.edj
+.PHONY: all assets clean arc arc-dark arc-darker
 
-all: arc.edj arc-dark.edj arc-darker.edj
+all: arc arc-dark arc-darker
 
-arc: arc.edj
+arc:
+	make -C $(SRC_DIR) ../arc.edj
 
-arc-dark: arc-dark.edj
+arc-dark:
+	make -C $(SRC_DIR) ../arc-dark.edj
 
-arc-darker: arc-darker.edj
-
-%.edj:
-	make -C $(SRC_DIR) ../$@
+arc-darker:
+	make -C $(SRC_DIR) ../arc-darker.edj
 
 orig-theme:
 	git submodule update --init efl

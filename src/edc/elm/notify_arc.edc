@@ -15,8 +15,8 @@ group { name: "elm/notify/block_events/default";
 }
 
 group { name: "elm/notify/top/default";
-   images.image: "button_border_arc.png" COMP;
-   images.image: "button_bg_arc.png" COMP;
+   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
 
    data.item: "hide_finished_signal" "on";
    parts {
@@ -32,8 +32,8 @@ group { name: "elm/notify/top/default";
       part { name: "base";
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "button_bg_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
             rel1.offset: 10 10;
             rel2.offset: -10 -10;
             rel1.relative: 0.0 -1.0;
@@ -51,8 +51,8 @@ group { name: "elm/notify/top/default";
       part { name: "border";
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "button_border_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
             rel.to: "base";
             color_class: "popup_border";
          }

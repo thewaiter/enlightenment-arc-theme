@@ -1,9 +1,9 @@
 group { name: "elm/button/base/default";
    alias: "elm/button/base/naviframe/back_btn/default";
    alias: "elm/button/base/naviframe/back_btn/pager";
+   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
    images.image: "button_focus_arc.png" COMP;
-   images.image: "button_bg_arc.png" COMP;
-   images.image: "button_border_arc.png" COMP;
 #define ICON     1
 #define LABEL    2
 #define MASK     3
@@ -111,8 +111,8 @@ group { name: "elm/button/base/default";
    parts {
       image { "base";
          desc { "default";
-            image.normal: "button_bg_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
             image.middle: SOLID;
             rel1.offset: 4 3;
             rel2.offset: -5 -4;
@@ -139,12 +139,10 @@ group { name: "elm/button/base/default";
       }
       image { "border";
          desc { "default";
-            image.normal: "button_border_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
             image.middle: 0;
             rel.to: "base";
-            // rel1.offset: 1 1;
-            // rel2.offset: -1 -1;
             fill.smooth: 0;
             color_class: "button_border";
          }
@@ -712,6 +710,7 @@ group { name: "elm/button/base/anchor";
       }
       rect { "bar"; nomouse;
          desc { "default";
+            max: -1 1;
             rel1.relative: 0.0 1.0;
             rel1.offset: -1 -1;
             rel2.offset: 1 1;
@@ -725,6 +724,7 @@ group { name: "elm/button/base/anchor";
       }
       rect { "bar2"; nomouse;
          desc { "default";
+            max: -1 1;
             rel1.to: "bar";
             rel2.to: "bar";
             color_class: "button_text_anchor_clicked";

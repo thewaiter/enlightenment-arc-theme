@@ -1,6 +1,6 @@
  group { name: "e/widgets/button";
-   images.image: "button_bg_arc.png" COMP;
-   images.image: "button_border_arc.png" COMP;
+   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
    images.image: "button_focus_arc.png" COMP;
 #define PRESSED 1
 #define HOVER   2
@@ -26,8 +26,8 @@
       image { "base";
          desc { "default";
 
-            image.normal: "button_bg_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
             image.middle: SOLID;
             rel1.offset: 4 3;
             rel2.offset: -5 -4;
@@ -55,8 +55,8 @@
       image { "border";
          desc { "default";
 
-            image.normal: "button_border_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
             image.middle: 0;
             rel.to: "base";
             // rel1.offset: 1 1;

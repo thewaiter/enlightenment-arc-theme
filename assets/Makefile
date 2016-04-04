@@ -1,4 +1,7 @@
-ASSETS=toggle-background toggle checkmark checkmark-selection dot-small rect-border rect-background-big rect-background-small checkmark-large largerect-background-big largerect-background-small round-background-small round-background-big minimize maximize cross
+ASSETS=toggle-background toggle checkmark checkmark-selection dot-small \
+	rect-border rect-background-big rect-background-small checkmark-large \
+	largerect-background-big largerect-background-small round-background-small \
+	round-background-big minimize maximize cross bg-rounded-3px border-rounded-3px
 ASSETS_n=$(foreach asset,$(ASSETS),whitened/$(asset).png)
 
 

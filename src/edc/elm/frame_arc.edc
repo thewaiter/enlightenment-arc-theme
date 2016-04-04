@@ -1,12 +1,12 @@
 group { name: "elm/frame/base/default";
-   images.image: "button_bg_arc.png" COMP;
-   images.image: "button_border_arc.png" COMP;
+   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
    parts {
 
       image { "base";
          desc { "default";
-            image.normal: "button_bg_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
             image.middle: SOLID;
             rel1.relative: 0.0 0.0;
             rel1.offset: 2 0;
@@ -19,8 +19,8 @@ group { name: "elm/frame/base/default";
       }
       image { name: "border";
          desc { state: "default" 0.0;
-            image.normal: "button_border_arc.png";
-            image.border: 2 2 2 2;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
             image.middle: 0;
             fill.smooth: 0;
             color_class: "frame_border";
