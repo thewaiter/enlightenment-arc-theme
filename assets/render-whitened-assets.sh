@@ -45,5 +45,16 @@ else
               --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
     && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png
 fi
+if [ -f $ASSETS_DIR/$i@4.png ]; then
+    echo $ASSETS_DIR/$i@4.png exists.
+else
+    echo
+    echo Rendering $ASSETS_DIR/$i@4.png
+    $INKSCAPE --export-id=$i \
+              --export-dpi=360 \
+              --export-id-only \
+              --export-png=$ASSETS_DIR/$i@4.png $SRC_FILE >/dev/null \
+    && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@4.png
+fi
 done
 exit 0

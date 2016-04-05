@@ -12,9 +12,39 @@
 #define COL_BG 64 69 82 255
 #define COL_BG_DARK 56 60 74 255
 #define COL_BG_DARK_TRANS 56 60 74 220
+#define COL_BG_DARKER 47 53 62 255
 #define COL_BORDER_DARK 43 46 57 255
 #define COL_FONT 211 218 227 255
 #define COL_FONT_DIS 211 218 227 150
+
+// colors for border buttons minimize/maximize/close
+#define MINIMIZE_ACTIVE 185 188 194 255
+#define MAXMIMIZE_ACTIVE 185 188 194 255
+#define CLOSE_ACTIVE 204 87 93 255
+
+#define MINIMIZE_INACTIVE 102 106 116 255
+#define MAXMIMIZE_INACTIVE 102 106 116 255
+#define CLOSE_INACTIVE 102 106 116 255
+
+#define MINIMIZE_HOVER 196 199 204 255
+#define MINIMIZE_HOVER_BACKGROUND 69 76 92 255
+#define MINIMIZE_HOVER_BACKGROUND_BORDER 38 41 50 255
+#define MAXIMIZE_HOVER 196 199 204 255
+#define MAXIMIZE_HOVER_BACKGROUND 69 76 92 255
+#define MAXIMIZE_HOVER_BACKGROUND_BORDER 38 41 50 255
+#define CLOSE_HOVER 215 120 125 255
+
+#define MINIMIZE_PRESSED 255 255 255 255
+#define MINIMIZE_PRESSED_BACKGROUND 82 148 226 255
+#define MAXIMIZE_PRESSED 255 255 255 255
+#define MAXIMIZE_PRESSED_BACKGROUND 82 148 226 255
+#define CLOSE_PRESSED 190 56 65 255
+
+#define NO_COLOR 255 255 255 0
+
+#define WIN_BORDER_LINE 22 27 43 255
+#define WIN_BORDER_UNDERLINE 53 59 73 255
+#define WIN_BORDER_BG COL_BG_DARKER
 
 color_classes {
 // comp
@@ -32,12 +62,13 @@ color_classes {
       description: "Background color";
    }
 // wm
-   color_class { name: "border_title";
+   color_class { name: "win_border_title";
       color: FN_COL_DISABLE;
+      // color: 128 135 145 255;
       desc: "Title of an inactive window frame";
    }
-   color_class { name: "border_title_active";
-      color: FN_COL_DEFAULT_SOFT_SHADOW;
+   color_class { name: "win_border_title_active";
+      color: FN_COL_DEFAULT;
       desc: "Title of an active window frame";
    }
    color_class { name: "border_frame";
@@ -51,6 +82,78 @@ color_classes {
    color_class { name: "border_bottom";
       color: WIN_DEFAULT_BASIC;
       desc: "Bottom edge of a window frame";
+   }
+   color_class { name: "win_border_color";
+      color: WIN_BORDER_LINE;
+      desc: "Window border outline color";
+   }
+   color_class { name: "win_border_title_bg_color";
+      color: WIN_BORDER_BG;
+      desc: "Window border title background color";
+   }
+   color_class { name: "close-btn-inactive";
+      color: CLOSE_INACTIVE;
+      desc: "Window border close button, window inactive";
+   }
+   color_class { name: "close-btn-active";
+      color: CLOSE_ACTIVE;
+      desc: "Window border close button active";
+   }
+   color_class { name: "close-btn-hover";
+      color: CLOSE_HOVER;
+      desc: "Window border close button hovered";
+   }
+   color_class { name: "close-btn-pressed";
+      color: CLOSE_PRESSED;
+      desc: "Window border close button pressed";
+   }
+   color_class { name: "mini-maxi-bg-active";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button bg, window inactive";
+   }
+   color_class { name: "mini-maxi-bg-inactive";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button bg active";
+   }
+   color_class { name: "mini-maxi-bg-hover";
+      color: MINIMIZE_HOVER_BACKGROUND;
+      desc: "Window border minimize/maximize button bg hover";
+   }
+   color_class { name: "mini-maxi-bg-pressed";
+      color: MINIMIZE_PRESSED_BACKGROUND;
+      desc: "Window border minimize/maximize button bg pressed";
+   }
+   color_class { name: "mini-maxi-border-active";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button border, window inactive";
+   }
+   color_class { name: "mini-maxi-border-inactive";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button border active";
+   }
+   color_class { name: "mini-maxi-border-hover";
+      color: MINIMIZE_HOVER_BACKGROUND_BORDER;
+      desc: "Window border minimize/maximize button border hover";
+   }
+   color_class { name: "mini-maxi-border-pressed";
+      color: MINIMIZE_PRESSED_BACKGROUND;
+      desc: "Window border minimize/maximize button border pressed";
+   }
+   color_class { name: "mini-maxi-symbol-active";
+      color: MINIMIZE_ACTIVE;
+      desc: "Window border minimize/maximize button symbol, window inactive";
+   }
+   color_class { name: "mini-maxi-symbol-inactive";
+      color: MINIMIZE_INACTIVE;
+      desc: "Window border minimize/maximize button symbol active";
+   }
+   color_class { name: "mini-maxi-symbol-hover";
+      color: MINIMIZE_HOVER;
+      desc: "Window border minimize/maximize button symbol hover";
+   }
+   color_class { name: "mini-maxi-symbol-pressed";
+      color: MINIMIZE_PRESSED;
+      desc: "Window border minimize/maximize button symbol pressed";
    }
    color_class { name: "move_text";
       color: FN_COL_DEFAULT;
@@ -97,7 +200,7 @@ color_classes {
       desc: "Text of the winlist's title";
    }
    color_class { name: "dialog_base";
-      color: WIN_DEFAULT_BASIC;
+      color: COL_BG;
       desc: "Base color of a dialog window";
    }
    color_class { name: "shelf_base";

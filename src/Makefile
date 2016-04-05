@@ -24,6 +24,7 @@ edc/shelf_arc.edc \
 edc/border_arc.edc \
 edc/about-e_arc.edc \
 edc/about-theme_arc.edc \
+edc/dialog_arc.edc \
 edc/menu_arc.edc \
 edc/button_arc.edc \
 edc/check_arc.edc \
