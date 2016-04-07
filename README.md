@@ -1,5 +1,7 @@
 # Arc theme for enlightenment
-Original arc design from [horst3180](https://github.com/horst3180/arc-theme). There are still a lot of widgets and e-modules missing.
+Original arc design from [horst3180](https://github.com/horst3180/arc-theme). There are still a lot of widgets and e-modules missing and just Arc-Dark.
+
+![A screenshot of the Arc-Darker theme](https://github.com/LeBlue/enlightenment-arc-theme/blob/master/screenshots/shot.png)
 
 ### Install
 
@@ -12,7 +14,7 @@ To build the arc themes you need will need
 * `git` for a clone of `efl`
 * `make`
 
-the source of the default e-theme to fill not yet implemented widgets/modules under the orig-theme directory. Either link to your own efl clone `ln -s /path/to/efl-clone/data/elementary/themes orig-theme` or setup a new clone and link by running `make orig-theme`.
+the source of the default e-theme to fill not yet implemented widgets/modules under the orig-theme directory. Either link to your own efl clone `ln -s /path/to/efl-clone/data/elementary/themes orig-theme` or setup a new clone and link by running `make orig-theme`. To build:
 
 `make`
 
