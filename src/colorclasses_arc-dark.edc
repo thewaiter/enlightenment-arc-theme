@@ -183,20 +183,32 @@ color_classes {
       color: FN_COL_DISABLE;
       desc: "Text of a disabled menu item";
    }
+   color_class { name: "winlist_top_bg";
+      color: COL_BG_DARKER;
+      desc: "";
+   }
+   color_class { name: "winlist_bg";
+      color: COL_BG;
+      desc: "";
+   }
+   color_class { name: "winlist_item_selected_bg";
+      color: COL_PRESSED;
+      desc: "";
+   }
    color_class { name: "winlist_item";
-      color: FN_COL_DEFAULT;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of an inactive winlist item";
    }
    color_class { name: "winlist_item_active";
-      color: FN_COL_HIGHLIGHT;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of an active winlist item";
    }
    color_class { name: "winlist_label";
-      color: FN_COL_DEFAULT;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of the current winlist item";
    }
    color_class { name: "winlist_title";
-      color: FN_COL_DISABLE;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of the winlist's title";
    }
    color_class { name: "dialog_base";

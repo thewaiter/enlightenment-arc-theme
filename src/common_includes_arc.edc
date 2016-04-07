@@ -77,7 +77,7 @@
 // #include "../orig-theme/edc/syscon.edc"
 // #include "../orig-theme/edc/pointer.edc"
 // #include "../orig-theme/edc/sys.edc"
-// #include "../orig-theme/edc/winlist.edc"
+#include "edc/winlist_arc.edc"
 // #include "../orig-theme/edc/desklock.edc"
 // #include "../orig-theme/edc/deskmirror.edc"
 // #include "../orig-theme/edc/wizard.edc"

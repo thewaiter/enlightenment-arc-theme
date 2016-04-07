@@ -35,6 +35,7 @@ edc/textblock_arc.edc \
 edc/start_arc.edc \
 edc/tasks_arc.edc \
 edc/notification_arc.edc \
+edc/winlist_arc.edc \
 
 IMG_ORIG_DIR=../orig-theme/img
 IMG_WHITENED=../assets/whitened
