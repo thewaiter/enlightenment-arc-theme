@@ -32,6 +32,7 @@ edc/check_arc.edc \
 edc/radio_arc.edc \
 edc/label_arc.edc \
 edc/scrollframe_arc.edc \
+edc/slider_arc.edc \
 edc/textblock_arc.edc \
 edc/start_arc.edc \
 edc/tasks_arc.edc \

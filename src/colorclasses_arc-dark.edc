@@ -17,6 +17,8 @@
 #define COL_FONT 211 218 227 255
 #define COL_FONT_DIS 211 218 227 150
 
+#define COL_MASK_DISABLED 255 255 255 150
+
 // colors for border buttons minimize/maximize/close
 #define MINIMIZE_ACTIVE 185 188 194 255
 #define MAXMIMIZE_ACTIVE 185 188 194 255
@@ -426,6 +428,26 @@ color_classes {
    color_class { name: "radio_text_disabled";
       color: FN_COL_DISABLE;
       desc: "Text of a disabled radio widget's label";
+   }
+   color_class { name: "slider_base";
+      color: COL_BG_DARKER;
+      desc: "Slider base";
+   }
+   color_class { name: "slider_inset";
+      color: COL_PRESSED;
+      desc: "Slider color";
+   }
+   color_class { name: "slider_knob";
+      color: COL_BG;
+      desc: "Slider knob";
+   }
+   color_class { name: "slider_knob_border";
+      color: COL_BORDER_DARK;
+      desc: "Slider knob_border";
+   }
+   color_class { name: "slider_knob_pressed";
+      color: COL_PRESSED;
+      desc: "Slider knob color";
    }
    color_class { name: "slider_text";
       color: FN_COL_DEFAULT;

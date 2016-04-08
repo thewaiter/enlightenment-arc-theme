@@ -6,6 +6,7 @@ ASSETS=toggle-background toggle checkmark checkmark-selection dot-small \
 	minimize-dash maximize-sym \
 	bg-left-rounded-3px border-left-rounded-3px bg-right-rounded-3px border-right-rounded-3px \
 	bg-none-rounded-3px border-none-rounded-3px \
+	slider-vertical-2px slider-horizontal-2px slider-knob slider-knob-border \
 
 ASSETS_n=$(foreach asset,$(ASSETS),whitened/$(asset).png)
 
