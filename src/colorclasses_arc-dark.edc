@@ -246,16 +246,16 @@ color_classes {
       desc: "Border color of a button";
    }
    color_class { name: "button_icon";
-      color: 211 218 227 255;
-      desc: "Text of a button";
+      color: 255 255 255 255;
+      desc: "Icon of a button";
    }
    color_class { name: "button_icon_pressed";
-      color: 211 218 227 230;
-      desc: "Text of a button";
+      color: 255 255 255 230;
+      desc: "Icon of a pressed button";
    }
    color_class { name: "button_icon_disabled";
-      color: 211 218 227 64;
-      desc: "Text of a button";
+      color: 255 255 255 64;
+      desc: "Text of a disabled button";
    }
    color_class { name: "button_text";
       color: FN_COL_DEFAULT;
