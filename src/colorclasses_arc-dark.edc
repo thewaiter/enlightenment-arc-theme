@@ -8,6 +8,11 @@
 #define COL_HOVER 80 86 102 255
 #define COL_ENABLE 82  148 226 255
 #define COL_PRESSED COL_ENABLE
+
+#define COL_LIGHT_NORM 95 101 115 255
+#define COL_LIGHT_HOVER 118 123 135 255
+#define COL_LIGHT_PRESSED COL_ENABLE
+
 // #define COL_BG 68 74 88 255
 #define COL_BG 64 69 82 255
 #define COL_BG_DARK 56 60 74 255
@@ -408,6 +413,10 @@ color_classes {
       // color : COL_BG;
       color: 255 255 255 0;
       desc: "Base of a frame widget";
+   }
+   color_class { name: "panes_dots";
+      color: COL_LIGHT_NORM;
+      desc: "Panes dots";
    }
    color_class { name: "scroller_bg";
       color: WIN_DEFAULT_BASIC;
