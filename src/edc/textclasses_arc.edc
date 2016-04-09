@@ -10,4 +10,5 @@ text_classes {
     INHERIT_DEFAULT("check_text_disabled", 11)
     INHERIT_DEFAULT("radio", 11)
     INHERIT_DEFAULT("frame", 11)
+    INHERIT_DEFAULT("list_item", 11);
 }

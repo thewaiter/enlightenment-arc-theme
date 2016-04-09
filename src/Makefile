@@ -14,6 +14,7 @@ edc/elm/entry_arc.edc \
 edc/elm/frame_arc.edc \
 edc/elm/label_arc.edc \
 edc/elm/panes_arc.edc \
+edc/elm/genlist_arc.edc \
 edc/elm/separator_arc.edc \
 edc/elm/segment_control_arc.edc \
 edc/elm/check_arc.edc \

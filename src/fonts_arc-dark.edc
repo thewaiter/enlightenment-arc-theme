@@ -15,6 +15,7 @@
 #define FNIT   "Sans:style=Oblique"
 #define FNBDIT "Sans:style=Bold Italic"
 #define FNSIZE "11"
+#define FNSIZE_ 11
 
 #define FN_COL_DEFAULT_BASIC 211 218 227 255
 #define FN_COL_DEFAULT_BASIC_HEX "#D3DAE3"

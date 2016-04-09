@@ -16,7 +16,7 @@
 // #include "../orig-theme/edc/elm/bubble.edc"
 #include "edc/elm/panes_arc.edc"
 // #include "../orig-theme/edc/elm/toolbar.edc"
-// #include "../orig-theme/edc/elm/genlist.edc"
+#include "edc/elm/genlist_arc.edc"
 #include "edc/elm/list_arc.edc"
 // #include "../orig-theme/edc/elm/conform.edc"
 // #include "../orig-theme/edc/elm/icon.edc"
