@@ -1,6 +1,6 @@
 group { name: "e/modules/start/main";
    alias: "e/gadget/start/main";
-   images.image: "dot-small@2.png" COMP;
+   IMAGE_SET("dot-small", 4, 4)
    max: 128 128;
    parts {
       rect { name: "base";
@@ -24,7 +24,7 @@ group { name: "e/modules/start/main";
       }
       image { name: "circle1";
          desc { "default";
-            image.normal: "dot-small@2.png";
+            image.normal: "dot-small";
             rel.to: "spacer";
             rel1.relative: 0.0 0.0;
             rel2.relative: 0.0 1.0;

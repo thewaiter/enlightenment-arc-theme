@@ -66,22 +66,7 @@
             }
          }
       }
-
-      images.set {
-         name: "close-btn";
-         image {
-            image: "close-btn.png" COMP;
-            size: 1 1 14 14;
-         }
-         image {
-            image: "close-btn@2.png" COMP;
-            size: 15 15 28 28;
-         }
-         image {
-            image: "close-btn@4.png" COMP;
-            size: 29 29 128 128;
-         }
-      }
+      IMAGE_SET("close-btn", 14, 14)
       parts {
          image { "base";
             desc { "default";
@@ -193,52 +178,9 @@
             }
          }
       }
-
-      images.set {
-         name: "mini-maxi-bg";
-         image {
-            image: "mini-maxi-bg.png" COMP;
-            size: 1 1 14 14;
-         }
-         image {
-            image: "mini-maxi-bg@2.png" COMP;
-            size: 15 15 28 28;
-         }
-         image {
-            image: "mini-maxi-bg@4.png" COMP;
-            size: 29 29 128 128;
-         }
-      }
-      images.set {
-         name: "minimize-dash";
-         image {
-            image: "minimize-dash.png" COMP;
-            size: 1 1 14 14;
-         }
-         image {
-            image: "minimize-dash@2.png" COMP;
-            size: 15 15 28 28;
-         }
-         image {
-            image: "minimize-dash@4.png" COMP;
-            size: 29 29 128 128;
-         }
-      }
-      images.set {
-         name: "mini-maxi-border";
-         image {
-            image: "mini-maxi-border.png" COMP;
-            size: 1 1 14 14;
-         }
-         image {
-            image: "mini-maxi-border@2.png" COMP;
-            size: 15 15 28 28;
-         }
-         image {
-            image: "mini-maxi-border@4.png" COMP;
-            size: 29 29 128 128;
-         }
-      }
+      IMAGE_SET("mini-maxi-bg", 14, 14)
+      IMAGE_SET("minimize-dash", 14, 14)
+      IMAGE_SET("mini-maxi-border", 14, 14)
       parts {
          image { "base";
             desc { "default";
@@ -361,21 +303,7 @@
    }
    group { name: "e/border/btn-maximize";
       inherit: "e/border/btn-minimize";
-      images.set {
-         name: "maximize-sym";
-         image {
-            image: "maximize-sym.png" COMP;
-            size: 1 1 14 14;
-         }
-         image {
-            image: "maximize-sym@2.png" COMP;
-            size: 15 15 28 28;
-         }
-         image {
-            image: "maximize-sym@4.png" COMP;
-            size: 29 29 128 128;
-         }
-      }
+      IMAGE_SET("maximize-sym", 14, 14)
       parts {
          image { "symbol"; nomouse;
             desc { "default";
@@ -502,7 +430,7 @@ group {
                text_class: "title_bar";
                align: 0.5 0.0;
                min: 0 1;
-               text: "M";
+               text: " ";
             }
             fixed: 0 1;
          }

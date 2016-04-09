@@ -1,0 +1,17 @@
+#define IMAGE_SET(_NAME, _WIDTH, _HEIGHT) \
+      images.set { \
+         name: _NAME; \
+         image { \
+            image: _NAME".png" COMP; \
+            size: 0 0 _WIDTH _HEIGHT; \
+         } \
+         image { \
+            image: _NAME"@2.png" COMP; \
+            size: (_WIDTH + 1) (_HEIGHT + 1) (_WIDTH * 2) (_HEIGHT * 2); \
+         } \
+         image { \
+            image: _NAME"@4.png" COMP; \
+            size:  (_WIDTH * 2 + 1) (_HEIGHT * 2 + 1) (_WIDTH * 8) (_HEIGHT * 8); \
+         } \
+      }
+

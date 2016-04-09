@@ -5,6 +5,7 @@ ARC_DARK_SRC=arc-dark.edc colorclasses_arc-dark.edc fonts_arc-dark.edc
 ARC_DARKER_SRC=arc-darker.edc colorclasses_arc-darker.edc fonts_arc-darker.edc
 
 ARC_COMMON_SRC=common_includes_arc.edc \
+macros_arc.edc \
 edc/textclasses_arc.edc \
 edc/elm/bg_arc.edc \
 edc/elm/button_arc.edc \
