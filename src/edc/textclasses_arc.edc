@@ -1,13 +1,13 @@
 text_classes {
 #define INHERIT_DEFAULT(_name, _size) \
     text_class { \
-        name: ##_name; \
+        name: _name; \
         font: "Sans"; \
         size: _size; \
     }
-    INHERIT_DEFAULT(check, 11)
-    INHERIT_DEFAULT(check_button, 11)
-    INHERIT_DEFAULT(check_text_disabled, 11)
-    INHERIT_DEFAULT(radio, 11)
-    INHERIT_DEFAULT(frame, 11)
+    INHERIT_DEFAULT("check", 11)
+    INHERIT_DEFAULT("check_button", 11)
+    INHERIT_DEFAULT("check_text_disabled", 11)
+    INHERIT_DEFAULT("radio", 11)
+    INHERIT_DEFAULT("frame", 11)
 }
