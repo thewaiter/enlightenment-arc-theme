@@ -466,6 +466,34 @@ color_classes {
       color: FN_COL_DISABLE;
       desc: "Text of a disabled slider widget's label";
    }
+   color_class { name: "list_item_base";
+      color: COL_BG;
+      desc: "List item even background";
+   }
+   color_class { name: "list_item_base_odd";
+      color: COL_BG;
+      desc: "List item odd background";
+   }
+   color_class { name: "list_item_base_selected";
+      color: COL_PRESSED;
+      desc: "List item background selected";
+   }
+   color_class { name: "list_item_base_hover";
+      color: COL_LIGHT_NORM;
+      desc: "List item background hover";
+   }
+   color_class { name: "list_item_text";
+      color: FN_COL_DEFAULT;
+      desc: "List item text";
+   }
+   color_class { name: "list_item_text_selected";
+      color: FN_COL_DEFAULT;
+      desc: "List item selected text";
+   }
+   color_class { name: "list_item_text_disabled";
+      color: FN_COL_DISABLE;
+      desc: "List item disabled text";
+   }
    color_class { name: "ilist_item_selected";
       color: FN_COL_HIGHLIGHT;
       desc: "Text of a selected ilist item";
