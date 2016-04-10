@@ -494,6 +494,34 @@ color_classes {
       color: FN_COL_DISABLE;
       desc: "List item disabled text";
    }
+   color_class { name: "list_item_header_base";
+      color: COL_BG_DARK;
+      desc: "List item even background";
+   }
+   color_class { name: "list_item_header_base_odd";
+      color: COL_BG_DARK;
+      desc: "List item odd background";
+   }
+   color_class { name: "list_item_header_text";
+      color: FN_COL_DEFAULT;
+      desc: "List item text";
+   }
+   color_class { name: "list_item_arrow";
+      color: COL_LIGHT_NORM;
+      desc: "";
+   }
+   color_class { name: "list_item_arrow_selected";
+      color: COL_LIGHT_NORM;
+      desc: "";
+   }
+   color_class { name: "list_item_arrow_hover";
+      color: COL_LIGHT_HOVER;
+      desc: "";
+   }
+   color_class { name: "list_item_arrow_disabled";
+      color: COL_NORM;
+      desc: "";
+   }
    color_class { name: "ilist_item_selected";
       color: FN_COL_HIGHLIGHT;
       desc: "Text of a selected ilist item";
