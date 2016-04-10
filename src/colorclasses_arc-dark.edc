@@ -219,7 +219,7 @@ color_classes {
       desc: "Text of the winlist's title";
    }
    color_class { name: "dialog_base";
-      color: COL_BG;
+      color: COL_BG_DARK;
       desc: "Base color of a dialog window";
    }
    color_class { name: "shelf_base";
@@ -253,7 +253,7 @@ color_classes {
       desc: "Border color of a button";
    }
    color_class { name: "button_icon";
-      color: 255 255 255 255;
+      color: FN_COL_DEFAULT;
       desc: "Icon of a button";
    }
    color_class { name: "button_icon_pressed";

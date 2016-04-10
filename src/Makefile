@@ -23,6 +23,7 @@ edc/elm/ctxpopup_arc.edc \
 edc/elm/notify_arc.edc \
 edc/elm/popup_arc.edc \
 edc/background_arc.edc \
+edc/conf_arc.edc \
 edc/shelf_arc.edc \
 edc/border_arc.edc \
 edc/about-e_arc.edc \
