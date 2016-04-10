@@ -1,0 +1,361 @@
+/* panes widget style information
+
+   [SIGNAL]
+      elm,panes,fixed: Used for elm_panes_fixed_set()
+      elm,panes,unfixed: Used for elm_panes_fixed_set()
+
+   [SIGNAL EMIT]
+      elm,action,click: Used for "clicked" smart callback.
+      elm,action,click,double: Used for "clicked,double" smart callback.
+      elm,action,press: Used for "press" smart callback.
+      elm,action,unpress: Used for "unpress" smart callback.
+*/
+
+#define PANEMIN  10
+#define PANEMIN2 16
+#define PANEWID  32
+
+group { name: "elm/panes/vertical/default";
+   IMAGE_SET("dot-small", 4, 4)
+   images.image: "holes_vert.png" COMP;
+   parts {
+      part { name: "whole"; type: SPACER;
+         description { state: "default" 0.0;
+         }
+      }
+      part { name: "right_constraint"; type: SPACER;
+         dragable { confine: "whole";
+            x: 1 1 1;
+            y: 0 0 0;
+         }
+         description { state: "default" 0.0;
+            max: 0 0;
+         }
+      }
+      part { name: "left_constraint"; type: SPACER;
+         dragable { confine: "whole";
+            x: 1 1 1;
+            y: 0 0 0;
+         }
+         description { state: "default" 0.0;
+            max: 0 0;
+         }
+      }
+      part { name: "sub_whole"; type: SPACER;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel1.to_x: "left_constraint";
+            rel2.relative: 0.0 1.0;
+            rel2.to_x: "right_constraint";
+         }
+      }
+      part { name: "whole_left"; type: RECT;
+         description { state: "default" 0.0;
+            rel2.to_x: "elm.bar";
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -4 -1;
+         }
+      }
+      part { name: "whole_right"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to_x: "elm.bar";
+            rel1.relative: 0.0 0.0;
+            rel1.offset: 3 0;
+         }
+      }
+      part { name: "elm.swallow.left"; type: SWALLOW;
+         clip_to: "whole_left";
+         description { state: "default" 0.0;
+            rel2.to_x: "elm.bar";
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -4 -1;
+         }
+      }
+      part { name: "elm.swallow.right"; type: SWALLOW;
+         clip_to: "whole_right";
+         description { state: "default" 0.0;
+            rel1.to_x: "elm.bar";
+            rel1.relative: 0.0 0.0;
+            rel1.offset: 3 0;
+         }
+      }
+      part { name: "elm.bar"; type: SPACER;
+         dragable { confine: "sub_whole";
+            x: 1 1 1;
+            y: 0 0 0;
+         }
+         description { state: "default" 0.0;
+            max: 0 99999;
+            min: 0 14;
+            fixed: 1 1;
+            rel1.relative: 0.0 0.5;
+            rel2.relative: 1.0 0.5;
+         }
+      }
+      part { name: "spacer";
+         type: SPACER;
+         description { state: "default" 0.0;
+            rel1.to: "whole_left";
+            rel1.offset: 2 0;
+            rel1.relative: 1.0 0.0;
+            rel2.to: "whole_right";
+            rel2.offset: -3 -1;
+            rel2.relative: 0.0 1.0;
+            aspect: 0.2 0.2;
+            aspect_preference: HORIZONTAL;
+            align: 0.5 0.5;
+         }
+      }
+      image { name: "circle1";
+         desc { "default";
+            image.normal: "dot-small";
+            rel.to: "spacer";
+            rel1.relative: 0.0 0.0;
+            rel2.relative: 1.0 0.0;
+            align: 0.5 0.5;
+            aspect: 1 1;
+            color_class: "panes_dots";
+         }
+      }
+      image { name: "circle2";
+         inherit: "circle1";
+         desc { "default";
+            align: 0.5 0.5;
+            rel1.relative: 0.0 0.5;
+            rel2.relative: 1.0 0.5;
+         }
+      }
+      image { name: "circle3";
+         inherit: "circle1";
+         desc { "default";
+            align: 0.5 0.5;
+            rel1.relative: 0.0 1.0;
+            rel2.relative: 1.0 1.0;
+         }
+      }
+      // part { name: "dots"; mouse_events: 0;
+      //    description { state: "default" 0.0;
+      //       image.normal: "holes_vert.png";
+      //       rel1.to: "elm.bar";
+      //       rel2.to: "elm.bar";
+      //       FIXED_SIZE(4, 14)
+      //    }
+      // }
+      part { name: "elm.swallow.event"; type: SWALLOW;
+         description { state: "default" 0.0;
+            visible: 0;
+            min: PANEMIN PANEMIN2;
+            fixed: 1 1;
+            rel1.to: "elm.bar";
+            rel2.to: "elm.bar";
+         }
+      }
+      part { name: "bar"; type: RECT;
+         dragable.events: "elm.bar";
+         description { state: "default" 0.0;
+            min: PANEMIN PANEWID;
+            max: 99999 99999;
+            fixed: 1 1;
+            rel1.to_x: "elm.swallow.event";
+            rel2.to_x: "elm.swallow.event";
+            color: 0 0 0 0;
+         }
+         description { state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+   }
+   programs {
+      program {signal: "mouse,down,1"; source: "bar"; // for "press" smart callback
+         action: SIGNAL_EMIT "elm,action,press" "elm";
+      }
+      program { signal: "mouse,up,1"; source: "bar"; // for "unpress" smart callback
+         action: SIGNAL_EMIT "elm,action,unpress" "elm";
+      }
+      program { signal: "mouse,clicked,1"; source: "bar"; // for "clicked" smart callback
+         action: SIGNAL_EMIT "elm,action,click" "elm";
+      }
+      program { signal: "mouse,down,1,double"; source: "bar"; // for "clicked,double" smart callback
+         action: SIGNAL_EMIT "elm,action,click,double" "elm";
+      }
+      program { // for elm_panes_fixed_set()
+         signal: "elm,panes,fixed"; source: "elm";
+         action: STATE_SET "disabled" 0.0;
+         target: "bar";
+      }
+      program { // for elm_panes_fixed_set()
+         signal: "elm,panes,unfixed"; source: "elm";
+         action: STATE_SET "default" 0.0;
+         target: "bar";
+      }
+   }
+}
+
+group { name: "elm/panes/horizontal/default";
+   images.image: "holes_horiz.png" COMP;
+   parts {
+      part { name: "whole"; type: SPACER;
+         description { state: "default" 0.0;
+         }
+      }
+      part { name: "right_constraint"; type: SPACER;
+         dragable { confine: "whole";
+            x: 0 0 0;
+            y: 1 1 1;
+         }
+         description { state: "default" 0.0;
+            max: 0 0;
+         }
+      }
+      part { name: "left_constraint"; type: SPACER;
+         dragable { confine: "whole";
+            x: 0 0 0;
+            y: 1 1 1;
+         }
+         description { state: "default" 0.0;
+            max: 0 0;
+         }
+      }
+      part { name: "sub_whole"; type: SPACER;
+         description { state: "default" 0.0;
+            rel1.relative: 0.0 1.0;
+            rel1.to_y: "left_constraint";
+            rel2.relative: 1.0 0.0;
+            rel2.to_y: "right_constraint";
+         }
+      }
+      part { name: "whole_left"; type: RECT;
+         description { state: "default" 0.0;
+            rel2.to_y: "elm.bar";
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -1 -4;
+         }
+      }
+      part { name: "whole_right"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to_y: "elm.bar";
+            rel1.relative: 0.0 0.0;
+            rel1.offset: 0 3;
+         }
+      }
+      part { name: "elm.swallow.left"; type: SWALLOW;
+         clip_to: "whole_left";
+         description { state: "default" 0.0;
+            rel2.to_y: "elm.bar";
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -1 -4;
+         }
+      }
+      part { name: "elm.swallow.right"; type: SWALLOW;
+         clip_to: "whole_right";
+         description { state: "default" 0.0;
+            rel1.to_y: "elm.bar";
+            rel1.relative: 0.0 0.0;
+            rel1.offset: 0 3;
+         }
+      }
+      part { name: "elm.bar"; type: SPACER;
+         dragable { confine: "sub_whole";
+            x: 0 0 0;
+            y: 1 1 1;
+         }
+         description { state: "default" 0.0;
+            max: 99999 0;
+            min: 14 0;
+            fixed: 1 1;
+            rel1.relative: 0.5 0.0;
+            rel2.relative: 0.5 1.0;
+         }
+      }
+      part { name: "spacer";
+         type: SPACER;
+         description { state: "default" 0.0;
+            rel1.to: "whole_left";
+            rel1.offset: 0 2;
+            rel1.relative: 0.0 1.0;
+            rel2.to: "whole_right";
+            rel2.offset: -1 -3;
+            rel2.relative: 1.0 0.0;
+            aspect: 5 5;
+            aspect_preference: VERTICAL;
+            align: 0.5 0.5;
+         }
+      }
+      image { name: "circle1";
+         desc { "default";
+            image.normal: "dot-small";
+            rel.to: "spacer";
+            rel1.relative: 0.0 0.0;
+            rel2.relative: 0.0 1.0;
+            align: 0.5 0.5;
+            aspect: 1 1;
+            color_class: "panes_dots";
+         }
+      }
+      image { name: "circle2";
+         inherit: "circle1";
+         desc { "default";
+            align: 0.5 0.5;
+            rel1.relative: 0.5 0.0;
+            rel2.relative: 0.5 1.0;
+         }
+      }
+      image { name: "circle3";
+         inherit: "circle1";
+         desc { "default";
+            align: 0.5 0.5;
+            rel1.relative: 1.0 0.0;
+            rel2.relative: 1.0 1.0;
+         }
+      }
+      part { name: "elm.swallow.event"; type: SWALLOW;
+         description { state: "default" 0.0;
+            visible: 0;
+            min: PANEMIN2 PANEMIN;
+            fixed: 1 1;
+            rel1.to: "elm.bar";
+            rel2.to: "elm.bar";
+         }
+      }
+      part { name: "bar"; type: RECT;
+         dragable.events: "elm.bar";
+         description { state: "default" 0.0;
+            min: PANEWID PANEMIN;
+            max: 99999 99999;
+            fixed: 1 1;
+            rel1.to_y: "elm.swallow.event";
+            rel2.to_y: "elm.swallow.event";
+            color: 0 0 0 0;
+         }
+         description { state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+   }
+   programs {
+      program {signal: "mouse,down,1"; source: "bar"; // for "press" smart callback
+         action: SIGNAL_EMIT "elm,action,press" "elm";
+      }
+      program { signal: "mouse,up,1"; source: "bar"; // for "unpress" smart callback
+         action: SIGNAL_EMIT "elm,action,unpress" "elm";
+      }
+      program { signal: "mouse,clicked,1"; source: "bar"; // for "clicked" smart callback
+         action: SIGNAL_EMIT "elm,action,click" "elm";
+      }
+      program { signal: "mouse,down,1,double"; source: "bar"; // for "clicked,double" smart callback
+         action: SIGNAL_EMIT "elm,action,click,double" "elm";
+      }
+      program { // for elm_panes_fixed_set()
+         signal: "elm,panes,fixed"; source: "elm";
+         action: STATE_SET "disabled" 0.0;
+         target: "bar";
+      }
+      program { // for elm_panes_fixed_set()
+         signal: "elm,panes,unfixed"; source: "elm";
+         action: STATE_SET "default" 0.0;
+         target: "bar";
+      }
+   }
+}
