@@ -172,7 +172,7 @@ group { name: "e/widgets/ilist";
    }
    programs {
       program {
-         signal: "elm,state,selected"; source: "elm";
+         signal: "e,state,selected"; source: "e";
          script {
             new s = get_int(it_state);
             set_int(it_state, s |= SELECTED);
@@ -180,7 +180,7 @@ group { name: "e/widgets/ilist";
          }
       }
       program {
-         signal: "elm,state,unselected"; source: "elm";
+         signal: "e,state,unselected"; source: "e";
          script {
             new s = get_int(it_state);
             set_int(it_state, s &= ~SELECTED);
