@@ -6,7 +6,7 @@ group { name: "elm/separator/horizontal/default";
             max: 99999 1;
             rel1.offset: 1 1;
             rel2.offset: -2 -2;
-            color: COL_BG_DARK;
+            color: COL_BORDER_DARK;
 
          }
       }
