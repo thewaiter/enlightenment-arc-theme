@@ -464,7 +464,7 @@ color_classes {
    }
    color_class { name: "slider_inset";
       color: COL_PRESSED;
-      desc: "Slider color";
+      desc: "Slider inset color";
    }
    color_class { name: "slider_knob";
       color: COL_BG;
@@ -479,7 +479,7 @@ color_classes {
       desc: "Slider knob color";
    }
    color_class { name: "slider_text";
-      color: FN_COL_DEFAULT;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of a slider widget's label";
    }
    color_class { name: "slider_text_disabled";

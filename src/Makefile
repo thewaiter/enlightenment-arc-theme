@@ -23,6 +23,7 @@ edc/elm/list_arc.edc \
 edc/elm/ctxpopup_arc.edc \
 edc/elm/notify_arc.edc \
 edc/elm/popup_arc.edc \
+edc/elm/slider_arc.edc \
 edc/toolbar_arc.edc \
 edc/background_arc.edc \
 edc/conf_arc.edc \

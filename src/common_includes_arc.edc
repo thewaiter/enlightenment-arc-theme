@@ -11,7 +11,7 @@
 #include "edc/elm/label_arc.edc"
 #include "edc/elm/separator_arc.edc"
 #include "edc/elm/check_arc.edc"
-// #include "../orig-theme/edc/elm/slider.edc"
+#include "edc/elm/slider_arc.edc"
 #include "edc/elm/radio_arc.edc"
 // #include "../orig-theme/edc/elm/bubble.edc"
 #include "edc/elm/panes_arc.edc"
