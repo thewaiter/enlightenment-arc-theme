@@ -73,7 +73,7 @@
 #include "edc/border_arc.edc"
 #include "edc/dialog_arc.edc"
 #include "edc/conf_arc.edc"
-// #include "../orig-theme/edc/gadman.edc"
+#include "edc/gadman_arc.edc"
 // #include "../orig-theme/edc/syscon.edc"
 // #include "../orig-theme/edc/pointer.edc"
 // #include "../orig-theme/edc/sys.edc"

@@ -16,7 +16,8 @@
 // #define COL_BG 68 74 88 255
 #define COL_BG 64 69 82 255
 #define COL_BG_DARK 56 60 74 255
-#define COL_BG_DARK_TRANS 56 60 74 220
+//all kinds of popups/notification/ctxpopup bg
+#define COL_BG_DARK_TRANS 56 60 74 230
 #define COL_BG_DARKER 47 53 62 255
 #define COL_BORDER_DARK 43 46 57 255
 #define COL_FONT 211 218 227 255

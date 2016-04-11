@@ -1,0 +1,36 @@
+group { name: "e/gadman/popup";
+   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
+   parts {
+      part { name: "bg"; mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
+            fill.smooth: 0;
+            color_class: "popup_bg";
+         }
+      }
+      part { name: "bevel"; mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 0;
+            image.middle: 0;
+            fill.smooth: 0;
+            color_class: "popup_border";
+         }
+      }
+      part { name: "e.swallow.content"; type: SWALLOW; clip_to: "clip";
+         description { state: "default" 0.0;
+            rel1.offset: 3 3;
+            rel2.offset: -4 -4;
+         }
+      }
+      part { name: "clip"; type: RECT;
+         description { state: "default";
+            rel1.to: "e.swallow.content";
+            rel2.to: "e.swallow.content";
+         }
+      }
+   }
+}
