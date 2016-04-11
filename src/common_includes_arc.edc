@@ -49,7 +49,7 @@
 // #include "../orig-theme/edc/elm/calendar.edc"
 // #include "../orig-theme/edc/elm/layout.edc"
 // #include "../orig-theme/edc/elm/progress.edc"
-// #include "../orig-theme/edc/elm/naviframe.edc"
+#include "edc/elm/naviframe_arc.edc"
 // #include "../orig-theme/edc/elm/panel.edc"
 #include "edc/elm/popup_arc.edc"
 // #include "../orig-theme/edc/elm/border.edc"

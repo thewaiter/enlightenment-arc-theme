@@ -639,6 +639,10 @@ color_classes {
       color: FN_COL_DISABLE;
       desc: "Text of a disabled multibuttonentry item";
    }
+   color_class { name: "naviframe_title_bg";
+      color: COL_BG_DARK;
+      desc: "Naviframe title background";
+   }
 
 // modules
    color_class { name: "module_label";
