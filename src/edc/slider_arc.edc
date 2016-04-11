@@ -256,9 +256,9 @@ group { name: "e/widgets/slider_vertical";
          description { "default";
             image.normal: "slider-vertical-2px.png";
             image.border: 5 5 7 7;
-            rel1.to: "base";
-            rel2.to_x: "base";
-            rel2.to_y: "knob";
+            rel1.to_x: "base";
+            rel1.to_y: "knob";
+            rel2.to: "base";
             color_class: "slider_inset";
          }
          description { "disabled";
