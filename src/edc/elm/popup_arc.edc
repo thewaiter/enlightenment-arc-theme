@@ -44,22 +44,33 @@ group { name: "elm/notify/block_events/popup/transparent";
 group { name: "elm/notify/top/popup/default";
    inherit: "elm/notify/top/default";
 #define OVERRIDE_BASE() \
-   images.image: "tooltip-base-border_arc.png" COMP; \
+   images.image: "bg-rounded-3px.png" COMP; \
+   images.image: "border-rounded-3px.png" COMP; \
    parts { \
       part { name: "base"; \
          description { state: "default" 0.0; \
-            image.normal: "tooltip-base-border_arc.png"; \
-            image.border: 5 5 5 5; \
-            image.border_scale_by: 0.5; \
+            image.normal: "bg-rounded-3px.png"; \
+            image.border: 3 3 3 3; \
             image.middle: 1; \
-            color: 255 255 255 255; \
+            visible: 0; \
+            color_class: "popup_bg"; \
          } \
          description { state: "visible" 0.0; \
-            image.normal: "tooltip-base-border_arc.png"; \
-            image.border: 5 5 5 5; \
-            image.border_scale_by: 0.5; \
+            inherit: "default" 0.0; \
+            visible: 1; \
+         } \
+      } \
+      part { name: "border"; \
+         description { state: "default" 0.0; \
+            image.normal: "border-rounded-3px.png"; \
+            image.border: 3 3 3 3; \
             image.middle: 1; \
-            color: 255 255 255 255; \
+            visible: 0; \
+            color_class: "popup_border"; \
+         } \
+         description { state: "visible" 0.0; \
+            inherit: "default" 0.0; \
+            visible: 1; \
          } \
       } \
    }
@@ -147,7 +158,7 @@ group { name: "elm/label/base/popup/default";
    alias: "elm/label/base/popup/transparent";
    styles {
       style { name: "popup_desc_style";
-         base: "font="FN" font_size="FNSIZE" text_class=label align=center color="CFN_COL_DEFAULT_BASIC_HEX" color_class=popup_text wrap=mixed";
+         base: "font="FN" font_size="FNSIZE" text_class=label align=center color="FN_COL_DEFAULT_BASIC_HEX" color_class=popup_text wrap=mixed";
          tag: "br" "\n";
          tag: "hilight" "+ font="FNBD" text_class=label_light";
          tag: "b" "+ font="FNBD" text_class=label_light";
@@ -183,7 +194,7 @@ group { name: "elm/popup/base/default";
    alias: "elm/popup/base/transparent";
    styles {
       style { name: "popup_title_style";
-         base: "font="FNBD" font_size="FNSIZE" text_class=label align=center color="CFN_COL_DEFAULT_BASIC_HEX" color_class=popup_title_text wrap=mixed";
+         base: "font="FNBD" font_size="FNSIZE" text_class=label align=center color="FN_COL_DEFAULT_BASIC_HEX" color_class=popup_title_text wrap=mixed";
          tag: "br" "\n";
          tag: "hilight" "+ font="FNBD" text_class=label_light";
          tag: "b" "+ font="FNBD" text_class=label_light";
