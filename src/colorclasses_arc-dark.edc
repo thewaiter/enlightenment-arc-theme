@@ -499,7 +499,7 @@ color_classes {
       desc: "List item background selected";
    }
    color_class { name: "list_item_base_hover";
-      color: COL_LIGHT_NORM;
+      color: COL_HOVER;
       desc: "List item background hover";
    }
    color_class { name: "list_item_text";
