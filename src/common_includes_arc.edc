@@ -92,7 +92,7 @@
 #include "edc/check_arc.edc"
 #include "edc/radio_arc.edc"
 #include "edc/label_arc.edc"
-// #include "../orig-theme/edc/frame.edc"
+#include "edc/frame_arc.edc"
 #include "edc/slider_arc.edc"
 #include "edc/scrollframe_arc.edc"
 #include "edc/textblock_arc.edc"
