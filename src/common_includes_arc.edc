@@ -55,7 +55,7 @@
 // #include "../orig-theme/edc/elm/border.edc"
 // XXX: min size calc problems - too wide! ... err ok on my 32bit box... eh?
 // #include "../orig-theme/edc/elm/spinner.edc"
-// #include "../orig-theme/edc/elm/menu.edc"
+#include "edc/elm/menu_arc.edc"
 // #include "../orig-theme/edc/elm/clock.edc"
 // #include "../orig-theme/edc/elm/gengrid.edc"
 // #include "../orig-theme/edc/elm/hover.edc"

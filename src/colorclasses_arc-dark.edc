@@ -196,15 +196,20 @@ color_classes {
       desc: "Text of an active menu item";
    }
    color_class { name: "menu_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base color of a menu";
+      color: COL_BG_DARK;
+      desc: "Menu background color";
+   }
+   color_class { name: "menu_border";
+      color: COL_BORDER_DARK;
+      desc: "Menu border color";
    }
    color_class { name: "menu_title";
       color: FN_COL_DISABLE;
       desc: "Title text of a menu";
    }
    color_class { name: "menu_item";
-      color: FN_COL_INACTIVE;
+      // color: FN_COL_INACTIVE;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of an inactive menu item";
    }
    color_class { name: "menu_item_active";

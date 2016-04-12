@@ -15,3 +15,12 @@
          } \
       }
 
+images.image: "win_shadow_rounded_arc.png" COMP;
+
+#define WIN_SHADOW_ROUNDED_ARC \
+   image.normal: "win_shadow_rounded_arc.png"; \
+   image.border: 44 44 44 44; \
+   image.middle: 0; \
+   rel1.offset: -21 -14; \
+   rel2.offset: 20 27; \
+   fill.smooth: 0

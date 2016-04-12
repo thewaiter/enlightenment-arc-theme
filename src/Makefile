@@ -25,6 +25,7 @@ edc/elm/ctxpopup_arc.edc \
 edc/elm/notify_arc.edc \
 edc/elm/popup_arc.edc \
 edc/elm/slider_arc.edc \
+edc/elm/menu_arc.edc \
 edc/elm/naviframe_arc.edc \
 edc/toolbar_arc.edc \
 edc/background_arc.edc \
