@@ -1,6 +1,7 @@
 group { name: "elm/button/base/default";
    alias: "elm/button/base/naviframe/back_btn/default";
    alias: "elm/button/base/naviframe/back_btn/pager";
+   data.item: "focus_highlight" "on";
    images.image: "bg-rounded-3px.png" COMP;
    images.image: "border-rounded-3px.png" COMP;
    images.image: "button_focus_arc.png" COMP;

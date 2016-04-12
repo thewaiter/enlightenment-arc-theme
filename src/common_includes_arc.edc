@@ -23,7 +23,7 @@
 // #include "../orig-theme/edc/elm/video.edc"
 // #include "../orig-theme/edc/elm/access.edc"
 // #include "../orig-theme/edc/elm/photo.edc"
-// #include "../orig-theme/edc/elm/focus.edc"
+#include "edc/elm/focus_arc.edc"
 // #include "../orig-theme/edc/elm/datetime.edc"
 // #include "../orig-theme/edc/elm/player.edc"
 // #include "../orig-theme/edc/elm/thumb.edc"

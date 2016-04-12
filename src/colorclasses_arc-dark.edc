@@ -64,6 +64,10 @@ color_classes {
       color: 255 255 255 255;
       description: "Objects which have focus";
    }
+   color_class { name: "focus_outline";
+      color: COL_PRESSED;
+      description: "Focus outline color";
+   }
 
    color_class { name: "background";
       color: COL_BG;

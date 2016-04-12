@@ -12,6 +12,7 @@ edc/elm/button_arc.edc \
 edc/elm/scroller_arc.edc \
 edc/elm/entry_arc.edc \
 edc/elm/frame_arc.edc \
+edc/elm/focus_arc.edc \
 edc/elm/label_arc.edc \
 edc/elm/panes_arc.edc \
 edc/elm/genlist_arc.edc \
