@@ -57,7 +57,7 @@
 // #include "../orig-theme/edc/elm/spinner.edc"
 #include "edc/elm/menu_arc.edc"
 // #include "../orig-theme/edc/elm/clock.edc"
-// #include "../orig-theme/edc/elm/gengrid.edc"
+#include "edc/elm/gengrid_arc.edc"
 // #include "../orig-theme/edc/elm/hover.edc"
 // #include "../orig-theme/edc/elm/cursor.edc"
 
