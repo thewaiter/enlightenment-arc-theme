@@ -30,6 +30,8 @@ edc/elm/naviframe_arc.edc \
 edc/elm/gengrid_arc.edc \
 edc/preview_arc.edc \
 edc/deskpreview_arc.edc \
+edc/deskmirror_arc.edc \
+edc/pager16_arc.edc \
 edc/fileman_arc.edc \
 edc/toolbar_arc.edc \
 edc/background_arc.edc \

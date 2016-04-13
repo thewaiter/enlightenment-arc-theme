@@ -9,7 +9,8 @@ ASSETS=toggle-background toggle checkmark checkmark-selection dot-small \
 	slider-vertical-2px slider-horizontal-2px slider-knob slider-knob-border \
 	arrow-up arrow-down arrow-right arrow-left \
 	reload heart progress-bar-2px \
-	sym-shutdown
+	sym-shutdown \
+	border-rounded-1px bg-rounded-1px border-top-rounded-1px bg-top-rounded-1px \
 
 ASSETS_n=$(foreach asset,$(ASSETS),whitened/$(asset).png)
 

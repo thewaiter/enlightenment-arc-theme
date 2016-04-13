@@ -176,6 +176,10 @@ color_classes {
       color: FN_COL_DEFAULT;
       desc: "Info text while resizing a window";
    }
+   color_class { name: "pager_glow";
+      color: COL_ENABLE;
+      desc: "Pager desk indicator glow color";
+   }
    color_class { name: "menu_item_border";
       color: COL_BORDER_DARK;
       desc: "Menu border color";

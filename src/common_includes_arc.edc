@@ -102,7 +102,7 @@
 #include "edc/sys_arc.edc"
 #include "edc/winlist_arc.edc"
 // #include "../orig-theme/edc/desklock.edc"
-// #include "../orig-theme/edc/deskmirror.edc"
+#include "edc/deskmirror_arc.edc"
 // #include "../orig-theme/edc/wizard.edc"
 // #include "../orig-theme/edc/init.edc"
 #include "edc/about-e_arc.edc"
@@ -114,7 +114,7 @@
 // modules
 #include "edc/start_arc.edc"
 // #include "../orig-theme/edc/pager.edc"
-// #include "../orig-theme/edc/pager16.edc"
+#include "edc/pager16_arc.edc"
 // #include "../orig-theme/edc/xkbswitch.edc"
 #include "edc/tasks_arc.edc"
 // #include "../orig-theme/edc/connman.edc"
