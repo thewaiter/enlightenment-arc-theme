@@ -1,0 +1,41 @@
+group { name: "e/widgets/preview";
+   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
+   parts {
+      part { name: "bg";
+         description { state: "default" 0.0;
+            rel1.to: "e.swallow.content";
+            rel2.to: "e.swallow.content";
+            color_class: "dialog_base";
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 1;
+            fill.smooth: 0;
+         }
+      }
+      part { name: "border";
+         description { state: "default" 0.0;
+            rel.to: "bg";
+            color_class: "popup_border";
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 1;
+            fill.smooth: 0;
+         }
+      }
+      part { name: "clipper"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "e.swallow.content";
+            rel2.to: "e.swallow.content";
+         }
+      }
+      part { name: "e.swallow.content"; type: SWALLOW;
+         clip_to: "clipper";
+         description { state: "default" 0.0;
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
+         }
+      }
+
+   }
+}

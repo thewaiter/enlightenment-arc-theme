@@ -24,3 +24,58 @@ images.image: "win_shadow_rounded_arc.png" COMP;
    rel1.offset: -21 -14; \
    rel2.offset: 20 27; \
    fill.smooth: 0
+
+IMAGE_SET("reload", 14, 14)
+
+#define BUSY_SPINNER(_NAME, _CLIP, _REL, _SIG_START, _SIG_STOP, _SIG_SRC) \
+      part { name: _NAME; mouse_events: 0; \
+         clip_to: _CLIP; \
+         description { state: "default" 0.0; \
+            fixed: 1 1; \
+            rel1.to: _REL; \
+            rel2.to: _REL; \
+            image.normal: "reload"; \
+            map.on: 1; \
+            map.smooth: 1; \
+            map.rotation.center: _REL; \
+         } \
+         description { state: "spin" 0.0; \
+            inherit: "default" 0.0; \
+            map.rotation.z: -360; \
+         } \
+      } \
+      program { name: "spin"; \
+         signal: _SIG_START; source: _SIG_SRC; \
+         action: STATE_SET "spin" 0.0; \
+         transition: LINEAR 1.0; \
+         target: _NAME; \
+         after: "spin2"; \
+      } \
+      program { name: "spin2"; \
+         action: STATE_SET "default" 0.0; \
+         target: _NAME; \
+         after: "spin"; \
+      } \
+      program { \
+         signal: _SIG_START; source: _SIG_SRC; \
+         action: STATE_SET "active" 0.0; \
+         transition: SINUSOIDAL 0.25; \
+         target: _CLIP; \
+      } \
+      program { \
+         signal: _SIG_STOP; source: _SIG_SRC; \
+         action: STATE_SET "default" 0.0; \
+         transition: SINUSOIDAL 1.0; \
+         target: _CLIP; \
+         after: "spin3"; \
+      } \
+      program { name: "spin3"; \
+         action: ACTION_STOP; \
+         target: "spin"; \
+         target: "spin2"; \
+         after: "spin4"; \
+      } \
+      program { name: "spin4"; \
+         action: STATE_SET "default" 0.0; \
+         target: _NAME; \
+      }

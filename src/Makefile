@@ -27,6 +27,9 @@ edc/elm/popup_arc.edc \
 edc/elm/slider_arc.edc \
 edc/elm/menu_arc.edc \
 edc/elm/naviframe_arc.edc \
+edc/preview_arc.edc \
+edc/deskpreview_arc.edc \
+edc/fileman_arc.edc \
 edc/toolbar_arc.edc \
 edc/background_arc.edc \
 edc/conf_arc.edc \

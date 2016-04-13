@@ -299,7 +299,7 @@ color_classes {
       desc: "Text of a button";
    }
    color_class { name: "button_text_pressed";
-      color: FN_COL_DEFAULT;
+      color: FN_COL_DEFAULT_BASIC_PRESSED;
       desc: "Text of a button";
    }
    color_class { name: "button_text_disabled";
@@ -467,6 +467,10 @@ color_classes {
    color_class { name: "radio_text_disabled";
       color: FN_COL_DISABLE;
       desc: "Text of a disabled radio widget's label";
+   }
+   color_class { name: "progress_bar";
+      color: COL_PRESSED;
+      desc: "Progress bar color";
    }
    color_class { name: "slider_base";
       color: COL_BG_DARKER;
