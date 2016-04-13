@@ -16,6 +16,7 @@
 // #define COL_BG 68 74 88 255
 #define COL_BG 64 69 82 255
 #define COL_BG_DARK 56 60 74 255
+#define COL_BG_DARK_HOVER 60 65 78 255
 //all kinds of popups/notification/ctxpopup bg
 #define COL_BG_DARK_TRANS 56 60 74 235
 #define COL_BG_DARKER 47 53 62 255
@@ -187,6 +188,10 @@ color_classes {
    color_class { name: "menu_item_border_selected";
       color: COL_BORDER_DARK;
       desc: "Menu border color";
+   }
+   color_class { name: "menu_item_base_hover";
+      color: COL_BG_DARK_HOVER;
+      desc: "Menu background selected color";
    }
    color_class { name: "menu_item_base_selected";
       color: COL_BG;

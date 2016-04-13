@@ -289,19 +289,19 @@ group { name: "e/widgets/toolbar/item";
          }
       }
    }
-   image: "bg-top-rounded-3px.png" COMP;
-   image: "border-top-rounded-3px.png" COMP;
+   image: "bg-top-rounded-1px.png" COMP;
+   image: "border-top-rounded-1px.png" COMP;
    parts {
       part { name: "base"; mouse_events: 0;
          description { state: "default" 0.0;
-            image.normal: "bg-top-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-top-rounded-1px.png";
+            image.border: 1 1 1 1;
             color_class: "menu_item_base";
             rel2.offset: -1 0;
          }
          description { state: "hover" 0.0;
             inherit: "default" 0.0;
-            color_class: "menu_item_base";
+            color_class: "menu_item_base_hover";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
@@ -312,8 +312,8 @@ group { name: "e/widgets/toolbar/item";
          description { state: "default" 0.0;
             // rel1.to: "base";
             // rel2.to: "base";
-            image.normal: "border-top-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-top-rounded-1px.png";
+            image.border: 1 1 1 1;
             color_class: "menu_item_border";
             rel2.offset: -1 0;
             image.middle: 0;
