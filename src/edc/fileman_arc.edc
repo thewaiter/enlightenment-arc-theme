@@ -75,11 +75,11 @@ group { name: "e/fileman/default/list/variable";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_text";
+            color_class: "list_item_text_selected";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_text";
+            color_class: "list_item_text_disabled";
          }
       }
 //////////////////////////
@@ -364,7 +364,7 @@ group { name: "e/fileman/default/icon/fixed";
          base: "font="FN" font_size=10 text_class=fileman_icon align=center color="FN_COL_DEFAULT_BASIC_HEX" wrap=mixed align=center ellipsis=1.0";
       }
       style { name: "fileman_icon_name_selected";
-         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="FN_COL_DEFAULT_BASIC_HEX" wrap=mixed align=center ellipsis=1.0";
+         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="FN_COL_DEFAULT_BASIC_SELECTED_HEX" wrap=mixed align=center ellipsis=1.0";
       }
    }
    script {
@@ -437,7 +437,7 @@ group { name: "e/fileman/default/icon/fixed";
             rel1.to: "label0";
             rel2.to: "label0";
             rel2.offset: -1 6;
-            color_class: "list_item_text";
+            // color_class: "list_item_text";
             text {
                style: "fileman_icon_name";
                align: 0.5 0.0;
@@ -447,8 +447,8 @@ group { name: "e/fileman/default/icon/fixed";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_text_selected";
-            visible: 1;
+            // color_class: "list_item_text_selected";
+            text.style: "fileman_icon_name_selected";
          }
       }
       part { name: "textmaster"; type: RECT;
@@ -738,7 +738,7 @@ group { name: "e/fileman/desktop/icon/fixed";
    images.image: "darken_square.png" COMP;
    styles {
       style { name: "fileman_icon_full";
-         base: "font="FN" font_size=10 text_class=fileman_icon align=center color=#ff00ffff wrap=mixed style=shadow,bottom shadow_color=#00000080 align=center";
+         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="FN_COL_DEFAULT_BASIC_HEX" wrap=mixed style=shadow,bottom shadow_color=#00000080 align=center";
       }
    }
    parts {
@@ -1052,7 +1052,7 @@ group { name: "e/fileman/popup/default";
             rel2.relative: 1.0 0.0;
             rel2.offset: -2 3;
             align: 0.5 0.0;
-            color: FN_COL_DEFAULT;
+            color_class: "popup_title_text";
             text { font: FNBD; size: FNSIZE;
                text_class: "popup_title";
                align: 0.5 0.0;
@@ -2035,7 +2035,7 @@ group { name: "modules/efm_navigation/pathbar_button";
          }
          description { state: "hover" 0.0;
             inherit: "default" 0;
-            color_class: "button_bg";
+            color_class: "button_bg_hover";
             visible: 1;
          }
       }
@@ -2076,6 +2076,7 @@ group { name: "modules/efm_navigation/pathbar_button";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
+            color_class: "button_text_pressed";
          }
       }
       part { name: "event"; type: RECT;
