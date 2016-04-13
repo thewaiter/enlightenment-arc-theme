@@ -111,6 +111,16 @@
             inherit: "default" 0.0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
          }
+         description { state: "combo_vert" 0.0;
+            align: 0.5 0.0;
+            rel1.offset: 6 5;
+            rel1.to: "base";
+            rel2.relative: 1.0 0.0;
+            rel2.offset: -7 -1;
+            rel2.to_x: "base";
+            rel2.to_y: "e.text.label";
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
+         }
          description { state: "icon" 0.0;
             inherit: "default" 0.0;
             min: 17 17;
@@ -144,19 +154,24 @@
                ellipsis: -1;
                align: 0.5 0.5;
                text_class: "button";
-               // text: "button";
+               text: "button";
             }
-         }
-         description { state: "disabled" 0.0;
-            inherit: "default" 0.0;
-            color_class: "button_text_disabled";
-            color3: 255 255 255 255;
          }
          description { state: "combo" 0.0;
             inherit: "default" 0.0;
             rel1.relative: 1.0 0.0;
             rel1.offset: 2 5;
             rel1.to_x: "e.swallow.icon";
+         }
+         description { state: "combo_vert" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 1.0;
+            rel1.offset: 6 -7;
+            rel1.to: "base";
+            rel2.offset: -7 -7;
+            rel2.to: "base";
+            align: 0.5 1.0;
+
          }
          description { state: "icon" 0.0;
             inherit: "default" 0.0;
@@ -270,6 +285,12 @@
       program {
          signal: "e,state,combo"; source: "e";
          action: STATE_SET "combo" 0.0;
+         target: "e.swallow.icon";
+         target: "e.text.label";
+      }
+      program {
+         signal: "e,state,combo,vert"; source: "e";
+         action: STATE_SET "combo_vert" 0.0;
          target: "e.swallow.icon";
          target: "e.text.label";
       }

@@ -2128,6 +2128,8 @@ group { name: "modules/efm_navigation/pathbar_button";
          }
       }
    }
+#undef SELECTED
+#undef HOVER
 }
 
 group { name: "modules/efm_navigation/pathbar_scrollframe";

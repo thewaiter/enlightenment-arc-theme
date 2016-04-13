@@ -61,30 +61,6 @@
 // #include "../orig-theme/edc/elm/hover.edc"
 // #include "../orig-theme/edc/elm/cursor.edc"
 
-// desktop in general
-// #include "../orig-theme/edc/wallpaper.edc"
-// #include "../orig-theme/edc/comp.edc"
-// #include "../orig-theme/edc/comp_compat.edc"
-// #include "../orig-theme/edc/comp_effects.edc"
-#include "edc/background_arc.edc"
-// #include "../orig-theme/edc/bryce.edc"
-// #include "../orig-theme/edc/bryce_editor.edc"
-#include "edc/shelf_arc.edc"
-#include "edc/border_arc.edc"
-#include "edc/dialog_arc.edc"
-#include "edc/conf_arc.edc"
-#include "edc/gadman_arc.edc"
-// #include "../orig-theme/edc/syscon.edc"
-// #include "../orig-theme/edc/pointer.edc"
-// #include "../orig-theme/edc/sys.edc"
-#include "edc/winlist_arc.edc"
-// #include "../orig-theme/edc/desklock.edc"
-// #include "../orig-theme/edc/deskmirror.edc"
-// #include "../orig-theme/edc/wizard.edc"
-// #include "../orig-theme/edc/init.edc"
-#include "edc/about-e_arc.edc"
-#include "edc/about-theme_arc.edc"
-// #include "../orig-theme/edc/transitions.edc"
 
 // widgets
 #include "edc/menu_arc.edc"
@@ -106,6 +82,34 @@
 // #include "../orig-theme/edc/fontpreview.edc"
 // #include "../orig-theme/edc/cslider.edc"
 // #include "../orig-theme/edc/spectrum.edc"
+
+
+// desktop in general
+// #include "../orig-theme/edc/wallpaper.edc"
+// #include "../orig-theme/edc/comp.edc"
+// #include "../orig-theme/edc/comp_compat.edc"
+// #include "../orig-theme/edc/comp_effects.edc"
+#include "edc/background_arc.edc"
+// #include "../orig-theme/edc/bryce.edc"
+// #include "../orig-theme/edc/bryce_editor.edc"
+#include "edc/shelf_arc.edc"
+#include "edc/border_arc.edc"
+#include "edc/dialog_arc.edc"
+#include "edc/conf_arc.edc"
+#include "edc/gadman_arc.edc"
+#include "edc/syscon_arc.edc"
+// #include "../orig-theme/edc/pointer.edc"
+#include "edc/sys_arc.edc"
+#include "edc/winlist_arc.edc"
+// #include "../orig-theme/edc/desklock.edc"
+// #include "../orig-theme/edc/deskmirror.edc"
+// #include "../orig-theme/edc/wizard.edc"
+// #include "../orig-theme/edc/init.edc"
+#include "edc/about-e_arc.edc"
+#include "edc/about-theme_arc.edc"
+// #include "../orig-theme/edc/transitions.edc"
+
+
 
 // modules
 #include "edc/start_arc.edc"

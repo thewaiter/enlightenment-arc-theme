@@ -17,8 +17,9 @@
 #define COL_BG 64 69 82 255
 #define COL_BG_DARK 56 60 74 255
 //all kinds of popups/notification/ctxpopup bg
-#define COL_BG_DARK_TRANS 56 60 74 230
+#define COL_BG_DARK_TRANS 56 60 74 235
 #define COL_BG_DARKER 47 53 62 255
+#define COL_BG_DARKER_TRANS 47 53 62 235
 #define COL_BORDER_DARK 43 46 57 255
 #define COL_FONT 211 218 227 255
 #define COL_FONT_DIS 211 218 227 150
@@ -609,6 +610,10 @@ color_classes {
       color: COL_BG_DARK_TRANS;
       desc: "Popup background";
    }
+   color_class { name: "popup_bg_dark";
+      color: COL_BG_DARKER_TRANS;
+      desc: "Popup background";
+   }
    color_class { name: "popup_border";
       color: COL_BORDER_DARK;
       desc: "Popup border";
@@ -670,5 +675,17 @@ color_classes {
    color_class { name: "module_label_plain";
       color: FN_COL_DEFAULT_BASIC;
       desc: "Plain text of a gadget";
+   }
+   color_class { name: "module_symbol";
+      color: FN_COL_DEFAULT_BASIC;
+      desc: "Module symbol color";
+   }
+   color_class { name: "module_symbol_hover";
+      color: 255 255 255 255;
+      desc: "Module symbol hover color";
+   }
+   color_class { name: "module_symbol_pressed";
+      color: COL_PRESSED;
+      desc: "Module symbol pressed color";
    }
 }

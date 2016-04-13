@@ -1,0 +1,145 @@
+group { name: "e/widgets/syscon/main";
+
+   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
+
+   parts {
+      part { name: "bg"; mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 1;
+            fill.smooth: 0;
+            color_class: "popup_bg";
+         }
+      }
+      part { name: "bevel"; mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 0;
+            fill.smooth: 0;
+            color_class: "popup_border";
+         }
+      }
+      part { name: "e.swallow.main"; type: SWALLOW;
+         description { state: "default" 0.0;
+            rel1.offset: 3 3;
+            rel2.offset: -4 3;
+            rel2.relative: 1.0 0.0;
+            align: 0.5 0.0;
+            fixed: 0 1;
+        }
+      }
+      part { name: "e.swallow.secondary"; type: SWALLOW;
+         description { state: "default" 0.0;
+            rel1.to: "e.swallow.main";
+            rel1.relative: 0.0 1.0;
+            rel2.to: "e.swallow.main";
+            align: 0.5 0.0;
+            fixed: 0 1;
+         }
+      }
+      part { name: "e.swallow.extra"; type: SWALLOW;
+         description { state: "default" 0.0;
+            rel1.to: "e.swallow.secondary";
+            rel1.relative: 0.0 1.0;
+            rel2.to: "e.swallow.secondary";
+            align: 0.5 0.0;
+            fixed: 0 1;
+        }
+      }
+      group { "btn_close"; source: "e/widgets/button";
+         desc { "default";
+            rel1.offset: 0 12;
+            rel1.relative: 0.5 0.0;
+            rel1.to_y: "e.swallow.extra";
+            rel2.offset: -1 -14;
+            rel2.relative: 0.5 1.0;
+            align: 0.5 1.0;
+            min: SOURCE;
+            fixed: 1 0;
+         }
+      }
+      alias: "e.text.label" "btn_close:e.text.label";
+   }
+   programs {
+      program {
+         signal: "mouse,clicked,1*"; source: "btn_close";
+         action: SIGNAL_EMIT "e,action,close" "";
+      }
+   }
+}
+
+group { name: "e/widgets/syscon/item/button";
+   alias: "e/desklock/pin_button";
+   parts {
+      group { "btn"; source: "e/widgets/button";
+         desc { "default";
+            min: SOURCE;
+         }
+      }
+      alias: "e.text.label" "btn:e.text.label";
+      alias: "e.swallow.icon" "btn:e.swallow.icon";
+      alias: "event" "btn:event";
+   }
+   programs {
+      program {
+         signal: "show"; source: "btn:";
+         action: SIGNAL_EMIT "e,state,combo,vert" "e";
+      }
+      program {
+         signal: "e,action,click"; source: "btn:";
+         action: SIGNAL_EMIT "e,action,click" "";
+      }
+   }
+}
+
+group { name: "e/modules/syscon/button";
+   IMAGE_SET("sym-shutdown", 16, 16)
+   parts {
+      part { name: "base";
+         description { state: "default" 0.0;
+            image.normal: "sym-shutdown";
+            rel1.relative: 0.1 0.1;
+            rel2.relative: 0.9 0.9;
+            aspect: 1.0 1.0; aspect_preference: BOTH;
+            color_class: "module_symbol";
+         }
+         description { state: "hilight" 0.0;
+            inherit: "default" 0.0;
+            color_class: "module_symbol_hover";
+         }
+         description { state: "clicked" 0.0;
+            inherit: "default" 0.0;
+            color_class: "module_symbol_pressed";
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "mouse,down,1"; source: "base";
+         action: STATE_SET "clicked" 0.0;
+         target: "base";
+      }
+      program {
+         signal: "mouse,up,1"; source: "base";
+         action: STATE_SET "hilight" 0.0;
+         target: "base";
+      }
+      program {
+         signal: "mouse,in"; source: "base";
+         action: STATE_SET "hilight" 0.0;
+         target: "base";
+      }
+      program {
+         signal: "mouse,out"; source: "base";
+         action: STATE_SET "default" 0.0;
+         target: "base";
+      }
+      program {
+         signal: "mouse,clicked,1*"; source: "base";
+         action: SIGNAL_EMIT "e,action,shutdown,show" "e";
+      }
+   }
+}
