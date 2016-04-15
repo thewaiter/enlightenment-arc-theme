@@ -671,6 +671,14 @@ color_classes {
       color: COL_BG_DARK;
       desc: "Naviframe title background";
    }
+   color_class { name: "inwin_bg";
+      color: COL_BG_DARK;
+      desc: "Inwin background";
+   }
+   color_class { name: "inwin_border";
+      color: COL_BORDER_DARK;
+      desc: "Inwin border";
+   }
 
 // modules
    color_class { name: "module_label";

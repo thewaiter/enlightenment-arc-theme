@@ -22,6 +22,7 @@ edc/elm/check_arc.edc \
 edc/elm/radio_arc.edc \
 edc/elm/list_arc.edc \
 edc/elm/ctxpopup_arc.edc \
+edc/elm/inwin_arc.edc \
 edc/elm/notify_arc.edc \
 edc/elm/popup_arc.edc \
 edc/elm/slider_arc.edc \

@@ -30,7 +30,7 @@
 // #include "../orig-theme/edc/elm/pointer.edc"
 // #include "../orig-theme/edc/elm/fileselector.edc"
 // #include "../orig-theme/edc/elm/win.edc"
-// #include "../orig-theme/edc/elm/inwin.edc"
+#include "edc/elm/inwin_arc.edc"
 // #include "../orig-theme/edc/elm/slideshow.edc"
 // #include "../orig-theme/edc/elm/diskselector.edc"
 #include "edc/elm/ctxpopup_arc.edc"
