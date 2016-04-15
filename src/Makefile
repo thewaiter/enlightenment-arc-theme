@@ -30,6 +30,7 @@ edc/elm/menu_arc.edc \
 edc/elm/naviframe_arc.edc \
 edc/elm/gengrid_arc.edc \
 edc/elm/hover_arc.edc \
+edc/elm/spinner_arc.edc \
 edc/preview_arc.edc \
 edc/deskpreview_arc.edc \
 edc/deskmirror_arc.edc \

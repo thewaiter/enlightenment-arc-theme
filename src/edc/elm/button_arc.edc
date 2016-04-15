@@ -1541,11 +1541,9 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
 
 /******************* SPINNER BUTTONS STYLES **********************/
    group { name: "elm/button/base/spinner/increase/default";
-      alias: "elm/button/base/spinner/increase/colorselector/default";
-      alias: "elm/button/base/calendar/increase/default";
-      alias: "elm/button/base/calendar/increase/double_spinners";
-      alias: "elm/button/base/colorselector/right/default";
 
+      images.image: "bg-right-rounded-3px.png" COMP;
+      images.image: "border-right-rounded-3px.png" COMP;
       IMAGE_SET("arrow-right", 14, 14)
 #define PRESSED  1
 #define HOVER    2
@@ -1750,29 +1748,136 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
       }
    }
 
-   group { name: "elm/button/base/spinner/decrease/default";
-      alias: "elm/button/base/spinner/decrease/colorselector/default";
+   group { name: "elm/button/base/spinner/increase/colorselector/default";
+      alias: "elm/button/base/calendar/increase/default";
+      alias: "elm/button/base/calendar/increase/double_spinners";
+      alias: "elm/button/base/colorselector/right/default";
       inherit: "elm/button/base/spinner/increase/default";
+      parts {
+         part { "base";
+            desc { "default";
+               visible: 0;
+            }
+            desc { "hover";
+               inherit: "default";
+            }
+            desc { "pressed";
+               inherit: "default";
+            }
+            desc { "disabled";
+               inherit: "default";
+            }
+         }
+         part { "border";
+            desc { "default";
+               visible: 0;
+            }
+         }
+      }
+   }
+
+#undef PRESSED
+#undef HOVER
+#undef DISABLE
+
+   group { name: "elm/button/base/spinner/decrease/default";
+      inherit: "elm/button/base/spinner/increase/default";
+      images.image: "bg-left-rounded-3px.png" COMP;
+      images.image: "border-left-rounded-3px.png" COMP;
+      IMAGE_SET("arrow-left", 14, 14)
+      parts {
+         part { "base";
+            desc { "default";
+               image.normal: "bg-left-rounded-3px.png";
+               image.border: 3 3 3 3;
+               image.middle: SOLID;
+               rel1.offset: 0 0;
+               rel2.offset: -1 -1;
+               fill.smooth: 0;
+               visible: 0;
+               color_class: "button_bg";
+            }
+            desc { "pressed";
+               inherit: "default";
+               image.normal: "bg-left-rounded-3px.png";
+               color_class: "button_bg_pressed";
+               visible: 1;
+            }
+            desc { "hover";
+               inherit: "default";
+               image.normal: "bg-left-rounded-3px.png";
+               color_class: "button_bg_hover";
+               visible: 1;
+            }
+            desc { "disabled";
+               inherit: "default";
+               image.normal: "bg-left-rounded-3px.png";
+               color_class: "button_bg_disabled";
+               visible: 1;
+            }
+         }
+
+         part { "border";
+            desc { "default";
+               image.border: 3 3 3 3;
+               image.middle: 0;
+               rel.to: "base";
+               rel1.offset: 0 0;
+               rel2.offset: -1 -1;
+               image.normal: "border-left-rounded-3px.png";
+            }
+         }
+         part { name: "arrow.image";
+            scale: 1;
+            description { state: "default" 0.0;
+               min: 14 14;
+               max: 14 14;
+               color_class: "arrow_icon";
+               image.normal: "arrow-left";
+            }
+            description { state: "hover" 0.0;
+               inherit: "default" 0.0;
+               color_class: "arrow_icon_hover";
+            }
+            description { state: "pressed" 0.0;
+               inherit: "default" 0.0;
+               color_class: "arrow_icon_pressed";
+            }
+            description { state: "disabled" 0.0;
+               inherit: "default" 0.0;
+               color_class: "arrow_icon_disabled";
+            }
+         }
+      }
+
+   }
+   group { name: "elm/button/base/spinner/decrease/colorselector/default";
+      alias: "elm/button/base/colorselector/left/default";
       alias: "elm/button/base/calendar/decrease/default";
       alias: "elm/button/base/calendar/decrease/double_spinners";
-      images.image: "sym_left_light_normal.png" COMP;
-      images.image: "sym_left_glow_normal.png" COMP;
-      images.image: "sym_left_dark_normal.png" COMP;
+
+      inherit: "elm/button/base/spinner/increase/colorselector/default";
+      IMAGE_SET("arrow-left", 14, 14)
       parts {
          part { name: "arrow.image";
             scale: 1;
             description { state: "default" 0.0;
-               min: 15 15;
-               max: 15 15;
-               image.normal: "sym_left_light_normal.png";
+               // min: 14 14;
+               // max: 14 14;
+               color_class: "arrow_icon";
+               image.normal: "arrow-left";
+            }
+            description { state: "hover" 0.0;
+               inherit: "default" 0.0;
+               color_class: "arrow_icon_hover";
             }
             description { state: "pressed" 0.0;
                inherit: "default" 0.0;
-               image.normal: "sym_left_glow_normal.png";
+               color_class: "arrow_icon_pressed";
             }
             description { state: "disabled" 0.0;
                inherit: "default" 0.0;
-               image.normal: "sym_left_dark_normal.png";
+               color_class: "arrow_icon_disabled";
             }
          }
       }
@@ -1792,8 +1897,7 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
             type: TEXT;
             scale: 1;
             description { state: "default" 0.0;
-               color: FN_COL_DEFAULT;
-               color_class: "spinner";
+               color_class: "spinner_text";
                rel1.to: "bg";
                rel2.to: "bg";
                text { font: FN; size: FNSIZE;
@@ -1856,24 +1960,27 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
    }
    group { name: "elm/button/base/spinner/increase/vertical";
       inherit: "elm/button/base/spinner/increase/default";
-      images.image: "sym_up_light_normal.png" COMP;
-      images.image: "sym_up_glow_normal.png" COMP;
-      images.image: "sym_up_dark_normal.png" COMP;
+      IMAGE_SET("arrow-up", 14, 14)
       parts {
          part { name: "arrow.image";
             scale: 1;
             description { state: "default" 0.0;
-               min: 15 15;
-               max: 15 15;
-               image.normal: "sym_up_light_normal.png";
+               // min: 14 14;
+               // max: 14 14;
+               color_class: "arrow_icon";
+               image.normal: "arrow-up";
+            }
+            description { state: "hover" 0.0;
+               inherit: "default" 0.0;
+               color_class: "arrow_icon_hover";
             }
             description { state: "pressed" 0.0;
                inherit: "default" 0.0;
-               image.normal: "sym_up_glow_normal.png";
+               color_class: "arrow_icon_pressed";
             }
             description { state: "disabled" 0.0;
                inherit: "default" 0.0;
-               image.normal: "sym_up_dark_normal.png";
+               color_class: "arrow_icon_disabled";
             }
          }
       }
@@ -1881,24 +1988,27 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
 
    group { name: "elm/button/base/spinner/decrease/vertical";
       inherit: "elm/button/base/spinner/decrease/default";
-      images.image: "sym_down_light_normal.png" COMP;
-      images.image: "sym_down_glow_normal.png" COMP;
-      images.image: "sym_down_dark_normal.png" COMP;
+      IMAGE_SET("arrow-down", 14, 14)
       parts {
          part { name: "arrow.image";
             scale: 1;
             description { state: "default" 0.0;
-               min: 15 15;
-               max: 15 15;
-               image.normal: "sym_down_light_normal.png";
+               // min: 14 14;
+               // max: 14 14;
+               color_class: "arrow_icon";
+               image.normal: "arrow-down";
+            }
+            description { state: "hover" 0.0;
+               inherit: "default" 0.0;
+               color_class: "arrow_icon_hover";
             }
             description { state: "pressed" 0.0;
                inherit: "default" 0.0;
-               image.normal: "sym_down_glow_normal.png";
+               color_class: "arrow_icon_pressed";
             }
             description { state: "disabled" 0.0;
                inherit: "default" 0.0;
-               image.normal: "sym_down_dark_normal.png";
+               color_class: "arrow_icon_disabled";
             }
          }
       }

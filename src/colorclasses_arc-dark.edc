@@ -488,8 +488,16 @@ color_classes {
       desc: "Bar of a scroller widget";
    }
    color_class { name: "spinner_bg";
-      color: 0 0 0 0;
-      desc: "Background of a spinner widget";
+      color: COL_BG;
+      desc: "Spinner background";
+   }
+   color_class { name: "spinner_border";
+      color: COL_BORDER_DARK;
+      desc: "Spinner border";
+   }
+   color_class { name: "spinner_text";
+      color: FN_COL_DEFAULT_BASIC;
+      desc: "Spinner text";
    }
    color_class { name: "radio_text";
       color: FN_COL_DEFAULT;
