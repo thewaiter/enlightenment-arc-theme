@@ -56,6 +56,11 @@
 #define WIN_BORDER_UNDERLINE 53 59 73 255
 #define WIN_BORDER_BG COL_BG_DARKER
 
+#define COL_ICON_BASIC FN_COL_DEFAULT_BASIC
+#define COL_ICON_BASIC_HOVER FN_COL_DEFAULT_BASIC_PRESSED
+#define COL_ICON_BASIC_PRESSED FN_COL_DEFAULT_BASIC_PRESSED
+#define COL_ICON_BASIC_DISABLED FN_COL_DEFAULT_BASIC_DISABLED
+
 color_classes {
 // comp
    color_class { name: "comp_focus-out_color";
@@ -301,8 +306,8 @@ color_classes {
       desc: "Icon of a pressed button";
    }
    color_class { name: "button_icon_disabled";
-      color: 255 255 255 64;
-      desc: "Text of a disabled button";
+      color: COL_MASK_DISABLED;
+      desc: "Icon of a disabled button";
    }
    color_class { name: "button_text";
       color: FN_COL_DEFAULT;
@@ -359,6 +364,22 @@ color_classes {
       color: 21 21 21 255;
       color3: 255 255 255 192;
       desc: "Disabled Day Text";
+   }
+   color_class { name: "arrow_icon";
+      color: COL_ICON_BASIC;
+      desc: "Arrow icon of spinner, hoverselector, colorselector, calender, etc.";
+   }
+   color_class { name: "arrow_icon_hover";
+      color: COL_ICON_BASIC_HOVER;
+      desc: "Arrow icon of hovered spinner, hoverselector, colorselector, calender, etc.";
+   }
+   color_class { name: "arrow_icon_pressed";
+      color: COL_ICON_BASIC_PRESSED;
+      desc: "Arrow icon of pressed spinner, hoverselector, colorselector, calender, etc.";
+   }
+   color_class { name: "arrow_icon_disabled";
+      color: COL_ICON_BASIC_DISABLED;
+      desc: "Arrow icon of disabled spinner, hoverselector, colorselector, calender, etc.";
    }
    color_class { name: "check_text";
       color: FN_COL_DEFAULT;
@@ -604,15 +625,15 @@ color_classes {
    }
 
    color_class { name: "hoversel_text";
-      color: FN_COL_DEFAULT;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of a hoverselector item";
    }
    color_class { name: "hoversel_text_disabled";
-      color: FN_COL_DISABLE;
+      color: FN_COL_DEFAULT_BASIC_DISABLED;
       desc: "Text of a disabled hoverselector item";
    }
    color_class { name: "hoversel_item_active";
-      color: FN_COL_HIGHLIGHT;
+      color: FN_COL_DEFAULT_BASIC_PRESSED;
       desc: "Text of an active hoverselector item";
    }
    color_class { name: "popup_bg";

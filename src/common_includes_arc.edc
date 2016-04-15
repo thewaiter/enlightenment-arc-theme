@@ -58,7 +58,7 @@
 #include "edc/elm/menu_arc.edc"
 // #include "../orig-theme/edc/elm/clock.edc"
 #include "edc/elm/gengrid_arc.edc"
-// #include "../orig-theme/edc/elm/hover.edc"
+#include "edc/elm/hover_arc.edc"
 // #include "../orig-theme/edc/elm/cursor.edc"
 
 
