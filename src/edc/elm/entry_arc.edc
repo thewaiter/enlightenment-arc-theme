@@ -16,10 +16,10 @@ group { name: "elm/scroller/entry/default";
             color: 0 0 0 0;
          }
          description { state: "pass" 0.0;
-            color: 0 255 0 90;
+            color_class: "entry_border_val_pass";
          }
          description { state: "fail" 0.0;
-            color: 255 0 0 90;
+            color_class: "entry_border_val_fail";
          }
       }
       part { name: "bg";
@@ -95,23 +95,6 @@ group { name: "elm/scroller/entry/default";
       }
    }
    programs {
-      // program {
-      //    signal: "elm,action,focus_highlight,show"; source: "elm";
-      //    action: STATE_SET "focused" 0.0;
-      //    target: "glow";
-      //    after: "focus_in2";
-      // }
-      // program { name: "focus_in2";
-      //    action: STATE_SET "focused2" 0.0;
-      //    transition: DECELERATE 0.5;
-      //    target: "glow";
-      // }
-      // program {
-      //    signal: "elm,action,focus_highlight,hide"; source: "elm";
-      //    action: STATE_SET "default" 0.0;
-      //    transition: DECELERATE 0.3;
-      //    target: "glow";
-      // }
       program { name: "validation_fail";
          signal: "validation,default,fail";
          source: "elm";
@@ -134,28 +117,34 @@ group { name: "elm/scroller/entry/default";
 }
 
 group { name: "elm/scroller/entry_single/default";
-   // images.image: "bevel_in.png" COMP;
-   // images.image: "inset_shadow.png" COMP;
-   images.image: "bg_glow_in.png" COMP;
-   images.image: "button_normal_arc.png" COMP;
-   images.image: "entry_bevel_arc.png" COMP;
    images.image: "entry_outline_focus_arc.png" COMP;
+   images.image: "border-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px.png" COMP;
 
    data.item: "focus_highlight" "on";
 
    parts {
-      part { name: "validation_glow";
-         type: RECT;
-         insert_before: "bg";
-         mouse_events: 0;
+      part { name: "validation_glow"; mouse_events: 0;
+         insert_after: "border";
          description { state: "default" 0.0;
-            color: 0 0 0 0;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 0;
+            fill.smooth: 0;
+            rel.to: "border";
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
+            visible: 0;
          }
          description { state: "pass" 0.0;
-            color: 0 255 0 90;
+            inherit: "default" 0.0;
+            color_class: "entry_border_val_pass";
+            visible: 1;
          }
          description { state: "fail" 0.0;
-            color: 255 0 0 90;
+            inherit: "default" 0.0;
+            color_class: "entry_border_val_fail";
+            visible: 1;
          }
       }
       part { name: "sb_vbar_base"; type: RECT;
@@ -205,6 +194,17 @@ group { name: "elm/scroller/entry_single/default";
             color: COL_BG;
             color_class: "scroller_bg";
          }
+      }
+      part { name: "base"; nomouse;
+         description { state: "default" 0.0;
+            image.normal: "bg-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 1;
+            fill.smooth: 0;
+            color_class: "entry_bg";
+            rel.to: "bg";
+         }
+
       }
       part { name: "clipper"; type: RECT;
          description { state: "default" 0.0;
@@ -280,30 +280,16 @@ group { name: "elm/scroller/entry_single/default";
          action: STATE_SET "default" 0.0;
          target: "elm.swallow.end";
       }
-      part { name: "inset"; mouse_events: 0;
+      part { name: "border"; mouse_events: 0;
          description { state: "default" 0.0;
-            image.normal: "entry_bevel_arc.png";
-            image.border: 5 5 5 5;
-            image.border_scale_by: 0.2;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
             image.middle: 0;
-            rel1.to: "bg";
-            rel1.offset: -1 -1;
-            rel2.to: "bg";
-            rel2.offset: 0 0;
             fill.smooth: 0;
+            rel.to: "base";
+            color_class: "entry_border";
          }
       }
-      // part { name: "shadow"; mouse_events: 0;
-      //    description { state: "default" 0.0;
-      //       image.normal: "inset_shadow.png";
-      //       image.border: 5 5 7 3;
-      //       image.middle: 0;
-      //       rel1.to: "bg";
-      //       rel2.to: "bg";
-      //       fill.smooth: 0;
-      //       color: 255 255 255 128;
-      //    }
-      // }
       part { name: "elm.swallow.overlay"; type: SWALLOW;
          clip_to: "clipper";
          description { state: "default" 0.0;
@@ -311,46 +297,8 @@ group { name: "elm/scroller/entry_single/default";
             rel2.offset: -2 -2;
          }
       }
-      part { name: "glow";
-         mouse_events: 0;
-         description { state: "default" 0.0;
-            rel1.to: "bg";
-            rel2.to: "bg";
-            image.normal: "entry_outline_focus_arc.png";
-            image.border: 4 4 4 4;
-            image.border_scale_by: 0.25;
-            image.middle: 0;
-            fill.smooth: 1;
-            color: 255 255 255 0;
-         }
-         description { state: "focused" 0.0;
-            inherit: "default" 0.0;
-            color: 255 255 255 255;
-         }
-         description { state: "focused2" 0.0;
-            inherit: "default" 0.0;
-            color: 255 255 255 64;
-         }
-      }
    }
    programs {
-      program {
-         signal: "elm,action,focus_highlight,show"; source: "elm";
-         action: STATE_SET "focused" 0.0;
-         target: "glow";
-         after: "focus_in2";
-      }
-      program { name: "focus_in2";
-         action: STATE_SET "focused2" 0.0;
-         transition: DECELERATE 0.5;
-         target: "glow";
-      }
-      program {
-         signal: "elm,action,focus_highlight,hide"; source: "elm";
-         action: STATE_SET "default" 0.0;
-         transition: DECELERATE 0.3;
-         target: "glow";
-      }
       program { name: "validation_fail";
          signal: "validation,default,fail";
          source: "elm";
@@ -478,7 +426,7 @@ group { name: "elm/entry/selection/default";
    parts {
       part { name: "base"; type: RECT;
          description { state: "default" 0.0;
-            color: COL_ENABLE;
+            color_class: "entry_selection_bar";
          }
       }
    }
@@ -532,6 +480,15 @@ group { name: "elm/entry/base/default";
             rel2.offset: -2 -2;
          }
       }
+      // part { name: "border";
+      //    description { "default";
+      //       image.normal: "border-rounded-3px.png";
+      //       image.border: 3 3 3 3;
+      //       image.middle: 0;
+      //       rel.to: "bg";
+      //       color_class: "entry_border";
+      //    }
+      // }
       part { name: "elm.guide"; type: TEXTBLOCK; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
@@ -793,12 +750,62 @@ group { name: "elm/entry/base-single/default";
             }
          }
       }
+      part { name: "glow";
+         mouse_events: 0;
+         description { state: "default" 0.0;
+            rel1.offset: 0 1;
+            rel2.offset: -1 -2;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 0;
+            fill.smooth: 1;
+            color_class: "entry_focus_outline";
+            color: 255 255 255 0;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "elm,action,focus"; source: "elm";
+         action: STATE_SET "focused" 0.0;
+         transition: ACCELERATE 0.3;
+         target: "glow";
+      }
+      program {
+         signal: "elm,action,unfocus"; source: "elm";
+         action: STATE_SET "default" 0.0;
+         transition: ACCELERATE 0.3;
+         target: "glow";
+      }
    }
 }
 
 group { name: "elm/entry/base-single/spinner/default";
    alias: "elm/entry/base-single/spinner/vertical";
    inherit: "elm/entry/base-single/default";
+   images.image: "border-rect-3px.png" COMP;
+   parts {
+      part { name: "glow";
+         description { "default";
+            image.normal: "border-rect-3px.png";
+            image.border: 3 3 3 3;
+            rel1.offset: 0 2;
+            rel2.offset: -1 -3;
+            image.middle: 0;
+            fill.smooth: 1;
+            color_class: "entry_focus_outline";
+            color: 255 255 255 0;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+      }
+   }
 }
 
 group { name: "elm/entry/base-single-noedit/default";
@@ -961,6 +968,37 @@ group { name: "elm/entry/base-password/default";
             text { style: "entry_single_disabled_style";
             }
          }
+      }
+      part { name: "glow";
+         mouse_events: 0;
+         description { state: "default" 0.0;
+            rel1.offset: 0 1;
+            rel2.offset: -1 -2;
+            image.normal: "border-rounded-3px.png";
+            image.border: 3 3 3 3;
+            image.middle: 0;
+            fill.smooth: 1;
+            color_class: "entry_focus_outline";
+            color: 255 255 255 0;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "elm,action,focus"; source: "elm";
+         action: STATE_SET "focused" 0.0;
+         transition: ACCELERATE 0.3;
+         target: "glow";
+      }
+      program {
+         signal: "elm,action,unfocus"; source: "elm";
+         action: STATE_SET "default" 0.0;
+         transition: ACCELERATE 0.3;
+         target: "glow";
       }
    }
 }

@@ -83,7 +83,6 @@ color_classes {
 // wm
    color_class { name: "win_border_title";
       color: FN_COL_DISABLE;
-      // color: 128 135 145 255;
       desc: "Title of an inactive window frame";
    }
    color_class { name: "win_border_title_active";
@@ -426,13 +425,40 @@ color_classes {
       desc: "Text in a disabled entry box";
    }
    color_class { name: "entry_guide_text";
-      color: 0 0 0 255;
-      color3: 255 255 255 25;
+      color: FN_COL_INACTIVE;
       desc: "Guide text in a entry box";
    }
    color_class { name: "entry_scrollframe_base";
       color: COL_BG;
       desc: "Base of a entry's scroller widget";
+   }
+   color_class { name: "entry_bg";
+      color: COL_BG;
+      desc: "Entry background";
+   }
+   color_class { name: "entry_border";
+      color: COL_BORDER_DARK;
+      desc: "Entry border";
+   }
+   color_class { name: "entry_border_val_pass";
+      color: 82 255 82 255;
+      desc: "Entry border validation passed";
+   }
+   color_class { name: "entry_border_val_fail";
+      color: 255 82 82 255;
+      desc: "Entry border validation failed";
+   }
+   color_class { name: "entry_selection_bar";
+      color: COL_PRESSED;
+      desc: "Entry selection color";
+   }
+   color_class { name: "entry_focus_outline";
+      color: COL_PRESSED;
+      desc: "Entry focus outline";
+   }
+   color_class { name: "entry_cursor";
+      color: FN_COL_DEFAULT_BASIC;
+      desc: "Entry cursor";
    }
    color_class { name: "index_bg";
       color: 0 0 0 0;

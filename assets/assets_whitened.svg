@@ -924,8 +924,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.375"
-     inkscape:cx="334.82612"
-     inkscape:cy="58.306827"
+     inkscape:cx="301.9665"
+     inkscape:cy="-12.804284"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -5607,6 +5607,17 @@
          id="bg-rounded-1px-24"
          style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:0" />
     </g>
+    <rect
+       style="display:inline;opacity:1;fill:none;fill-opacity:0;stroke:#ffffff;stroke-linejoin:miter;stroke-opacity:1"
+       id="border-rect-3px"
+       width="20"
+       height="22"
+       x="296.60519"
+       y="-23.716825"
+       inkscape:export-filename="/home/matthias/Projekte/tests/border.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:label="#rect6986" />
   </g>
   <g
      inkscape:groupmode="layer"
