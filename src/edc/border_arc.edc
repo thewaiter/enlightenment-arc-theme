@@ -439,6 +439,15 @@ group {
             color_class: "win_border_title_active";
          }
       }
+      rect { name: "event-dummy"; mouse_events: 1;
+         description { "default";
+            color: 0 0 0 0;
+            rel1.to_x: "btn-spacer";
+            rel2.to_x: "btn-spacer";
+            rel1.to_y: "top_bg";
+            rel2.to_y: "top_bg";
+         }
+      }
       part { name: "btn-spacer";
          type: SPACER;
          description { state: "default" 0.0;
