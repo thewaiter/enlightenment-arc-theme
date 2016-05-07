@@ -234,6 +234,26 @@ color_classes {
       color: FN_COL_DISABLE;
       desc: "Text of a disabled menu item";
    }
+   color_class { name: "toolbar_item";
+      color: FN_COL_INACTIVE;
+      desc: "Toolbar: Text of an inactive toolbar item";
+   }
+   color_class { name: "toolbar_item_hover";
+      color: FN_COL_DEFAULT_BASIC_SELECTED;
+      desc: "Toolbar: Text of an inactive toolbar item";
+   }
+   color_class { name: "toolbar_item_active";
+      color: FN_COL_DEFAULT_BASIC_SELECTED;
+      desc: "Toolbar: Text of an active toolbar item";
+   }
+   color_class { name: "toolbar_item_disabled";
+      color: FN_COL_DISABLE;
+      desc: "Toolbar: Text of a disabled toolbar item";
+   }
+   color_class { name: "toolbar_item_separator";
+      color: COL_BORDER_DARK;
+      desc: "Toolbar separator color";
+   }
    color_class { name: "winlist_top_bg";
       color: COL_BG_DARKER;
       desc: "";
