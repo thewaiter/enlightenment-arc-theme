@@ -300,22 +300,37 @@ group { "genlist_base"; inherit_only: 1; nomouse; program_source: "elm";
     }
 }
 
-group { "genlist_top"; inherit_only: 1; nomouse; program_source: "elm";
-	 parts {
-		 rect { "event_block"; mouse;
-			 desc { "default";
-				 color: 0 0 0 0;
-				 hid;
-				 link.base: "elm,state,enabled";
-			 }
-			 desc { "disabled";
-				 inherit: "default";
-				 vis;
-				 link.base: "elm,state,disabled";
-			 }
-		 }
-	 }
-}
+// group { "genlist_top"; inherit_only: 1; nomouse; program_source: "elm";
+// 	 parts {
+// 		 rect { "event_block"; mouse;
+// 			 desc { "default";
+// 				 color: 0 0 0 0;
+// 				 hid;
+// 				 link.base: "elm,state,enabled";
+// 			 }
+// 			 desc { "disabled";
+// 				 inherit: "default";
+// 				 vis;
+// 				 link.base: "elm,state,disabled";
+// 			 }
+// 		 }
+// 	 }
+// }
+
+#define GENLIST_TOP \
+		rect { "event_block"; mouse; \
+			desc { "default"; \
+				color: 0 0 0 0; \
+				hid; \
+				link.base: "elm,state,enabled"; \
+			} \
+			desc { "disabled"; \
+				inherit: "default"; \
+				vis; \
+				link.base: "elm,state,disabled"; \
+			} \
+		}
+
 
 group { "elm/genlist/item/default/default"; nomouse;
 	data.item: "selectraise" "on";
@@ -453,8 +468,11 @@ group { "elm/genlist/item/default/default"; nomouse;
 			}
 		}
 		//##//
+   GENLIST_TOP
 	}
-	inherit: "genlist_top";
+
+// inherit: "genlist_top";
+
 }
 ODD("elm/genlist/item_odd/default/default", "elm/genlist/item/default/default")
 COMPRESS("elm/genlist/item_compress/default/default", "elm/genlist/item/default/default")
@@ -616,9 +634,11 @@ group { "elm/genlist/item/default_style/default"; nomouse;
 			}
 		}
 		//##//
-
+   GENLIST_TOP
 	}
-	inherit: "genlist_top";
+
+// inherit: "genlist_top";
+
 }
 ODD("elm/genlist/item_odd/default_style/default", "elm/genlist/item/default_style/default")
 COMPRESS("elm/genlist/item_compress/default_style/default", "elm/genlist/item/default_style/default")
@@ -736,9 +756,11 @@ group { "elm/genlist/item/one_icon/default"; nomouse;
 			}
 		}
 		//##//
-
+      GENLIST_TOP
 	}
-	inherit: "genlist_top";
+
+// inherit: "genlist_top";
+
 }
 ODD("elm/genlist/item_odd/one_icon/default", "elm/genlist/item/one_icon/default")
 COMPRESS("elm/genlist/item_compress/one_icon/default", "elm/genlist/item/one_icon/default")
@@ -856,9 +878,11 @@ group { "elm/genlist/item/end_icon/default"; nomouse;
 			}
 		}
 		//##//
-
+   GENLIST_TOP
 	}
-	inherit: "genlist_top";
+
+// inherit: "genlist_top";
+
 }
 ODD("elm/genlist/item_odd/end_icon/default", "elm/genlist/item/end_icon/default")
 COMPRESS("elm/genlist/item_compress/end_icon/default", "elm/genlist/item/end_icon/default")
@@ -957,9 +981,11 @@ group { "elm/genlist/item/no_icon/default"; nomouse;
 			}
 		}
 		//##//
-
+      GENLIST_TOP
 	}
-	inherit: "genlist_top";
+
+// inherit: "genlist_top";
+
 }
 ODD("elm/genlist/item_odd/no_icon/default", "elm/genlist/item/no_icon/default")
 COMPRESS("elm/genlist/item_compress/no_icon/default", "elm/genlist/item/no_icon/default")
@@ -997,8 +1023,10 @@ group { "elm/genlist/item/full/default"; nomouse;
 		}
 		//##//
 
-	}
-	inherit: "genlist_top";
+
+// inherit: "genlist_top";
+   GENLIST_TOP
+   }
 }
 ODD("elm/genlist/item_odd/full/default", "elm/genlist/item/full/default")
 group { "elm/genlist/item_compress/full/default";
@@ -1679,9 +1707,10 @@ group { "elm/genlist/item/tree_effect/default";
 // 			}
 // 		}
 // 		//##//
-
+//       GENLIST_TOP
 // 	}
 // 	inherit: "genlist_top";
+//
 // }
 // // ODD("elm/genlist/item_odd/icon_top_text_bottom/default", "elm/genlist/item/icon_top_text_bottom/default")
 // // COMPRESS("elm/genlist/item_compress/icon_top_text_bottom/default", "elm/genlist/item/icon_top_text_bottom/default")
@@ -2186,7 +2215,7 @@ group { "elm/genlist/item/tree_effect/default";
 // 			}
 // 		}
 // 		//##//
-
+//       GENLIST_TOP
 // 	}
 // 	inherit: "genlist_top";
 // }
@@ -2831,7 +2860,7 @@ group { "elm/genlist/item/tree_effect/default";
 // 			}
 // 		}
 // 		//##//
-
+//       GENLIST_TOP
 // 	}
 // 	inherit: "genlist_top";
 // }
@@ -3087,7 +3116,7 @@ group { "elm/genlist/item/tree_effect/default";
 // 			}
 // 		}
 // 		//##//
-
+//       GENLIST_TOP
 // 	}
 // 	inherit: "genlist_top";
 // }
@@ -3646,7 +3675,7 @@ group { "elm/genlist/item/tree_effect/default";
 // 			}
 // 		}
 // 		//##//
-
+//       GENLIST_TOP
 // 	}
 // 	inherit: "genlist_top";
 // }
@@ -4099,7 +4128,7 @@ group { "elm/genlist/item/tree_effect/default";
 // 			}
 // 		}
 // 		//##//
-
+//       GENLIST_TOP
 // 	}
 // 	inherit: "genlist_top";
 // }
@@ -4649,7 +4678,7 @@ group { "elm/genlist/item/mode/default"; nomouse;
 		}
 
       ARROW_GROUP
-
+      GENLIST_TOP
 	}
 
 	// inherit: "genlist_top";
