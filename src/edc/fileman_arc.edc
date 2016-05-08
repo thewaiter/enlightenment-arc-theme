@@ -830,7 +830,6 @@ group { name: "e/fileman/default/scrollframe";
          }
       }
       part { name: "e.box.operations"; type: BOX;
-         insert_after: "inset";
          description { state: "default" 0.0;
             rel1.offset: 3 3;
             rel1.to: "bg";
