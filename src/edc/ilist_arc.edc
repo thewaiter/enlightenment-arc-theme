@@ -66,11 +66,14 @@ group { name: "e/widgets/ilist";
       public it_state;
       public eval_state(s) {
          if (s & SELECTED) {
-            set_state(PART:"sel_base", "selected", 0.0);
+            // set_state(PART:"sel_base", "selected", 0.0);
+            run_program(PROGRAM:"base_selected");
          } else if (s & HOVER) {
-            set_state(PART:"sel_base", "hover", 0.0);
+            // set_state(PART:"sel_base", "hover", 0.0);
+            run_program(PROGRAM:"base_hover");
          } else {
-            set_state(PART:"sel_base", "default", 0.0);
+            // set_state(PART:"sel_base", "default", 0.0);
+            run_program(PROGRAM:"base_default");
          }
 
       }
@@ -86,18 +89,15 @@ group { name: "e/widgets/ilist";
       }
       part { name: "sel_base"; mouse_events: 0; type: RECT;
          description { state: "default" 0.0;
-            color_class: "list_item_base_hover";
-            visible: 0;
+            color_class: "list_item_base";
          }
          description { state: "selected";
             inherit: "default" 0.0;
             color_class: "list_item_base_selected";
-            visible: 1;
          }
          description { state: "hover";
             inherit: "default";
-            visible: 1;
-
+            color_class: "list_item_base_hover";
          }
       }
       program {
@@ -115,6 +115,21 @@ group { name: "e/widgets/ilist";
             set_int(it_state, s &= ~HOVER);
             eval_state(s);
          }
+      }
+      program { name: "base_selected";
+         action: STATE_SET "selected" 0.0;
+         target: "sel_base";
+         transition: SINUSOIDAL 0.2;
+      }
+      program { name: "base_hover";
+         action: STATE_SET "hover" 0.0;
+         target: "sel_base";
+         transition: SINUSOIDAL 0.2;
+      }
+      program { name: "base_default";
+         action: STATE_SET "default" 0.0;
+         target: "sel_base";
+         transition: SINUSOIDAL 0.2;
       }
       part { name: "e.swallow.icon"; type: SWALLOW; mouse_events: 0;
          description { state: "default" 0.0;

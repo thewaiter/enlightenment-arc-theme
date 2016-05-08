@@ -11,10 +11,12 @@
          new h = m & HOVER;
          if (!p) {
             if (!h) {
-               set_state(PART:"base", "default", 0.0);
+               // set_state(PART:"base", "default", 0.0);
+               run_program(PROGRAM:"set_base_default");
             }
             else {
-               set_state(PART:"base", "hover", 0.0);
+               // set_state(PART:"base", "hover", 0.0);
+               run_program(PROGRAM:"set_base_hover");
             }
            }
          else {
@@ -257,6 +259,16 @@
             m &= ~PRESSED; set_int(btmode, m);
             eval_mode(m);
          }
+      }
+      program { name: "set_base_hover";
+         action: STATE_SET "hover";
+         target: "base";
+         transition: SINUSOIDAL 0.2;
+      }
+      program { name: "set_base_default";
+         action: STATE_SET "default";
+         target: "base";
+         transition: SINUSOIDAL 0.2;
       }
       program {
          signal: "mouse,down,1"; source: "event";

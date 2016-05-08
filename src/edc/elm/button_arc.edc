@@ -28,10 +28,13 @@ group { name: "elm/button/base/default";
             if (!d) {
                if (!p) {
                   if (!h) {
-                     set_state(PART:"base", "default", 0.0);
+                     // set_state(PART:"base", "default", 0.0);
+                     run_program(PROGRAM:"set_base_default");
+
                   }
                   else {
-                     set_state(PART:"base", "hover", 0.0);
+                     run_program(PROGRAM:"set_base_hover");
+                     // set_state(PART:"base", "hover", 0.0);
                   }
                  }
                else {
@@ -370,6 +373,16 @@ group { name: "elm/button/base/default";
             eval_mode(m);
          }
       }
+      program { name: "set_base_hover";
+         action: STATE_SET "hover";
+         target: "base";
+         transition: SINUSOIDAL 0.2;
+      }
+      program { name: "set_base_default";
+         action: STATE_SET "default";
+         target: "base";
+         transition: SINUSOIDAL 0.2;
+      }
       program { name: "button_unclick";
          signal: "mouse,up,1"; source: "event";
          action: SIGNAL_EMIT "elm,action,unpress" "elm";
@@ -392,6 +405,7 @@ group { name: "elm/button/base/default";
          action: STATE_SET "default" 0.0;
          in: 0.5 0.0;
          target: "base";
+         transition: SINUSOIDAL 0.2;
       }
       program {
          signal: "mouse,clicked,1"; source: "event";
