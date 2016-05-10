@@ -195,30 +195,18 @@ group { name: "elm/slider/horizontal/default";
             color: 255 255 255 64;
          }
          description { state: "inverted" 0.0;
+            inherit: "default";
             rel1.relative: 0.5 0.0;
             rel1.to_x: "button";
             rel1.to_y: "base";
             rel2.offset: 0 -1;
             rel2.to: "base";
-            image.normal: "slider-horizontal-2px.png";
-            image.border: 7 7 5 5;
-            color_class: "slider_inset";
-            // image.border: 4 0 0 0;
+            rel2.relative: 1.0 1.0;
          }
          description { state: "range" 0.0;
-            rel1.relative: 0.5 1.0;
-            rel1.offset: 0 -1;
+            inherit: "default";
             rel1.to_x: "button";
-            rel1.to_y: "base";
-            rel2.relative: 0.5 1.0;
-            rel2.offset: 0 -1;
             rel2.to_x: "button2";
-            rel2.to_y: "base";
-            fixed: 0 1;
-            image.normal: "slider-horizontal-2px.png";
-            color_class: "slider_inset";
-            image.border: 7 7 5 5;
-            // image.border: 0 4 0 0;
          }
          description { state: "disabled_range" 0.0;
             inherit: "range" 0.0;
@@ -613,17 +601,29 @@ group { name: "elm/slider/horizontal/default";
       }
    }
    programs {
-      program {
+      program { name: "knob_pressed";
          signal: "mouse,down,1"; source: "elm.dragable.slider";
          action:  STATE_SET "clicked" 0.0;
          target: "knob";
          target: "knob_border";
       }
-      program {
+      program { name: "knob_unpressed";
          signal: "mouse,up,1"; source: "elm.dragable.slider";
          action:  STATE_SET "default" 0.0;
          target: "knob";
          target: "knob_border";
+      }
+      program { name: "knob2_pressed";
+         signal: "mouse,down,1"; source: "elm.dragable2.slider";
+         action:  STATE_SET "clicked" 0.0;
+         target: "knob2";
+         target: "knob_border2";
+      }
+      program { name: "knob2_unpressed";
+         signal: "mouse,up,1"; source: "elm.dragable2.slider";
+         action:  STATE_SET "show" 0.0;
+         target: "knob2";
+         target: "knob_border2";
       }
       program {
          signal: "elm,slider,range,enable";
@@ -1142,27 +1142,17 @@ group { name: "elm/slider/vertical/default";
             color: COL_MASK_DISABLED;
          }
          description { state: "inverted" 0.0;
+            inherit: "default";
             rel1.relative: 0.0 0.5;
             rel1.to_y: "button";
             rel1.to_x: "base";
             rel2.to: "base";
-            rel2.offset: -1 -1;
-            image.normal: "slider-vertical-2px.png";
-            image.border: 5 5 7 7;
-            color_class: "slider_inset";
+            rel2.relative: 1.0 1.0;
          }
          description { state: "range" 0.0;
-            rel1.relative: 0.5 1.0;
-            rel1.to_x: "base";
+            inherit: "default";
             rel1.to_y: "button";
-            rel2.relative: 0.5 1.0;
-            rel2.offset: -1 -1;
-            rel2.to_x: "base";
             rel2.to_y: "button2";
-            fixed: 1 0;
-            image.normal: "slider-vertical-2px.png";
-            color_class: "slider_inset";
-            image.border: 5 5 7 7;
          }
          description { state: "disabled_range" 0.0;
             inherit: "range" 0.0;
@@ -1170,8 +1160,8 @@ group { name: "elm/slider/vertical/default";
          }
          description { state: "range_reverse" 0.0;
             inherit: "range" 0.0;
-            rel1.to_x: "button2";
-            rel2.to_x: "button";
+            rel1.to_y: "button2";
+            rel2.to_y: "button";
          }
          description { state: "disabled_range_reverse" 0.0;
             inherit: "range_reverse" 0.0;
@@ -1493,6 +1483,7 @@ group { name: "elm/slider/vertical/default";
          description { state: "clicked" 0.0;
             inherit: "default" 0.0;
             color_class: "slider_knob_pressed";
+            visible: 1;
          }
       }
       part { name: "knob_border2"; nomouse;
@@ -1510,6 +1501,7 @@ group { name: "elm/slider/vertical/default";
          desc { state: "clicked";
             inherit: "default" 0.0;
             color_class: "slider_knob_pressed";
+            visible: 1;
          }
       }
       part { name: "slideevent2"; type: RECT; repeat_events: 1;
@@ -1565,6 +1557,18 @@ group { name: "elm/slider/vertical/default";
          target: "knob_border";
       }
       program {
+         signal: "mouse,down,1"; source: "elm.dragable2.slider";
+         action:  STATE_SET "clicked" 0.0;
+         target: "knob2";
+         target: "knob_border2";
+      }
+      program {
+         signal: "mouse,up,1"; source: "elm.dragable2.slider";
+         action:  STATE_SET "show" 0.0;
+         target: "knob2";
+         target: "knob_border2";
+      }
+      program {
          signal: "elm,slider,range,enable";
          source: "elm";
          script {
@@ -1588,7 +1592,7 @@ group { name: "elm/slider/vertical/default";
               set_state(PART:"button2", "default", 0.0);
               set_state(PART:"elm.dragable2.slider", "default", 0.0);
               set_state(PART:"knob2", "default", 0.0);
-              set_state(PART:"knob_border2", "show", 0.0);
+              set_state(PART:"knob_border2", "default", 0.0);
               set_state(PART:"slideevent2", "default", 0.0);
               set_state(PART:"elm.track2.slider", "default", 0.0);
               set_state(PART:"glow", "default", 0.0);
