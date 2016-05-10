@@ -208,6 +208,7 @@ group { name: "e/widgets/winlist/item";
             rel1.offset: 2 2;
             rel2.relative: 0.0 1.0;
             rel2.offset: 2 -3;
+            fixed: 1 1;
          }
       }
       part { name: "e.swallow.icon"; type: SWALLOW; mouse_events: 0;

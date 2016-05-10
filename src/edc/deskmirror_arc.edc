@@ -30,6 +30,7 @@ group { name: "e/deskmirror/frame/default";
          description { state: "iconic";
             rel1.relative: 0.0 1.0;
             rel2.relative: 0.0 1.0;
+            fixed: 1 1;
          }
       }
       part { name: "top_spacer"; type: SPACER;
@@ -46,6 +47,7 @@ group { name: "e/deskmirror/frame/default";
             rel1.to: "bottom_size";
             rel2.to: "bottom_size";
             align: 0.5 1.0;
+            fixed: 0 1;
          }
       }
       part { name: "bottom_size"; type: SPACER;

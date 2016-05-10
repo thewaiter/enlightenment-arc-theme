@@ -20,6 +20,7 @@ group { name: "e/modules/start/main";
             rel2.relative: 0.7 0.5;
             aspect: 1 4;
             align: 0.5 0.5;
+            fixed: 1 0;
          }
       }
       image { name: "circle1";
@@ -31,6 +32,7 @@ group { name: "e/modules/start/main";
             align: 0.5 0.5;
             aspect: 1 1;
             color_class: "button_icon";
+            fixed: 0 1;
          }
       }
       image { name: "circle2";

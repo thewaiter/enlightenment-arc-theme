@@ -112,6 +112,9 @@ group { name:"e/modules/tasks/item";
             inherit: "default" 0.0;
             color: FN_COL_DISABLE;
          }
+         description { state: "clicked" 0.0;
+            inherit: "default";
+         }
       }
       part { name: "icon"; type: SPACER;
          description { state: "default" 0.0;
@@ -122,6 +125,7 @@ group { name:"e/modules/tasks/item";
             rel2.relative: 0.0 1.0;
             rel2.offset: 3 -4;
             rel2.to: "sel_base";
+            fixed: 1 0;
          }
          description { state: "icon_only" 0.0;
             inherit: "default" 0.0;

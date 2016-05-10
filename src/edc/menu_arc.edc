@@ -152,14 +152,12 @@ group { name: "e/widgets/menu/default/item_bg";
       program {
          signal: "e,state,selected"; source: "e";
          action: STATE_SET "active" 0.0;
-         target: "base";
          target: "border";
          target: "selected_overlay";
       }
       program {
          signal: "e,state,unselected"; source: "e";
          action: STATE_SET "default" 0.0;
-         target: "base";
          target: "border";
          target: "selected_overlay";
       }

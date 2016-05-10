@@ -416,7 +416,6 @@ group {
          type: TEXT;
          mouse_events: 0;
          scale: 1;
-         effect: SHADOW BOTTOM;
          description { state: "default" 0.0;
             rel1.relative: 0.0 0.0;
             rel1.offset: 7 3;
@@ -504,6 +503,9 @@ group {
             max: 99999 1;
          }
          description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+         }
+         description { state: "max" 0.0;
             inherit: "default" 0.0;
          }
       }
