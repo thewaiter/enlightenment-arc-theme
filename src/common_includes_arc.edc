@@ -132,7 +132,7 @@
 // #include "../orig-theme/edc/backlight.edc"
 // #include "../orig-theme/edc/mixer.edc"
 // #include "../orig-theme/edc/battery.edc"
-// #include "../orig-theme/edc/evrything.edc"
+#include "edc/evrything_arc.edc"
 // #include "../orig-theme/edc/illume.edc"
 // #include "../orig-theme/edc/bluez4.edc"
 // #include "../orig-theme/edc/packagekit.edc"

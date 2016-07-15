@@ -7,6 +7,7 @@ ASSETS=toggle-background toggle checkmark checkmark-selection dot-small \
 	bg-left-rounded-3px border-left-rounded-3px bg-right-rounded-3px border-right-rounded-3px \
 	bg-none-rounded-3px border-none-rounded-3px \
 	slider-vertical-2px slider-horizontal-2px slider-knob slider-knob-border \
+	scroller-vertical-3px scroller-horizontal-3px \
 	arrow-up arrow-down arrow-right arrow-left \
 	reload heart progress-bar-2px \
 	sym-shutdown \
