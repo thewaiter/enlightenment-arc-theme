@@ -227,7 +227,7 @@ group { name: "e/widgets/menu/default/label";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            visible: 0;
+            color: 211 218 227 (255 *0.45);
          }
       }
    }
