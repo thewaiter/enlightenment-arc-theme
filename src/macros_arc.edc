@@ -15,6 +15,46 @@
          } \
       }
 
+#define IMAGE_SET_BORDER_ALT(_NAME, _WIDTH, _HEIGHT, _LEFT, _RIGHT, _TOP, _BOTTOM) \
+      images.set { \
+         name: _NAME; \
+         image { \
+            image: _NAME".png" COMP; \
+            size: 0 0 _WIDTH _HEIGHT; \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+         image { \
+            image: _NAME"@2.png" COMP; \
+            size: (_WIDTH + 1) (_HEIGHT + 1) (_WIDTH * 2) (_HEIGHT * 2); \
+            border: (_LEFT * 2) (_RIGHT * 2) (_TOP * 2) (_BOTTOM * 2); \
+         } \
+         image { \
+            image: _NAME"@4.png" COMP; \
+            size:  (_WIDTH * 2 + 1) (_HEIGHT * 2 + 1) (_WIDTH * 8) (_HEIGHT * 8); \
+            border: (_LEFT * 4) (_RIGHT * 4) (_TOP * 4) (_BOTTOM * 4); \
+         } \
+      }
+
+#define IMAGE_SET_BORDER(_NAME, _WIDTH, _HEIGHT, _LEFT, _RIGHT, _TOP, _BOTTOM) \
+      images.set { \
+         name: _NAME; \
+         image { \
+            image: _NAME".png" COMP; \
+            size: 0 0 _WIDTH _HEIGHT; \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+         image { \
+            image: _NAME"@2.png" COMP; \
+            size: (_WIDTH + 1) (_HEIGHT + 1) (_WIDTH * 2) (_HEIGHT * 2); \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+         image { \
+            image: _NAME"@4.png" COMP; \
+            size:  (_WIDTH * 2 + 1) (_HEIGHT * 2 + 1) (_WIDTH * 8) (_HEIGHT * 8); \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+      }
+
 images.image: "win_shadow_rounded_arc.png" COMP;
 
 #define WIN_SHADOW_ROUNDED_ARC \

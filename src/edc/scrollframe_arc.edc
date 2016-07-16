@@ -1,13 +1,12 @@
 group { name: "e/widgets/scrollframe";
-   images.image: "scroll_bar_base_arc.png" COMP;
-   images.image: "scroll_bar_hover_arc.png" COMP;
-   images.image: "scroll_bar_drag_arc.png" COMP;
+   IMAGE_SET_BORDER("scroller-vertical-3px", 12, 21, 6, 6, 6, 6)
+   IMAGE_SET_BORDER("scroller-horizontal-3px", 21, 12, 6, 6, 6, 6)
 
    script {
 #define PRESSED 1
 #define HOVER   2
       public sc_v_mode;
-      public eval_v_mode(m) {
+      public eval_sc_v_mode(m) {
          new p = m & PRESSED;
          new h = m & HOVER;
          if (!p) {
@@ -23,7 +22,7 @@ group { name: "e/widgets/scrollframe";
          }
       }
       public sc_h_mode;
-      public eval_h_mode(m) {
+      public eval_sc_h_mode(m) {
          new p = m & PRESSED;
          new h = m & HOVER;
          if (!p) {
@@ -45,8 +44,8 @@ group { name: "e/widgets/scrollframe";
       part { name: "sb_vbar_show"; type: RECT;
          scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: -11 -11;
-            rel2.offset: 10 10;
+            // rel1.offset: -11 -11;
+            // rel2.offset: 10 10;
          }
          description { state: "hidden" 0.0;
             inherit: "default" 0.0;
@@ -56,7 +55,9 @@ group { name: "e/widgets/scrollframe";
       part { name: "sb_vbar"; type: RECT;
          scale: 1;
          description { state: "default" 0.0;
-            min: 15 15;
+            min: 12 21;
+            max: 12 99999;
+            fixed: 1 0;
             align: 1.0 0.0;
             rel1.relative: 1.0 0.0;
             rel1.offset: -1 0;
@@ -94,7 +95,6 @@ group { name: "e/widgets/scrollframe";
             color: 0 0 0 0;
             rel1.relative: 0.0 1.0;
             rel1.to: "e.dragable.vbar";
-            // rel2.relative: 1.0 0.0;
             rel2.to: "sb_vbar";
          }
       }
@@ -105,7 +105,9 @@ group { name: "e/widgets/scrollframe";
          dragable.y: 1 1 0;
          dragable.confine: "sb_vbar_base";
          description { state: "default" 0.0;
-            min: 15 15;
+            min: 12 21;
+            max: 12 99999;
+            fixed: 1 0;
             rel1.relative: 0.5  0.5;
             rel1.to: "sb_vbar_base";
             rel2.relative: 0.5  0.5;
@@ -140,8 +142,8 @@ group { name: "e/widgets/scrollframe";
       part { name: "sb_hbar_show"; type: RECT;
          scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: -11 -11;
-            rel2.offset: 10 10;
+            // rel1.offset: -11 -11;
+            // rel2.offset: 10 10;
          }
          description { state: "hidden" 0.0;
             inherit: "default" 0.0;
@@ -151,7 +153,9 @@ group { name: "e/widgets/scrollframe";
       part { name: "sb_hbar"; type: RECT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
-            min: 15 15;
+            min: 21 12;
+            max: 99999 12;
+            fixed: 0 1;
             align: 0.0 1.0;
             rel1.relative: 0.0 1.0;
             rel1.offset: 0 -1;
@@ -168,9 +172,7 @@ group { name: "e/widgets/scrollframe";
          clip_to: "sb_hbar";
          description { state: "default" 0.0;
             color: 0 0 0 0;
-            // rel1.relative: 1.0 0.0;
             rel1.to: "sb_hbar";
-            // rel2.relative: 0.0 1.0;
             rel2.to: "sb_hbar";
          }
       }
@@ -190,7 +192,6 @@ group { name: "e/widgets/scrollframe";
             color: 0 0 0 0;
             rel1.relative: 1.0 0.0;
             rel1.to: "e.dragable.hbar";
-            // rel2.relative: 1.0 1.0;
             rel2.to: "sb_hbar";
          }
       }
@@ -201,7 +202,9 @@ group { name: "e/widgets/scrollframe";
          dragable.y: 0 0 0;
          dragable.confine: "sb_hbar_base";
          description { state: "default" 0.0;
-            min: 15 15;
+            min: 21 12;
+            max: 99999 12;
+            fixed: 0 1;
             rel1.relative: 0.5  0.5;
             rel1.to: "sb_hbar_base";
             rel2.relative: 0.5  0.5;
@@ -236,7 +239,6 @@ group { name: "e/widgets/scrollframe";
          description { state: "default" 0.0;
             rel1.to: "e.swallow.content";
             rel2.to: "e.swallow.content";
-            color: COL_BG;
             color_class: "scroller_bg";
          }
       }
@@ -259,151 +261,131 @@ group { name: "e/widgets/scrollframe";
       part { name: "base_vbar"; mouse_events: 0;
          clip_to: "sb_vbar_show";
          description { state: "default" 0.0;
-            rel1.offset: 3 4;
             rel1.to: "e.dragable.vbar";
-            rel2.offset: -5 -8;
             rel2.to: "e.dragable.vbar";
-            image.normal: "scroll_bar_base_arc.png";
-            // l r t b
-            image.border: 9 8 7 9;
-            image.border_scale_by: 0.5;
-            fill.smooth: 1;
-            min: 4 20;
+            image.normal: "scroller-vertical-3px";
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "scroller_bar";
          }
          description {
             state: "hover" 0.0;
             inherit: "default" 0.0;
-            image.normal: "scroll_bar_hover_arc.png";
+            color_class: "scroller_bar_hover";
          }
          description {
             state: "clicked" 0.0;
             inherit: "default" 0.0;
-            image.normal: "scroll_bar_drag_arc.png";
+            color_class: "scroller_bar_active";
          }
       }
       part { name: "base_hbar"; mouse_events: 0;
          clip_to: "sb_hbar_show";
          description { state: "default" 0.0;
-            rel1.offset: 4 5;
             rel1.to: "e.dragable.hbar";
-            rel2.offset: -5 -5;
             rel2.to: "e.dragable.hbar";
-            image.normal: "scroll_bar_base_arc.png";
-            image.border: 9 8 7 9;
-            image.border_scale_by: 0.5;
-            fill.smooth: 1;
-            min: 20 4;
+            image.normal: "scroller-horizontal-3px";
+            image.middle: SOLID;
+            fill.smooth: 0;
             color_class: "scroller_bar";
          }
          description {
             state: "hover" 0.0;
             inherit: "default" 0.0;
-            image.normal: "scroll_bar_hover_arc.png";
+            color_class: "scroller_bar_hover";
          }
          description {
             state: "clicked" 0.0;
             inherit: "default" 0.0;
-            image.normal: "scroll_bar_drag_arc.png";
+            color_class: "scroller_bar_active";
          }
       }
    }
    programs {
-      program { name: "sc_v_click_anim";
+      //  program {
+      //    signal: "mouse,down,*"; source: "e.dragable.vbar";
+      //    action: STATE_SET "clicked" 0.0;
+      //    target: "base_vbar";
+      // }
+      // program {
+      //    signal: "mouse,up,*"; source: "e.dragable.vbar";
+      //    action: STATE_SET "default" 0.0;
+      //    target: "base_vbar";
+      // }
+      // program {
+      //    signal: "mouse,down,*"; source: "e.dragable.hbar";
+      //    action: STATE_SET "default" 0.0;
+      //    target: "base_hbar";
+      // }
+      // program {
+      //    signal: "mouse,up,*"; source: "e.dragable.hbar";
+      //    action: STATE_SET "default" 0.0;
+      //    target: "base_hbar";
+      // }
+      // This does not work within configuration dialog/ilist, but in fileman, why?
+      program {
+         signal: "mouse,down,*"; source: "e.dragable.vbar";
          script {
             new m = get_int(sc_v_mode);
             m |= PRESSED; set_int(sc_v_mode, m);
-            eval_v_mode(m);
+            eval_sc_v_mode(m);
          }
       }
-      program { name: "sc_v_unclick_anim";
+      program {
+         signal: "mouse,up,*"; source: "e.dragable.vbar";
          script {
             new m = get_int(sc_v_mode);
             m &= ~PRESSED; set_int(sc_v_mode, m);
-            eval_v_mode(m);
+            eval_sc_v_mode(m);
          }
       }
-      program { name: "sc_v_hover_anim";
-         script {
-            new m = get_int(sc_v_mode);
-            m |= HOVER; set_int(sc_v_mode, m);
-            eval_v_mode(m);
-         }
-      }
-      program { name: "sc_v_unhover_anim";
-         script {
-            new m = get_int(sc_v_mode);
-            m &= ~HOVER; set_int(sc_v_mode, m);
-            eval_v_mode(m);
-         }
-      }
-      program { name: "sc_h_click_anim";
+      program {
+         signal: "mouse,down,*"; source: "e.dragable.hbar";
          script {
             new m = get_int(sc_h_mode);
             m |= PRESSED; set_int(sc_h_mode, m);
-            eval_h_mode(m);
+            eval_sc_h_mode(m);
          }
       }
-      program { name: "sc_h_unclick_anim";
+      program {
+         signal: "mouse,up,*"; source: "e.dragable.hbar";
          script {
-            new m = get_int(sc_h_mode);
-            m &= ~PRESSED; set_int(sc_h_mode, m);
-            eval_h_mode(m);
+            new m = get_int(sc_v_mode);
+            m &= ~PRESSED; set_int(sc_v_mode, m);
+            eval_sc_v_mode(m);
          }
-      }
-      program { name: "sc_h_hover_anim";
-         script {
-            new m = get_int(sc_h_mode);
-            m |= HOVER; set_int(sc_h_mode, m);
-            eval_h_mode(m);
-         }
-      }
-      program { name: "sc_h_unhover_anim";
-         script {
-            new m = get_int(sc_h_mode);
-            m &= ~HOVER; set_int(sc_h_mode, m);
-            eval_h_mode(m);
-         }
-      }
-      program {
-         signal: "mouse,down,1*"; source: "e.dragable.vbar";
-         action: STATE_SET "clicked" 0.0;
-         target: "e.dragable.vbar";
-         after: "sc_v_click_anim";
-      }
-      program {
-         signal: "mouse,up,1"; source: "e.dragable.vbar";
-         action: STATE_SET "default" 0.0;
-         target: "e.dragable.vbar";
-         after: "sc_v_unclick_anim";
-      }
-      program {
-         signal: "mouse,down,1*"; source: "e.dragable.hbar";
-         action: STATE_SET "clicked" 0.0;
-         target: "e.dragable.hbar";
-         after: "sc_h_click_anim";
-      }
-      program {
-         signal: "mouse,up,1"; source: "e.dragable.hbar";
-         action: STATE_SET "default" 0.0;
-         target: "e.dragable.hbar";
-         after: "sc_v_unclick_anim";
       }
       program {
          signal: "mouse,in"; source: "e.dragable.hbar";
-         after: "sc_h_hover_anim";
+         script {
+            new m = get_int(sc_h_mode);
+            m |= HOVER; set_int(sc_h_mode, m);
+            eval_sc_h_mode(m);
+         }
       }
       program {
          signal: "mouse,out"; source: "e.dragable.hbar";
-         after: "sc_h_unhover_anim";
+         script {
+            new m = get_int(sc_h_mode);
+            m &= ~HOVER; set_int(sc_h_mode, m);
+            eval_sc_h_mode(m);
+         }
       }
       program {
          signal: "mouse,in"; source: "e.dragable.vbar";
-         after: "sc_v_hover_anim";
+         script {
+            new m = get_int(sc_v_mode);
+            m |= HOVER; set_int(sc_v_mode, m);
+            eval_sc_v_mode(m);
+         }
       }
       program {
          signal: "mouse,out"; source: "e.dragable.vbar";
-         after: "sc_v_unhover_anim";
+         script {
+            new m = get_int(sc_v_mode);
+            m &= ~HOVER; set_int(sc_v_mode, m);
+            eval_sc_v_mode(m);
+         }
       }
    }
 }

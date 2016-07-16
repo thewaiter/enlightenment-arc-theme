@@ -526,7 +526,7 @@ color_classes {
       desc: "Panes dots";
    }
    color_class { name: "scroller_bg";
-      color: WIN_DEFAULT_BASIC;
+      color: COL_BG_DARK;
       desc: "Background of a scroller widget";
    }
    // color_class { name: "scroller_bar";
