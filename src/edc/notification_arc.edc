@@ -12,9 +12,6 @@ group { name: "e/modules/notification/logo";
 }
 
 group { name: "e/modules/notification/main";
-   images.image: "darken_square.png" COMP;
-   images.image: "sym_close_light_normal.png" COMP;
-   images.image: "sym_close_light_selected.png" COMP;
    images.image: "bg-rounded-3px.png" COMP;
    images.image: "border-rounded-3px.png" COMP;
    data.item: "app_icon_max" "48 48";
@@ -196,25 +193,10 @@ group { name: "e/modules/notification/main";
             fixed: 0 1;
          }
       }
-      part { name: "close";
+      part { name: "close"; type: GROUP;
          clip_to: "clip";
-         description { state: "default" 0.0;
-            image.normal: "sym_close_light_normal.png";
-            rel1.to: "e.event.close";
-            rel2.to: "e.event.close";
-            min: 15 15;
-            max: 15 15;
-            fixed: 1 1;
-         }
-         description { state: "selected" 0.0;
-            inherit: "default" 0.0;
-            image.normal: "sym_close_light_selected.png";
-         }
-      }
-      part { name: "e.event.close";
-         clip_to: "clip";
-         type: RECT;
          scale: 1;
+         source: "e/border/btn-close";
          description { state: "default" 0.0;
             rel.to: "base";
             rel1.relative: 1.0 0.0;
@@ -223,10 +205,12 @@ group { name: "e/modules/notification/main";
             rel2.offset: -13 12;
             align: 1.0 0.0;
             min: 15 15;
+            aspect: 1 1;
             color: 0 0 0 0;
             fixed: 1 1;
          }
       }
+      alias: "e.event.close" "close:base";
    }
    programs {
       program {
