@@ -2,7 +2,7 @@ group { name: "e/widgets/menu/default/background";
    parts {
       rect { name: "frame"; mouse_events: 0;
          description { state: "default" 0.0;
-            color: 43 46 57 255;
+            color_class: "menu_border";
          }
       }
       rect { name: "bg"; mouse_events: 0;
@@ -13,15 +13,13 @@ group { name: "e/widgets/menu/default/background";
             }
             rel2 {
                to: "frame";
-               offset: -1 -1;
+               offset: -2 -2;
             }
-            //color_class: "menu_base";
-            color: 56 60 74 255;
+            color_class: "menu_base";
          }
       }
       text { name: "e.text.title"; mouse_events: 0;
          scale: 1;
-         //effect: SHADOW BOTTOM;
          description { state: "default" 0.0;
             rel1 {
                to: "bg";
@@ -34,15 +32,15 @@ group { name: "e/widgets/menu/default/background";
                offset: -2 -1;
             }
             align: 0.5 0.0;
-            //color_class: "menu_title";
-            color: 207 218 231 (0.8*255);
+            color_class: "menu_title";
             max: 0 0;
-            text { font: Sans; size: 10;
+            text { font: Sans; size: FNSIZE;
                //text_class: "menu_title";
                align: 0.5 0.0;
                min: 0 0;
             }
             fixed: 0 1;
+            visible: 0;
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
@@ -88,12 +86,13 @@ group { name: "e/widgets/menu/default/background";
 
 group { name: "e/widgets/menu/default/separator";
    parts {
-      rect { name: "base";
+      rect { name: "base"; scale: 1;
          description { state: "default" 0.0;
-            color: 56 60 74 255;
+            color_class: "menu_separator";
             rel1.offset: 0 2;
             rel2.offset: -1 -3;
-            min: 0 2;
+            min: 0 1;
+            max: -1 1;
          }
       }
    }
@@ -109,14 +108,16 @@ group { name: "e/widgets/menu/default/item_bg";
       }
       rect { name: "border"; mouse_events: 0;
          description { state: "default" 0.0;
-            visible: 0;
+            visible: 1;
+            color_class: "menu_item_border";
+            rel1.offset: 1 1;
+            rel2.offset: 0 -1;
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
             visible: 1;
-            color: 255 255 255 (0.07*255);
-            rel1.offset: 0 1;
-            rel2.offset: 0 -1;
+            color_class: "menu_item_border_selected";
+
          }
       }
       rect { name: "selected_overlay"; mouse_events: 0;
@@ -129,11 +130,11 @@ group { name: "e/widgets/menu/default/item_bg";
                to: "border";
                offset: -1 -1;
             }
-            visible: 0;
+            color_class: "menu_base";
          }
          description { state: "active" 0.0;
             visible: 1;
-            color: 255 255 255 (0.05*255);
+            color_class: "menu_item_base_selected";
          }
       }
       swallow { name: "e.swallow.content";
@@ -152,12 +153,14 @@ group { name: "e/widgets/menu/default/item_bg";
       program {
          signal: "e,state,selected"; source: "e";
          action: STATE_SET "active" 0.0;
+         transition: SINUSOIDAL 0.2;
          target: "border";
          target: "selected_overlay";
       }
       program {
          signal: "e,state,unselected"; source: "e";
          action: STATE_SET "default" 0.0;
+         transition: SINUSOIDAL 0.2;
          target: "border";
          target: "selected_overlay";
       }
@@ -171,7 +174,7 @@ group { name: "e/widgets/menu/default/icon";
             color: 255 255 255 255;
          }
          description { state: "disabled" 0.0;
-            color: 255 255 255 128;
+            color: COL_MASK_DISABLED;
          }
       }
       part { name: "e.swallow.content"; type: SWALLOW;
@@ -206,14 +209,12 @@ group { name: "e/widgets/menu/default/label";
          }
       }
       text { name: "e.text.label"; mouse_events: 0;
-         //effect: SHADOW BOTTOM;
          scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 5 -1;
-            rel2.offset: (-2-16) -1; // needed for arrows
-            //color_class: "menu_item";
-            color: 207 218 231 (0.8*255);
-            text { font: Sans; size: 10;
+            rel2.offset: (-2-14) -1; // needed for arrows
+            color_class: "menu_item";
+            text { font: Sans; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 0.5;
@@ -222,12 +223,11 @@ group { name: "e/widgets/menu/default/label";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            color: 211 218 227 255;
-            visible: 1;
+            color_class: "menu_item_active";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 211 218 227 (255 *0.45);
+            color_class: "menu_item_disabled";
          }
       }
    }
@@ -256,13 +256,46 @@ group { name: "e/widgets/menu/default/label";
 }
 
 group { name: "e/widgets/menu/default/submenu";
-   images.image: "pan-end-symbolic_arc.svg" COMP;
+   // images.image: "pan-end-symbolic_arc.svg" COMP;
+   IMAGE_SET("arrow-right", 14, 14);
    parts {
-      image { name: "pan";
+      image { name: "arrow"; scale: 1;
          description { state: "default" 0.0;
-            image.normal: "pan-end-symbolic_arc.svg";
-            min: 16 16;
+            image.normal: "arrow-right";
+            min: 14 14;
+            max: 14 14;
+            color_class: "menu_item_inactive";
          }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "menu_item_active";
+         }
+         description { state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            color_class: "menu_item_disabled";
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "e,state,selected"; source: "e";
+         action: STATE_SET "selected" 0.0;
+         target: "arrow";
+      }
+      program {
+         signal: "e,state,unselected"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "arrow";
+      }
+      program {
+         signal: "e,state,enable"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "arrow";
+      }
+      program {
+         signal: "e,state,disable"; source: "e";
+         action: STATE_SET "disabled" 0.0;
+         target: "arrow";
       }
    }
 }
@@ -278,6 +311,7 @@ group { name: "e/widgets/menu/default/check";
          description { state: "default" 0.0;
             image.normal: "checkbox-unchecked-dark_arc.png";
             min: 16 16;
+            max: 16 16;
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
@@ -310,6 +344,7 @@ group { name: "e/widgets/menu/default/radio";
          description { state: "default" 0.0;
             image.normal: "radio-unchecked-dark_arc.png";
             min: 16 16;
+            max: 16 16;
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;

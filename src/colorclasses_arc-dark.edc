@@ -186,11 +186,11 @@ color_classes {
       desc: "Pager desk indicator glow color";
    }
    color_class { name: "menu_item_border";
-      color: COL_BORDER_DARK;
+      color: COL_BG_DARK;
       desc: "Menu border color";
    }
    color_class { name: "menu_item_border_selected";
-      color: COL_BORDER_DARK;
+      color: COL_BG;
       desc: "Menu border color";
    }
    color_class { name: "menu_item_base_hover";
@@ -218,7 +218,7 @@ color_classes {
       desc: "Menu border color";
    }
    color_class { name: "menu_title";
-      color: FN_COL_DISABLE;
+      color: FN_COL_INACTIVE;
       desc: "Title text of a menu";
    }
    color_class { name: "menu_item";
@@ -233,6 +233,10 @@ color_classes {
    color_class { name: "menu_item_disabled";
       color: FN_COL_DISABLE;
       desc: "Text of a disabled menu item";
+   }
+   color_class { name: "menu_separator";
+      color: COL_BORDER_DARK;
+      desc: "Menu separator";
    }
    color_class { name: "toolbar_item";
       color: FN_COL_INACTIVE;
