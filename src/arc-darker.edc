@@ -1,5 +1,8 @@
 #include "../orig-theme/macros.edc"
 
+#define THEME_NAME_UPPER "Arc Darker"
+#define THEME_NAME_LOWER "arc-darker"
+
 externals.external: "elm";
 
 // theme api version. from 1.10 on we will check version to avoid
