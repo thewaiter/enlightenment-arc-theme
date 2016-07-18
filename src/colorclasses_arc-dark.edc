@@ -15,6 +15,7 @@
 
 // #define COL_BG 68 74 88 255
 #define COL_BG 64 69 82 255
+#define COL_BG_LIGHT 91 98 123 255
 #define COL_BG_DARK 56 60 74 255
 #define COL_BG_DARK_HOVER 60 65 78 255
 //all kinds of popups/notification/ctxpopup bg
@@ -427,6 +428,46 @@ color_classes {
    color_class { name: "check_on_text_disabled";
       color: FN_COL_DISABLE;
       desc: "Text of a disabled checkbox's label when checked";
+   }
+   color_class { name: "check_base";
+      color: COL_BG_DARKER;
+      desc: "Checkbox base color";
+   }
+   color_class { name: "check_base_checked";
+      color: COL_ENABLE;
+      desc: "Checkbox base color while checked";
+   }
+   color_class { name: "check_border";
+      color: COL_BORDER_DARK;
+      desc: "Checkbox border color";
+   }
+   color_class { name: "check_border_checked";
+      color: COL_ENABLE;
+      desc: "Checkbox border color while checked";
+   }
+   color_class { name: "check_mark_checked";
+      color: COL_BG_DARKER;
+      desc: "Checkbox mark color while checked";
+   }
+   color_class { name: "toggle-knob";
+      color: COL_BG_DARK;
+      desc: "Toggle knob color";
+   }
+   color_class { name: "toggle-sym-disabled";
+      color: COL_BG_DARK;
+      desc: "Toggle symbol disabled";
+   }
+   color_class { name: "toggle-sym-enabled";
+      color: COL_BG_DARK;
+      desc: "Toggle symbol enabled";
+   }
+   color_class { name: "toggle-background-disabled";
+      color: COL_BG_LIGHT;
+      desc: "Toggle background inactive";
+   }
+   color_class { name: "toggle-background-enabled";
+      color: COL_ENABLE;
+      desc: "Toggle background active";
    }
    color_class { name: "datetime_bg";
       color: 0 0 0 0;

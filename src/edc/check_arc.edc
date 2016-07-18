@@ -1,40 +1,68 @@
 group { name: "e/widgets/check";
-   images {
-      image: "checkbox-checked-dark_arc.png" COMP;
-      image: "checkbox-unchecked-dark_arc.png" COMP;
-   }
+   IMAGE_SET(check-border, 14, 14)
+   IMAGE_SET(check-base, 14, 14)
+   IMAGE_SET(check-mark, 14, 14)
    parts {
       part { name: "clip"; type: RECT;
          description { state: "default" 0.0;
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 140;
+            color: COL_MASK_DISABLED;
+         }
+      }
+      image { name: "base"; mouse_events: 0;
+         scale: 1;
+         clip_to: "clip";
+         description { state: "default" 0.0;
+            image.normal: "check-base";
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
+            min: 14 14;
+            max: 14 14;
+            align: 0.0 0.5;
+            rel2.relative: 0.0 1.0;
+            color_class: "check_base";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "check_base_checked";
+         }
+      }
+      image { name: "border"; mouse_events: 0;
+         clip_to: "clip";
+         description { state: "default" 0.0;
+            image.normal: "check-border";
+            rel.to:  "base";
+            color_class: "check_border";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "check_border_checked";
          }
       }
       image { name: "indicator"; mouse_events: 0;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "checkbox-unchecked-dark_arc.png";
-            min: 16 16;
-            max: 16 16;
-            rel2.relative: 0.0 1.0;
-            align: 0.0 0.5;
+            image.normal: "check-mark";
+            rel.to:  "base";
+            visible: 0;
+            color_class: "check_mark_checked";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            image.normal: "checkbox-checked-dark_arc.png";
+            visible: 1;
          }
       }
       part { name: "e.text.label"; type: TEXT;
          scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 2 2;
-            rel1.to_x: "indicator";
+            rel1.to_x: "base";
             rel1.relative: 1.0 0.0;
             rel2.offset: -3 -3;
             color_class: "check_text";
-            text { font: Sans; size: 10;
+            text { font: Sans; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 0.5;
@@ -58,11 +86,15 @@ group { name: "e/widgets/check";
          signal: "e,state,checked"; source: "e";
          action: STATE_SET "selected" 0.0;
          target: "indicator";
+         target: "base";
+         target: "border";
       }
       program {
          signal: "e,state,unchecked"; source: "e";
          action: STATE_SET "default" 0.0;
          target: "indicator";
+         target: "base";
+         target: "border";
       }
       program {
          signal: "mouse,up,1"; source: "event";
@@ -92,10 +124,10 @@ group { name: "e/widgets/check_icon";
          description { state: "default" 0.0;
             rel1.offset: 2 2;
             rel1.relative: 1.0 0.0; 
-            rel1.to_x: "indicator";
+            rel1.to_x: "base";
             rel2.offset: 2 -3;
             rel2.relative: 1.0 1.0;
-            rel1.to_x: "indicator";
+            rel1.to_x: "base";
             align: 0.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
          }

@@ -1,4 +1,4 @@
-ASSETS=toggle-background toggle checkmark checkmark-selection dot-small \
+ASSETS=checkmark checkmark-selection dot-small \
 	rect-border rect-background-big rect-background-small checkmark-large \
 	largerect-background-big largerect-background-small round-background-small \
 	round-background-big minimize maximize cross bg-rounded-3px border-rounded-3px \
@@ -13,6 +13,9 @@ ASSETS=toggle-background toggle checkmark checkmark-selection dot-small \
 	sym-shutdown \
 	border-rounded-1px bg-rounded-1px border-top-rounded-1px bg-top-rounded-1px \
 	border-rect-3px \
+	check-base check-border check-mark check-mark-selection \
+	toggle-background toggle-knob toggle-sym-enabled toggle-sym-disabled \
+
 
 ASSETS_n=$(foreach asset,$(ASSETS),whitened/$(asset).png)
 

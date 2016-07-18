@@ -1,8 +1,7 @@
 group { name: "elm/check/base/default";
-   images {
-      image: "checkbox-checked-dark_arc.png" COMP;
-      image: "checkbox-unchecked-dark_arc.png" COMP;
-   }
+   IMAGE_SET(check-border, 14, 14)
+   IMAGE_SET(check-base, 14, 14)
+   IMAGE_SET(check-mark, 14, 14)
    #define ICON     1
    #define LABEL    2
    #define MASK     3
@@ -18,13 +17,15 @@ group { name: "elm/check/base/default";
                set_state(PART:"sizer.content", "visible", 0.0);
                set_state(PART:"elm.text", "visible", 0.0);
                set_state(PART:"indicator", "default", 0.0);
+               set_state(PART:"base", "default", 0.0);
+               set_state(PART:"border", "default", 0.0);
                set_state(PART:"clip", "default", 0.0);
                set_state(PART:"event", "default", 0.0);
             } else {
                set_state(PART:"elm.swallow.content", "visible", 0.0);
                set_state(PART:"sizer.content", "visible", 0.0);
                set_state(PART:"elm.text", "disabled_visible", 0.0);
-               set_state(PART:"indicator", "disabled", 0.0);
+               // set_state(PART:"indicator", "disabled", 0.0);
                set_state(PART:"clip", "disabled", 0.0);
                set_state(PART:"event", "disabled", 0.0);
             }
@@ -34,13 +35,15 @@ group { name: "elm/check/base/default";
                set_state(PART:"sizer.content", "icononly", 0.0);
                set_state(PART:"elm.text", "default", 0.0);
                set_state(PART:"indicator", "default", 0.0);
+               set_state(PART:"base", "default", 0.0);
+               set_state(PART:"border", "default", 0.0);
                set_state(PART:"clip", "default", 0.0);
                set_state(PART:"event", "default", 0.0);
             } else {
                set_state(PART:"elm.swallow.content", "visible", 0.0);
                set_state(PART:"sizer.content", "icononly", 0.0);
                set_state(PART:"elm.text", "disabled", 0.0);
-               set_state(PART:"indicator", "disabled", 0.0);
+               // set_state(PART:"indicator", "disabled", 0.0);
                set_state(PART:"clip", "disabled", 0.0);
                set_state(PART:"event", "disabled", 0.0);
             }
@@ -50,13 +53,15 @@ group { name: "elm/check/base/default";
                set_state(PART:"sizer.content", "default", 0.0);
                set_state(PART:"elm.text", "visible", 0.0);
                set_state(PART:"indicator", "default", 0.0);
+               set_state(PART:"base", "default", 0.0);
+               set_state(PART:"border", "default", 0.0);
                set_state(PART:"clip", "default", 0.0);
                set_state(PART:"event", "default", 0.0);
             } else {
                set_state(PART:"elm.swallow.content", "default", 0.0);
                set_state(PART:"sizer.content", "default", 0.0);
                set_state(PART:"elm.text", "disabled_visible", 0.0);
-               set_state(PART:"indicator", "disabled", 0.0);
+               // set_state(PART:"indicator", "disabled", 0.0);
                set_state(PART:"clip", "disabled", 0.0);
                set_state(PART:"event", "disabled", 0.0);
             }
@@ -66,13 +71,15 @@ group { name: "elm/check/base/default";
                set_state(PART:"sizer.content", "default", 0.0);
                set_state(PART:"elm.text", "default", 0.0);
                set_state(PART:"indicator", "default", 0.0);
+               set_state(PART:"base", "default", 0.0);
+               set_state(PART:"border", "default", 0.0);
                set_state(PART:"clip", "default", 0.0);
                set_state(PART:"event", "default", 0.0);
             } else {
                set_state(PART:"elm.swallow.content", "default", 0.0);
                set_state(PART:"sizer.content", "default", 0.0);
                set_state(PART:"elm.text", "default", 0.0);
-               set_state(PART:"indicator", "disabled", 0.0);
+               // set_state(PART:"indicator", "disabled", 0.0);
                set_state(PART:"clip", "disabled", 0.0);
                set_state(PART:"event", "disabled", 0.0);
             }
@@ -85,20 +92,49 @@ group { name: "elm/check/base/default";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 140;
+            color: COL_MASK_DISABLED;
+         }
+      }
+      image { name: "base"; mouse_events: 0;
+         scale: 1;
+         clip_to: "clip";
+         description { state: "default" 0.0;
+            image.normal: "check-base";
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
+            min: 14 14;
+            max: 14 14;
+            align: 0.0 0.5;
+            color_class: "check_base";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "check_base_checked";
+         }
+      }
+      image { name: "border"; mouse_events: 0;
+         clip_to: "clip";
+         description { state: "default" 0.0;
+            image.normal: "check-border";
+            rel.to:  "base";
+            color_class: "check_border";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "check_border_checked";
          }
       }
       image { name: "indicator"; mouse_events: 0;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "checkbox-unchecked-dark_arc.png";
-            min: 16 16;
-            max: 16 16;
-            align: 0.0 0.5;
+            image.normal: "check-mark";
+            rel.to:  "base";
+            visible: 0;
+            color_class: "check_mark_checked";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            image.normal: "checkbox-checked-dark_arc.png";
+            visible: 1;
          }
       }
       part { name: "elm.swallow.content"; type: SWALLOW;
@@ -109,10 +145,10 @@ group { name: "elm/check/base/default";
             visible: 0;
             align: 0.0 0.5;
             max: 0 0;
-            rel1.to_x: "indicator";
+            rel1.to_x: "base";
             rel1.relative: 1.0 0.0;
             rel1.offset: 1 1;
-            rel2.to_x: "indicator";
+            rel2.to_x: "base";
             rel2.offset: 1 -2;
             rel2.relative: 1.0 1.0;
          }
@@ -129,7 +165,7 @@ group { name: "elm/check/base/default";
          description { state: "default" 0.0;
             fixed: 1 1;
             visible: 0;
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 0 0;
                text_class: "check_text";
             }
@@ -163,7 +199,7 @@ group { name: "elm/check/base/default";
             rel1.relative: 1.0 0.0;
             rel2.offset: -3 -3;
             color_class: "check_text";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
               min: 0 0;
               align: 0.0 0.5;
               text_class: "check";
@@ -207,11 +243,15 @@ group { name: "elm/check/base/default";
          signal: "elm,state,check,on"; source: "elm";
          action:  STATE_SET "selected" 0.0;
          target: "indicator";
+         target: "base";
+         target: "border";
       }
       program {
          signal: "elm,state,check,off"; source: "elm";
          action:  STATE_SET "default" 0.0;
          target: "indicator";
+         target: "base";
+         target: "border";
       }
       program {
          signal: "elm,state,text,visible"; source: "elm";
@@ -271,10 +311,10 @@ group { name: "elm/check/base/default";
 
 
 group { name: "elm/check/base/toggle";
-   images {
-      image: "toggle_background_arc.png" COMP;
-      image: "toggle_arc.png" COMP;
-   }
+IMAGE_SET("toggle-knob", 20, 20)
+IMAGE_SET("toggle-sym-disabled", 20, 20)
+IMAGE_SET("toggle-sym-enabled", 20, 20)
+IMAGE_SET("toggle-background", 50, 20)
    
 #define ICON     1
 #define LABEL    2
@@ -362,11 +402,10 @@ group { name: "elm/check/base/toggle";
          description { state: "default" 0.0;
             fixed: 1 0;
             rel1.relative: 1.0 0.0;
-            rel1.offset: 1 1;
-            rel2.offset: -1 -1;
+
             align: 1.0 0.5;
-            min: 50 20;
-            max: 50 20;
+            min: 48 18;
+            max: 48 18;
          }
       }
       part { name: "toggle_background"; mouse_events: 0;
@@ -375,25 +414,49 @@ group { name: "elm/check/base/toggle";
             fixed: 1 1;
             rel1.to: "tog";
             rel2.to: "tog";
+            // rel1.offset: 1 1;
+            // rel2.offset: -1 -1;
             min: 50 20;
             max: 50 20;
-            align: 0.0 0.5;
-            color: 82 148 226 255;
-            color_class: "toggle_bg";
-            image.normal: "toggle_background_arc.png";
+            align: 0.5 0.5;
+            color_class: "toggle-background-enabled";
+            image.normal: "toggle-background";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 91 98 123 255;
+            color_class: "toggle-background-disabled";
+         }
+      }
+      image { name: "toggle_enabled_sym"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel.to: "toggle_background";
+            fixed: 1 1;
+            min: 20 20;
+            max: 20 20;
+            align: 0.0 0.5;
+            image.normal: "toggle-sym-enabled";
+            color_class: "toggle-sym-enabled";
+         }
+      }
+      image { name: "toggle_disabled_sym"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel.to: "toggle_background";
+            fixed: 1 1;
+            min: 20 20;
+            max: 20 20;
+            align: 1.0 0.5;
+            image.normal: "toggle-sym-disabled";
+            color_class: "toggle-sym-disabled";
          }
       }
       image { name: "toggle"; mouse_events: 0;
          scale: 1;
          clip_to: "tog_clip";
          description { state: "default" 0.0;
-            color: 53 58 71 255;
-            color_class: "toggle_knob";
-            image.normal: "toggle_arc.png";
+            color_class: "toggle-knob";
+            image.normal: "toggle-knob";
             rel1.to: "button";
             rel2.to: "button";
          }
@@ -416,11 +479,11 @@ group { name: "elm/check/base/toggle";
             fixed: 1 1;
             rel1 {
                to: "tog";
-               offset: 2 2;
+               // offset: 2 2;
             }
             rel2 {
                to: "tog";
-               offset: -2 -2;
+               // offset: -2 -2;
             }
             min: 18 18;
             max: 18 99999;
@@ -438,7 +501,7 @@ group { name: "elm/check/base/toggle";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 140;
+            color: COL_MASK_DISABLED;
          }
       }
       part { name: "elm.swallow.content"; type: SWALLOW;
@@ -465,7 +528,7 @@ group { name: "elm/check/base/toggle";
          description { state: "default" 0.0;
             fixed: 1 1;
             visible: 0;
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 0 0;
                text_class: "check_text";
             }
@@ -500,9 +563,8 @@ group { name: "elm/check/base/toggle";
             rel2.to_x: "tog";
             rel2.relative: 0.0 1.0;
             rel2.offset: -5 -3;
-            color: FN_COL_DEFAULT;
             color_class: "check_text";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
               min: 0 0;
               align: 0.0 0.5;
               text_class: "check";
@@ -511,7 +573,6 @@ group { name: "elm/check/base/toggle";
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
             color_class: "check_text_disabled";
-            color3: 255 255 255 255;
          }
          description { state: "visible" 0.0;
             inherit: "default" 0.0;
@@ -522,7 +583,6 @@ group { name: "elm/check/base/toggle";
          description { state: "disabled_visible" 0.0;
             inherit: "default" 0.0;
             color_class: "check_text_disabled";
-            color3: 255 255 255 255;
             visible: 1;
             text.min: 1 1;
             text.ellipsis: -1;

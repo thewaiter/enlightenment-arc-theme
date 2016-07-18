@@ -256,7 +256,6 @@ group { name: "e/widgets/menu/default/label";
 }
 
 group { name: "e/widgets/menu/default/submenu";
-   // images.image: "pan-end-symbolic_arc.svg" COMP;
    IMAGE_SET("arrow-right", 14, 14);
    parts {
       image { name: "arrow"; scale: 1;
@@ -301,21 +300,44 @@ group { name: "e/widgets/menu/default/submenu";
 }
 
 group { name: "e/widgets/menu/default/check";
-   images {
-      image: "checkbox-checked-dark_arc.png" COMP;
-      image: "checkbox-unchecked-dark_arc.png" COMP;
-   }
+   IMAGE_SET(check-border, 14, 14)
+   IMAGE_SET(check-base, 14, 14)
+   IMAGE_SET(check-mark, 14, 14)
    parts {
-      image { name: "indicator"; mouse_events: 0;
+      image { name: "base"; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
-            image.normal: "checkbox-unchecked-dark_arc.png";
-            min: 16 16;
-            max: 16 16;
+            image.normal: "check-base";
+            min: 14 14;
+            max: 14 14;
+            color_class: "check_base";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            image.normal: "checkbox-checked-dark_arc.png";
+            color_class: "check_base_checked";
+         }
+      }
+      image { name: "border"; mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "check-border";
+            rel.to:  "base";
+            color_class: "check_border";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "check_border_checked";
+         }
+      }
+      image { name: "indicator"; mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "check-mark";
+            rel.to:  "base";
+            visible: 0;
+            color_class: "check_mark_checked";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
          }
       }
    }
@@ -323,12 +345,16 @@ group { name: "e/widgets/menu/default/check";
       program {
          signal: "e,state,on"; source: "e";
          action: STATE_SET "selected" 0.0;
+         target: "base";
+         target: "border";
          target: "indicator";
       }
       program {
          signal: "e,state,off"; source: "e";
          action: STATE_SET "default" 0.0;
          target: "indicator";
+         target: "base";
+         target: "border";
       }
    }
 }
