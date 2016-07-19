@@ -1,8 +1,7 @@
 group { name: "elm/radio/base/default";
-   images {
-      image: "radio-checked-dark_arc.png" COMP;
-      image: "radio-unchecked-dark_arc.png" COMP;
-   }
+   IMAGE_SET("radio-base", 14, 14)
+   IMAGE_SET("radio-border", 14, 14)
+   IMAGE_SET("radio-dot", 14, 14)
 #define ICON     1
 #define LABEL    2
 #define MASK     3
@@ -72,27 +71,59 @@ group { name: "elm/radio/base/default";
       }
    }
    parts {
-      image { name: "indicator"; mouse_events: 0;
+      image { name : "radio_base"; mouse_events: 0;
          scale: 1;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "radio-unchecked-dark_arc.png";
-            min: 16 16;
-            max: 16 16;
+            image.normal: "radio-base";
+            min: 14 14;
+            max: 14 14;
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
             align: 0.0 0.5;
-            fixed: 1 0;
+            fixed: 1 1;
+            color_class: "radio_base";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            image.normal: "radio-checked-dark_arc.png";
+            color_class: "radio_base_selected";
          }
       }
+      image { name: "radio_border"; mouse_events: 0;
+         scale: 1;
+         clip_to: "clip";
+         description { state: "default" 0.0;
+            image.normal: "radio-border";
+            rel.to: "radio_base";
+            fixed: 1 1;
+            color_class: "radio_border";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "radio_border_selected";
+         }
+      }
+      image { name: "radio_dot"; mouse_events: 0;
+         scale: 1;
+         clip_to: "clip";
+         description { state: "default" 0.0;
+            image.normal: "radio-dot";
+            rel.to: "radio_base";
+            fixed: 1 1;
+            color_class: "radio_dot";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "radio_dot_selected";
+         }
+      }
+
       rect { name: "clip";
          description { state: "default" 0.0;
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 140;
+            color: COL_MASK_DISABLED;
          }
       }
       part { name: "elm.swallow.content"; type: SWALLOW;
@@ -103,8 +134,10 @@ group { name: "elm/radio/base/default";
             visible: 0;
             align: 0.0 0.5;
             max: 0 0;
+            rel1.to_x: "radio_base";
             rel1.relative: 1.0 0.0;
             rel1.offset: 1 1;
+            rel2.to_x: "radio_base";
             rel2.offset: 1 -2;
             rel2.relative: 1.0 1.0;
          }
@@ -121,7 +154,7 @@ group { name: "elm/radio/base/default";
          description { state: "default" 0.0;
             fixed: 1 1;
             visible: 0;
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 0 0;
                text_class: "radio_text";
             }
@@ -154,9 +187,8 @@ group { name: "elm/radio/base/default";
             rel1.to_x: "elm.swallow.content";
             rel1.relative: 1.0 0.0;
             rel2.offset: -3 -3;
-            color: FN_COL_DEFAULT;
             color_class: "radio_text";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
               min: 0 0;
               align: 0.0 0.5;
               text_class: "radio";
@@ -197,12 +229,16 @@ group { name: "elm/radio/base/default";
       program {
          signal: "elm,state,radio,on"; source: "elm";
          action:  STATE_SET "selected" 0.0;
-         target: "indicator";
+         target: "radio_dot";
+         target: "radio_base";
+         target: "radio_border";
       }
       program {
          signal: "elm,state,radio,off"; source: "elm";
          action:  STATE_SET "default" 0.0;
-         target: "indicator";
+         target: "radio_dot";
+         target: "radio_base";
+         target: "radio_border";
       }
       program {
          signal: "elm,state,text,visible"; source: "elm";

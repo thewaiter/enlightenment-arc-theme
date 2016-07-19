@@ -607,12 +607,36 @@ color_classes {
       desc: "Spinner text";
    }
    color_class { name: "radio_text";
-      color: FN_COL_DEFAULT;
+      color: FN_COL_DEFAULT_BASIC;
       desc: "Text of a radio widget's label";
    }
    color_class { name: "radio_text_disabled";
       color: FN_COL_DISABLE;
       desc: "Text of a disabled radio widget's label";
+   }
+   color_class { name: "radio_dot";
+      color: NO_COLOR;
+      desc: "Radio button dot while not selected";
+   }
+   color_class { name: "radio_dot_selected";
+      color: COL_BG_DARKER;
+      desc: "Radio button dot while selected";
+   }
+   color_class { name: "radio_base";
+      color: COL_BG_DARKER;
+      desc: "Radio button base while not selected";
+   }
+   color_class { name: "radio_base_selected";
+      color: COL_ENABLE;
+      desc: "Radio button base while selected";
+   }
+   color_class { name: "radio_border";
+      color: COL_BORDER_DARK;
+      desc: "Radio button border while not selected";
+   }
+   color_class { name: "radio_border_selected";
+      color: COL_ENABLE;
+      desc: "Radio button border while selected";
    }
    color_class { name: "progress_bar";
       color: COL_PRESSED;
@@ -655,7 +679,7 @@ color_classes {
       desc: "List item odd background";
    }
    color_class { name: "list_item_base_selected";
-      color: COL_PRESSED;
+      color: COL_ENABLE;
       desc: "List item background selected";
    }
    color_class { name: "list_item_base_hover";

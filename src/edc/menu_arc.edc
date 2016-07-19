@@ -360,21 +360,46 @@ group { name: "e/widgets/menu/default/check";
 }
 
 group { name: "e/widgets/menu/default/radio";
-   images {
-      image: "radio-checked-dark_arc.png" COMP;
-      image: "radio-unchecked-dark_arc.png" COMP;
-   }
+   IMAGE_SET("radio-base", 14, 14)
+   IMAGE_SET("radio-border", 14, 14)
+   IMAGE_SET("radio-dot", 14, 14)
+
    parts {
-      image { name: "indicator"; mouse_events: 0;
+      image { name : "base"; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
-            image.normal: "radio-unchecked-dark_arc.png";
-            min: 16 16;
-            max: 16 16;
+            image.normal: "radio-base";
+            min: 14 14;
+            max: 14 14;
+            color_class: "radio_base";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            image.normal: "radio-checked-dark_arc.png";
+            color_class: "radio_base_selected";
+         }
+      }
+      image { name: "border"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            image.normal: "radio-border";
+            rel.to: "base";
+            color_class: "radio_border";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "radio_border_selected";
+         }
+      }
+      image { name: "dot"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            image.normal: "radio-dot";
+            rel.to: "base";
+            color_class: "radio_dot";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color_class: "radio_dot_selected";
          }
       }
    }
@@ -382,12 +407,16 @@ group { name: "e/widgets/menu/default/radio";
       program {
          signal: "e,state,on"; source: "e";
          action: STATE_SET "selected" 0.0;
-         target: "indicator";
+         target: "dot";
+         target: "base";
+         target: "border";
       }
       program {
          signal: "e,state,off"; source: "e";
          action: STATE_SET "default" 0.0;
-         target: "indicator";
+         target: "dot";
+         target: "base";
+         target: "border";
       }
    }
 }

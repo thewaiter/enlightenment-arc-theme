@@ -924,8 +924,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6568543"
-     inkscape:cx="298.92238"
-     inkscape:cy="46.233923"
+     inkscape:cx="310.90603"
+     inkscape:cy="-184.98999"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2009,8 +2009,8 @@
     <rect
        ry="0"
        rx="0"
-       y="-267.11615"
-       x="230.79048"
+       y="-282.14218"
+       x="226.90138"
        height="552.75397"
        width="121"
        id="rect18028-4"
@@ -5800,6 +5800,42 @@
        transform="scale(-1,1)"
        inkscape:label="#path3759-7-4"
        r="9.5" />
+    <circle
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
+       id="radio-base"
+       cx="310"
+       cy="188.36218"
+       r="6.5"
+       inkscape:label="#path7319" />
+    <circle
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="radio-border"
+       cx="310"
+       cy="202.36218"
+       r="6.5"
+       inkscape:label="#path7319-6" />
+    <g
+       id="radio-dot"
+       inkscape:label="#g7052"
+       transform="translate(-0.499995,0.49998974)">
+      <rect
+         y="180.8622"
+         x="317.5"
+         height="13.99999"
+         width="13.99999"
+         id="rect7050"
+         style="opacity:1;fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         inkscape:label="#use15101-5-7-55"
+         rx="1.9988754"
+         y="185.8622"
+         x="322.5"
+         height="4"
+         width="4"
+         id="dot-small-8"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.08838987;marker:none;enable-background:accumulate"
+         ry="2" />
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"

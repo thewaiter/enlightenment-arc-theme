@@ -14,6 +14,7 @@ ASSETS= \
 	border-rect-3px \
 	check-base check-border check-mark check-mark-selection \
 	toggle-background toggle-knob toggle-sym-enabled toggle-sym-disabled \
+	radio-base radio-border radio-dot \
 
 
 ASSETS_n=$(foreach asset,$(ASSETS),whitened/$(asset).png)
