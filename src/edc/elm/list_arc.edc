@@ -120,16 +120,17 @@ group { name: "elm/list/item/default";
    script {
       public it_state;
       public eval_state(s) {
+         // Progams dont work! Why?
          // stop_programs_on(PART:"sel_base");
          if (s & SELECTED) {
-            // set_state(PART:"sel_base", "selected", 0.0);
-            run_program(PROGRAM:"base_selected");
+            set_state(PART:"sel_base", "selected", 0.0);
+            // run_program(PROGRAM:"base_selected");
          } else if (s & HOVER) {
-            // set_state(PART:"sel_base", "hover", 0.0);
-            run_program(PROGRAM:"base_hover");
+            set_state(PART:"sel_base", "hover", 0.0);
+            // run_program(PROGRAM:"base_hover");
          } else {
-            // set_state(PART:"sel_base", "default", 0.0);
-            run_program(PROGRAM:"base_default");
+            set_state(PART:"sel_base", "default", 0.0);
+            // run_program(PROGRAM:"base_default");
          }
 
       }
@@ -183,7 +184,7 @@ group { name: "elm/list/item/default";
       program { name: "base_selected";
          action: STATE_SET "selected" 0.0;
          target: "sel_base";
-         transition: SINUSOIDAL 0.1;
+         // transition: SINUSOIDAL 0.1;
       }
       program { name: "base_hover";
          action: STATE_SET "hover" 0.0;
