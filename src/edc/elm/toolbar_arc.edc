@@ -528,10 +528,6 @@ group { name: "elm/toolbar/item/default";
    data.item: "transition_animation_on" "1";
    data.item: "focusraise" "on";
 
-   images.image: "shadow_inset_bevels.png" COMP;
-   images.image: "shadow_angled_in_sides.png" COMP;
-   images.image: "horizontal_separated_bar_small_glow.png" COMP;
-   images.image: "bevel_dark_in.png" COMP;
    images.image: "border-top-rounded-1px.png" COMP;
    images.image: "bg-rounded-3px.png" COMP;
 #define ICON     1
@@ -633,18 +629,18 @@ group { name: "elm/toolbar/item/default";
       part { name: "bg"; nomouse;
          type: RECT;
          description { state: "default" 0.0;
-            color_class: "menu_item_base";
+            color_class: "toolbar_item_base";
             visible: 1;
             fixed: 1 1;
          }
          description { state: "selected" 0.0;
             inherit: "default" 0;
-            color_class: "menu_item_base_selected";
+            color_class: "toolbar_item_base_selected";
             visible: 1;
          }
          description { state: "hover" 0.0;
             inherit: "default" 0;
-            color_class: "menu_item_base_hover";
+            color_class: "toolbar_item_base_hover";
             visible: 1;
          }
       }
@@ -657,18 +653,18 @@ group { name: "elm/toolbar/item/default";
             image.normal: "border-rounded-1px.png";
             image.border: 1 1 1 1;
             image.middle: 0;
-            color_class: "button_border";
+            color_class: "toolbar_item_border";
             fixed: 1 1;
             visible: 0;
          }
          description { state: "selected" 0.0;
             inherit: "default" 0;
-            color_class: "button_border";
+            color_class: "toolbar_item_border_selected";
             visible: 1;
          }
          description { state: "hover" 0.0;
             inherit: "default" 0;
-            color_class: "button_border";
+            color_class: "toolbar_item_border_hover";
             visible: 1;
          }
       }
@@ -677,7 +673,7 @@ group { name: "elm/toolbar/item/default";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 64;
+            color: COL_MASK_DISABLED;
          }
       }
       part { name: "icon_clip1"; type: RECT;
@@ -775,7 +771,7 @@ group { name: "elm/toolbar/item/default";
             rel2.offset: -5 -3;
             align: 0.5 1.0;
             color_class: "toolbar_item";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
                align: 0.5 0.5;
@@ -813,7 +809,7 @@ group { name: "elm/toolbar/item/default";
             rel1.to: "elm.text";
             rel2.to: "elm.text";
             color_class: "toolbar_item_active";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.5 0.5;
                text_class: "toolbar_item";
@@ -857,7 +853,7 @@ group { name: "elm/toolbar/item/default";
             rel2.offset: -5 -3;
             align: 0.5 1.0;
             color_class: "toolbar_item";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
                align: 0.5 0.5;
@@ -899,7 +895,7 @@ group { name: "elm/toolbar/item/default";
             rel2.offset: 2 1;
             rel2.to: "elm.text";
             color_class: "toolbar_item_active";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.5 0.5;
                text_class: "toolbar_item";
@@ -1130,10 +1126,9 @@ group { name: "elm/toolbar/item/item_horizontal";
    data.item: "transition_animation_on" "1";
    data.item: "focusraise" "on";
 
-   images.image: "shadow_inset_bevels.png" COMP;
-   images.image: "shadow_angled_in_sides.png" COMP;
-   images.image: "horizontal_separated_bar_small_glow.png" COMP;
-   images.image: "bevel_dark_in.png" COMP;
+   images.image: "border-top-rounded-1px.png" COMP;
+   images.image: "bg-rounded-3px.png" COMP;
+
 #define ICON     1
 #define LABEL    2
 #define MASK     3
@@ -1232,18 +1227,18 @@ group { name: "elm/toolbar/item/item_horizontal";
       part { name: "bg"; nomouse;
          type: RECT;
          description { state: "default" 0.0;
-            color_class: "menu_item_base";
+            color_class: "toolbar_item_base";
             visible: 1;
             fixed: 1 1;
          }
          description { state: "selected" 0.0;
             inherit: "default" 0;
-            color_class: "menu_item_base_selected";
+            color_class: "toolbar_item_base_selected";
             visible: 1;
          }
          description { state: "hover" 0.0;
             inherit: "default" 0;
-            color_class: "menu_item_base_hover";
+            color_class: "toolbar_item_base_hover";
             visible: 1;
          }
       }
@@ -1256,18 +1251,18 @@ group { name: "elm/toolbar/item/item_horizontal";
             image.normal: "border-rounded-1px.png";
             image.border: 1 1 1 1;
             image.middle: 0;
-            color_class: "button_border";
+            color_class: "toolbar_item_border";
             fixed: 1 1;
             visible: 0;
          }
          description { state: "selected" 0.0;
             inherit: "default" 0;
-            color_class: "button_border";
+            color_class: "toolbar_item_border_selected";
             visible: 1;
          }
          description { state: "hover" 0.0;
             inherit: "default" 0;
-            color_class: "button_border";
+            color_class: "toolbar_item_border_hover";
             visible: 1;
          }
       }
@@ -1276,7 +1271,7 @@ group { name: "elm/toolbar/item/item_horizontal";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 64;
+            color: COL_MASK_DISABLED;
          }
       }
       part { name: "icon_clip1"; type: RECT;
@@ -1376,7 +1371,7 @@ group { name: "elm/toolbar/item/item_horizontal";
       //       rel2.offset: -5 -3;
       //       align: 0.5 1.0;
       //       color_class: "toolbar_item";
-      //       text { font: FN; size: 10;
+      //       text { font: FN; size: FNSIZE;
       //          min: 1 1;
       //          ellipsis: -1;
       //          align: 0.5 0.5;
@@ -1414,7 +1409,7 @@ group { name: "elm/toolbar/item/item_horizontal";
       //       rel1.to: "elm.text";
       //       rel2.to: "elm.text";
       //       color_class: "toolbar_item_active";
-      //       text { font: FN; size: 10;
+      //       text { font: FN; size: FNSIZE;
       //          text_source: "elm.text";
       //          align: 0.5 0.5;
       //          text_class: "toolbar_item";
@@ -1447,9 +1442,8 @@ group { name: "elm/toolbar/item/item_horizontal";
             rel1.to_x: "elm.swallow.icon";
             rel2.offset: -5 -3;
             align: 0.0 0.5;
-            // color: FN_COL_DEFAULT;
             color_class: "toolbar_item";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 0.5;
@@ -1464,7 +1458,6 @@ group { name: "elm/toolbar/item/item_horizontal";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            // color: FN_COL_DISABLE;
             color_class: "toolbar_item_disabled";
          }
          description { state: "noicon" 0.0;
@@ -1477,7 +1470,6 @@ group { name: "elm/toolbar/item/item_horizontal";
          }
          description { state: "noicon_disabled" 0.0;
             inherit: "noicon" 0.0;
-            // color: FN_COL_DISABLE;
             color_class: "toolbar_item_disabled";
          }
          description { state: "icononly" 0.0;
@@ -1495,7 +1487,7 @@ group { name: "elm/toolbar/item/item_horizontal";
             rel2.to: "elm.text";
             color_class: "toolbar_item_active";
             align: 0.5 0.5;
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.0 0.5;
                text_class: "toolbar_item";
@@ -1541,7 +1533,7 @@ group { name: "elm/toolbar/item/item_horizontal";
             align: 0.0 0.5;
             // color: FN_COL_DEFAULT;
             color_class: "toolbar_item";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 0.5;
@@ -1552,11 +1544,10 @@ group { name: "elm/toolbar/item/item_horizontal";
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
             visible: 0;
-            color_class: "toolbar_item_selected";
+            color_class: "toolbar_item_active";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            // color: FN_COL_DISABLE;
             color_class: "toolbar_item_disabled";
          }
          description { state: "noicon" 0.0;
@@ -1567,7 +1558,6 @@ group { name: "elm/toolbar/item/item_horizontal";
          }
          description { state: "noicon_disabled" 0.0;
             inherit: "noicon" 0.0;
-            // color: FN_COL_DISABLE;
             color_class: "toolbar_item_disabled";
          }
          description { state: "icononly" 0.0;
@@ -1585,7 +1575,7 @@ group { name: "elm/toolbar/item/item_horizontal";
             rel1.to: "elm.text";
             rel2.to: "elm.text";
             color_class: "toolbar_item_active";
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.0 0.5;
                text_class: "toolbar_item";
@@ -1609,24 +1599,6 @@ group { name: "elm/toolbar/item/item_horizontal";
             fixed: 1 1;
          }
       }
-      // part { name: "highlight"; mouse_events: 0;
-      //    description { state: "default" 0.0;
-      //       fixed: 0 1;
-      //       rel1.offset: -3 -7;
-      //       rel1.relative: 0.0 1.0;
-      //       rel1.to: "shadow2";
-      //       rel2.offset: 2 2;
-      //       rel2.to: "shadow2";
-      //       image.normal: "horizontal_separated_bar_small_glow.png";
-      //       image.border: 4 4 4 4;
-      //       fill.smooth: 0;
-      //       visible: 0;
-      //    }
-      //    description { state: "selected" 0.0;
-      //       inherit: "default" 0.0;
-      //       visible: 1;
-      //    }
-      // }
       part { name: "event"; type: RECT;
          ignore_flags: ON_HOLD;
          description { state: "default" 0.0;
@@ -1837,7 +1809,6 @@ group { name: "elm/toolbar/item/item_horizontal";
 
 // === separator
 group { name: "elm/toolbar/separator/default";
-   images.image: "bevel_dark_in.png" COMP;
    parts {
       rect { name: "base";
          description { state: "default" 0.0;
@@ -1867,7 +1838,6 @@ group { name: "elm/toolbar/separator/default";
 
 // === item: just a regular object holder in the toolbar for any child
 group { name: "elm/toolbar/object/default";
-   // images.image: "horizontal_separated_bar_small_glow.png" COMP;
    parts {
       part { name: "elm.swallow.object"; type: SWALLOW;
          description { state: "default" 0.0;
@@ -1909,9 +1879,6 @@ group { name: "elm/toolbar/object/default";
 // === item: the more PANEL that slides out under the toolbar
 // XXX: vert vs horiz (should emit)
 group { name: "elm/toolbar/more/default";
-   images.image: "vgrad_med_lighter.png" COMP;
-   images.image: "bevel_out.png" COMP;
-   images.image: "shine.png" COMP;
    images.image: "shadow_square_tiny.png" COMP;
    parts {
       part { name: "shadow"; mouse_events: 0;

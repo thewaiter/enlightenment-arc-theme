@@ -207,7 +207,7 @@ color_classes {
       desc: "Menu border color";
    }
    color_class { name: "menu_item_inactive";
-      color: FN_COL_INACTIVE;
+      color: FN_COL_DEFAULT_BASIC_INACTIVE;
       desc: "Text of an active menu item";
    }
    color_class { name: "menu_base";
@@ -219,11 +219,11 @@ color_classes {
       desc: "Menu border color";
    }
    color_class { name: "menu_title";
-      color: FN_COL_INACTIVE;
+      color: FN_COL_DEFAULT_BASIC_INACTIVE;
       desc: "Title text of a menu";
    }
    color_class { name: "menu_item";
-      // color: FN_COL_INACTIVE;
+      // color: FN_COL_DEFAULT_BASIC_INACTIVE;
       color: FN_COL_DEFAULT_BASIC;
       desc: "Text of an inactive menu item";
    }
@@ -239,8 +239,32 @@ color_classes {
       color: COL_BORDER_DARK;
       desc: "Menu separator";
    }
+   color_class { name: "toolbar_item_border";
+      color: COL_BG_DARK;
+      desc: "Toolbar item border color";
+   }
+   color_class { name: "toolbar_item_border_selected";
+      color: COL_BORDER_DARK;
+      desc: "Toolbar item border color selected";
+   }
+   color_class { name: "toolbar_item_border_hover";
+      color: COL_BORDER_DARK;
+      desc: "Toolbar item border color hover";
+   }
+   color_class { name: "toolbar_item_base_hover";
+      color: COL_BG_DARK_HOVER;
+      desc: "Toolbar item background selected color";
+   }
+   color_class { name: "toolbar_item_base_selected";
+      color: COL_BG;
+      desc: "Toolbar item background selected color";
+   }
+   color_class { name: "toolbar_item_base";
+      color: COL_BG_DARK;
+      desc: "Toolbar item backgournd color";
+   }
    color_class { name: "toolbar_item";
-      color: FN_COL_INACTIVE;
+      color: FN_COL_DEFAULT_BASIC_INACTIVE;
       desc: "Toolbar: Text of an inactive toolbar item";
    }
    color_class { name: "toolbar_item_hover";
@@ -490,7 +514,7 @@ color_classes {
       desc: "Text in a disabled entry box";
    }
    color_class { name: "entry_guide_text";
-      color: FN_COL_INACTIVE;
+      color: FN_COL_DEFAULT_BASIC_INACTIVE;
       desc: "Guide text in a entry box";
    }
    color_class { name: "entry_scrollframe_base";
