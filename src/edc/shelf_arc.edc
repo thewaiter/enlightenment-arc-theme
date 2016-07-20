@@ -20,8 +20,7 @@ group { name: "e/shelf/default/base"; nomouse;
 
       part { name: "bg"; type: RECT;
          description { state: "default" 0.0;
-            color: COL_BG;
-            color_class: "shelf_base";
+            color_class: "shelf_base_default";
          }
          description { state: "vert" 0.0;
             inherit: "default" 0.0;
@@ -33,7 +32,7 @@ group { name: "e/shelf/default/base"; nomouse;
             state: "default" 0.0;
             rel1.offset: -1 -1;
             rel2.offset: 1 1;
-            color: COL_BORDER_DARK;
+            color_class: "shelf_border_default";
          }
       }
       spacer { "sizer";
@@ -97,32 +96,23 @@ group { name: "e/shelf/alternate/base";
    parts {
       part { name: "bg"; type: RECT;
          description { state: "default" 0.0;
-            color: COL_BG_DARK;
-            color_class: "shelf_base";
+            color_class: "shelf_base_alternate";
          }
          description { state: "vert" 0.0;
             inherit: "default" 0.0;
          }
       }
-   }
-}
-group { name: "e/shelf/darker/base";
-   inherit: "e/shelf/default/base";
-   parts {
-      part { name: "bg"; type: RECT;
-         description { state: "default" 0.0;
-            color: COL_BORDER_DARK;
-            color_class: "shelf_base";
-         }
-         description { state: "vert" 0.0;
-            inherit: "default" 0.0;
+      part { name: "border"; type: RECT;
+         insert_before: "bg";
+         description {
+            state: "default" 0.0;
+            rel1.offset: -1 -1;
+            rel2.offset: 1 1;
+            color_class: "shelf_border_alternate";
          }
       }
    }
 }
-
-            // target: "dots_start"; \
-            // target: "dots_end"; \
 
 group { name: "e/shelf/default/inset"; nomouse;
    alias: "e/shelf/alternate/inset";
@@ -231,17 +221,21 @@ group { name: "e/shelf/translucent/base"; nomouse;
       item: "noshadow" "1";
    }
    parts {
-      part { name: "bg";
+      part { name: "bg"; type: RECT;
          description { state: "default" 0.0;
-            color: 127 127 127 135;
+            color_class: "shelf_base_translucent";
          }
          description { state: "vert" 0.0;
-            color: 127 127 127 135;
+            inherit: "default" 0.0;
          }
       }
-      part { name: "border";
-         description { state: "default" 0.0;
-            color: 43 46 57 135;
+      part { name: "border"; type: RECT;
+         insert_before: "bg";
+         description {
+            state: "default" 0.0;
+            rel1.offset: -1 -1;
+            rel2.offset: 1 1;
+            color_class: "shelf_border_translucent";
          }
       }
    }

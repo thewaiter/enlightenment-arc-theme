@@ -782,7 +782,7 @@ group { name: "elm/toolbar/item/default";
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
             visible: 0;
-            color_class: "toolbar_item_selected";
+            color_class: "toolbar_item_active";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
@@ -864,7 +864,7 @@ group { name: "elm/toolbar/item/default";
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
             visible: 0;
-            color_class: "toolbar_item_selected";
+            color_class: "toolbar_item_active";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
@@ -1382,7 +1382,7 @@ group { name: "elm/toolbar/item/item_horizontal";
       //    description { state: "selected" 0.0;
       //       inherit: "default" 0.0;
       //       visible: 0;
-      //       color_class: "toolbar_item_selected";
+      //       color_class: "toolbar_item_active";
       //    }
       //    description { state: "disabled" 0.0;
       //       inherit: "default" 0.0;
@@ -1454,7 +1454,7 @@ group { name: "elm/toolbar/item/item_horizontal";
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
             visible: 0;
-            color_class: "toolbar_item_selected";
+            color_class: "toolbar_item_active";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;

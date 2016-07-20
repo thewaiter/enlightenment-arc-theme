@@ -13,13 +13,12 @@ group { name: "elm/spinner/base/default";
       spacer { name: "bg";
          scale: 1;
          description { state: "default" 0.0;
-            // color_class: "spinner_bg";
          }
       }
       part { name: "base";
          scale: 1;
          description { state: "default" 0.0;
-            color_class: "spinner_bg";
+            color_class: "spinner_base";
             rel1.offset: 4 4;
             rel2.offset: -5 -5;
             image.normal: "bg-rounded-3px.png";

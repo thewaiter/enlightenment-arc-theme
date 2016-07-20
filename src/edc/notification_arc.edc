@@ -18,8 +18,8 @@ group { name: "e/modules/notification/main";
    data.item: "shaped" "1";
    styles {
       style { name: "notification_style_nowrap";
-         base: "font="FN" font_size=10 align=left color=#ffff style=shadow,bottom shadow_color=#00000080 wrap=none text_class=notification_body";
-         tag:  "subject"  "+ text_class=module_large style=glow color=#3399ffff glow_color=#3399ff18 align=center glow2_color=#3399ff12";
+         base: "font="FN" font_size=10 align=left color=#ffff wrap=none text_class=notification_body";
+         tag:  "subject"  "+ text_class=module_large style=glow color=#3399ffff align=center";
          tag:  "body"  "+ text_class=module_normal";
          tag:  "br" "\n";
          tag:  "ps" "ps";
@@ -30,8 +30,8 @@ group { name: "e/modules/notification/main";
          tag:  "a" ""; // links not supported
       }
       style { name: "notification_style";
-         base: "font="FN" font_size=10 align=left color=#ffff style=shadow,bottom shadow_color=#00000080 wrap=word text_class=notification_body";
-         tag:  "subject"  "+ text_class=module_large style=glow color=#3399ffff glow_color=#3399ff18 align=center glow2_color=#3399ff12";
+         base: "font="FN" font_size=10 align=left color=#ffff wrap=word text_class=notification_body";
+         tag:  "subject"  "+ text_class=module_large color=#3399ffff glow_color=#3399ff18 align=center";
          tag:  "body"  "+ text_class=module_normal";
          tag:  "br" "\n";
          tag:  "ps" "ps";
@@ -136,10 +136,10 @@ group { name: "e/modules/notification/main";
             rel1.offset: 4 4;
             rel2.to: "base";
             rel2.offset: -27 -11;
+            color_class: "popup_text";
             text {
                style: "notification_style";
                min: 0 1;
-               text: "this is a super long message";
             }
             fixed: 1 1;
          }
@@ -156,6 +156,7 @@ group { name: "e/modules/notification/main";
             rel1.relative: 1.0 1.0;
             rel1.offset: 4 4;
             rel2.offset: -27 -11;
+            color_class: "popup_text";
             text {
                style: "notification_style_nowrap";
                text_source: "notification.textblock.message";
@@ -179,13 +180,11 @@ group { name: "e/modules/notification/main";
             rel2.to_x: "e.event.close";
             rel2.to_y: "base";
             rel2.offset: -5 12;
-            color: FN_COL_DEFAULT;
             align: 0.0 0.0;
-            color_class: "notification_title";
+            color_class: "popup_title_text";
             text {
                font: FNBD;
-               size: 10;
-               text: "title goes here blah blah";
+               size: FNSIZE;
                min: 0 1;
                align: 0.0 0.5;
                text_class: "notification_title";

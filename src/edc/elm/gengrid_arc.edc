@@ -163,7 +163,7 @@ group { name: "elm/gengrid/item/default/default";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_selected";
+            color_class: "list_item_text_selected";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
@@ -209,7 +209,7 @@ group { name: "elm/gengrid/item/default_style/default";
    data.item: "texts" "elm.text";
    data.item: "contents" "elm.swallow.icon elm.swallow.end";
    styles.style {    name: "gengrid_style";
-      base: "font="FN" font_size="FNSIZE" align=left color="FN_COL_DEFAULT_BASIC_HEX" text_class=list_item ellipsis=1.0";
+      base: "font="FN" font_size="FNSIZE" align=left color="COL_FONT_BASIC_DEFAULT_HEX" text_class=list_item ellipsis=1.0";
       tag: "br" "\n";
       tag: "ps" "ps";
       tag: "hilight" "+ font_weight=Bold";
@@ -217,7 +217,7 @@ group { name: "elm/gengrid/item/default_style/default";
       tag: "tab" "\t";
    }
    styles.style { name: "gengrid_style_selected";
-      base: "font="FN" font_size="FNSIZE" align=left color="FN_COL_DEFAULT_BASIC_HEX" text_class=list_item_selected ellipsis=1.0";
+      base: "font="FN" font_size="FNSIZE" align=left color="COL_FONT_BASIC_DEFAULT_HEX" text_class=list_item_selected ellipsis=1.0";
       tag: "br" "\n";
       tag: "ps" "ps";
       tag: "hilight" "+ font_weight=Bold";
@@ -225,7 +225,7 @@ group { name: "elm/gengrid/item/default_style/default";
       tag: "tab" "\t";
    }
    styles.style { name: "gengrid_style_disabled";
-      base: "font="FN" font_size="FNSIZE" align=left color="FN_COL_DEFAULT_BASIC_HEX" text_class=list_item ellipsis=1.0";
+      base: "font="FN" font_size="FNSIZE" align=left color="COL_FONT_BASIC_DEFAULT_HEX" text_class=list_item ellipsis=1.0";
       tag: "br" "\n";
       tag: "ps" "ps";
       tag: "hilight" "+ font_weight=Bold";

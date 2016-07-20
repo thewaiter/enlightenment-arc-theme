@@ -1076,7 +1076,7 @@ group { name: "elm/button/base/hoversel_vertical/default";
          }
          desc { "pressed";
             inherit: "default";
-            color_class: "arrow-icon_pressed";
+            color_class: "arrow_icon_pressed";
          }
       }
    }
@@ -1961,8 +1961,7 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
             }
             description { state: "disabled" 0.0;
                inherit: "default" 0.0 ;
-               color: FN_COL_DISABLE;
-               color_class: "spinner_disabled";
+               color_class: "spinner_text_disabled";
             }
          }
          part { name: "over";
@@ -2207,7 +2206,7 @@ group { name: "elm/button/base/combobox_vertical/default";
          }
          desc { "pressed";
             inherit: "default";
-            color_class: "arrow-icon_pressed";
+            color_class: "arrow_icon_pressed";
          }
       }
    }

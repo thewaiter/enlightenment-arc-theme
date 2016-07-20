@@ -381,7 +381,7 @@ group {
             image.border: 3 3 3 3;
             rel2.to_y: "e.text.title";
             rel2.relative: 1.0 1.0;
-            color_class: "win_border_title_bg_color";
+            color_class: "win_border_base";
          }
       }
       image { name: "top_border_shadow"; nomouse;
@@ -390,7 +390,7 @@ group {
             image.border: 3 3 3 3;
             rel1.offset: 0 1;
             rel2.to: "top_bg";
-            color: WIN_BORDER_UNDERLINE;
+            color_class: "win_border_border_shadow";
          }
       }
       image { name: "top_border"; nomouse;
@@ -398,13 +398,13 @@ group {
             image.normal: "border-top-rounded-3px.png";
             image.border: 3 3 3 3;
             rel2.to: "top_bg";
-            color_class: "win_border_color";
+            color_class: "win_border_border";
          }
       }
       rect { name: "top_bg_maximized"; nomouse;
          desc { "default";
             rel2.to: "top_bg";
-            color_class: "win_border_title_bg_color";
+            color_class: "win_border_base";
             visible: 0;
          }
          desc { "max";
@@ -498,7 +498,7 @@ group {
       part { name: "bottom"; nomouse;
          type: RECT;
          description { state: "default" 0.0;
-            color_class: "win_border_color";
+            color_class: "win_border_border";
             align: 0.0 1.0;
             max: 99999 1;
          }
@@ -520,7 +520,7 @@ group {
                to_y: "bottom";
                relative: 1.0 0.0;
             }
-            color_class: "win_border_color";
+            color_class: "win_border_border";
             align: 0.0 0.0;
             max: 1 99999;
          }
@@ -539,7 +539,7 @@ group {
                to_y: "bottom";
                relative: 1.0 0.0;
             }
-            color_class: "win_border_color";
+            color_class: "win_border_border";
             align: 1.0 0.0;
             max: 1 99999;
          }
@@ -920,7 +920,7 @@ group { name: "e/widgets/border/default/move";
             rel1.offset: 4 4;
             rel1.relative: 1.0 0.0;
             rel2.offset: -5 -5;
-            color_class: "popup_text";
+            color_class: "move_text";
             text { font: FN; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
@@ -942,7 +942,7 @@ group { name: "e/widgets/border/default/resize";
       }
       part { name: "e.text.label"; type: TEXT;
          description { state: "default" 0.0;
-            color_class: "popup_text";
+            color_class: "resize_text";
          }
       }
    }

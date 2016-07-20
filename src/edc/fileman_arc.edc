@@ -361,10 +361,10 @@ group { name: "e/fileman/default/icon/fixed";
    images.image: "bg-rounded-3px.png" COMP;
    styles {
       style { name: "fileman_icon_name";
-         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="FN_COL_DEFAULT_BASIC_HEX" wrap=mixed align=center ellipsis=1.0";
+         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed align=center ellipsis=1.0";
       }
       style { name: "fileman_icon_name_selected";
-         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="FN_COL_DEFAULT_BASIC_SELECTED_HEX" wrap=mixed align=center ellipsis=1.0";
+         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="COL_FONT_BASIC_SELECTED_HEX" wrap=mixed align=center ellipsis=1.0";
       }
    }
    script {
@@ -738,7 +738,7 @@ group { name: "e/fileman/desktop/icon/fixed";
    images.image: "darken_square.png" COMP;
    styles {
       style { name: "fileman_icon_full";
-         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="FN_COL_DEFAULT_BASIC_HEX" wrap=mixed style=shadow,bottom shadow_color=#00000080 align=center";
+         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed style=shadow,bottom shadow_color=#00000080 align=center";
       }
    }
    parts {
@@ -749,7 +749,8 @@ group { name: "e/fileman/desktop/icon/fixed";
             align: 0.5 0.0;
             rel1.to: "e.text.label";
             rel2.to: "e.text.label";
-            color_class: "fileman_icon";
+            // color_class: "fileman_icon";
+            color_class: "popup_text";
             text {
                text: "xxxxx";
                text_source: "e.text.label";
@@ -1152,8 +1153,7 @@ group { name: "e/fileman/default/overlay";
             rel2.offset: 12 -1;
             rel2.to: "knob";
             align: 0.0 0.5;
-            color: FN_COL_DEFAULT;
-            color_class: "fileman_busy";
+            color_class: "popup_text";
             text { font: FNBD; size: 10;
                min: 1 1;
                ellipsis: -1;
@@ -1162,7 +1162,7 @@ group { name: "e/fileman/default/overlay";
             }
          }
       }
-      rect { name: "knob"; mouse_events: 0;
+      rect { name: "knob"; mouse_events: 0; scale: 1;
          clip_to: "busy_clip";
          description { state: "default" 0.0;
             FIXED_SIZE(28, 28);
@@ -1191,16 +1191,14 @@ group { name: "e/fileman/default/overlay";
       }
       part { name: "e.text.typebuf_label"; type: TEXT; mouse_events: 0;
          clip_to: "typebuf_clip";
-         effect: SHADOW BOTTOM;
          scale: 1;
          description { state: "default" 0.0;
             rel1.relative: 0.5 0.5;
             rel1.offset: -8 -8;
             rel2.relative: 0.5 0.5;
             rel2.offset: 7 7;
-            color: FN_COL_DEFAULT;
-            color_class: "fileman_typebuf";
-            text { font: FNBD; size: 10;
+            color_class: "popup_text";
+            text { font: FNBD; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
                align: 0.5 0.5;
@@ -1577,13 +1575,14 @@ group { name: "e/fileman/default/progress";
       part { name: "e.text.info"; type: TEXT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
-            color_class: "fileman_icon";
+            // color_class: "fileman_icon";
+         color_class: "popup_text";
             rel1.relative: 1.0 0.0;
             rel1.to_x: "knob";
             rel2.relative: 0.0 1.0;
             rel2.to_x: "close_event";
             rel2.offset: -3 -1;
-            text { font: FN; size: 10;
+            text { font: FN; size: FNSIZE;
                min: 1 0;
                ellipsis: -1;
                align: 0.0 0.5;
@@ -2184,7 +2183,7 @@ group { name: "modules/efm_navigation/pathbar_scrollframe";
          }
          description { state: "clicked" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_arrow_selectd";
+            color_class: "list_item_arrow_selected";
          }
       }
       part { name: "arrow1_ev"; type: RECT;
@@ -2207,7 +2206,7 @@ group { name: "modules/efm_navigation/pathbar_scrollframe";
          }
          description { state: "clicked" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_arrow_selectd";
+            color_class: "list_item_arrow_selected";
          }
       }
       part { name: "arrow2_ev"; type: RECT;

@@ -1,6 +1,5 @@
 group { name: "elm/focus_highlight/top/default";
 
-   // images.image: "focus_outline_arc.png" COMP;
    images.image: "border-rounded-3px.png" COMP;
    data.item: "animate" "on";
    script {

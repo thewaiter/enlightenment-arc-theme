@@ -271,7 +271,6 @@ group { name: "elm/list/item/default";
          description { state: "default" 0.0;
             rel1.to: "elm.text";
             rel2.to: "elm.text";
-            color: FN_COL_DISABLE;
             color_class: "list_item_text_disabled";
             text { font: FN; size: FNSIZE;
                text_source: "elm.text";

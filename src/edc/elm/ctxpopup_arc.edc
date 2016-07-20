@@ -65,7 +65,6 @@ group { name: "elm/ctxpopup/base/default";
             image.border: 5 5 5 5;
             image.border_scale_by: 0.5;
             image.middle: 1;
-            color_class: "ctxpopup_bg";
          }
       }
       part { name: "content_clip"; type: RECT;
@@ -246,35 +245,30 @@ group { name: "elm/ctxpopup/arrow/default";
             min: 9 9;
             fixed: 1 1;
             image.normal: "tooltip-edge-left-tip_arc.png";
-            color_class: "ctxpopup_bg";
          }
          description { state: "left" 0.0;
             inherit: "default" 0.0;
             min: 9 13;
             align: 0.0 0.5;
             image.normal: "tooltip-edge-left-tip_arc.png";
-            color_class: "ctxpopup_bg";
          }
          description { state: "right" 0.0;
             inherit: "default" 0.0;
             min: 9 13;
             align: 1.0 0.5;
             image.normal: "tooltip-edge-right-tip_arc.png";
-            color_class: "ctxpopup_bg";
          }
          description { state: "top" 0.0;
             inherit: "default" 0.0;
             min: 11 9;
             align: 0.5 0.0;
             image.normal: "tooltip-edge-top-tip_arc.png";
-            color_class: "ctxpopup_bg";
          }
          description { state: "bottom" 0.0;
             inherit: "default" 0.0;
             min: 11 9;
             align: 0.5 1.0;
             image.normal: "tooltip-edge-bottom-tip_arc.png";
-            color_class: "ctxpopup_bg";
          }
       }
    }
