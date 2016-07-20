@@ -1,11 +1,11 @@
 # Arc theme for enlightenment
-Original arc design from [horst3180](https://github.com/horst3180/arc-theme). There are still widgets and e-modules missing, an overview is shown below. For now only Arc-Dark theme is available.
+Original arc design from [horst3180](https://github.com/horst3180/arc-theme). There are still widgets and e-modules missing, an overview is shown below. For now Arc-Dark theme is available. Just started on coloring Arc theme.
 
 ![A screenshot of the Arc-Darker theme](https://github.com/LeBlue/enlightenment-arc-theme/blob/master/screenshots/shot.png)
 
 ### Install
 
-To install just save [arc-dark.edj](https://raw.githubusercontent.com/LeBlue/enlightenment-arc-theme/master/arc-dark.edj?raw=true) to the themes directory `$HOME/.elementary/themes/` or `make install`.
+To install just save [arc-dark.edj](https://raw.githubusercontent.com/LeBlue/enlightenment-arc-theme/master/arc-dark.edj?raw=true) and/or [arc.edj](https://raw.githubusercontent.com/LeBlue/enlightenment-arc-theme/master/arc.edj?raw=true) to the themes directory `$HOME/.elementary/themes/` or `make install`.
 
 ### Building
 
