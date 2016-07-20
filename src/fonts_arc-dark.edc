@@ -19,10 +19,11 @@
 
 #define COL_FONT_BASIC_DEFAULT                                 211 218 227 255
 #define COL_FONT_BASIC_PRESSED                                 255 255 255 255
-#define COL_FONT_BASIC_SELECTED COL_FONT_BASIC_PRESSED
+#define COL_FONT_BASIC_ACTIVE                                  COL_FONT_BASIC_PRESSED
+#define COL_FONT_BASIC_SELECTED                                COL_FONT_BASIC_PRESSED
 #define COL_FONT_BASIC_DEFAULT_HEX "#D3DAE3"
 #define COL_FONT_BASIC_PRESSED_HEX "#FFFFFF"
-#define COL_FONT_BASIC_SELECTED_HEX COL_FONT_BASIC_PRESSED_HEX
+#define COL_FONT_BASIC_SELECTED_HEX                            COL_FONT_BASIC_PRESSED_HEX
 #define COL_FONT_BASIC_INACTIVE                                211 218 227 (255*0.55)
 #define COL_FONT_BASIC_DISABLED                                211 218 227 (255*0.45)
 #define COL_FONT_BASIC_TRANSPARENT                             211 218 227 0
@@ -33,7 +34,7 @@
 
 #define ENTRY_STYLE_BASIC
 #define ENTRY_STYLE_DISABLED
-#define ENTRY_STYLE_GUIDE
+#define ENTRY_STYLE_GUIDE                                      168 168 168 255
 
 #define ENABLED_TEXTBLOCK_TAGS                                             \
    tag: "em" "+ font_style=Oblique";                                       \

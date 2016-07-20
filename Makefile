@@ -16,8 +16,7 @@ arc-darker:
 	make -C $(SRC_DIR) ../arc-darker.edj
 
 orig-theme:
-	git submodule update --init efl
-	ln -s efl/data/elementary/themes orig-theme
+	ln -s ../efl/data/elementary/themes orig-theme
 
 assets:
 	make -C assets all
@@ -26,6 +25,6 @@ clean:
 	make -C src clean
 
 install:
-	#cp arc.edj ~/.elementary/themes > /dev/null
+	cp arc.edj ~/.elementary/themes > /dev/null
 	cp arc-dark.edj ~/.elementary/themes >/dev/null
 	#cp arc-darker.edj ~/.elementary/themes >/dev/null

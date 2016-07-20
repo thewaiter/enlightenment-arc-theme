@@ -106,40 +106,39 @@ group { name: "e/widgets/menu/default/item_bg";
             color: 0 0 0 0;
          }
       }
-      rect { name: "border"; mouse_events: 0;
+      rect { name: "border"; mouse_events: 0; scale: 1;
          description { state: "default" 0.0;
-            visible: 1;
             color_class: "menu_item_border";
-            rel1.offset: 1 1;
-            rel2.offset: 0 -1;
+            rel1.offset: 0 0;
+            rel2.offset: -1 -1;
+
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
-            visible: 1;
             color_class: "menu_item_border_selected";
 
          }
       }
-      rect { name: "selected_overlay"; mouse_events: 0;
+      rect { name: "selected_overlay"; mouse_events: 0; scale: 1;
          description { state: "default" 0.0;
             rel1 {
                to: "border";
-               offset: 1 1;
+               offset: 0 1;
             }
             rel2 {
                to: "border";
-               offset: -1 -1;
+               offset: -1 -2;
             }
             color_class: "menu_base";
          }
          description { state: "active" 0.0;
-            visible: 1;
+            inherit: "default" 0.0;
             color_class: "menu_item_base_selected";
          }
       }
-      swallow { name: "e.swallow.content";
+      swallow { name: "e.swallow.content"; scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: 3 1;
+            rel1.offset: 3 2;
             rel2.offset: -3 -4;
          }
       }

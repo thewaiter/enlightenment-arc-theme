@@ -610,7 +610,7 @@ group { name: "e/modules/everything/tab_item";
       part { name: "shadow1"; mouse_events: 0; type: RECT;
          description { state: "default" 0.0;
             min: 80 10;
-            color_class: "menu_item_base_selected";
+            color_class: "list_item_base_selected";
             visible: 0;
          }
          description { state: "selected" 0.0;
@@ -626,7 +626,7 @@ group { name: "e/modules/everything/tab_item";
             rel2.offset: -5 -3;
             rel2.relative: 0.5 1.0;
             align: 0.5 0.5;
-            color_class: "menu_item";
+            color_class: "list_item_text";
             text { font: FN; size: 10;
                min: 1 1;
                ellipsis: -1;
@@ -645,7 +645,7 @@ group { name: "e/modules/everything/tab_item";
          description { state: "default" 0.0;
             rel1.to: "e.text.label";
             rel2.to: "e.text.label";
-            color_class: "menu_item_active";
+            color_class: "list_item_text_selected";
             text { font: FN; size: 10;
                text_source: "e.text.label";
                align: 0.5 0.5;
@@ -941,7 +941,7 @@ group { name: "e/modules/everything/thumbview/item/thumb";
             text { font: FN; size: 10;
                text_source: "e.text.label";
                align: 0.5 1.0;
-               text_class: "menu_item";
+               text_class: "list_item";
             }
             visible: 0;
          }

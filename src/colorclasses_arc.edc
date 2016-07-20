@@ -1,376 +1,708 @@
-//#define WIN_DEFAULT_BASIC 56 60 74 200
-// #define WIN_DEFAULT_BASIC 56 60 74 240
-//#define WIN_DEFAULT_BASIC 68 74 88 250
-//#define WIN_DEFAULT_BASIC 211 218 227 255
-#define WIN_DEFAULT_BASIC 255 255 255 255
 
-#define COL_NORM 68 74 88 255
-#define COL_HOVER 80 86 102 255
-#define COL_ENABLE 82  148 226 255
-#define COL_PRESSED COL_ENABLE
-// #define COL_BG 68 74 88 255
-#define COL_BG 64 69 82 255
-#define COL_BG_DARK 56 60 74 255
-#define COL_BG_DARK_TRANS 56 60 74 220
-#define COL_BORDER_DARK 43 46 57 255
-#define COL_FONT 211 218 227 255
-#define COL_FONT_DIS 211 218 227 150
+#define COL_NORM                 251 251 252 255
+#define COL_HOVER                245 245 245 255
+#define COL_ENABLE                82 148 226 255
+#define COL_PRESSED              207 214 230 255
+
+#define COL_LIGHT_NORM            95 101 115 255 //TODO
+#define COL_LIGHT_HOVER          118 123 135 255 //TODO
+#define COL_LIGHT_PRESSED        COL_ENABLE      //TODO
+
+#define COL_BG                   255 255 255 255
+#define COL_BG_LIGHT              91  98 123 255 //TODO
+#define COL_BG_DARK              245 246 247 255
+#define COL_BG_DARK_HOVER        245 246 247 255 //TODO
+#define COL_BG_IN_W              207 214 230 255
+
+//all kinds of popups/notification/ctxpopup bg
+#define COL_BG_DARK_TRANS        245 246 247 235
+#define COL_BG_DARKER            231 232 235 255
+#define COL_BG_DARKER_TRANS      231 232 235 235
+#define COL_BORDER               235 235 235 255
+#define COL_BORDER_DARK          207 214 230 255
+
+#define COL_MASK_DISABLED        255 255 255 200 //TODO
+
+// colors for border buttons minimize/maximize/close
+#define MINIMIZE_ACTIVE          123 128 139 255
+#define MAXMIMIZE_ACTIVE         123 128 139 255
+#define CLOSE_ACTIVE             244  96 103 255
+
+#define MINIMIZE_INACTIVE        123 128 139 255 //TODO
+#define MAXMIMIZE_INACTIVE       123 128 139 255 //TODO
+#define CLOSE_INACTIVE           123 128 139 255 //TODO
+
+#define MINIMIZE_HOVER           122 127 139 255 //TODO
+#define MINIMIZE_HOVER_BACKGROUND 253 253 253 255
+#define MINIMIZE_HOVER_BACKGROUND_BORDER 212 213 219 255
+#define MAXIMIZE_HOVER           122 127 139 255 //TODO
+#define MAXIMIZE_HOVER_BACKGROUND 253 253 253 255
+#define MAXIMIZE_HOVER_BACKGROUND_BORDER 212 213 219 255
+#define CLOSE_HOVER              246 128 134 255
+
+#define MINIMIZE_PRESSED         255 255 255 255 //TODO
+#define MINIMIZE_PRESSED_BACKGROUND 82 148 226 255 //TODO
+#define MAXIMIZE_PRESSED         255 255 255 255 //TODO
+#define MAXIMIZE_PRESSED_BACKGROUND 82 148 226 255 //TODO
+#define CLOSE_PRESSED            241 48 57 255
+
+#define NO_COLOR                 255 255 255 0
+
+#define WIN_BORDER_LINE          224 224 224 255
+#define WIN_BORDER_UNDERLINE     238 239 242 255
+#define WIN_BORDER_BG            COL_BG_DARKER
+
+#define COL_ICON_BASIC           COL_FONT_BASIC_DEFAULT //TODO
+#define COL_ICON_BASIC_HOVER     COL_FONT_BASIC_DEFAULT //TODO
+#define COL_ICON_BASIC_PRESSED   COL_FONT_BASIC_PRESSED //TODO
+#define COL_ICON_BASIC_DISABLED  COL_FONT_BASIC_DISABLED //TODO
+
+#define COL_SUCCESS              115 210  22 255
+#define COL_ERROR                252  65  56 255
+#define COL_WARNING              242 120  53 255
+
+
 
 color_classes {
-// comp
-   color_class { name: "comp_focus-out_color";
-      color: 255 255 255 255;
-      description: "Objects which do not have focus";
-   }
-   color_class { name: "comp_focus_color";
-      color: 255 255 255 255;
-      description: "Objects which have focus";
-   }
 
    color_class { name: "background";
       color: COL_BG;
       description: "Background color";
    }
 // wm
-   color_class { name: "border_title";
-      color: FN_COL_DISABLE;
-      desc: "Title of an inactive window frame";
+   color_class { name: "win_border_title";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Window border frame title";
    }
-   color_class { name: "border_title_active";
-      color: FN_COL_DEFAULT_SOFT_SHADOW;
-      desc: "Title of an active window frame";
+   color_class { name: "win_border_title_active";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Window border frame title active";
    }
-   color_class { name: "border_frame";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base of an inactive window frame";
+   color_class { name: "win_border_border";
+      color: WIN_BORDER_LINE;
+      desc: "Window border outline color";
    }
-   color_class { name: "border_frame_active";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base of an active window frame";
+   color_class { name: "win_border_base";
+      color: WIN_BORDER_BG;
+      desc: "Window border title background color";
    }
-   color_class { name: "border_bottom";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Bottom edge of a window frame";
+   color_class { name: "win_border_border_shadow";
+      color: WIN_BORDER_UNDERLINE;
+      desc: "Window border top outline shadow";
+   }
+   color_class { name: "close-btn-inactive";
+      color: CLOSE_INACTIVE;
+      desc: "Window border close button, window inactive";
+   }
+   color_class { name: "close-btn-active";
+      color: CLOSE_ACTIVE;
+      desc: "Window border close button active";
+   }
+   color_class { name: "close-btn-hover";
+      color: CLOSE_HOVER;
+      desc: "Window border close button hovered";
+   }
+   color_class { name: "close-btn-pressed";
+      color: CLOSE_PRESSED;
+      desc: "Window border close button pressed";
+   }
+   color_class { name: "mini-maxi-bg-active";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button bg, window inactive";
+   }
+   color_class { name: "mini-maxi-bg-inactive";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button bg active";
+   }
+   color_class { name: "mini-maxi-bg-hover";
+      color: MINIMIZE_HOVER_BACKGROUND;
+      desc: "Window border minimize/maximize button bg hover";
+   }
+   color_class { name: "mini-maxi-bg-pressed";
+      color: MINIMIZE_PRESSED_BACKGROUND;
+      desc: "Window border minimize/maximize button bg pressed";
+   }
+   color_class { name: "mini-maxi-border-active";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button border, window inactive";
+   }
+   color_class { name: "mini-maxi-border-inactive";
+      color: NO_COLOR;
+      desc: "Window border minimize/maximize button border active";
+   }
+   color_class { name: "mini-maxi-border-hover";
+      color: MINIMIZE_HOVER_BACKGROUND_BORDER;
+      desc: "Window border minimize/maximize button border hover";
+   }
+   color_class { name: "mini-maxi-border-pressed";
+      color: MINIMIZE_PRESSED_BACKGROUND;
+      desc: "Window border minimize/maximize button border pressed";
+   }
+   color_class { name: "mini-maxi-symbol-active";
+      color: MINIMIZE_ACTIVE;
+      desc: "Window border minimize/maximize button symbol, window inactive";
+   }
+   color_class { name: "mini-maxi-symbol-inactive";
+      color: MINIMIZE_INACTIVE;
+      desc: "Window border minimize/maximize button symbol active";
+   }
+   color_class { name: "mini-maxi-symbol-hover";
+      color: MINIMIZE_HOVER;
+      desc: "Window border minimize/maximize button symbol hover";
+   }
+   color_class { name: "mini-maxi-symbol-pressed";
+      color: MINIMIZE_PRESSED;
+      desc: "Window border minimize/maximize button symbol pressed";
    }
    color_class { name: "move_text";
-      color: FN_COL_DEFAULT;
+      color: COL_FONT_BASIC_DEFAULT;
       desc: "Info text while moving a window";
    }
    color_class { name: "resize_text";
-      color: FN_COL_DEFAULT;
+      color: COL_FONT_BASIC_DEFAULT;
       desc: "Info text while resizing a window";
    }
+   color_class { name: "pager_glow";
+      color: COL_ENABLE;
+      desc: "Pager desk indicator glow color";
+   }
+   color_class { name: "menu_item_border";
+      color: COL_BG_DARK;
+      desc: "Menu border color";
+   }
+   color_class { name: "menu_item_border_selected";
+      color: COL_BORDER;
+      desc: "Menu border color";
+   }
+   color_class { name: "menu_item_base_hover";
+      color: COL_HOVER;
+      desc: "Menu background selected color";
+   }
+   color_class { name: "menu_item_base_selected";
+      color: COL_HOVER;
+      desc: "Menu background selected color";
+   }
+   color_class { name: "menu_item_base";
+      color: COL_BG_DARK;
+      desc: "Menu border color";
+   }
+   color_class { name: "menu_item_inactive";
+      color: COL_FONT_BASIC_INACTIVE;
+      desc: "Menu item text while inactive";
+   }
    color_class { name: "menu_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base color of a menu";
+      color: COL_BG_DARK;
+      desc: "Menu background color";
+   }
+   color_class { name: "menu_border";
+      color: COL_BORDER_DARK;
+      desc: "Menu border color";
    }
    color_class { name: "menu_title";
-      color: FN_COL_DISABLE;
-      desc: "Title text of a menu";
+      color: COL_FONT_BASIC_INACTIVE;
+      desc: "Menu title text";
    }
    color_class { name: "menu_item";
-      color: FN_COL_DEFAULT;
-      desc: "Text of an inactive menu item";
+      // color: COL_FONT_BASIC_INACTIVE;
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Menu item text inactive";
    }
    color_class { name: "menu_item_active";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of an active menu item";
+      color: COL_FONT_BASIC_ACTIVE;
+      desc: "Menu item text active";
    }
    color_class { name: "menu_item_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled menu item";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Menu item text disabled";
    }
-   color_class { name: "winlist_item";
-      color: FN_COL_DEFAULT;
-      desc: "Text of an inactive winlist item";
+   color_class { name: "menu_separator";
+      color: COL_BORDER_DARK;
+      desc: "Menu separator";
    }
-   color_class { name: "winlist_item_active";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of an active winlist item";
+   color_class { name: "toolbar_item_border";
+      color: COL_BG_DARK;
+      desc: "Toolbar item border color";
+   }
+   color_class { name: "toolbar_item_border_selected";
+      color: COL_BORDER_DARK;
+      desc: "Toolbar item border color selected";
+   }
+   color_class { name: "toolbar_item_border_hover";
+      color: COL_BORDER_DARK;
+      desc: "Toolbar item border color hover";
+   }
+   color_class { name: "toolbar_item_base_hover";
+      color: COL_BG_DARK_HOVER;
+      desc: "Toolbar item background selected color";
+   }
+   color_class { name: "toolbar_item_base_selected";
+      color: COL_BG;
+      desc: "Toolbar item background selected color";
+   }
+   color_class { name: "toolbar_item_base";
+      color: COL_BG_DARK;
+      desc: "Toolbar item backgournd color";
+   }
+   color_class { name: "toolbar_item";
+      color: COL_FONT_BASIC_INACTIVE;
+      desc: "Toolbar: Text of an inactive toolbar item";
+   }
+   color_class { name: "toolbar_item_hover";
+      color: COL_FONT_BASIC_ACTIVE;
+      desc: "Toolbar: Text of an inactive toolbar item";
+   }
+   color_class { name: "toolbar_item_active";
+      color: COL_FONT_BASIC_ACTIVE;
+      desc: "Toolbar: Text of an active toolbar item";
+   }
+   color_class { name: "toolbar_item_disabled";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Toolbar: Text of a disabled toolbar item";
+   }
+   color_class { name: "toolbar_item_separator";
+      color: COL_BORDER_DARK;
+      desc: "Toolbar separator color";
+   }
+   color_class { name: "winlist_top_bg";
+      color: COL_BG_DARKER;
+      desc: "Winlist top border background";
+   }
+   color_class { name: "winlist_bg";
+      color: COL_BG;
+      desc: "Winlist background";
+   }
+   color_class { name: "winlist_item_selected_bg";
+      color: COL_ENABLE;
+      desc: "Winlist item selected background";
+   }
+   color_class { name: "winlist_item_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Winlist text of an inactive item";
+   }
+   color_class { name: "winlist_item_text_iconified";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Winlist text of an inactive item";
+   }
+   color_class { name: "winlist_item_text_active";
+      color: COL_FONT_BASIC_SELECTED;
+      desc: "Winlist text of an active item";
    }
    color_class { name: "winlist_label";
-      color: FN_COL_DEFAULT;
-      desc: "Text of the current winlist item";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Winlist text of the current winlist item";
    }
    color_class { name: "winlist_title";
-      color: FN_COL_DISABLE;
-      desc: "Text of the winlist's title";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Winlist text of the title";
    }
    color_class { name: "dialog_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base color of a dialog window";
+      color: COL_BG_DARK;
+      desc: "Dialog base color of a dialog window";
    }
-   color_class { name: "shelf_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base color of a shelf";
+   color_class { name: "shelf_base_default";
+      color: COL_BG_DARKER;
+      desc: "Shelf base of default shelf";
    }
-   color_class { name: "fileman_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base color of filemanager backgrounds";
+   color_class { name: "shelf_base_translucent";
+      color: COL_BG_DARK_TRANS;
+      desc: "Shelf base of translucent shelf";
+   }
+   color_class { name: "shelf_base_alternate";
+      color: COL_BG_DARK;
+      desc: "Shelf base of alternate shelf";
+   }
+   color_class { name: "shelf_border_default";
+      color: COL_BORDER_DARK;
+      desc: "Shelf border of default shelf";
+   }
+   color_class { name: "shelf_border_translucent";
+      color: COL_BORDER_DARK;
+      desc: "Shelf border of translucent shelf";
+   }
+   color_class { name: "shelf_border_alternate";
+      color: COL_BORDER_DARK;
+      desc: "Shelf border of alternate shelf";
    }
 
 // widgets
    color_class { name: "button_bg";
       color: COL_NORM;
-      desc: "Background color of a button";
+      desc: "Button background";
    }
    color_class { name: "button_bg_pressed";
       color: COL_PRESSED;
-      desc: "Background color of a pressed button";
+      desc: "Button background pressed button";
    }
    color_class { name: "button_bg_hover";
       color: COL_HOVER;
-      desc: "Background color of a pressed button";
+      desc: "button background of a hovered button";
    }
    color_class { name: "button_bg_disabled";
       color: COL_NORM;
-      desc: "Text of a button";
+      desc: "Button text";
    }
    color_class { name: "button_border";
       color: COL_BORDER_DARK;
-      desc: "Border color of a button";
+      desc: "Button border";
    }
    color_class { name: "button_icon";
-      color: 211 218 227 255;
-      desc: "Text of a button";
+      color: COL_ICON_BASIC;
+      desc: "Button icon (color mask)";
    }
    color_class { name: "button_icon_pressed";
-      color: 211 218 227 230;
-      desc: "Text of a button";
+      color: COL_ICON_BASIC_PRESSED;
+      desc: "Button icon of a pressed button";
    }
    color_class { name: "button_icon_disabled";
-      color: 211 218 227 64;
-      desc: "Text of a button";
+      color: COL_ICON_BASIC_DISABLED;
+      desc: "Button icon of a disabled button";
    }
    color_class { name: "button_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a button";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Button text";
    }
    color_class { name: "button_text_pressed";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a button";
+      color: COL_FONT_BASIC_PRESSED;
+      desc: "Button text of a pressed button";
    }
    color_class { name: "button_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled button";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Button text of a disabled button";
    }
    color_class { name: "button_text_anchor";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of an anchor link";
+      color: COL_FONT_BASIC_HIGHLIGHT;
+      desc: "Button text of an anchor link";
    }
    color_class { name: "button_text_anchor_clicked";
-      color: FN_COL_HIGHLIGHT_CLICKED;
-      desc: "Text of an anchor link when clicked";
+      color: COL_FONT_BASIC_HIGHLIGHT_CLICKED;
+      desc: "Button text of an anchor link when clicked";
    }
    color_class { name: "button_text_anchor_disabled";
-      color: FN_COL_HIGHLIGHT_DISABLE;
-      desc: "Text of a disabled anchor link";
+      color: COL_FONT_BASIC_HIGHLIGHT_DISABLED;
+      desc: "Button text of a disabled anchor link";
    }
-   color_class { name: "calendar_year_text";
-      color: FN_COL_DEFAULT;
-      desc: "Year Text in Title Area";
+   color_class { name: "arrow_icon";
+      color: COL_ICON_BASIC;
+      desc: "Arrow icon of spinner, hoverselector, colorselector, calender, etc.";
    }
-   color_class { name: "calendar_month_text";
-      color: FN_COL_DEFAULT;
-      desc: "Month Text in Title Area";
+   color_class { name: "arrow_icon_hover";
+      color: COL_ICON_BASIC_HOVER;
+      desc: "Arrow icon of hovered spinner, hoverselector, colorselector, calender, etc.";
    }
-   color_class { name: "calendar_weekday_text";
-      color: FN_COL_DISABLE;
-      desc: "Weekday Text";
+   color_class { name: "arrow_icon_pressed";
+      color: COL_ICON_BASIC_PRESSED;
+      desc: "Arrow icon of pressed spinner, hoverselector, colorselector, calender, etc.";
    }
-   color_class { name: "calendar_day_text";
-      color: 255 255 255 255;
-      color3: 0 0 0 128;
-      desc: "Day Text";
-   }
-   color_class { name: "calendar_day_text_holiday";
-      color: 128 128 128 255;
-      color3: 0 0 0 128;
-      desc: "Holiday Text";
-   }
-   color_class { name: "calendar_day_text_today";
-      color: 51 153 255 255;
-      color2: 51 153 255 24;
-      desc: "Today Text";
-   }
-   color_class { name: "calendar_day_text_disabled";
-      color: 21 21 21 255;
-      color3: 255 255 255 192;
-      desc: "Disabled Day Text";
+   color_class { name: "arrow_icon_disabled";
+      color: COL_ICON_BASIC_DISABLED;
+      desc: "Arrow icon of disabled spinner, hoverselector, colorselector, calender, etc.";
    }
    color_class { name: "check_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a checkbox's label";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Checkbox text of label";
    }
    color_class { name: "check_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled checkbox's label";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Checkbox text of a disabled label";
    }
-   color_class { name: "check_off_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a checkbox's label when unchecked";
+   color_class { name: "check_base";
+      color: COL_BG;
+      desc: "Checkbox base color";
    }
-   color_class { name: "check_off_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled checkbox's label when unchecked";
+   color_class { name: "check_base_checked";
+      color: COL_ENABLE;
+      desc: "Checkbox base color while checked";
    }
-   color_class { name: "check_on_text";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of a checkbox's label when checked";
+   color_class { name: "check_border";
+      color: COL_BORDER_DARK;
+      desc: "Checkbox border color";
    }
-   color_class { name: "check_on_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled checkbox's label when checked";
+   color_class { name: "check_border_checked";
+      color: COL_ENABLE;
+      desc: "Checkbox border color while checked";
    }
-   color_class { name: "datetime_bg";
-      color: 0 0 0 0;
-      desc: "Background of a datetime widget";
+   color_class { name: "check_mark_checked";
+      color: COL_BG_DARKER;
+      desc: "Checkbox mark color while checked";
    }
-   color_class { name: "datetime_separator_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text in a datetime separator area";
+   color_class { name: "toggle-knob";
+      color: COL_BG_DARK;
+      desc: "Toggle knob color";
    }
-   color_class { name: "datetime_separator_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text in a disabled datetime separator area";
+   color_class { name: "toggle-sym-disabled";
+      color: COL_BG_DARK;
+      desc: "Toggle symbol disabled";
+   }
+   color_class { name: "toggle-sym-enabled";
+      color: COL_BG_DARK;
+      desc: "Toggle symbol enabled";
+   }
+   color_class { name: "toggle-background-disabled";
+      color: COL_BG_IN_W;
+      desc: "Toggle background inactive";
+   }
+   color_class { name: "toggle-background-enabled";
+      color: COL_ENABLE;
+      desc: "Toggle background active";
    }
    color_class { name: "entry_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text in an entry box";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Entry box text";
    }
    color_class { name: "entry_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text in a disabled entry box";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Entry box disabled text";
    }
    color_class { name: "entry_guide_text";
-      color: 0 0 0 255;
-      color3: 255 255 255 25;
-      desc: "Guide text in a entry box";
+      color: COL_FONT_BASIC_INACTIVE;
+      desc: "Entry box guide text";
    }
    color_class { name: "entry_scrollframe_base";
       color: COL_BG;
-      desc: "Base of a entry's scroller widget";
+      desc: "Entry base of a entry's scroller widget";
    }
-   color_class { name: "index_bg";
-      color: 0 0 0 0;
-      desc: "Background of a index widget";
+   color_class { name: "entry_bg";
+      color: COL_BG;
+      desc: "Entry background";
    }
-   color_class { name: "index_highlight_text";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of a hlghlight item text";
+   color_class { name: "entry_border";
+      color: COL_BORDER_DARK;
+      desc: "Entry border";
    }
-   color_class { name: "index_item_bg";
-      color: 0 0 0 0;
-      desc: "Background of a index item object";
+   color_class { name: "entry_border_val_pass";
+      color: COL_SUCCESS;
+      desc: "Entry border validation passed";
    }
-   color_class { name: "index_item_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a index item";
+   color_class { name: "entry_border_val_fail";
+      color: COL_ERROR;
+      desc: "Entry border validation failed";
    }
-   color_class { name: "index_item_text_selected";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of a selected index item";
+   color_class { name: "entry_selection_bar";
+      color: COL_ENABLE;
+      desc: "Entry selection color";
+   }
+   color_class { name: "entry_focus_outline";
+      color: COL_ENABLE;
+      desc: "Entry focus outline";
+   }
+   color_class { name: "entry_cursor";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Entry cursor";
+   }
+   color_class { name: "entry_selection_handler";
+      color: 255 255 255 255;
+      desc: "Entry selection handler";
+   }
+   color_class { name: "focus_outline";
+      color: COL_ENABLE;
+      description: "Focus outline";
    }
    color_class { name: "label_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a generic label";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Label text of a generic label";
    }
    color_class { name: "label_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled generic label";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Label text of a disabled generic label";
    }
    color_class { name: "frame";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a frame header";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Frame text of a frame header";
    }
    color_class { name: "frame_border";
       color: COL_BORDER_DARK;
-      desc: "Border of a frame widget";
+      desc: "Frame border of a frame widget";
    }
    color_class { name: "frame_base";
-      // color : COL_BG;
-      color: 255 255 255 0;
-      desc: "Base of a frame widget";
+      color: NO_COLOR;
+      desc: "Frame base of a frame widget";
+   }
+   color_class { name: "panes_dots";
+      color: COL_LIGHT_NORM;
+      desc: "Panes dots";
    }
    color_class { name: "scroller_bg";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Background of a scroller widget";
+      color: COL_BG_DARK;
+      desc: "Scroller background";
+   }
+   // color_class { name: "scroller_bar";
+   //    color: 255 255 255 255;
+   //    desc: "Bar of a scroller widget";
+   // }
+   color_class { name: "scroller_base";
+      color: COL_BG_DARK;
+      desc: "Scroller bar base";
    }
    color_class { name: "scroller_bar";
-      color: 255 255 255 255;
-      desc: "Bar of a scroller widget";
+      color: COL_LIGHT_NORM;
+      desc: "Scroller bar";
    }
-   color_class { name: "spinner_bg";
-      color: 0 0 0 0;
-      desc: "Background of a spinner widget";
+   color_class { name: "scroller_bar_hover";
+      color: COL_LIGHT_HOVER;
+      desc: "Scroller bar hover";
+   }
+   color_class { name: "scroller_bar_active";
+      color: COL_LIGHT_PRESSED;
+      desc: "Scroller bar pressed";
+   }
+   color_class { name: "spinner_base";
+      color: COL_BG;
+      desc: "Spinner background";
+   }
+   color_class { name: "spinner_border";
+      color: COL_BORDER_DARK;
+      desc: "Spinner border";
+   }
+   color_class { name: "spinner_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Spinner text";
+   }
+   color_class { name: "spinner_text_disabled";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Spinner text";
    }
    color_class { name: "radio_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a radio widget's label";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Radio button text of label";
    }
    color_class { name: "radio_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled radio widget's label";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Radio button text of label while disabled";
+   }
+   color_class { name: "radio_dot";
+      color: NO_COLOR;
+      desc: "Radio button dot while not selected";
+   }
+   color_class { name: "radio_dot_selected";
+      color: COL_BG;
+      desc: "Radio button dot while selected";
+   }
+   color_class { name: "radio_base";
+      color: COL_BG;
+      desc: "Radio button base while not selected";
+   }
+   color_class { name: "radio_base_selected";
+      color: COL_ENABLE;
+      desc: "Radio button base while selected";
+   }
+   color_class { name: "radio_border";
+      color: COL_BORDER_DARK;
+      desc: "Radio button border while not selected";
+   }
+   color_class { name: "radio_border_selected";
+      color: COL_ENABLE;
+      desc: "Radio button border while selected";
+   }
+   color_class { name: "progress_bar";
+      color: COL_PRESSED;
+      desc: "Progress bar";
+   }
+   color_class { name: "slider_base";
+      color: COL_BG_IN_W;
+      desc: "Slider base";
+   }
+   color_class { name: "slider_inset";
+      color: COL_ENABLE;
+      desc: "Slider inset";
+   }
+   color_class { name: "slider_knob";
+      color: COL_BG;
+      desc: "Slider knob";
+   }
+   color_class { name: "slider_knob_border";
+      color: COL_BORDER_DARK;
+      desc: "Slider knob border";
+   }
+   color_class { name: "slider_knob_pressed";
+      color: COL_ENABLE;
+      desc: "Slider knob pressed";
    }
    color_class { name: "slider_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a slider widget's label";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Slider text of a slider widget's label";
    }
    color_class { name: "slider_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled slider widget's label";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Slider text of a disabled slider widget's label";
    }
-   color_class { name: "ilist_item_selected";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of a selected ilist item";
+   color_class { name: "list_item_base";
+      color: COL_BG;
+      desc: "List item even background";
    }
-   color_class { name: "ilist_item";
-      color: FN_COL_DEFAULT;
-      desc: "Text of an even-numbered, unselected ilist item";
+   color_class { name: "list_item_base_odd";
+      color: COL_BG;
+      desc: "List item odd background";
    }
-   color_class { name: "ilist_item_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base of an even-numbered ilist item";
+   color_class { name: "list_item_base_selected";
+      color: COL_ENABLE;
+      desc: "List item background selected";
    }
-   color_class { name: "ilist_item_odd";
-      color: FN_COL_DEFAULT;
-      desc: "Text of an odd-numbered, unselected ilist item";
+   color_class { name: "list_item_base_hover";
+      color: COL_HOVER;
+      desc: "List item background hover";
    }
-   color_class { name: "ilist_item_odd_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base of an odd-numbered ilist item";
+   color_class { name: "list_item_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "List item text";
    }
-   color_class { name: "ilist_item_header";
-      color: FN_COL_DEFAULT;
-      desc: "Text of an even-numbered ilist header";
+   color_class { name: "list_item_text_selected";
+      color: COL_FONT_BASIC_SELECTED;
+      desc: "List item selected text";
    }
-   color_class { name: "ilist_item_header_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base of an even-numbered ilist header";
+   color_class { name: "list_item_text_disabled";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "List item disabled text";
    }
-   color_class { name: "ilist_item_header_odd";
-      color: FN_COL_DEFAULT;
-      desc: "Text of an odd-numbered ilist header";
+   color_class { name: "list_item_header_base";
+      color: COL_BG_DARK;
+      desc: "List item even background";
    }
-   color_class { name: "ilist_item_header_odd_base";
-      color: WIN_DEFAULT_BASIC;
-      desc: "Base of an odd-numbered ilist header";
+   color_class { name: "list_item_header_base_odd";
+      color: COL_BG_DARK;
+      desc: "List item odd background";
    }
-
+   color_class { name: "list_item_header_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "List item group/header text";
+   }
+   color_class { name: "list_item_header_text_disabled";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "List item group/header text disabled";
+   }
+   color_class { name: "list_item_arrow";
+      color: COL_LIGHT_NORM;
+      desc: "List item arrow";
+   }
+   color_class { name: "list_item_arrow_selected";
+      color: COL_LIGHT_PRESSED;
+      desc: "List item arrow selected";
+   }
+   color_class { name: "list_item_arrow_hover";
+      color: COL_LIGHT_HOVER;
+      desc: "List item arrow hover";
+   }
+   color_class { name: "list_item_arrow_disabled";
+      color: COL_NORM;
+      desc: "List item arrow disabled";
+   }
    color_class { name: "hoversel_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a hoverselector item";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Hoverselector text";
    }
    color_class { name: "hoversel_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled hoverselector item";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Hoverselector text disabled";
    }
    color_class { name: "hoversel_item_active";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of an active hoverselector item";
+      color: COL_FONT_BASIC_PRESSED;
+      desc: "Hoverselector text pressed";
    }
    color_class { name: "popup_bg";
       color: COL_BG_DARK_TRANS;
+      desc: "Popup background";
+   }
+   color_class { name: "popup_bg_dark";
+      color: COL_BG_DARKER_TRANS;
       desc: "Popup background";
    }
    color_class { name: "popup_border";
@@ -382,53 +714,93 @@ color_classes {
       desc: "Popup title background";
    }
    color_class { name: "popup_title_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text color of popup title text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Popup title text";
    }
    color_class { name: "popup_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text color of popup text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Popup text";
    }
-   color_class { name: "ctxpopup_bg";
-      color: 255 255 255 255;
-      desc: "Color of ctxpopup background";
+   color_class { name: "naviframe_title_bg";
+      color: COL_BG_DARK;
+      desc: "Naviframe title background";
    }
-   color_class { name: "multibuttonentry_bg";
-      color: 0 0 0 0;
-      desc: "Background of a multibuttonentry widget";
+   color_class { name: "naviframe_text_title";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Naviframe title text";
    }
-   color_class { name: "multibuttonentry_item_bg";
-      color: 0 0 0 0;
-      desc: "Background of a multibuttonentry item object";
+   color_class { name: "naviframe_text_subtitle";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Naviframe subtitle text";
    }
-   color_class { name: "multibuttonentry_item_bg_selected";
-      color: 0 0 0 0;
-      desc: "Background of a selected multibuttonentry item object";
+   color_class { name: "inwin_bg";
+      color: COL_BG_DARK;
+      desc: "Inwin background";
    }
-   color_class { name: "multibuttonentry_item_text";
-      color: FN_COL_DEFAULT;
-      desc: "Text of a multibuttonentry item";
+   color_class { name: "inwin_border";
+      color: COL_BORDER_DARK;
+      desc: "Inwin border";
    }
-   color_class { name: "multibuttonentry_item_text_pressed";
-      color: FN_COL_HIGHLIGHT;
-      desc: "Text of a pressed multibuttonentry item";
+   color_class { name: "tasks_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Tasks text";
    }
-   color_class { name: "multibuttonentry_item_text_disabled";
-      color: FN_COL_DISABLE;
-      desc: "Text of a disabled multibuttonentry item";
+   color_class { name: "tasks_text_clicked";
+      color: COL_FONT_BASIC_PRESSED;
+      desc: "Tasks text clicked";
+   }
+   color_class { name: "tasks_text_selected";
+      color: COL_FONT_BASIC_HIGHLIGHT;
+      desc: "Tasks text selected";
+   }
+   color_class { name: "tasks_text_iconic";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Tasks text minimized";
+   }
+   color_class { name: "tasks_base";
+      color: COL_NORM;
+      desc: "Tasks base";
+   }
+   color_class { name: "tasks_base_pressed";
+      color: COL_PRESSED;
+      desc: "Tasks base pressed";
+   }
+   color_class { name: "tasks_base_selected";
+      color: COL_BG_DARK;
+      desc: "Tasks base pressed";
+   }
+   color_class { name: "tasks_base_hover";
+      color: COL_HOVER;
+      desc: "Tasks base hover";
+   }
+   color_class { name: "tasks_border";
+      color: COL_BORDER_DARK;
+      desc: "Tasks border";
    }
 
 // modules
    color_class { name: "module_label";
-      color: FN_COL_DEFAULT;
-      desc: "Default text of a gadget";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Module/gadget default text";
    }
    color_class { name: "module_label_invisible";
-      color: FN_COL_TRANSPARENT;
-      desc: "Transparent text of a gadget";
+      color: COL_FONT_BASIC_TRANSPARENT;
+      desc: "Module/gadget transparent text";
    }
    color_class { name: "module_label_plain";
-      color: FN_COL_DEFAULT_BASIC;
-      desc: "Plain text of a gadget";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Module/gadget plain text";
+   }
+   color_class { name: "module_symbol";
+      color: COL_ICON_BASIC;
+      desc: "Module symbol color";
+   }
+   color_class { name: "module_symbol_hover";
+      color: 255 255 255 255;
+      desc: "Module symbol hover color";
+   }
+   color_class { name: "module_symbol_pressed";
+      color: COL_PRESSED;
+      desc: "Module symbol pressed color";
    }
 }

@@ -77,8 +77,8 @@ EDJE_CC_FLAGS=$(EDJE_CC_IMG_FLAGS) $(EDJE_CC_SND_FLAGS)
 all: ../arc.edj ../arc-dark.edj ../arc-darker.edj
 
 ../arc.edj: $(ARC_SRC) $(ARC_COMMON_SRC)
-	# $(EDJE_CC) $(EDJE_CC_FLAGS) arc.edc ../arc.edj
-	$(info Arc colors not yet done)
+	$(info Building arc theme..)
+	$(EDJE_CC) $(EDJE_CC_FLAGS) arc.edc ../arc.edj
 
 ../arc-dark.edj: $(ARC_DARK_SRC) $(ARC_COMMON_SRC)
 	$(info Building arc dark theme..)

@@ -17,6 +17,7 @@
 #define COL_BG_DARK_TRANS         56  60 74 235
 #define COL_BG_DARKER             47  53 62 255
 #define COL_BG_DARKER_TRANS       47  53 62 235
+#define COL_BORDER                43  46 57 255
 #define COL_BORDER_DARK           43  46 57 255
 
 #define COL_MASK_DISABLED        255 255 255 150
@@ -206,7 +207,7 @@ color_classes {
       desc: "Menu item text inactive";
    }
    color_class { name: "menu_item_active";
-      color: COL_FONT_BASIC_SELECTED;
+      color: COL_FONT_BASIC_ACTIVE;
       desc: "Menu item text active";
    }
    color_class { name: "menu_item_disabled";
