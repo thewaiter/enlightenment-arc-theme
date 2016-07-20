@@ -1,0 +1,5 @@
+// window border sizes
+#define BORDER_BTN_PAD 4
+#define BORDER_BTN_H 14
+#define BORDER_BTN_W 14
+#define BORDER_WIDTH 1

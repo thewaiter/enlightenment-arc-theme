@@ -1,5 +1,6 @@
 #include "edc/textclasses_arc.edc"
 #include "macros_arc.edc"
+#include "size_classes.edc"
 // elm
 #include "edc/elm/bg_arc.edc"
 #include "edc/elm/button_arc.edc"

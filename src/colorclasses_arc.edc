@@ -90,6 +90,10 @@ color_classes {
       color: WIN_BORDER_UNDERLINE;
       desc: "Window border top outline shadow";
    }
+   color_class { name: "close-btn-bg";
+      color: COL_BG;
+      desc: "Window border close button background";
+   }
    color_class { name: "close-btn-inactive";
       color: CLOSE_INACTIVE;
       desc: "Window border close button, window inactive";
