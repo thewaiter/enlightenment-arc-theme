@@ -67,6 +67,7 @@ group { name: "elm/scroller/entry/default";
       }
       part { name: "elm.swallow.end"; type: SWALLOW;
          clip_to: "clipper";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             rel1.to: "clipper";
@@ -118,17 +119,20 @@ group { name: "elm/scroller/entry/default";
 
 group { name: "elm/scroller/entry_single/default";
    images.image: "entry_outline_focus_arc.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
 
    data.item: "focus_highlight" "on";
 
    parts {
       part { name: "validation_glow"; mouse_events: 0;
          insert_after: "border";
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
             fill.smooth: 0;
             rel.to: "border";
@@ -196,8 +200,10 @@ group { name: "elm/scroller/entry_single/default";
       }
       part { name: "base"; nomouse;
          description { state: "default" 0.0;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 1;
             fill.smooth: 0;
             color_class: "entry_bg";
@@ -229,6 +235,7 @@ group { name: "elm/scroller/entry_single/default";
       }
       part { name: "elm.swallow.icon"; type: SWALLOW;
          clip_to: "clipper";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             rel1.offset: 1 1;
@@ -255,6 +262,7 @@ group { name: "elm/scroller/entry_single/default";
       }
       part { name: "elm.swallow.end"; type: SWALLOW;
          clip_to: "clipper";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             rel1.offset: -2 1;
@@ -280,11 +288,13 @@ group { name: "elm/scroller/entry_single/default";
          target: "elm.swallow.end";
       }
       part { name: "border"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
-            fill.smooth: 0;
             rel.to: "base";
             color_class: "entry_border";
          }
@@ -325,6 +335,7 @@ group { name: "elm/entry/cursor/default";
    parts {
       part { name: "cursor"; mouse_events: 0;
          clip_to: "clipper";
+         // scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -4 -4;
             rel2.offset: 3 3;
@@ -435,6 +446,7 @@ group { name: "elm/entry/anchor/default";
    images.image: "horizontal_separated_bar_small_glow.png" COMP;
    parts {
       part { name: "bar";
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "horizontal_separated_bar_small_glow.png";
             image.border: 4 4 4 4;
@@ -598,6 +610,7 @@ group { name: "elm/entry/base-mixedwrap/default";
          }
       }
       part { name: "elm.text";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 0;
             text { style: "entry_style_mixedwrap";
@@ -648,6 +661,7 @@ group { name: "elm/entry/base-charwrap/default";
          }
       }
       part { name: "elm.text";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 0;
             text { style: "entry_style_charwrap";
@@ -684,6 +698,7 @@ group { name: "elm/entry/base-nowrap/default";
          }
       }
       part { name: "elm.text";
+         scale: 1;
          description { state: "default" 0.0;
             text { style: "entry_nowrap_style";
                min: 1 1;
@@ -734,6 +749,7 @@ group { name: "elm/entry/base-single/default";
          }
       }
       part { name: "elm.text";
+         scale: 1;
          multiline: 0;
          description { state: "default" 0.0;
             text { style: "entry_single_style";
@@ -751,11 +767,14 @@ group { name: "elm/entry/base-single/default";
       }
       part { name: "glow";
          mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 0 1;
             rel2.offset: -1 -2;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
             fill.smooth: 1;
             color_class: "entry_focus_outline";
@@ -789,9 +808,12 @@ group { name: "elm/entry/base-single/spinner/default";
    images.image: "border-rect-3px.png" COMP;
    parts {
       part { name: "glow";
+         scale: 1;
          description { "default";
-            image.normal: "border-rect-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             rel1.offset: 0 2;
             rel2.offset: -1 -3;
             image.middle: 0;
@@ -811,6 +833,7 @@ group { name: "elm/entry/base-single-noedit/default";
    inherit: "elm/entry/base/default";
    parts {
       part { name: "elm.text";
+         scale: 1;
          entry_mode: PLAIN;
          multiline: 0;
          source: "elm/entry/selection/default"; // selection under
@@ -970,11 +993,14 @@ group { name: "elm/entry/base-password/default";
       }
       part { name: "glow";
          mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 0 1;
             rel2.offset: -1 -2;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
             fill.smooth: 1;
             color_class: "entry_focus_outline";
@@ -1006,6 +1032,7 @@ group { name: "elm/entry/magnifier/default";
    images.image: "frame_rounded.png" COMP;
    parts {
       part { name: "bg"; type: RECT; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 10 10;
             rel1.to: "over";
@@ -1019,6 +1046,7 @@ group { name: "elm/entry/magnifier/default";
          }
       }
       part { name: "elm.swallow.content"; type: SWALLOW; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 10 10;
             rel1.to: "over";

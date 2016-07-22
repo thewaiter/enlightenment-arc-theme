@@ -4,10 +4,29 @@ group { name: "elm/menu/item/default";
       public menu_disable; //0:enable, 1:disable
    }
    parts {
-      rect { name: "base"; mouse_events: 0;
+      rect { name: "border"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 1 0;
             rel2.offset: -2 0;
+            color_class: "menu_item_border";
+            visible: 0;
+         }
+         description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            color_class: "menu_item_border_selected";
+            visible: 1;
+         }
+         description { state: "disabled" 0.0;
+            inherit:  "default" 0.0;
+            color_class: "menu_item_border_disabled";
+         }
+      }
+      rect { name: "base"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
             color_class: "menu_item_base";
             visible: 0;
          }

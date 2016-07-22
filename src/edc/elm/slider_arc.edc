@@ -41,7 +41,7 @@ group { name: "elm/slider/horizontal/default";
    IMAGE_SET("slider-knob", 15, 15)
    IMAGE_SET("slider-knob-border", 15, 15)
 
-   images.image: "slider-horizontal-2px.png" COMP;
+   images.image: "slider-horizontal-2px@4.png" COMP;
 #define ICON    1
 #define LABEL   2
 #define END     4
@@ -162,12 +162,14 @@ group { name: "elm/slider/horizontal/default";
          }
       }
      part { name: "base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "elm.swallow.bar";
             rel2.to: "elm.swallow.bar";
-            image.normal: "slider-horizontal-2px.png";
-            image.border:  7 7 5 5;
-            fill.smooth: 0;
+            image.normal: "slider-horizontal-2px@4.png";
+            image.border:  28 28 20 20;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             min: 15 15;
             max: 99999 15;
             fixed: 0 1;
@@ -180,9 +182,12 @@ group { name: "elm/slider/horizontal/default";
          }
       }
       part { name: "glow";
-        description { state: "default" 0.0;
-            image.normal: "slider-horizontal-2px.png";
-            image.border: 7 7 5 5;
+         scale: 1;
+         description { state: "default" 0.0;
+            image.normal: "slider-horizontal-2px@4.png";
+            image.border:  28 28 20 20;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             rel1.to: "base";
             rel2.relative: 0.5 1.0;
             rel2.offset: 0 -1;
@@ -192,7 +197,7 @@ group { name: "elm/slider/horizontal/default";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 64;
+            color: COL_MASK_DISABLED;
          }
          description { state: "inverted" 0.0;
             inherit: "default";
@@ -237,6 +242,7 @@ group { name: "elm/slider/horizontal/default";
          }
       }
       part { name: "elm.swallow.icon"; type: SWALLOW;
+         scale: 1;
          clip_to: "dis_clip";
          description { state: "default" 0.0;
             visible: 0;
@@ -312,6 +318,7 @@ group { name: "elm/slider/horizontal/default";
          }
       }
       part { name: "elm.swallow.end"; type: SWALLOW;
+         scale: 1;
          clip_to: "dis_clip";
          description { state: "default" 0.0;
             visible: 0;
@@ -424,8 +431,8 @@ group { name: "elm/slider/horizontal/default";
          dragable.confine: "elm.swallow.bar";
          description { state: "default" 0.0;
             color: 0 0 0 0;
-            min: 16 16;
-            max: 16 16;
+            min: 15 15;
+            max: 15 15;
             fixed: 1 1;
             rel1.relative: 0.5 0.0;
             rel1.to_x: "elm.swallow.bar";
@@ -435,9 +442,9 @@ group { name: "elm/slider/horizontal/default";
       }
       part { name: "knob"; scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: 1 1;
+            // rel1.offset: 1 1;
             rel1.to: "elm.dragable.slider";
-            rel2.offset: -1 -1;
+            // rel2.offset: -1 -1;
             rel2.to: "elm.dragable.slider";
             image.normal: "slider-knob";
             min: 15 15;
@@ -505,8 +512,8 @@ group { name: "elm/slider/horizontal/default";
          dragable.confine: "elm.swallow.bar";
          description { state: "default" 0.0;
             color: 0 0 0 0;
-            min: 16 16;
-            max: 16 16;
+            min: 15 15;
+            max: 15 15;
             fixed: 1 1;
             rel1.relative: 0.5 0.0;
             rel1.to_x: "elm.swallow.bar";
@@ -837,20 +844,22 @@ group { name: "elm/slider/horizontal/indicator/default";
    alias: "elm/slider/horizontal/indicator/media_player/position/flush";
    alias: "elm/slider/horizontal/indicator/media_player/volume/default";
    alias: "elm/slider/horizontal/indicator/media_player/volume/flush";
-   images.image: "bg-rounded-3px.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "slider-horizontal-2px@4.png" COMP;
    parts {
       part { name: "base"; type: SPACER;
          scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
-            min: 16 16;
+            min: 15 15;
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
          }
       }
       part { name: "clip"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             rel1.to: "elm.indicator";
@@ -866,14 +875,17 @@ group { name: "elm/slider/horizontal/indicator/default";
       }
       part { name: "bevel"; mouse_events: 0;
          clip_to: "clip";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -5 -5;
             rel1.to: "elm.indicator";
             rel2.offset: 4 4;
             rel2.to: "elm.indicator";
             color_class: "popup_bg";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border:  12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             visible: 0;
          }
@@ -883,10 +895,13 @@ group { name: "elm/slider/horizontal/indicator/default";
          }
       }
       part { name: "bevel_border"; mouse_events: 0;
+         scale: 1;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             visible: 0;
             color_class: "popup_border";
@@ -990,7 +1005,7 @@ group { name: "elm/slider/vertical/default";
    IMAGE_SET("slider-knob", 15, 15)
    IMAGE_SET("slider-knob-border", 15, 15)
 
-   images.image: "slider-horizontal-2px.png" COMP;
+   images.image: "slider-vertical-2px@4.png" COMP;
 #define ICON    1
 #define LABEL   2
 #define END     4
@@ -1110,11 +1125,14 @@ group { name: "elm/slider/vertical/default";
          }
       }
       part { name: "base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "elm.swallow.bar";
             rel2.to: "elm.swallow.bar";
-            image.normal: "slider-vertical-2px.png";
-            image.border:  5 5 7 7;
+            image.normal: "slider-vertical-2px@4.png";
+            image.border: 20 20 28 28;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             min: 15 15;
             max: 15 99999;
@@ -1127,9 +1145,13 @@ group { name: "elm/slider/vertical/default";
          }
       }
       part { name: "glow";
+         scale: 1;
         description { state: "default" 0.0;
-            image.normal: "slider-vertical-2px.png";
-            image.border: 5 5 7 7;
+            image.normal: "slider-vertical-2px@4.png";
+            image.border: 20 20 28 28;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
+            fill.smooth: 0;
             rel1.to: "base";
             rel2.relative: 1.0 0.5;
             rel2.offset: -1 -1;
@@ -1184,6 +1206,7 @@ group { name: "elm/slider/vertical/default";
       }
       part { name: "elm.swallow.icon"; type: SWALLOW;
          clip_to: "dis_clip";
+         scale: 1;
          description { state: "default" 0.0;
             visible: 0;
             align: 0.5 0.0;
@@ -1259,6 +1282,7 @@ group { name: "elm/slider/vertical/default";
          }
       }
       part { name: "elm.swallow.end"; type: SWALLOW;
+         scale: 1;
          clip_to: "dis_clip";
          description { state: "default" 0.0;
             visible: 0;
@@ -1367,8 +1391,8 @@ group { name: "elm/slider/vertical/default";
          dragable.confine: "elm.swallow.bar";
          description { state: "default" 0.0;
             color: 0 0 0 0;
-            min: 16 16;
-            max: 16 16;
+            min: 15 15;
+            max: 15 15;
             fixed: 1 1;
             rel1.relative: 0.0 0.5;
             rel1.to_x: "elm.swallow.bar";
@@ -1448,8 +1472,8 @@ group { name: "elm/slider/vertical/default";
          dragable.confine: "elm.swallow.bar";
          description { state: "default" 0.0;
             color: 0 0 0 0;
-            min: 16 16;
-            max: 16 16;
+            min: 15 15;
+            max: 15 15;
             fixed: 1 1;
             rel1.relative: 0.0 0.5;
             rel1.to_x: "elm.swallow.bar";
@@ -1778,13 +1802,12 @@ group { name: "elm/slider/vertical/indicator/default";
    alias: "elm/slider/vertical/indicator/media_player/position/flush";
    alias: "elm/slider/vertical/indicator/media_player/volume/default";
    alias: "elm/slider/vertical/indicator/media_player/volume/flush";
-   images.image: "darken_rounded_square.png" COMP;
    parts {
       part { name: "base"; type: SPACER;
          scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
-            min: 16 16;
+            min: 15 15;
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
@@ -1806,14 +1829,17 @@ group { name: "elm/slider/vertical/indicator/default";
       }
       part { name: "bevel"; mouse_events: 0;
          clip_to: "clip";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -5 -5;
             rel1.to: "elm.indicator";
             rel2.offset: 4 4;
             rel2.to: "elm.indicator";
             color_class: "popup_bg";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             visible: 0;
          }
@@ -1824,9 +1850,12 @@ group { name: "elm/slider/vertical/indicator/default";
       }
       part { name: "bevel_border"; mouse_events: 0;
          clip_to: "clip";
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             visible: 0;
             color_class: "popup_border";

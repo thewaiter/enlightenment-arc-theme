@@ -357,6 +357,7 @@ group { name: "elm/naviframe/item/basic/default";
          }
       }
       part { name: "elm.swallow.icon"; type: SWALLOW;
+         scale: 1;
          clip_to: "elements_clip";
          description { state: "default" 0.0;
             fixed: 1 0;

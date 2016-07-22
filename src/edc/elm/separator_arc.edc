@@ -1,6 +1,7 @@
 group { name: "elm/separator/horizontal/default";
    parts {
       rect { name: "base";
+         scale: 1;
          description { state: "default" 0.0;
             min: 1 1;
             max: 99999 1;
@@ -16,6 +17,7 @@ group { name: "elm/separator/vertical/default";
    inherit: "elm/separator/horizontal/default";
    parts {
       part { name: "base";
+         scale: 1;
          description { state: "default" 0.0;
             max: 1 99999;
          }

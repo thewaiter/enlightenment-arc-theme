@@ -1,6 +1,6 @@
 group { name: "elm/focus_highlight/top/default";
 
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
    data.item: "animate" "on";
    script {
       public s_x, s_y, s_w, s_h; /* source */
@@ -90,10 +90,11 @@ group { name: "elm/focus_highlight/top/default";
       part { name: "glow"; mouse_events: 0;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
-            fill.smooth: 0;
             rel1.to: "base";
             rel1.offset: -1 -1;
             rel2.to: "base";
@@ -104,10 +105,11 @@ group { name: "elm/focus_highlight/top/default";
       part { name: "sel"; mouse_events: 0;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
-            fill.smooth: 0;
             rel1.to: "glow";
             rel2.to: "glow";
             color: 255 255 255 0;

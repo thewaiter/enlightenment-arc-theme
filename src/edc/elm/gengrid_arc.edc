@@ -8,7 +8,7 @@ group { name: "elm/gengrid/item/default/default";
    data.item: "texts" "elm.text";
    data.item: "contents" "elm.swallow.icon elm.swallow.end";
 #define IMGP() \
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
 
    IMGP()
    parts {
@@ -42,9 +42,12 @@ group { name: "elm/gengrid/item/default/default";
          target: "base"; \
       } \
       part { name: "sel_base"; mouse_events: 0; \
+         scale: 1; \
          description { state: "default" 0.0; \
-            image.normal: "bg-rounded-3px.png"; \
-            image.border: 3 3 3 3; \
+            image.normal: "bg-rounded-3px@4.png"; \
+            image.border: 12 12 12 12; \
+            image.border_scale: 1; \
+            image.border_scale_by: 0.25; \
             fill.smooth: 0; \
             rel.to: "elm.text"; \
             rel1.offset: -3 -1; \
@@ -57,15 +60,34 @@ group { name: "elm/gengrid/item/default/default";
             color_class: "list_item_base_selected"; \
          } \
       } \
+      part { name: "sel_border"; mouse_events: 0; \
+         scale: 1; \
+         description { state: "default" 0.0; \
+            image.normal: "border-rounded-3px@4.png"; \
+            image.border: 12 12 12 12; \
+            image.border_scale: 1; \
+            image.border_scale_by: 0.25; \
+            image.middle: 0; \
+            rel.to: "sel_base"; \
+            color_class: "list_item_border"; \
+         } \
+         description { state: "selected" 0.0; \
+            inherit: "default" 0.0; \
+            visible: 1; \
+            color_class: "list_item_border_selected"; \
+         } \
+      } \
       program { \
          signal: "elm,state,selected"; source: "elm"; \
          action: STATE_SET "selected" 0.0; \
          target: "sel_base"; \
+         target: "sel_border"; \
       } \
       program { \
          signal: "elm,state,unselected"; source: "elm"; \
          action: STATE_SET "default" 0.0; \
          target: "sel_base"; \
+         target: "sel_border"; \
       } \
       program { \
          signal: "elm,state,disabled"; source: "elm"; \
@@ -154,6 +176,7 @@ group { name: "elm/gengrid/item/default/default";
       }
       //##//
       part { name: "icon_area"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 0;
             rel1.offset: 2 2;
@@ -188,6 +211,7 @@ group { name: "elm/gengrid/item/default/default";
       }
       part { name: "elm.swallow.end"; type: SWALLOW;
          clip_to: "icon_area";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             align: 1.0 0.0;
@@ -288,6 +312,7 @@ group { name: "elm/gengrid/item/default_style/default";
       }
       //##//
       part { name: "icon_area"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 0;
             rel1.offset: 2 2;
@@ -318,6 +343,7 @@ group { name: "elm/gengrid/item/default_style/default";
       }
       part { name: "elm.swallow.end"; type: SWALLOW;
          clip_to: "icon_area";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             align: 1.0 0.0;
@@ -417,6 +443,7 @@ group { name: "elm/gengrid/item/album-preview/default";
       }
       //##//
       part { name: "icon_area"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 0;
             rel1.offset: 2 2;
@@ -514,7 +541,7 @@ group { name: "elm/gengrid/item/thumb/default";
    data.item: "contents" "elm.swallow.icon elm.swallow.end";
 
    images.image: "win_shadow.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
    parts {
       part { name: "base"; type: RECT;
          description { state: "default" 0.0;
@@ -522,21 +549,20 @@ group { name: "elm/gengrid/item/thumb/default";
          }
       }
       part { name: "shadow"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "image-border";
             rel2.to: "image-border";
-            image.normal: "win_shadow_rounded_arc.png";
-            image.border: 24 22 16 24;
-            image.middle: 0;
-            rel1.offset: -22 -14;
-            rel2.offset: 20 22;
-            fill.smooth: 0;
+            WIN_SHADOW_ROUNDED_ARC;
          }
       }
       part { name: "sel_base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             rel.to: "elm.text";
             rel1.offset: -3 -1;
@@ -549,25 +575,45 @@ group { name: "elm/gengrid/item/thumb/default";
             color_class: "list_item_base_selected";
          }
       }
+      part { name: "sel_border"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
+            rel.to: "sel_base";
+            color_class: "list_item_border";
+         }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            color_class: "list_item_border_selected";
+         }
+      }
       program {
          signal: "elm,state,selected"; source: "elm";
          action: STATE_SET "selected" 0.0;
          target: "sel_base";
+         target: "sel_border";
       }
       program {
          signal: "elm,state,unselected"; source: "elm";
          action: STATE_SET "default" 0.0;
          target: "sel_base";
+         target: "sel_border";
       }
       program {
          signal: "elm,state,disabled"; source: "elm";
          action: STATE_SET "disabled" 0.0;
          target: "sel_base";
+         target: "sel_border";
          target: "icon_area";
       }
       program {
          signal: "elm,state,enabled"; source: "elm";
          action: STATE_SET "default" 0.0;
+         target: "sel_border";
          target: "sel_base";
          target: "icon_area";
       }
@@ -620,6 +666,7 @@ group { name: "elm/gengrid/item/thumb/default";
       }
       //##//
       part { name: "icon_area"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 0;
             aspect: 1.0 1.0; aspect_preference: BOTH;
@@ -650,9 +697,12 @@ group { name: "elm/gengrid/item/thumb/default";
          }
       }
       part { name: "image-border";
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             rel1.to: "elm.swallow.icon";
             rel1.offset: -1 -1;
@@ -663,6 +713,7 @@ group { name: "elm/gengrid/item/thumb/default";
 
       part { name: "elm.swallow.end"; type: SWALLOW;
          clip_to: "icon_area";
+         scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             align: 1.0 0.0;

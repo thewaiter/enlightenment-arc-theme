@@ -2,8 +2,8 @@ group { name: "elm/button/base/default";
    alias: "elm/button/base/naviframe/back_btn/default";
    alias: "elm/button/base/naviframe/back_btn/pager";
    data.item: "focus_highlight" "on";
-   images.image: "bg-rounded-3px.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
    images.image: "button_focus_arc.png" COMP;
 #define ICON     1
 #define LABEL    2
@@ -113,10 +113,12 @@ group { name: "elm/button/base/default";
       }
    }
    parts {
-      image { "base";
+      image { "base"; scale: 1;
          desc { "default";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: SOLID;
             rel1.offset: 4 3;
             rel2.offset: -5 -4;
@@ -140,25 +142,27 @@ group { name: "elm/button/base/default";
             visible: 0;
          }
       }
-      image { "border";
+      image { "border"; scale: 1;
          desc { "default";
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
             rel.to: "base";
-            fill.smooth: 0;
+            // fill.smooth: 0;
             color_class: "button_border";
          }
       }
       image { name: "outline"; mouse_events: 0;
          desc { state: "default" 0.0;
             visible: 0;
-            image {
-               normal: "button_focus_arc.png";
-               border: 3 3 3 3;
-               border_scale_by: 0.5;
-               middle: NONE;
-            }
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
+            image.middle: 0;
+            color_class: "focus_inline";
             rel1 {
                to: "base";
                offset: 3 3;
@@ -596,6 +600,7 @@ group { name: "elm/button/base/anchor";
          }
       }
       swallow { "elm.swallow.content"; nomouse;
+         scale: 1;
          clip_to: "icon_clip";
          desc { "default";
             fixed: 1 0;
@@ -723,7 +728,9 @@ group { name: "elm/button/base/anchor";
          }
       }
       rect { "bar"; nomouse;
+         scale: 1;
          desc { "default";
+            min: 0 1;
             max: -1 1;
             rel1.relative: 0.0 1.0;
             rel1.offset: -1 -1;
@@ -737,7 +744,9 @@ group { name: "elm/button/base/anchor";
          }
       }
       rect { "bar2"; nomouse;
+         scale: 1;
          desc { "default";
+            min: 0 1;
             max: -1 1;
             rel1.to: "bar";
             rel2.to: "bar";
@@ -1102,10 +1111,10 @@ group { name: "elm/button/base/hoversel_vertical/default";
 
 group { name: "elm/button/base/hoversel_vertical_entry/default";
    alias: "elm/button/base/hoversel_vertical_entry/entry";
-   images.image: "vgrad_med_dark.png" COMP;
-   images.image: "bevel_horiz_out.png" COMP;
+   // images.image: "vgrad_med_dark.png" COMP;
+   // images.image: "bevel_horiz_out.png" COMP;
    images.image: "shadow_rounded_horiz.png" COMP;
-   images.image: "shine.png" COMP;
+   // images.image: "shine.png" COMP;
 #define ICON     1
 #define LABEL    2
 #define MASK     3
@@ -1542,7 +1551,7 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
          }
          desc { "clicked";
             inherit: "default";
-            visible: 1;
+            // visible: 1;
          }
       }
    }
@@ -1551,8 +1560,8 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
 /******************* SPINNER BUTTONS STYLES **********************/
    group { name: "elm/button/base/spinner/increase/default";
 
-      images.image: "bg-right-rounded-3px.png" COMP;
-      images.image: "border-right-rounded-3px.png" COMP;
+      images.image: "bg-right-rounded-3px@4.png" COMP;
+      images.image: "border-right-rounded-3px@4.png" COMP;
       IMAGE_SET("arrow-right", 14, 14)
 #define PRESSED  1
 #define HOVER    2
@@ -1590,9 +1599,12 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
       }
       parts {
          image { "base";
+            scale: 1;
             desc { "default";
-               image.normal: "bg-right-rounded-3px.png";
-               image.border: 3 3 3 3;
+               image.normal: "bg-right-rounded-3px@4.png";
+               image.border: 12 12 12 12;
+               image.border_scale_by: 0.25;
+               image.border_scale: 1;
                image.middle: SOLID;
                rel1.offset: 0 0;
                rel2.offset: 0 -1;
@@ -1618,12 +1630,14 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
             }
          }
          image { "border";
+            scale: 1;
             desc { "default";
-               image.normal: "border-right-rounded-3px.png";
-               image.border: 3 3 3 3;
+               image.normal: "border-right-rounded-3px@4.png";
+               image.border: 12 12 12 12;
+               image.border_scale_by: 0.25;
+               image.border_scale: 1;
                image.middle: 0;
                rel.to: "base";
-               fill.smooth: 0;
                rel1.offset: 0 0;
                rel2.offset: -1 -1;
                color_class: "button_border";
@@ -1634,6 +1648,7 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
             description { state: "default" 0.0;
                min: 14 14;
                max: 14 14;
+               fixed: 1 1;
                color_class: "arrow_icon";
                image.normal: "arrow-right";
             }
@@ -1835,15 +1850,13 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
 
    group { name: "elm/button/base/spinner/decrease/default";
       inherit: "elm/button/base/spinner/increase/default";
-      images.image: "bg-left-rounded-3px.png" COMP;
-      images.image: "border-left-rounded-3px.png" COMP;
+      images.image: "bg-left-rounded-3px@4.png" COMP;
+      images.image: "border-left-rounded-3px@4.png" COMP;
       IMAGE_SET("arrow-left", 14, 14)
       parts {
          part { "base";
             desc { "default";
-               image.normal: "bg-left-rounded-3px.png";
-               image.border: 3 3 3 3;
-               image.middle: SOLID;
+               image.normal: "bg-left-rounded-3px@4.png";
                rel1.offset: 0 0;
                rel2.offset: -1 -1;
                fill.smooth: 0;
@@ -1852,19 +1865,16 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
             }
             desc { "pressed";
                inherit: "default";
-               image.normal: "bg-left-rounded-3px.png";
                color_class: "button_bg_pressed";
                visible: 1;
             }
             desc { "hover";
                inherit: "default";
-               image.normal: "bg-left-rounded-3px.png";
                color_class: "button_bg_hover";
                visible: 1;
             }
             desc { "disabled";
                inherit: "default";
-               image.normal: "bg-left-rounded-3px.png";
                color_class: "button_bg_disabled";
                visible: 1;
             }
@@ -1872,20 +1882,15 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
 
          part { "border";
             desc { "default";
-               image.border: 3 3 3 3;
-               image.middle: 0;
                rel.to: "base";
                rel1.offset: 0 0;
                rel2.offset: -1 -1;
-               image.normal: "border-left-rounded-3px.png";
+               image.normal: "border-left-rounded-3px@4.png";
             }
          }
          part { name: "arrow.image";
             scale: 1;
             description { state: "default" 0.0;
-               min: 14 14;
-               max: 14 14;
-               color_class: "arrow_icon";
                image.normal: "arrow-left";
             }
             description { state: "hover" 0.0;
@@ -1915,8 +1920,9 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
          part { name: "arrow.image";
             scale: 1;
             description { state: "default" 0.0;
-               // min: 14 14;
-               // max: 14 14;
+               min: 14 14;
+               max: 14 14;
+               fixed: 1 1;
                color_class: "arrow_icon";
                image.normal: "arrow-left";
             }
@@ -2017,8 +2023,9 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
          part { name: "arrow.image";
             scale: 1;
             description { state: "default" 0.0;
-               // min: 14 14;
-               // max: 14 14;
+               min: 14 14;
+               max: 14 14;
+               fixed: 1 1;
                color_class: "arrow_icon";
                image.normal: "arrow-up";
             }
@@ -2045,8 +2052,9 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
          part { name: "arrow.image";
             scale: 1;
             description { state: "default" 0.0;
-               // min: 14 14;
-               // max: 14 14;
+               min: 14 14;
+               max: 14 14;
+               fixed: 1 1;
                color_class: "arrow_icon";
                image.normal: "arrow-down";
             }
@@ -2110,9 +2118,12 @@ group { name: "elm/button/base/combobox_vertical/default";
          desc { "default";}
       }
       image { "bg"; nomouse;
+         scale: 1;
          desc { "default";
-            image.normal: "bg-right-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-right-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: SOLID;
             rel.to: "arrow-spacer";
             rel1.offset: -5 1;
@@ -2169,9 +2180,12 @@ group { name: "elm/button/base/combobox_vertical/default";
          }
       }
       image { "border"; nomouse;
+         scale: 1;
          desc { "default";
-            image.normal: "border-right-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-right-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale_by: 0.25;
+            image.border_scale: 1;
             image.middle: 0;
             rel.to: "bg";
             fill.smooth: 0;
@@ -2331,6 +2345,7 @@ group { name: "elm/button/base/combobox_vertical_entry/default";
          }
       }
       swallow { "elm.swallow.content"; nomouse;
+         scale: 1;
          clip_to: "icon_clip";
          desc { "default";
             fixed: 1 0;

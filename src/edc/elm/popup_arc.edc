@@ -44,14 +44,17 @@ group { name: "elm/notify/block_events/popup/transparent";
 group { name: "elm/notify/top/popup/default";
    inherit: "elm/notify/top/default";
 #define OVERRIDE_BASE() \
-   images.image: "bg-rounded-3px.png" COMP; \
-   images.image: "border-rounded-3px.png" COMP; \
+   images.image: "bg-rounded-3px@4.png" COMP; \
+   images.image: "border-rounded-3px@4.png" COMP; \
    parts { \
       part { name: "base"; \
          description { state: "default" 0.0; \
-            image.normal: "bg-rounded-3px.png"; \
-            image.border: 3 3 3 3; \
+            image.normal: "bg-rounded-3px@4.png"; \
+            image.border: 12 12 12 12; \
+            image.border_scale: 1; \
+            image.border_scale_by: 0.25; \
             image.middle: 1; \
+            fill.smooth: 0;\
             visible: 0; \
             color_class: "popup_bg"; \
          } \
@@ -62,8 +65,10 @@ group { name: "elm/notify/top/popup/default";
       } \
       part { name: "border"; \
          description { state: "default" 0.0; \
-            image.normal: "border-rounded-3px.png"; \
-            image.border: 3 3 3 3; \
+            image.normal: "border-rounded-3px@4.png"; \
+            image.border: 12 12 12 12; \
+            image.border_scale: 1; \
+            image.border_scale_by: 0.25; \
             image.middle: 1; \
             visible: 0; \
             color_class: "popup_border"; \
@@ -263,6 +268,7 @@ group { name: "elm/popup/base/default";
          }
       }
       part { name: "elm.swallow.content"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 2 2;
             rel2.offset: -3 -3;
@@ -507,6 +513,7 @@ group { name: "elm/popup/base/subpopup";
    inherit: "elm/popup/base/default";
    parts {
       part { name: "pad.closebtn"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "base";
             rel1.relative: 1 0;

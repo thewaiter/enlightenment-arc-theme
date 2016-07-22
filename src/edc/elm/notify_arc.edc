@@ -15,8 +15,8 @@ group { name: "elm/notify/block_events/default";
 }
 
 group { name: "elm/notify/top/default";
-   images.image: "bg-rounded-3px.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
 
    data.item: "hide_finished_signal" "on";
    parts {
@@ -30,10 +30,13 @@ group { name: "elm/notify/top/default";
          }
       }
       part { name: "base";
+         scale: 1;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             rel1.offset: 10 10;
             rel2.offset: -10 -10;
             rel1.relative: 0.0 -1.0;
@@ -49,10 +52,13 @@ group { name: "elm/notify/top/default";
          }
       }
       part { name: "border";
+         scale: 1;
          clip_to: "clip";
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             rel.to: "base";
             color_class: "popup_border";
          }
@@ -66,6 +72,7 @@ group { name: "elm/notify/top/default";
 
       part { name: "elm.swallow.content"; type: SWALLOW;
          clip_to: "clip";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "base";
             rel1.offset: 12 12;

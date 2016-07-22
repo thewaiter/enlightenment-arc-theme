@@ -1095,6 +1095,7 @@ group { name: "e/fileman/default/overlay";
    alias: "e/fileman/desktop/overlay";
    images.image: "border-rounded-3px.png" COMP;
    images.image: "bg-rounded-3px.png" COMP;
+   images.image: "darken_rounded_square.png" COMP;
 
 
    parts {

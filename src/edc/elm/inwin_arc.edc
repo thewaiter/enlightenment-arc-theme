@@ -14,6 +14,7 @@ group { name: "elm/win/inwin/default";
          }
       }
       part { name: "pop"; mouse_events: 1;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "elm.swallow.content";
             rel1.offset: -5 -5;
@@ -21,8 +22,10 @@ group { name: "elm/win/inwin/default";
             rel2.offset: 4 4;
             color_class: "inwin_bg";
             image {
-               normal: "bg-rounded-3px.png";
-               border: 3 3 3 3;
+               normal: "bg-rounded-3px@4.png";
+               border: 12 12 12 12;
+               border_scale: 1;
+               border_scale_by: 0.25;
                middle: SOLID;
 
             }
@@ -30,12 +33,15 @@ group { name: "elm/win/inwin/default";
          }
       }
       part { name: "border"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel.to: "pop";
             color_class: "inwin_border";
             image {
-               normal: "border-rounded-3px.png";
-               border: 3 3 3 3;
+               normal: "border-rounded-3px@4.png";
+               border: 12 12 12 12;
+               border_scale: 1;
+               border_scale_by: 0.25;
                middle: 0;
             }
          }

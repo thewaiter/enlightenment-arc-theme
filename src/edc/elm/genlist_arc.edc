@@ -156,6 +156,7 @@ group { "elm/genlist/item/group_index/default"; nomouse; program_source: "elm";
 			}
 		}
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -165,6 +166,7 @@ group { "elm/genlist/item/group_index/default"; nomouse; program_source: "elm";
 			}
 		}
 		swallow { "elm.swallow.icon"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -177,6 +179,7 @@ group { "elm/genlist/item/group_index/default"; nomouse; program_source: "elm";
 			}
 		}
 		swallow { "elm.swallow.end"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 1.0 0.5;
@@ -422,6 +425,7 @@ group { "elm/genlist/item/default/default"; nomouse;
 		}
 		//##//
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -431,6 +435,7 @@ group { "elm/genlist/item/default/default"; nomouse;
 			}
 		}
 		swallow { "elm.swallow.icon"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -450,6 +455,7 @@ group { "elm/genlist/item/default/default"; nomouse;
 			}
 		}
 		swallow { "elm.swallow.end"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 1.0 0.5;
@@ -588,6 +594,7 @@ group { "elm/genlist/item/default_style/default"; nomouse;
 		}
 		//##//
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -597,6 +604,7 @@ group { "elm/genlist/item/default_style/default"; nomouse;
 			}
 		}
 		swallow { "elm.swallow.icon"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -616,6 +624,7 @@ group { "elm/genlist/item/default_style/default"; nomouse;
 			}
 		}
 		swallow { "elm.swallow.end"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 1.0 0.5;
@@ -726,6 +735,7 @@ group { "elm/genlist/item/one_icon/default"; nomouse;
 		}
 		//##//
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -735,6 +745,7 @@ group { "elm/genlist/item/one_icon/default"; nomouse;
 			}
 		}
 		swallow { "elm.swallow.icon"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -851,6 +862,7 @@ group { "elm/genlist/item/end_icon/default"; nomouse;
 		}
 		//##//
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -860,6 +872,7 @@ group { "elm/genlist/item/end_icon/default"; nomouse;
 			}
 		}
 		swallow { "elm.swallow.icon"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 1.0 0.5;
@@ -970,6 +983,7 @@ group { "elm/genlist/item/no_icon/default"; nomouse;
 		}
 		//##//
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -1011,6 +1025,7 @@ group { "elm/genlist/item/full/default"; nomouse;
 		}
 		//##//
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -1108,9 +1123,11 @@ group { "genlist_arrow"; program_source: "elm";
 			}
 		}
 		rect { "arrow"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				min: 14 14;
+				max: 14 14;
 				aspect: 1.0 1.0;
 				align: 0.0 0.5;
 				// rel1.to_x: "elm.swallow.pad";
@@ -1247,6 +1264,7 @@ group { "elm/genlist/tree/default/default"; nomouse;
 
 	parts {
 		swallow { "elm.swallow.icon";
+			scale: 1;
 			desc { "default";
 				rel1.to_x: "arrow";
 				rel1.offset: 1 2;
@@ -1274,6 +1292,7 @@ group { "elm/genlist/tree/default_style/default";
 	inherit: "elm/genlist/item/default_style/default";
 	parts {
 		swallow { "elm.swallow.icon";
+			scale: 1;
 			desc { "default";
 				rel1.to_x: "arrow";
 				rel1.offset: 1 2;
@@ -1299,6 +1318,7 @@ group { "elm/genlist/tree/one_icon/default";
 	inherit: "elm/genlist/item/one_icon/default";
 	parts {
 		swallow { "elm.swallow.icon";
+			scale: 1;
 			desc { "default";
 				rel1.to_x: "arrow";
 				rel1.offset: 1 2;
@@ -1324,6 +1344,7 @@ group { "elm/genlist/tree/end_icon/default";
 	inherit: "elm/genlist/item/end_icon/default";
 	parts {
 		text { "elm.text";
+			scale: 1;
 			desc { "default";
 				rel1.to_x: "arrow";
 				rel1.offset: 1 2;
@@ -1353,6 +1374,7 @@ group { "elm/genlist/tree/no_icon/default";
 	inherit: "elm/genlist/item/no_icon/default";
 	parts {
 		text { "elm.text";
+			scale: 1;
 			desc { "default";
 				rel1.to_x: "arrow";
 				rel1.offset: 1 2;
@@ -1382,6 +1404,7 @@ group { "elm/genlist/tree/full/default";
 	inherit: "elm/genlist/item/full/default";
 	parts {
 		swallow { "elm.swallow.content";
+			scale: 1;
 			desc { "default";
 				rel1.to_x: "arrow";
 				rel1.offset: 1 2;
@@ -4562,6 +4585,7 @@ group { "elm/genlist/item/mode/default"; nomouse;
 		}
 		//##//
 		swallow { "elm.swallow.pad"; mouse;
+			scale: 1;
 			desc { "default";
 				fixed: 1 0;
 				align: 0.0 0.5;
@@ -4689,6 +4713,7 @@ group { "elm/genlist/tree/mode/default";
 	inherit: "elm/genlist/item/mode/default";
 	parts {
 		text { "elm.text.mode";
+			scale: 1;
 			desc { "default";
 				rel1.to_x: "arrow";
 				rel1.offset: 1 2;
