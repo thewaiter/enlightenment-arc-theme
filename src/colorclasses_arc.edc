@@ -3,6 +3,7 @@
 #define COL_HOVER                245 245 245 255
 #define COL_ENABLE                82 148 226 255
 #define COL_PRESSED              207 214 230 255
+#define COL_SELECTED             COL_ENABLE
 
 #define COL_LIGHT_NORM            95 101 115 255 //TODO
 #define COL_LIGHT_HOVER          118 123 135 255 //TODO
@@ -20,6 +21,8 @@
 #define COL_BG_DARKER_TRANS      231 232 235 235
 #define COL_BORDER               235 235 235 255
 #define COL_BORDER_DARK          207 214 230 255
+
+#define COL_FOCUS_INLINE         135 135 135 100
 
 #define COL_MASK_DISABLED        255 255 255 200 //TODO
 
@@ -385,6 +388,46 @@ color_classes {
       color: COL_FONT_BASIC_HIGHLIGHT_DISABLED;
       desc: "Button text of a disabled anchor link";
    }
+   color_class { name: "seg_ctrl_base";
+      color: COL_NORM;
+      desc: "Segment Control background";
+   }
+   color_class { name: "seg_ctrl_base_selected";
+      color: COL_SELECTED;
+      desc: "Segment Control background selected item";
+   }
+   color_class { name: "seg_ctrl_base_pressed";
+      color: COL_PRESSED;
+      desc: "Segment Control background pressed item";
+   }
+   color_class { name: "seg_ctrl_base_hover";
+      color: COL_HOVER;
+      desc: "Segment Control background of a hovered item";
+   }
+   color_class { name: "seg_ctrl_base_disabled";
+      color: COL_NORM;
+      desc: "Segment Control background disabled item";
+   }
+   color_class { name: "seg_ctrl_border";
+      color: COL_BORDER_DARK;
+      desc: "Segment Control border";
+   }
+   color_class { name: "seg_ctrl_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Segment Control text";
+   }
+   color_class { name: "seg_ctrl_text_selected";
+      color: COL_FONT_BASIC_SELECTED;
+      desc: "Segment Control text of a selected item";
+   }
+   color_class { name: "seg_ctrl_text_pressed";
+      color: COL_FONT_BASIC_PRESSED;
+      desc: "Segment Control text of a pressed item";
+   }
+   color_class { name: "seg_ctrl_text_disabled";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Segment Control text of a disabled item";
+   }
    color_class { name: "arrow_icon";
       color: COL_ICON_BASIC;
       desc: "Arrow icon of spinner, hoverselector, colorselector, calender, etc.";
@@ -500,6 +543,10 @@ color_classes {
    color_class { name: "focus_outline";
       color: COL_ENABLE;
       description: "Focus outline";
+   }
+   color_class { name: "focus_inline";
+      color: COL_FOCUS_INLINE;
+      description: "Focus inline for focus indicator on buttons etc.";
    }
    color_class { name: "label_text";
       color: COL_FONT_BASIC_DEFAULT;

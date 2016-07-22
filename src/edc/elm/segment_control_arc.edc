@@ -48,7 +48,7 @@ group { name: "elm/segment_control/item/default";
                border_scale: 1;
                border_scale_by: 0.25;
             }
-            color_class: "button_bg";
+            color_class: "seg_ctrl_base";
          }
          description { state: "default_single" 0.0;
             inherit: "default" 0.0;
@@ -87,62 +87,62 @@ group { name: "elm/segment_control/item/default";
          description { state: "pressed_single" 0.0;
             inherit: "default_single" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_pressed";
          }
          description { state: "pressed_left" 0.0;
             inherit: "default_left" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_pressed";
          }
          description { state: "pressed_right" 0.0;
             inherit: "default_right" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_pressed";
          }
          description { state: "pressed_middle" 0.0;
             inherit: "default_middle" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_pressed";
          }
          description { state: "selected_single" 0.0;
             inherit: "default_middle" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_selected";
          }
          description { state: "selected_left" 0.0;
             inherit: "default_left" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_selected";
          }
          description { state: "selected_right" 0.0;
             inherit: "default_right" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_selected";
          }
          description { state: "selected_middle" 0.0;
             inherit: "default_middle" 0.0;
             visible: 1;
-            color_class: "button_bg_pressed";
+            color_class: "seg_ctrl_base_selected";
          }
          description { state: "hover_single" 0.0;
             inherit: "default_middle" 0.0;
             visible: 1;
-            color_class: "button_bg_hover";
+            color_class: "seg_ctrl_base_hover";
          }
          description { state: "hover_left" 0.0;
             inherit: "default_left" 0.0;
             visible: 1;
-            color_class: "button_bg_hover";
+            color_class: "seg_ctrl_base_hover";
          }
          description { state: "hover_right" 0.0;
             inherit: "default_right" 0.0;
             visible: 1;
-            color_class: "button_bg_hover";
+            color_class: "seg_ctrl_base_hover";
          }
          description { state: "hover_middle" 0.0;
             inherit: "default_middle" 0.0;
             visible: 1;
-            color_class: "button_bg_hover";
+            color_class: "seg_ctrl_base_hover";
          }
       }
       part { name: "segment_border"; nomouse;
@@ -156,7 +156,7 @@ group { name: "elm/segment_control/item/default";
                border_scale_by: 0.25;
                middle: 0;
             }
-            color_class: "button_border";
+            color_class: "seg_ctrl_border";
          }
          description { state: "default_single" 0.0;
             inherit: "default" 0.0;
@@ -237,12 +237,12 @@ group { name: "elm/segment_control/item/default";
                offset: 0 -1;
             }
             rel2.offset: -6 -2;
-            color_class: "button_text";
+            color_class: "seg_ctrl_text";
             text {
                font: FN;
                size: FNSIZE;
                min: 0 1;
-               text_class: "button";
+               text_class: "seg_ctrl";
             }
          }
          description { state: "normal" 0.0;
@@ -252,17 +252,17 @@ group { name: "elm/segment_control/item/default";
          description { state: "pressed" 0.0;
             inherit: "default" 0.0;
             visible: 1;
-            color_class: "button_text_pressed";
+            color_class: "seg_ctrl_text_pressed";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
             visible: 1;
-            color_class: "button_text_pressed";
+            color_class: "seg_ctrl_text_selected";
          }
          description { state: "disabled" 0.0;
             inherit: "default" 0.0;
             visible: 1;
-            color_class: "button_text_disabled";
+            color_class: "seg_ctrl_text_disabled";
          }
       }
       part { name: "disabler";
