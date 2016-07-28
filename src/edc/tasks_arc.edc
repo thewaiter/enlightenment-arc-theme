@@ -1,8 +1,9 @@
 group { name:"e/modules/tasks/item";
-   images.image: "bg-rounded-3px" COMP;
-   images.image: "border-rounded-3px" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
 #define PRESSED 1
 #define HOVER   2
+#define SELECTED 4
    script {
       public btmode;
       public eval_mode(m) {
@@ -24,9 +25,10 @@ group { name:"e/modules/tasks/item";
    parts {
       part { name: "sel_base"; mouse_events: 0; type: RECT;
          clip_to: "sel_clip";
+         scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: 3 3;
-            rel2.offset: -4 -4;
+            rel1.offset: 4 4;
+            rel2.offset: -4 -5;
             color: 0 0 0 0;
          }
       }
@@ -52,10 +54,13 @@ group { name:"e/modules/tasks/item";
       }
       image { "base";
          clip_to: "clip";
+         scale: 1; nomouse;
          desc { "default";
 
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: SOLID;
             rel.to: "sel_base";
             rel1.offset: -3 -2;
@@ -71,12 +76,19 @@ group { name:"e/modules/tasks/item";
             inherit: "default";
             color_class: "tasks_base_hover";
          }
+         desc { "selected";
+            inherit: "default";
+            color_class: "tasks_base_selected";
+         }
       }
       image { "border";
-         clip_to: "clip";
+         // clip_to: "clip";
+         scale: 1; nomouse;
          desc { "default";
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             rel.to: "base";
             fill.smooth: 0;
@@ -110,22 +122,23 @@ group { name:"e/modules/tasks/item";
          }
       }
       part { name: "icon"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             align: 0.0 0.5;
-            rel1.offset: 3 3;
+            rel1.offset: 4 4;
             rel1.to: "sel_base";
             rel2.relative: 0.0 1.0;
-            rel2.offset: 3 -4;
+            rel2.offset: 4 -4;
             rel2.to: "sel_base";
             fixed: 1 0;
          }
          description { state: "icon_only" 0.0;
             inherit: "default" 0.0;
             align: 0.5 0.5;
-            rel1.offset: 2 2;
+            // rel1.offset: 2 2;
             rel2.relative: 1.0 1.0;
-            rel2.offset: -3 -3;
+            // rel2.offset: -3 -3;
          }
          description { state: "text_only" 0.0;
             inherit: "default" 0.0;
@@ -151,8 +164,8 @@ group { name:"e/modules/tasks/item";
          }
          description { state: "iconic" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 64;
-         }
+            color: COL_MASK_DISABLED;
+         }  
       }
       part { name: "e.swallow.icon"; type: SWALLOW; mouse_events: 0;
          clip_to: "icon_clip";
@@ -181,6 +194,7 @@ group { name:"e/modules/tasks/item";
          }
       }
       part { name: "clip"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -20 -20;
             rel2.offset: 19 19;
@@ -196,6 +210,7 @@ group { name:"e/modules/tasks/item";
          }
       }
       part { name: "sel_clip"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -20 -20;
             rel2.offset: 19 19;
@@ -248,6 +263,20 @@ group { name:"e/modules/tasks/item";
             eval_mode(m);
          }
       }
+      program { name: "button_select_anim";
+         script {
+            new m = get_int(btmode);
+            m |= SELECTED; set_int(btmode, m);
+            eval_mode(m);
+         }
+      }
+      program { name: "button_unselect_anim";
+         script {
+            new m = get_int(btmode);
+            m &= ~SELECTED; set_int(btmode, m);
+            eval_mode(m);
+         }
+      }
       program {
          signal: "mouse,down,1"; source: "event";
          action: STATE_SET "clicked" 0.0;
@@ -271,12 +300,14 @@ group { name:"e/modules/tasks/item";
          action: STATE_SET "selected" 0.0;
          target: "clip";
          target: "sel_clip";
+         after: "button_select_anim";
       }
       program {
          signal: "e,state,unfocused"; source: "e";
          action: STATE_SET "default" 0.0;
          target: "clip";
          target: "sel_clip";
+         after: "button_unselect_anim";
       }
       program {
          signal: "e,state,urgent"; source: "e";
@@ -365,3 +396,6 @@ group { name:"e/modules/tasks/item_vert";
       }
    }
 }
+#undef PRESSED
+#undef HOVER
+#undef SELECTED

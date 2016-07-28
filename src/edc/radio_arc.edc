@@ -134,6 +134,7 @@ group { name: "e/widgets/radio_icon";
       part { name: "e.swallow.icon"; type: SWALLOW;
          insert_before: "event";
          clip_to: "clip"; // this most certia
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 2 2;
             rel1.relative: 1.0 0.0; 

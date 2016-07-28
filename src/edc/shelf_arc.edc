@@ -28,6 +28,7 @@ group { name: "e/shelf/default/base"; nomouse;
       }
       part { name: "border"; type: RECT;
          insert_before: "bg";
+         scale: 1;
          description {
             state: "default" 0.0;
             rel1.offset: -1 -1;
@@ -36,6 +37,7 @@ group { name: "e/shelf/default/base"; nomouse;
          }
       }
       spacer { "sizer";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 1 0;
             rel1.relative: 0.0 0.0;
@@ -103,6 +105,7 @@ group { name: "e/shelf/alternate/base";
          }
       }
       part { name: "border"; type: RECT;
+         scale: 1;
          insert_before: "bg";
          description {
             state: "default" 0.0;
@@ -141,6 +144,7 @@ group { name: "e/shelf/default/inset"; nomouse;
          }
       }
       spacer { "sizer";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 4 1;
             rel2.offset: -5 -2;
@@ -230,6 +234,7 @@ group { name: "e/shelf/translucent/base"; nomouse;
          }
       }
       part { name: "border"; type: RECT;
+         scale: 1;
          insert_before: "bg";
          description {
             state: "default" 0.0;
@@ -260,6 +265,7 @@ group { name: "e/shelf/default/plain"; nomouse;
          }
       }
       spacer { "sizer";
+         scale: 1;
          desc {
             rel1.offset: 1 1;
             rel2.offset: -2 -2;

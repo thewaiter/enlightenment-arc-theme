@@ -283,6 +283,38 @@ group { "genlist_base"; inherit_only: 1; nomouse; program_source: "elm";
       eval_state(s);
       }
    }
+   program { name: "hover_icon_out";
+      signal: "mouse,out"; source: "elm.swallow.icon";
+      script {
+      new s = get_int(it_state);
+      set_int(it_state, s &= ~HOVER);
+      eval_state(s);
+      }
+   }
+   program { name: "hover_icon";
+      signal: "mouse,in"; source: "elm.swallow.icon";
+      script {
+      new s = get_int(it_state);
+      set_int(it_state, s |= HOVER);
+      eval_state(s);
+      }
+   }
+   program { name: "hover_end_out";
+      signal: "mouse,out"; source: "elm.swallow.end";
+      script {
+      new s = get_int(it_state);
+      set_int(it_state, s &= ~HOVER);
+      eval_state(s);
+      }
+   }
+   program { name: "hover_end";
+      signal: "mouse,in"; source: "elm.swallow.end";
+      script {
+      new s = get_int(it_state);
+      set_int(it_state, s |= HOVER);
+      eval_state(s);
+      }
+   }
    program {
        signal: "elm,state,selected"; source: "elm";
        script {

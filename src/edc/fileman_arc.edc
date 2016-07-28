@@ -84,6 +84,7 @@ group { name: "e/fileman/default/list/variable";
       }
 //////////////////////////
       part { name: "icon0"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             align: 0.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
@@ -126,6 +127,7 @@ group { name: "e/fileman/default/list/variable";
          }
       }
       part { name: "vol"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "ball_small_glow.png";
             min: 14 14;
@@ -148,6 +150,7 @@ group { name: "e/fileman/default/list/variable";
          }
       }
       part { name: "op";
+         scale: 1;
          description { state: "default" 0.0;
             align: 1.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
@@ -188,6 +191,7 @@ group { name: "e/fileman/default/list/variable";
       }
       part { name: "label_event"; type: RECT;
          ignore_flags: ON_HOLD;
+         scale: 1;
          description { state: "default" 0.0;
             color: 0 0 0 0;
             rel1.to: "e.text.label";
@@ -358,7 +362,7 @@ group { name: "e/fileman/default/icon/fixed";
    images.image: "sym_icon_op_ask.png" COMP;
    images.image: "sym_icon_op_copy.png" COMP;
    images.image: "sym_icon_op_move.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
    styles {
       style { name: "fileman_icon_name";
          base: "font="FN" font_size=10 text_class=fileman_icon align=center color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed align=center ellipsis=1.0";
@@ -396,11 +400,14 @@ group { name: "e/fileman/default/icon/fixed";
    }
    parts {
       part { name: "sel_base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 2 2;
             rel2.offset: -3 -3;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             color_class: "list_item_base_hover";
             fill.smooth: 0;
             visible: 0;
@@ -452,6 +459,7 @@ group { name: "e/fileman/default/icon/fixed";
          }
       }
       part { name: "textmaster"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -20 -20;
             rel2.offset: 19 19;
@@ -463,6 +471,7 @@ group { name: "e/fileman/default/icon/fixed";
       }
 //////////////////////////
       part { name: "icon0"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 4 4;
             rel2.relative: 1.0 0.0;
@@ -485,6 +494,7 @@ group { name: "e/fileman/default/icon/fixed";
          }
       }
       part { name: "icon_shadow"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -3 -2;
             rel1.to: "icon_base";
@@ -519,6 +529,7 @@ group { name: "e/fileman/default/icon/fixed";
          }
       }
       part { name: "vol"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "ball_small_glow.png";
             min: 14 14;
@@ -541,6 +552,7 @@ group { name: "e/fileman/default/icon/fixed";
          }
       }
       part { name: "op";
+         scale: 1;
          description { state: "default" 0.0;
             align: 1.0 0.0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
@@ -572,6 +584,7 @@ group { name: "e/fileman/default/icon/fixed";
 //////////////////////////////
       part { name: "event"; type: RECT;
          ignore_flags: ON_HOLD;
+         scale: 1;
          description { state: "default" 0.0;
             color: 0 0 0 0;
             rel1.to: "icon0";
@@ -774,6 +787,7 @@ group { name: "e/fileman/desktop/icon/fixed";
          }
       }
       part { name: "bevel"; mouse_events: 0;
+         scale: 1;
          insert_before: "e.text.label";
          clip_to: "textmaster";
          description { state: "default" 0.0;
@@ -811,7 +825,6 @@ group { name: "e/fileman/default/scrollframe";
    parts {
       part { name: "bg";
          description { state: "default" 0.0;
-            color: 255 255 255 255;
             color_class: "background";
          }
       }
@@ -831,6 +844,7 @@ group { name: "e/fileman/default/scrollframe";
          }
       }
       part { name: "e.box.operations"; type: BOX;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 3 3;
             rel1.to: "bg";
@@ -859,6 +873,7 @@ group { name: "e/fileman/default/window/main";
          }
       }
       part { name: "e.swallow.favorites"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
             align: 0.0 1.0;
             rel1.offset: 4 4;
@@ -866,10 +881,13 @@ group { name: "e/fileman/default/window/main";
             rel2.offset: 4 -5;
             rel2.relative: 0.0 1.0;
             rel2.to: "region";
+            min: 125 0;
+            max: 125 -1;
             fixed: 1 0;
          }
       }
       part { name: "e.swallow.content"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 4 4;
             rel1.to: "region";
@@ -884,7 +902,11 @@ group { name: "e/fileman/default/window/main";
          }
       }
       part { name: "e.swallow.toolbar"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
+            min: 0 36;
+            max: -1 36;
+            fixed: 0 1;
          }
          description { state: "tb_top" 0.0;
             align: 0.5 0.0;
@@ -904,6 +926,7 @@ group { name: "e/fileman/default/window/main";
          }
       }
       part { name: "region"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
          }
          description { state: "tb_top" 0.0;
@@ -975,7 +998,10 @@ group { name: "e/fileman/default/window/main";
 group { name: "e/fileman/toolbar/default/base";
    parts {
       part { name: "base"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
+            min: 0 36;
+            max: -1 36;
             rel1.offset: 2 2;
             rel2.offset: -3 -3;
             color_class: "dialog_base";
@@ -988,6 +1014,7 @@ group { name: "e/fileman/toolbar/default/base";
          }
       }
       part { name: "e.swallow.content"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 2 2;
             rel2.offset: -3 -3;
@@ -1011,31 +1038,35 @@ group { name: "e/fileman/toolbar/default/base";
 }
 
 group { name: "e/fileman/popup/default";
-   images.image: "vgrad_med_lighter.png" COMP;
-   images.image: "bevel_out.png" COMP;
-   images.image: "shine.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
    parts {
       part { name: "base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             image.middle: 1;
             color_class: "dialog_base";
          }
       }
       part { name: "border"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             color_class: "popup_border";
          }
       }
 
       part { name: "e.swallow.content"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 4 0;
             rel1.relative: 0.0 1.0;
@@ -1093,10 +1124,8 @@ group { name: "e/fileman/desktop/scrollframe";
 
 group { name: "e/fileman/default/overlay";
    alias: "e/fileman/desktop/overlay";
-   images.image: "border-rounded-3px.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
-   images.image: "darken_rounded_square.png" COMP;
-
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
 
    parts {
       part { name: "typebuf_clip"; type: RECT;
@@ -1120,25 +1149,31 @@ group { name: "e/fileman/default/overlay";
          }
       }
       part { name: "busy_bevel"; mouse_events: 0;
+         scale: 1;
          clip_to: "busy_clip";
          description { state: "default" 0.0;
             rel1.offset: -12 0;
             rel1.to: "e.text.busy_label";
             rel2.offset: 11 -1;
             rel2.to: "e.text.busy_label";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             fixed: 1 1;
             color_class: "popup_bg";
          }
       }
-      part { name: "border"; mouse_events: 0;
+      part { name: "busy_border"; mouse_events: 0;
+         scale: 1;
          clip_to: "busy_clip";
          description { state: "default" 0.0;
             rel.to: "busy_bevel";
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             fixed: 1 1;
             color_class: "popup_border";
@@ -1178,16 +1213,35 @@ group { name: "e/fileman/default/overlay";
       }
       BUSY_SPINNER("knob_spinner", "busy_clip", "knob", "e,state,busy,start", "e,state,busy,stop", "e")
 
-      part { name: "bevel2"; mouse_events: 0;
+      part { name: "typebuf_bevel"; mouse_events: 0;
+         scale: 1;
          clip_to: "typebuf_clip";
          description { state: "default" 0.0;
             rel1.offset: -15 -15;
             rel1.to: "e.text.typebuf_label";
             rel2.offset: 14 14;
             rel2.to: "e.text.typebuf_label";
-            image.normal: "darken_rounded_square.png";
-            image.border: 15 15 15 15;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
+            fixed: 1 1;
+            color_class: "popup_bg";
+         }
+      }
+      part { name: "typebuf_border"; mouse_events: 0;
+         scale: 1;
+         clip_to: "typebuf_clip";
+         description { state: "default" 0.0;
+            rel.to: "typebuf_bevel";
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
+            image.middle: 0;
+            fixed: 1 1;
+            color_class: "popup_border";
          }
       }
       part { name: "e.text.typebuf_label"; type: TEXT; mouse_events: 0;
@@ -1230,13 +1284,16 @@ group { name: "e/fileman/default/list/drop_in";
    images.image: "mini_blue_glow_arrow_1.png" COMP;
    images.image: "mini_blue_glow_arrow_2.png" COMP;
    images.image: "mini_blue_glow_arrow_3.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
    parts {
       part { name: "pat"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 1;
             fill.smooth: 0;
             color: 255 255 255 50;
@@ -1249,9 +1306,12 @@ group { name: "e/fileman/default/list/drop_in";
          }
       }
       part { name: "base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             fill.smooth: 0;
             rel2.to: "pat";
@@ -1265,6 +1325,7 @@ group { name: "e/fileman/default/list/drop_in";
          }
       }
       part { name: "drop0"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_0.png";
             rel1.offset: -10 -10;
@@ -1289,6 +1350,7 @@ group { name: "e/fileman/default/list/drop_in";
          }
       }
       part { name: "drop1"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_1.png";
             rel1.offset: 9 -10;
@@ -1313,6 +1375,7 @@ group { name: "e/fileman/default/list/drop_in";
          }
       }
       part { name: "drop2"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_2.png";
             rel1.offset: 9 9;
@@ -1337,6 +1400,7 @@ group { name: "e/fileman/default/list/drop_in";
          }
       }
       part { name: "drop3"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_3.png";
             rel1.offset: -10 9;
@@ -1410,6 +1474,7 @@ group { name: "e/fileman/default/list/drop_between";
    images.image: "sym_up_glow_normal.png" COMP;
    parts {
       part { name: "base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -4 -4;
             rel2.offset: 3 3;
@@ -1425,6 +1490,7 @@ group { name: "e/fileman/default/list/drop_between";
          }
       }
       part { name: "drop0"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "sym_down_glow_normal.png";
             rel1.offset: 0 -20;
@@ -1449,6 +1515,7 @@ group { name: "e/fileman/default/list/drop_between";
          }
       }
       part { name: "drop1"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "sym_up_glow_normal.png";
             rel1.offset: 0 19;
@@ -1508,14 +1575,17 @@ group { name: "e/fileman/default/list/drop_between";
 }
 
 group { name: "e/fileman/default/rubberband";
-   images.image: "border-rounded-3px.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
    parts {
 
       part { name: "pat"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 1;
             fill.smooth: 0;
             color: 255 255 255 50;
@@ -1523,9 +1593,12 @@ group { name: "e/fileman/default/rubberband";
          }
       }
       part { name: "base"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             fill.smooth: 0;
             rel2.to: "pat";
@@ -1537,14 +1610,15 @@ group { name: "e/fileman/default/rubberband";
 }
 
 group { name: "e/fileman/default/progress";
-   images.image: "border-rounded-3px.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
    images.image: "led_red_light.png" COMP;
    images.image: "led_strobe.png" COMP;
-   images.image: "slider-horizontal-2px.png" COMP;
-   images.image: "progress-bar-2px.png" COMP;
+   images.image: "slider-horizontal-2px@4.png" COMP;
+   images.image: "progress-bar-2px@4.png" COMP;
    parts {
       part { name: "base"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to_x: "e.text.info";
             rel2.to_x: "e.text.info";
@@ -1553,21 +1627,27 @@ group { name: "e/fileman/default/progress";
       }
 
       part { name: "bevel"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -5 -5;
             rel2.offset: 4 4;
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             fixed: 1 1;
             color_class: "popup_bg";
          }
       }
       part { name: "border"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             rel.to: "bevel";
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             fixed: 1 1;
             color_class: "popup_border";
@@ -1592,6 +1672,7 @@ group { name: "e/fileman/default/progress";
          }
       }
       part { name: "busy_clip"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: -20 0;
             color: 255 255 255 0;
@@ -1616,6 +1697,7 @@ group { name: "e/fileman/default/progress";
          }
       }
       rect { name: "knob"; mouse_events: 0;
+         scale: 1;
          clip_to: "busy_clip";
          description { state: "default" 0.0;
             FIXED_SIZE(28, 28);
@@ -1637,6 +1719,7 @@ group { name: "e/fileman/default/progress";
          }
       }
       part { name: "led"; mouse_events: 0;
+         scale: 1;
          clip_to: "led_clip";
          description { state: "default" 0.0;
             image.normal: "led_red_light.png";
@@ -1648,6 +1731,7 @@ group { name: "e/fileman/default/progress";
          }
       }
       part { name: "led_spinner"; mouse_events: 0;
+         scale: 1;
          clip_to: "led_clip";
          description { state: "default" 0.0;
             rel1.to: "led";
@@ -1668,6 +1752,7 @@ group { name: "e/fileman/default/progress";
          }
       }
       group { name: "close_event";
+         scale: 1;
          source: "e/border/btn-close";
          desc { "default";
             step: 2 2;
@@ -1682,6 +1767,7 @@ group { name: "e/fileman/default/progress";
          }
       }
       part { name: "progress"; mouse_events: 0;
+         scale: 1;
          clip_to: "busy_clip";
          description { state: "default" 0.0;
             rel1.to: "base";
@@ -1689,8 +1775,10 @@ group { name: "e/fileman/default/progress";
             rel1.offset: 0 0;
             rel2.to: "e.gauge.bar";
             rel2.offset: 4 0;
-            image.normal: "progress-bar-2px.png";
-            image.border: 7 7 0 0;
+            image.normal: "progress-bar-2px@4.png";
+            image.border: 28 28 0 0;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             min: 10 5;
             max: 9999 5;
             align: 0.0 0.9;
@@ -1780,11 +1868,11 @@ group { name: "e/fileman/default/progress";
 }
 
 group { name: "modules/efm_navigation/main";
-   images.image: "arrow-left.png" COMP;
-   images.image: "arrow-right.png" COMP;
-   images.image: "arrow-up.png" COMP;
-   images.image: "heart.png" COMP;
-   images.image: "reload.png" COMP;
+   IMAGE_SET("arrow-left", 14, 14)
+   IMAGE_SET("arrow-right", 14, 14)
+   IMAGE_SET("arrow-up", 14, 14)
+   IMAGE_SET("heart", 14, 14)
+   IMAGE_SET("reload", 14, 14)
    script {
 
 #define PRESSED 1
@@ -1817,13 +1905,17 @@ EVAL_STATE_FNC(go_fav)
    }
    parts {
       part { name: "base"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "back";
             rel2.to: "favorite";
             fixed: 1 1;
+            min: 0 36;
+            max: -1 36;
          }
       }
       part { name: "e.swallow.pathbar"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
             align: 0.0 0.5;
             rel1.to_x: "base";
@@ -1835,12 +1927,15 @@ EVAL_STATE_FNC(go_fav)
 
 #define BUTTON(_NAME, _REL, _ICON, _ACTION) \
       part { name: #_NAME"_bg"; \
+         scale: 1; \
          description { state: "default" 0.0; \
             rel1.to: _REL; \
             rel2.to: _REL; \
             color_class: "button_bg"; \
-            image.normal: "bg-rounded-3px.png"; \
-            image.border: 3 3 3 3; \
+            image.normal: "bg-rounded-3px@4.png"; \
+            image.border: 12 12 12 12; \
+            image.border_scale: 1; \
+            image.border_scale_by: 0.25; \
             fill.smooth: 0; \
             visible: 0; \
             fixed: 1 1; \
@@ -1857,11 +1952,14 @@ EVAL_STATE_FNC(go_fav)
          } \
       } \
       part { name: #_NAME"_border"; \
+         scale: 1; \
          description { state: "default" 0.0; \
-            rel1.to: _REL; \
-            rel2.to: _REL; \
-            image.normal: "border-rounded-3px.png"; \
-            image.border: 3 3 3 3; \
+            rel1.to: #_NAME"_bg"; \
+            rel2.to: #_NAME"_bg"; \
+            image.normal: "border-rounded-3px@4.png"; \
+            image.border: 12 12 12 12; \
+            image.border_scale: 1; \
+            image.border_scale_by: 0.25; \
             image.middle: 0; \
             fixed: 1 1; \
             visible: 0; \
@@ -1878,6 +1976,7 @@ EVAL_STATE_FNC(go_fav)
          } \
       } \
       part { name: #_NAME"_icon"; \
+         scale: 1; \
          description { state: "default" 0.0; \
             rel1.to: _REL; \
             rel2.to: _REL; \
@@ -1925,13 +2024,14 @@ EVAL_STATE_FNC(go_fav)
          action: SIGNAL_EMIT "e,action,"_ACTION",click" ""; \
       } \
 
-      BUTTON(go_back, "back", "arrow-left.png", "back")
-      BUTTON(go_forward, "forward", "arrow-right.png", "forward")
-      BUTTON(go_parent, "parent", "arrow-up.png", "up")
-      BUTTON(go_reload, "reload", "reload.png", "refresh")
-      BUTTON(go_fav, "favorite", "heart.png", "favorites")
+      BUTTON(go_back, "back", "arrow-left", "back")
+      BUTTON(go_forward, "forward", "arrow-right", "forward")
+      BUTTON(go_parent, "parent", "arrow-up", "up")
+      BUTTON(go_reload, "reload", "reload", "refresh")
+      BUTTON(go_fav, "favorite", "heart", "favorites")
 
       part { name: "back"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 6 0;
             rel2.relative: 0.0 1.0;
@@ -1940,9 +2040,12 @@ EVAL_STATE_FNC(go_fav)
             color: 0 0 0 0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             fixed: 0 1;
+            min: 28 28;
+            max: 28 28;
          }
       }
       part { name: "forward"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "back";
             rel1.relative: 1.0 0.0;
@@ -1951,9 +2054,12 @@ EVAL_STATE_FNC(go_fav)
             color: 0 0 0 0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             fixed: 0 1;
+            min: 28 28;
+            max: 28 28;
          }
       }
       part { name: "parent"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "forward";
             rel1.relative: 1.0 0.0;
@@ -1962,9 +2068,12 @@ EVAL_STATE_FNC(go_fav)
             color: 0 0 0 0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             fixed: 0 1;
+            min: 28 28;
+            max: 28 28;
          }
       }
       part { name: "reload"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "parent";
             rel1.relative: 1.0 0.0;
@@ -1973,9 +2082,12 @@ EVAL_STATE_FNC(go_fav)
             color: 0 0 0 0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             fixed: 0 1;
+            min: 28 28;
+            max: 28 28;
          }
       }
       part { name: "favorite"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "reload";
             rel1.relative: 1.0 0.0;
@@ -1984,6 +2096,8 @@ EVAL_STATE_FNC(go_fav)
             color: 0 0 0 0;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             fixed: 0 1;
+            min: 28 28;
+            max: 28 28;
          }
       }
    }
@@ -1994,8 +2108,8 @@ EVAL_STATE_FNC(go_fav)
 }
 
 group { name: "modules/efm_navigation/pathbar_button";
-   images.image: "border-rounded-3px.png" COMP;
-   images.image: "bg-rounded-3px.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
    script {
 #define SELECTED 1
 #define HOVER 2
@@ -2019,13 +2133,18 @@ group { name: "modules/efm_navigation/pathbar_button";
    }
    parts {
       part { name: "bg";
+         scale: 1;
          description { state: "default" 0.0;
             color_class: "button_bg";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             visible: 1;
             fixed: 1 1;
+            min: 0 28;
+            max: -1 28;
          }
          description { state: "selected" 0.0;
             inherit: "default" 0;
@@ -2039,11 +2158,14 @@ group { name: "modules/efm_navigation/pathbar_button";
          }
       }
       part { name: "border";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "bg";
             rel2.to: "bg";
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             color_class: "button_border";
             fixed: 1 1;
@@ -2134,11 +2256,12 @@ group { name: "modules/efm_navigation/pathbar_button";
 
 group { name: "modules/efm_navigation/pathbar_scrollframe";
 
-   images.image: "arrow-right.png" COMP;
-   images.image: "arrow-left.png" COMP;
+   IMAGE_SET("arrow-right", 14, 14)
+   IMAGE_SET("arrow-left", 14, 14)
 
    parts {
       part { name: "clipper"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "e.swallow.content";
             rel1.offset: -3 -50;
@@ -2174,11 +2297,12 @@ group { name: "modules/efm_navigation/pathbar_scrollframe";
          }
       }
       part { name: "arrow1"; mouse_events: 0;
+         scale: 1;
          clip_to: "arrow_clipper";
          description { state: "default" 0.0;
             rel1.to: "arrow1_ev";
             rel2.to: "arrow1_ev";
-            image.normal: "arrow-left.png";
+            image.normal: "arrow-left";
             color_class: "list_item_arrow";
             FIXED_SIZE(14, 14)
          }
@@ -2197,11 +2321,12 @@ group { name: "modules/efm_navigation/pathbar_scrollframe";
          }
       }
       part { name: "arrow2"; mouse_events: 0;
+         scale: 1;
          clip_to: "arrow_clipper";
          description { state: "default" 0.0;
             rel1.to: "arrow2_ev";
             rel2.to: "arrow2_ev";
-            image.normal: "arrow-right.png";
+            image.normal: "arrow-right";
             color_class: "list_item_arrow";
             FIXED_SIZE(14, 14)
          }

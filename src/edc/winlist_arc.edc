@@ -1,22 +1,27 @@
 group { name: "e/widgets/winlist/main";
-   images.image: "bg-rounded-3px.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
    parts {
        image { "base";
+         scale: 1;
          desc { "default";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: SOLID;
-            // rel1.offset: 4 3;
-            // rel2.offset: -5 -4;
             fill.smooth: 0;
             color_class: "winlist_bg";
          }
       }
 
       image { name: "top_bg"; nomouse;
+         scale: 1;
          desc { "default";
-            image.normal: "bg-top-rounded-3px.png";
+            image.normal: "bg-top-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.border: 3 3 3 3;
             rel2.to_y: "e.text.title";
             rel2.relative: 1.0 1.0;
@@ -24,8 +29,12 @@ group { name: "e/widgets/winlist/main";
          }
       }
       image { name: "top_border_shadow"; nomouse;
+         scale: 1;
          desc { "default";
-            image.normal: "border-top-rounded-3px.png";
+            image.normal: "border-top-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.border: 3 3 3 3;
             rel1.offset: 0 1;
             rel2.to: "top_bg";
@@ -33,8 +42,12 @@ group { name: "e/widgets/winlist/main";
          }
       }
       image { "border";
+         scale: 1;
          desc { "default";
-            image.normal: "border-rounded-3px.png";
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.border: 3 3 3 3;
             image.middle: 0;
             rel.to: "base";
@@ -97,6 +110,7 @@ group { name: "e/widgets/winlist/main";
          }
       }
       part { name: "list_clip"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             color: 255 255 255 255;
             rel1.relative: 0.0 1.0;
@@ -134,7 +148,7 @@ group { name: "e/widgets/winlist/item";
          }
          description { state: "iconified" 0.0;
             inherit: "default" 0.0;
-            color_class: "winlist_item_text_disabled";
+            color_class: "winlist_item_text_iconified";
          }
       }
       rect { name: "sel_base"; mouse_events: 0;
@@ -148,6 +162,7 @@ group { name: "e/widgets/winlist/item";
          }
       }
       part { name: "icon"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             align: 0.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;

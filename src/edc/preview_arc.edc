@@ -1,26 +1,21 @@
 group { name: "e/widgets/preview";
-   images.image: "bg-rounded-3px.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
    parts {
       part { name: "bg";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "e.swallow.content";
             rel2.to: "e.swallow.content";
+            rel1.offset: -1 -1;
+            rel2.offset: 1 0;
             color_class: "dialog_base";
-            image.normal: "bg-rounded-3px.png";
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.border: 3 3 3 3;
             image.middle: 1;
-            fill.smooth: 0;
-         }
-      }
-      part { name: "border";
-         description { state: "default" 0.0;
-            rel.to: "bg";
-            color_class: "popup_border";
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
-            image.middle: 1;
-            fill.smooth: 0;
          }
       }
       part { name: "clipper"; type: RECT;
@@ -31,9 +26,22 @@ group { name: "e/widgets/preview";
       }
       part { name: "e.swallow.content"; type: SWALLOW;
          clip_to: "clipper";
+         scale: 1;
          description { state: "default" 0.0;
-            rel1.offset: 1 1;
-            rel2.offset: -2 -2;
+            rel1.offset: 2 2;
+            rel2.offset: -3 -3;
+         }
+      }
+      part { name: "border"; nomouse;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel.to: "bg";
+            color_class: "popup_border";
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
+            image.middle: 0;
          }
       }
 

@@ -1,27 +1,30 @@
 group { name: "e/modules/pager16/popup";
-   images.image: "bg-rounded-3px.png" COMP;
-   images.image: "border-rounded-3px.png" COMP;
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
    parts {
       image { "base";
          desc { "default";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
-            image.middle: SOLID;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             fill.smooth: 0;
             color_class: "popup_bg_dark";
          }
       }
       image { "bevel";
          desc { "default";
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             rel.to: "base";
-            fill.smooth: 0;
             color_class: "popup_border";
          }
       }
       part { name: "e.swallow.content"; type: SWALLOW;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to_y: "e.text.label";
             rel1.relative: 0.0 1.0;
@@ -54,13 +57,14 @@ group { name: "e/modules/pager16/popup";
 group { name: "e/modules/pager16/desk";
    images.image: "inset_shadow.png" COMP;
    images.image: "downlight_glow_white_arc.png" COMP;
-   images.image: "border-rounded-1px.png" COMP;
+   images.image: "border-rounded-1px@4.png" COMP;
    images.image: "mini_blue_glow_arrow_0.png" COMP;
    images.image: "mini_blue_glow_arrow_1.png" COMP;
    images.image: "mini_blue_glow_arrow_2.png" COMP;
    images.image: "mini_blue_glow_arrow_3.png" COMP;
    parts {
       part { name: "base"; type: SPACER;
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "inset";
             rel1.offset: 1 1;
@@ -69,14 +73,16 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "bevel"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-1px.png";
+            image.normal: "border-rounded-1px@4.png";
             color_class: "win_border_border_shadow";
-            image.border: 1 1 1 1;
+            image.border: 4 4 4 4;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             rel1.to: "base";
             rel2.to: "base";
-            fill.smooth: 0;
          }
       }
       part { name: "clip"; type: RECT; mouse_events: 0;
@@ -87,6 +93,7 @@ group { name: "e/modules/pager16/desk";
       }
       part { name: "e.swallow.content"; type: SWALLOW;
          clip_to: "clip";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "base";
             rel2.to: "base";
@@ -98,6 +105,7 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "shadow"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "inset_shadow.png";
             image.border: 5 5 7 3;
@@ -108,6 +116,7 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "glow"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "downlight_glow_white_arc.png";
             image.border: 0 0 3 0;
@@ -140,10 +149,13 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "inset"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
-            image.normal: "border-rounded-1px.png";
+            image.normal: "border-rounded-1px@4.png";
             color_class: "win_border_border";
-            image.border: 1 1 1 1;
+            image.border: 4 4 4 4;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: 0;
             rel1.offset: 1 2;
             rel2.offset: -2 -3;
@@ -151,6 +163,7 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "drop0"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_0.png";
             rel1.to: "base";
@@ -177,6 +190,7 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "drop1"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_1.png";
             rel1.to: "base";
@@ -203,6 +217,7 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "drop2"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_2.png";
             rel1.to: "base";
@@ -229,6 +244,7 @@ group { name: "e/modules/pager16/desk";
          }
       }
       part { name: "drop3"; mouse_events: 0;
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "mini_blue_glow_arrow_3.png";
             rel1.to: "base";

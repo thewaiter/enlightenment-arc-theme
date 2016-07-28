@@ -1,7 +1,7 @@
 group { name: "e/widgets/scrollframe";
-   IMAGE_SET_BORDER("scroller-vertical-3px", 12, 21, 6, 6, 6, 6)
-   IMAGE_SET_BORDER("scroller-horizontal-3px", 21, 12, 6, 6, 6, 6)
 
+   images.image: "scroller-vertical-3px@4.png" COMP;
+   images.image: "scroller-horizontal-3px@4.png" COMP;
    script {
 #define PRESSED 1
 #define HOVER   2
@@ -250,6 +250,7 @@ group { name: "e/widgets/scrollframe";
       }
       part { name: "e.swallow.content"; type: SWALLOW;
          clip_to: "clipper";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.offset: 1 1;
             rel2.relative: 0.0 0.0;
@@ -260,12 +261,15 @@ group { name: "e/widgets/scrollframe";
       }
       part { name: "base_vbar"; mouse_events: 0;
          clip_to: "sb_vbar_show";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "e.dragable.vbar";
             rel2.to: "e.dragable.vbar";
-            image.normal: "scroller-vertical-3px";
+            image.normal: "scroller-vertical-3px@4.png";
+            image.border: 24 24 24 24;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: SOLID;
-            fill.smooth: 0;
             color_class: "scroller_bar";
          }
          description {
@@ -281,12 +285,15 @@ group { name: "e/widgets/scrollframe";
       }
       part { name: "base_hbar"; mouse_events: 0;
          clip_to: "sb_hbar_show";
+         scale: 1;
          description { state: "default" 0.0;
             rel1.to: "e.dragable.hbar";
             rel2.to: "e.dragable.hbar";
-            image.normal: "scroller-horizontal-3px";
+            image.normal: "scroller-horizontal-3px@4.png";
+            image.border: 24 24 24 24;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
             image.middle: SOLID;
-            fill.smooth: 0;
             color_class: "scroller_bar";
          }
          description {
