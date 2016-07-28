@@ -122,7 +122,7 @@
 // #include "../orig-theme/edc/music_control.edc"
 // #include "../orig-theme/edc/systray.edc"
 // #include "../orig-theme/edc/appmenu.edc"
-// #include "../orig-theme/edc/clock.edc"
+#include "edc/clock_arc.edc"
 // #include "../orig-theme/edc/ibar-ibox.edc"
 // #include "../orig-theme/edc/colors.edc"
 // #include "../orig-theme/edc/edgebindings.edc"
@@ -138,7 +138,7 @@
 // #include "../orig-theme/edc/bluez4.edc"
 // #include "../orig-theme/edc/packagekit.edc"
 // #include "../orig-theme/edc/wireless.edc"
-//#include "../orig-theme/edc/time.edc"
+#include "edc/time_arc.edc"
 
 // icons
 // #include "../orig-theme/edc/icons.edc"

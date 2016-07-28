@@ -40,6 +40,7 @@ edc/fileman_arc.edc \
 edc/toolbar_arc.edc \
 edc/background_arc.edc \
 edc/conf_arc.edc \
+edc/clock_arc.edc \
 edc/shelf_arc.edc \
 edc/border_arc.edc \
 edc/about-e_arc.edc \
@@ -57,6 +58,7 @@ edc/gadman_arc.edc \
 edc/scrollframe_arc.edc \
 edc/slider_arc.edc \
 edc/textblock_arc.edc \
+edc/time_arc.edc \
 edc/start_arc.edc \
 edc/tasks_arc.edc \
 edc/notification_arc.edc \

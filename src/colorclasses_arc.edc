@@ -870,4 +870,36 @@ color_classes {
       color: COL_PRESSED;
       desc: "Module symbol pressed color";
    }
+   color_class { name: "clock_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Clock: text color of digital clock";
+   }
+   color_class { name: "clock_bg";
+      color: COL_BG;
+      desc: "Clock: background color of digital clock";
+   }
+   color_class { name: "calendar_month";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Calendar month";
+   }
+   color_class { name: "calendar_year";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Calendar year";
+   }
+   color_class { name: "calendar_today";
+      color: COL_FONT_BASIC_HIGHLIGHT;
+      desc: "Calendar today";
+   }
+   color_class { name: "calendar_weekday";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Calendar weekday";
+   }
+   color_class { name: "calendar_weekday_hidden";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Calendar day other month";
+   }
+   color_class { name: "calendar_weekend";
+      color: COL_FONT_BASIC_INACTIVE;
+      desc: "Calendar weekend";
+   }
 }
