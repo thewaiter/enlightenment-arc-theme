@@ -14,7 +14,7 @@ group { name: "e/shelf/default/base"; nomouse;
    }
 
    parts {
-      rect { "mouse"; mouse;
+      rect { "mouse"; mouse_events: 0;
          desc { color: 0 0 0 0; }
       }
 
