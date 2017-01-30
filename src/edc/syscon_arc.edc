@@ -139,7 +139,7 @@ group { name: "e/modules/syscon/button";
       }
       program {
          signal: "mouse,clicked,1*"; source: "base";
-         action: SIGNAL_EMIT "e,action,shutdown,show" "e";
+         action: SIGNAL_EMIT "e,action,shutdown,show" "";
       }
    }
 }
