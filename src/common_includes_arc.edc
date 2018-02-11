@@ -120,7 +120,7 @@
 #include "edc/tasks_arc.edc"
 // #include "../orig-theme/edc/connman.edc"
 // #include "../orig-theme/edc/music_control.edc"
-// #include "../orig-theme/edc/systray.edc"
+#include "../orig-theme/edc/systray.edc"
 // #include "../orig-theme/edc/appmenu.edc"
 #include "edc/clock_arc.edc"
 // #include "../orig-theme/edc/ibar-ibox.edc"
