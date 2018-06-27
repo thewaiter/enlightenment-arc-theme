@@ -2,7 +2,7 @@ group { name: "e/widgets/radio";
    IMAGE_SET("radio-base", 14, 14)
    IMAGE_SET("radio-border", 14, 14)
    IMAGE_SET("radio-dot", 14, 14)
-#define ICON     1
+
    parts {
       part { name: "clip"; type: RECT;
          description { state: "default" 0.0;

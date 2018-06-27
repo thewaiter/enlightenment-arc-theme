@@ -102,7 +102,7 @@
 // #include "../orig-theme/edc/pointer.edc"
 #include "edc/sys_arc.edc"
 #include "edc/winlist_arc.edc"
-// #include "../orig-theme/edc/desklock.edc"
+#include "../orig-theme/edc/desklock.edc"
 #include "edc/deskmirror_arc.edc"
 // #include "../orig-theme/edc/wizard.edc"
 // #include "../orig-theme/edc/init.edc"
@@ -141,7 +141,7 @@
 #include "edc/time_arc.edc"
 
 // icons
-// #include "../orig-theme/edc/icons.edc"
+#include "../orig-theme/edc/icons.edc"
 // #include "../orig-theme/edc/border-icons.edc"
 
 // port unchanged stuff so this can work as a replacement
