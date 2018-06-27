@@ -77,7 +77,7 @@
 #include "edc/toolbar_arc.edc"
 #include "edc/preview_arc.edc"
 #include "edc/deskpreview_arc.edc"
-// #include "../orig-theme/edc/entry.edc"
+#include "../orig-theme/edc/entry.edc"
 #include "edc/fileman_arc.edc"
 // #include "../orig-theme/edc/colorwell.edc"
 // #include "../orig-theme/edc/fontpreview.edc"
