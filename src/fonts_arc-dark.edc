@@ -27,9 +27,9 @@
 #define COL_FONT_BASIC_INACTIVE                                211 218 227 (255*0.55)
 #define COL_FONT_BASIC_DISABLED                                211 218 227 (255*0.45)
 #define COL_FONT_BASIC_TRANSPARENT                             211 218 227 0
-#define COL_FONT_BASIC_HIGHLIGHT                                82 148 226 255
-#define COL_FONT_BASIC_HIGHLIGHT_CLICKED                        82 148 226 (255*0.55)
-#define COL_FONT_BASIC_HIGHLIGHT_DISABLED                       82 148 226 (255 *0.45)
+#define COL_FONT_BASIC_HIGHLIGHT                                65  146 54 255
+#define COL_FONT_BASIC_HIGHLIGHT_CLICKED                        65  146 54 (255*0.55)
+#define COL_FONT_BASIC_HIGHLIGHT_DISABLED                       65  146 54 (255 *0.45)
 
 
 #define ENTRY_STYLE_BASIC

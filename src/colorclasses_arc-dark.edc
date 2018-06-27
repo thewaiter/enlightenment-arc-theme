@@ -1,7 +1,7 @@
 
 #define COL_NORM                  68  74  88 255
 #define COL_HOVER                 80  86 102 255
-#define COL_ENABLE                82 148 226 255
+#define COL_ENABLE                65  146 54 255
 #define COL_PRESSED              COL_ENABLE
 #define COL_SELECTED             COL_ENABLE
 
@@ -28,7 +28,7 @@
 // colors for border buttons minimize/maximize/close
 #define MINIMIZE_ACTIVE          185 188 194 255
 #define MAXMIMIZE_ACTIVE         185 188 194 255
-#define CLOSE_ACTIVE             204  87  93 255
+#define CLOSE_ACTIVE             65  146 54 255
 
 #define MINIMIZE_INACTIVE        102 106 116 255
 #define MAXMIMIZE_INACTIVE       102 106 116 255
@@ -40,13 +40,13 @@
 #define MAXIMIZE_HOVER           196 199 204 255
 #define MAXIMIZE_HOVER_BACKGROUND 69  76  92 255
 #define MAXIMIZE_HOVER_BACKGROUND_BORDER 38 41 50 255
-#define CLOSE_HOVER              215 120 125 255
+#define CLOSE_HOVER              65  186 54 255
 
 #define MINIMIZE_PRESSED         255 255 255 255
 #define MINIMIZE_PRESSED_BACKGROUND 82 148 226 255
 #define MAXIMIZE_PRESSED         255 255 255 255
 #define MAXIMIZE_PRESSED_BACKGROUND 82 148 226 255
-#define CLOSE_PRESSED            190 56 65 255
+#define CLOSE_PRESSED            65  220 54 255
 
 #define NO_COLOR                 255 255 255 0
 
