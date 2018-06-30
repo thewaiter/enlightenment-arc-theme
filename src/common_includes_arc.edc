@@ -114,8 +114,8 @@
 
 // modules
 #include "edc/start_arc.edc"
-// #include "../orig-theme/edc/pager.edc"
-#include "edc/pager16_arc.edc"
+#include "../orig-theme/edc/pager.edc"
+//#include "edc/pager16_arc.edc"
 // #include "../orig-theme/edc/xkbswitch.edc"
 #include "edc/tasks_arc.edc"
 // #include "../orig-theme/edc/connman.edc"
