@@ -105,7 +105,7 @@
 #include "../orig-theme/edc/desklock.edc"
 #include "edc/deskmirror_arc.edc"
 // #include "../orig-theme/edc/wizard.edc"
-// #include "../orig-theme/edc/init.edc"
+#include "../orig-theme/edc/init.edc"
 #include "edc/about-e_arc.edc"
 #include "edc/about-theme_arc.edc"
 // #include "../orig-theme/edc/transitions.edc"
