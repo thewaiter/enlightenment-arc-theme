@@ -99,7 +99,7 @@
 #include "edc/conf_arc.edc"
 #include "edc/gadman_arc.edc"
 #include "edc/syscon_arc.edc"
-// #include "../orig-theme/edc/pointer.edc"
+#include "../orig-theme/edc/pointer.edc"
 #include "edc/sys_arc.edc"
 #include "edc/winlist_arc.edc"
 #include "../orig-theme/edc/desklock.edc"
