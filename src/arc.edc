@@ -1,4 +1,4 @@
-#include "../orig-theme/macros.edc"
+#include "macros.edc"
 
 #define THEME_NAME_UPPER "Arc"
 #define THEME_NAME_LOWER "arc"

@@ -57,7 +57,7 @@ group { name: "e/theme/about";
             rel2.to: "name";
             align: 0.5 1.0;
             text { font: FN; size: FNSIZE;
-               text: "The " THEME_NAME_LOWER " theme for Enlightenment";
+               text: "The " THEME_NAME_LOWER " theme for Moksha";
                min: 1 1;
                ellipsis: -1;
                align: 0.5 1.0;
@@ -97,29 +97,49 @@ group { name: "e/theme/about";
             rel2.to: "orig-arc-theme";
             text {  style: "about-theme-style";
                min: 0 1;
-               text: "contributors: LeBlue, leiflm (T_UNIX)";
+               text: "<br>Contributors: LeBlue, leiflm (T_UNIX)";
                ellipsis: -1;
                align: 0.5 0.5;
             }
             color: COL_FONT_BASIC_TRANSPARENT;
-         }
+            }
          desc { "visible";
             inherit: "default";
             color: COL_FONT_BASIC_DEFAULT;
+            }
          }
+         part { name: "bodhi"; type: TEXTBLOCK; mouse_events: 0;
+            scale: 1;
+            description { state: "default" 0.0;
+               fixed: 1 1;
+               rel1.relative: 0.0 1.0;
+               rel1.to: "contributors";
+               rel1.offset: 0 10;
+               rel2.to: "contributors";
+               text {  style: "about-theme-style";
+                  min: 0 1;
+                  text: "<br>Moksha Port by Štefan (thewaiter) Uram";
+                  ellipsis: -1;
+                  align: 0.5 0.5;
+               }
+               color: COL_FONT_BASIC_TRANSPARENT;
+            }
+            desc { "visible";
+               inherit: "default";
+               color: COL_FONT_BASIC_DEFAULT;
+            }
       }
-
       part { name: "copyright"; type: TEXTBLOCK; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
             fixed: 1 1;
             rel1.relative: 0.0 1.0;
-            rel1.to: "contributors";
+            rel1.to: "bodhi";
             rel1.offset: 0 10;
-            rel2.to: "contributors";
+            rel2.to: "bodhi";
             text {  style: "about-theme-style";
                min: 0 1;
-               text: "GPL 3.0";
+               text: "<br>GPL 3.0";
                ellipsis: -1;
                align: 0.5 0.5;
             }
@@ -211,6 +231,7 @@ group { name: "e/theme/about";
          target: "copyright";
          target: "orig-arc-theme";
          target: "contributors";
+         target: "bodhi";
          in: 0.2 0.0;
          transition: SIN 1.0;
       }

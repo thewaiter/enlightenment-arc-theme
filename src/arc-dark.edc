@@ -1,7 +1,7 @@
-#include "../orig-theme/macros.edc"
+#include "macros.edc"
 
-#define THEME_NAME_UPPER "Arc Dark"
-#define THEME_NAME_LOWER "arc-dark"
+#define THEME_NAME_UPPER "Arc Green"
+#define THEME_NAME_LOWER "arc-green"
 
 externals.external: "elm";
 

@@ -204,7 +204,7 @@ group { name: "elm/button/base/default";
       swallow { "elm.swallow.content"; nomouse;
          clip_to: "icon_clip";
          desc { "default";
-            fixed: 1 0;
+            fixed: 1 1;
             align: 0.0 0.5;
             rel1.offset: 6 5;
             rel1.to: "base";
@@ -578,6 +578,9 @@ group { name: "elm/button/base/anchor";
          desc { "default";
             rel1.offset: 0 0;
             rel2.offset: 0 0;
+         }
+         desc { "clicked";
+            inherit: "default";
          }
       }
       rect { "icon_clip";
@@ -1247,6 +1250,11 @@ group { name: "elm/button/base/hoversel_vertical_entry/default";
             visible: 1;
             color_class: "list_item_base_selected";
          }
+         desc { "pressed";
+            inherit: "default" ;
+            color_class: "button_bg_pressed";
+            visible: 1;
+         }
       }
       rect { "icon_clip";
          desc { "default";
@@ -1323,6 +1331,11 @@ group { name: "elm/button/base/hoversel_vertical_entry/default";
          }
          desc { "hover";
             inherit: "default";
+         }
+         desc { "pressed";
+            inherit: "default" ;
+            color_class: "button_bg_pressed";
+            visible: 1;
          }
       }
       spacer { "text_container";
@@ -1401,6 +1414,10 @@ group { name: "elm/button/base/hoversel_vertical_entry/default";
          }
          desc { "hover";
             inherit: "default";
+            visible: 1;
+         }
+         desc { "pressed";
+            inherit: "default" ;
             visible: 1;
          }
       }
@@ -1551,7 +1568,9 @@ group { name: "elm/button/base/hoversel_horizontal_entry/default";
          }
          desc { "clicked";
             inherit: "default";
-            // visible: 1;
+         }
+         desc { "pressed";
+            inherit: "default" ;
          }
       }
    }
