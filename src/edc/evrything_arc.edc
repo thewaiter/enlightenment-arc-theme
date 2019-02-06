@@ -1084,7 +1084,7 @@ group { name: "e/modules/everything/thumbview/item/list";
             rel2.to_x: "arrow";
             color_class: "list_item_text";
             align: 1.0 0.5;
-            max: 160 99999;
+            max: 10 99999;
             text { font: FN; size: 8;
                min: 0 1;
                align: 1.0 0.5;
