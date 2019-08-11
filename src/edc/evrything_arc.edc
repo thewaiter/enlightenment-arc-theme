@@ -847,7 +847,7 @@ group { name: "e/modules/everything/thumbview/main/scrollframe";
       program {
          signal: "mouse,down,1*"; source: "e.dragable.vbar";
          action: STATE_SET "clicked" 0.0;
-         target: "e.dragable.vbar";
+         //~ target: "e.dragable.vbar";
          target: "base_vbar";
       }
       program {

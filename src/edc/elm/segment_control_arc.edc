@@ -419,12 +419,12 @@ group { name: "elm/segment_control/item/default";
             update_state();
          }
       }
-      program {
-         signal: "elm,type,segment,normal";
-         source: "elm";
-         action: STATE_SET "default_normal" 0.0;
-         target: "segment_border";
-      }
+      //~ program {
+         //~ signal: "elm,type,segment,normal";
+         //~ source: "elm";
+         //~ action: STATE_SET "default_normal" 0.0;
+         //~ target: "segment_border";
+      //~ }
       program {
          name: "pressed_segment";
          signal: "elm,state,segment,pressed";

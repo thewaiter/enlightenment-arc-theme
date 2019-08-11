@@ -215,6 +215,10 @@ group { name: "e/modules/notification/main";
             color: 0 0 0 0;
             fixed: 1 1;
          }
+         description { state: "selected" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
       }
       alias: "e.event.close" "close:base";
    }

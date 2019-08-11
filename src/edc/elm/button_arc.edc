@@ -1000,7 +1000,7 @@ group { name: "elm/button/base/media_player/prev/default";
       }
       program {
          signal: "elm,anim,activate"; source: "elm";
-         action: STATE_SET "clicked" 0.0;
+         action: STATE_SET "selected" 0.0;
          target: "shadow1";
          target: "shadow2";
          after: "button_unpressed_anim";
@@ -2316,7 +2316,7 @@ group { name: "elm/button/base/combobox_vertical/default";
          action: STATE_SET "disabled" 0.0;
          target: "icon_clip";
          target: "event";
-         target: "arrow_icon";
+         //~ target: "arrow_icon";
       }
       program { name: "button_state_enabled";
          signal: "elm,state,enabled"; source: "elm";

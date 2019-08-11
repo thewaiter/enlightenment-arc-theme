@@ -61,6 +61,10 @@ group { name: "e/sys/logout";
             align: 0.0 0.5;
             FIXED_SIZE(40, 40)
          }
+          description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            FIXED_SIZE(40, 40)
+         }
       }
       BUSY_SPINNER("knob_spinner", "knob", "knob", "show", "hide", "")
    }

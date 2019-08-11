@@ -765,11 +765,11 @@ group { name: "elm/hover/base/main_menu_submenu/default";
          signal: "mouse,up,*"; source: "base";
          action: SIGNAL_EMIT "elm,action,dismiss" "elm";
       }
-      program { name: "show";
-         signal: "elm,action,show"; source: "elm";
-         action: STATE_SET "visible" 0.0;
-         target: "base";
-      }
+      //~ program { name: "show";
+         //~ signal: "elm,action,show"; source: "elm";
+         //~ action: STATE_SET "visible" 0.0;
+         //~ target: "base";
+      //~ }
       program { name: "hide";
          signal: "elm,action,hide"; source: "elm";
          action: STATE_SET "default" 0.0;

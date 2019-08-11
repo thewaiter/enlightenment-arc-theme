@@ -781,16 +781,16 @@ group {
          action: STATE_SET "shaded" 0.0;
          target: "shadow";
          target: "bottom";
-         target: "e.text.title";
+         //~ target: "e.text.title";
       }
-      program {
-         signal: "e,state,unshaded";
-         source: "e";
-         action: STATE_SET "unshaded" 0.0;
-         target: "shadow";
-         target: "bottom";
-         target: "e.text.title";
-      }
+      //~ program {
+         //~ signal: "e,state,unshaded";
+         //~ source: "e";
+         //~ action: STATE_SET "unshaded" 0.0;
+         //~ target: "shadow";
+         //~ target: "bottom";
+         //~ target: "e.text.title";
+      //~ }
       program {
          signal: "e,state,focused";
          source: "e";
