@@ -177,6 +177,7 @@ group { name: "e/modules/everything/selector_item";
             text { font: FNBD; size: 10;
                min: 0 1;
                align: 0.0 1.0;
+               //~ ellipsis: -1;
                text_class: "menu_item";
             }
          }
@@ -196,6 +197,7 @@ group { name: "e/modules/everything/selector_item";
                text_source: "e.text.label";
                min: 0 1;
                align: 0.0 1.0;
+               //~ ellipsis: -1; 
                text_class: "menu_item";
             }
             visible: 0;
@@ -217,6 +219,7 @@ group { name: "e/modules/everything/selector_item";
                min: 0 1;
                align: 1.0 0.0;
                text_class: "menu_item";
+               //~ ellipsis: -1; 
             }
          }
          description { state: "selected" 0.0;
@@ -236,6 +239,7 @@ group { name: "e/modules/everything/selector_item";
                min: 0 1;
                align: 1.0 0.0;
                text_class: "menu_item";
+               //~ ellipsis: -1; 
             }
             visible: 0;
          }
@@ -359,7 +363,6 @@ group { name: "e/modules/everything/list";
                min: 1 1;
                ellipsis: -1;
                text_class: "fileman_typebuf";
-               ellipsis: -1;
             }
          }
       }
@@ -650,6 +653,7 @@ group { name: "e/modules/everything/tab_item";
                text_source: "e.text.label";
                align: 0.5 0.5;
                text_class: "menu_item";
+               //~ ellipsis: -1; 
             }
             visible: 0;
          }
@@ -924,6 +928,7 @@ group { name: "e/modules/everything/thumbview/item/thumb";
             text { font: FN; size: 10;
                min: 0 1;
                align: 0.5 1.0;
+               //~ ellipsis: -1; 
                text_class: "fileman_icon";
             }
          }
@@ -942,6 +947,7 @@ group { name: "e/modules/everything/thumbview/item/thumb";
                text_source: "e.text.label";
                align: 0.5 1.0;
                text_class: "list_item";
+               //~ ellipsis: -1; 
             }
             visible: 0;
          }
@@ -1084,11 +1090,12 @@ group { name: "e/modules/everything/thumbview/item/list";
             rel2.to_x: "arrow";
             color_class: "list_item_text";
             align: 1.0 0.5;
-            max: 10 99999;
+            max: 160 99999;
             text { font: FN; size: 8;
                min: 0 1;
                align: 1.0 0.5;
                text_class: "ilist_item";
+               //~ ellipsis: -1; 
             }
          }
          description { state: "selected" 0.0;
@@ -1110,6 +1117,7 @@ group { name: "e/modules/everything/thumbview/item/list";
               min: 0 1;
               align: 1.0 0.5;
               text_class: "ilist_item";
+              ellipsis: -1; 
             }
             visible: 0;
          }
@@ -1132,6 +1140,7 @@ group { name: "e/modules/everything/thumbview/item/list";
                min: 0 1; 
                align: 0.0 0.5;
                text_class: "ilist_item";
+               //~ ellipsis: -1; 
             }
          }
          description { state: "selected" 0.0;
@@ -1150,6 +1159,7 @@ group { name: "e/modules/everything/thumbview/item/list";
               text_source: "e.text.label";
               align: 0.0 0.5;
               text_class: "ilist_item";
+              //~ ellipsis: -1; 
             }
             visible: 0;
          }
