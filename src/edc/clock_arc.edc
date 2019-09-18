@@ -430,11 +430,11 @@ group { name: "e/modules/clock/digital";
              rel2.offset: -1 1;
              align: 0.5 1.0;
              color_class: "calendar_today";
-             //~ color_class: "clock_text";
              text { font: FN; size: 8;
                 text_class: "module_small";
                 align: 0.5 0.5;
-                //~ min: 0 1;
+                text: "Tod, 12/30/2011";
+                size_range: 6 12;  
                 fit: 1 0;
              }
              fixed: 0 1;
