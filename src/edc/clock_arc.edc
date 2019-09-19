@@ -434,7 +434,7 @@ group { name: "e/modules/clock/digital";
                 text_class: "module_small";
                 align: 0.5 0.5;
                 text: "Tod, 12/30/2011";
-                size_range: 6 12;  
+                size_range: 6 10;  
                 fit: 1 0;
              }
              fixed: 0 1;
