@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=arc-green-theme-GTK
+Comment=Arc green theme for Moksha desktop denerated with oomox by the_waiter
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=arc-green-theme-GTK
+GtkTheme=arc-green-theme-GTK
+IconTheme=arc-green-icons-GTK
+MetacityTheme=arc-green-theme-GTK

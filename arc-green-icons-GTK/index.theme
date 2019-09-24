@@ -1,5 +1,5 @@
 [Icon Theme]
-Name=arc-dark-icons-GTK
+Name=arc-green-icons-GTK
 Comment=Colorized Gnome Icons
 Inherits=gnome-colors-common,gnome,Adwaita,breeze,oxygen,hicolor
 Example=folder
