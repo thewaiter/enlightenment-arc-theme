@@ -9,7 +9,7 @@ externals.external: "elm";
 // compat issues
 data.item: "version" "110";
 data.item: "icon-theme" "arc-green-icons-GTK";
-data.item: "gtk-theme" "arc-green-theme-GTK";
+data.item: "gtk-theme" "MokshaArcGreen";
 
 collections {
 #include "fonts_arc-dark.edc"
