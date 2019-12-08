@@ -1,7 +1,7 @@
 
 #define COL_NORM                  68  74  88 255
 #define COL_HOVER                 80  86 102 255
-#define COL_ENABLE                65  146 54 255
+#define COL_ENABLE                65  146 54 128
 #define COL_PRESSED              COL_ENABLE
 #define COL_SELECTED             COL_ENABLE
 
