@@ -43,6 +43,7 @@ edc/conf_arc.edc \
 edc/clock_arc.edc \
 edc/shelf_arc.edc \
 edc/border_arc.edc \
+edc/border-icons_arc.edc \
 edc/about-e_arc.edc \
 edc/about-theme_arc.edc \
 edc/evrything_arc.edc \
