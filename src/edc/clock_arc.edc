@@ -177,7 +177,8 @@ group { name: "e/modules/clock/digital";
       // if they are calculations go weird. this shouldnt happen, but does.
       part { name: "timearea"; type: RECT;
          description { state: "default" 0.0;
-            visible: 0;
+            color: 56 60 74 255;
+            visible: 1;
          }
          description { state: "date" 0.0;
             inherit: "default" 0.0;
@@ -426,11 +427,11 @@ group { name: "e/modules/clock/digital";
           scale: 1;
           description { state: "default" 0.0;
              rel1.relative: 0.0 1.0;
-             rel1.offset: 0 1;
-             rel2.offset: -1 1;
+             rel1.offset: 0 2;
+             rel2.offset: -1 0;
              align: 0.5 1.0;
              color_class: "calendar_today";
-             text { font: FN; size: 8;
+             text { font: FN; size: 18;
                 text_class: "module_small";
                 align: 0.5 0.5;
                 text: "Tod, 12/30/2011";
@@ -636,7 +637,7 @@ group { name: "e/modules/clock/main";
             rel1.offset: 0 -1;
             rel2.to: "base";
             rel2.offset: -1 -2;
-            image.normal: "inset_round_shadow.png";
+            //image.normal: "inset_round_shadow.png";
          }
       }
       part { name: "base-hi";
@@ -879,7 +880,31 @@ group { name: "e/modules/clock/calendar/day";
            }
       }
    }
+   
+   
+   
    parts {
+   part { name: "weekend"; type: RECT;
+				mouse_events: 0;
+				description { state: "default" 0.0;
+					color: 0 0 0 0;
+				}
+				description { state: "weekend" 0.0;
+					inherit: "default" 0.0;
+					color: 0 0 0 32;
+				}
+			}
+   
+   part { name: "day"; type: RECT;
+				mouse_events: 0;
+				description { state: "default" 0.0;
+					color: 56 60 74 255;
+				}
+				description { state: "today" 0.0;
+					inherit: "default" 0.0;
+					color: 56 60 74 255;
+				}
+			}
       part { name: "e.text.label"; type: TEXT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
