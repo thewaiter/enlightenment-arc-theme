@@ -34,6 +34,7 @@
    ICON("preferences-variables",                  80, "icon_preferences-variables.png")
    ICON("preferences-interaction",                80, "icon_preferences-interaction.png")
    ICON("preferences-composite",                  80, "icon_preferences-composite.png")
+   ICON("preferences-applications",               80, "icon_home.png")
 
    ICON("enlightenment/wallpaper_stretch",          80, "icon_wallpaper_stretch.png")
    ICON("enlightenment/wallpaper_center",           80, "icon_wallpaper_center.png")
