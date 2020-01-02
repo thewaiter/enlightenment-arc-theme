@@ -426,7 +426,7 @@ group { name: "e/modules/clock/digital";
           scale: 1;
           description { state: "default" 0.0;
              rel1.relative: 0.0 1.0;
-             rel1.offset: 0 1;
+             rel1.offset: 0 -1;
              rel2.offset: -1 1;
              align: 0.5 1.0;
              color_class: "calendar_today";
@@ -879,7 +879,31 @@ group { name: "e/modules/clock/calendar/day";
            }
       }
    }
+   
+   
+   
    parts {
+   part { name: "weekend"; type: RECT;
+				mouse_events: 0;
+				description { state: "default" 0.0;
+					color: 0 0 0 0;
+				}
+				description { state: "weekend" 0.0;
+					inherit: "default" 0.0;
+					color: 0 0 0 32;
+				}
+			}
+   
+   part { name: "day"; type: RECT;
+				mouse_events: 0;
+				description { state: "default" 0.0;
+					color: 56 60 74 255;
+				}
+				description { state: "today" 0.0;
+					inherit: "default" 0.0;
+					color: 56 60 74 255;
+				}
+			}
       part { name: "e.text.label"; type: TEXT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
