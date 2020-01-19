@@ -92,14 +92,26 @@ group { name: "e/widgets/about/main";
             align: 0.5 1.0;
          }
       }
-      part { name: "logo";
+      part { name: "logo_top";
          description { state: "default" 0.0;
             image.normal: "logo_blue_bottom.png";
             image.scale_hint: STATIC;
-            FIXED_SIZE(263,100);
+            FIXED_SIZE(250,250);
             rel1.to: "top_base";
+            rel1.offset: 0 30;
             rel2.to: "top_base";
-            align: 0.5 0.25;
+            align: 0.5 0.5;
+         }
+      }
+      part { name: "logo_bottom";
+         description { state: "default" 0.0;
+            image.normal: "logo_blue_bottom.png";
+            image.scale_hint: STATIC;
+            FIXED_SIZE(250,250);
+            rel1.relative: 0.5 0.5;
+            //~ rel1.offset: 0 30;
+            rel2.relative: 0.5 1.5;
+            //~ align: 0.5 0.25;
          }
       }
       part { name: "top_base"; type: RECT;
