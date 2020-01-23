@@ -37,7 +37,7 @@ group { name: "e/init/splash";
             image.normal: "logo_blue_small.png";
             rel1.relative: 0.5 0.5;
             rel2.relative: 0.5 0.5;
-            FIXED_SIZE(100, 127)
+            FIXED_SIZE(100, 100)
          }
       }
       part { name: "logo_glow";
