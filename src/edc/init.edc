@@ -82,7 +82,7 @@ group {
                state: "default" 0.0;
                rel1 {
                   to_y: "logo";
-                  relative: 0.05 -0.4;
+                  relative: 0.05 -0.5;
                }
                rel2 {
                   to_y: "logo";
@@ -90,6 +90,7 @@ group {
                }
                color: 255 255 255 0;
                text {
+				   //~ text: "MOKSHA";
                   font: "Sans:style=Bold";
                   size: 16;
                   // fit: 0 1;
@@ -118,6 +119,7 @@ group {
                }
                color: 255 255 255 0;
                text {
+                  //~ text: "System check done";
                   font: "Sans";
                   size: 10;
                   // fit: 0 1;
