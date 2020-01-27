@@ -22,7 +22,7 @@ group {
             image.normal: "bg_radgrad.png";
             image.scale_hint: STATIC;
             fill.smooth: 0;
-            ASPECT_FILL((1024/653))
+            //~ ASPECT_FILL((1024/653))
          }
       }
       part { name: "pat";
@@ -70,7 +70,7 @@ group {
             clip_to: "logoclip";
             description {
                state: "default" 0.0;
-               FIXED_SIZE(80, 80)
+               FIXED_SIZE(150, 150)
                image.normal: "moksha_logo.png";
             }
          }
@@ -90,7 +90,7 @@ group {
                }
                color: 255 255 255 0;
                text {
-				   //~ text: "MOKSHA";
+				   text: "MOKSHA";
                   font: "Sans:style=Bold";
                   size: 16;
                   // fit: 0 1;
@@ -119,7 +119,7 @@ group {
                }
                color: 255 255 255 0;
                text {
-                  //~ text: "System check done";
+                  text: "System check done";
                   font: "Sans";
                   size: 10;
                   // fit: 0 1;
