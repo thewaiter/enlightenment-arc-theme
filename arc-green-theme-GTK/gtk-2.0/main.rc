@@ -93,7 +93,7 @@ style "default" {
 
   base[NORMAL] = @base_color
   base[PRELIGHT] = shade (0.95, @bg_color)
-  base[SELECTED] = @selected_bg_color
+  base[SELECTED] = shade (0.9, @selected_bg_color)
   base[INSENSITIVE] = @bg_color
   base[ACTIVE] = shade (0.9, @selected_bg_color)
 
