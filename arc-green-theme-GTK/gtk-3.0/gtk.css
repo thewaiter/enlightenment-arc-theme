@@ -2916,7 +2916,7 @@ headerbar button.titlebutton,
   .titlebar button.titlebutton:checked {
     color: #ffffff;
     border-color: transparent;
-    background-color: #419236; }
+    background-color: rgba(95, 105, 127, 0.37); }
   headerbar button.titlebutton.close, headerbar button.titlebutton.maximize, headerbar button.titlebutton.minimize,
   .titlebar button.titlebutton.close,
   .titlebar button.titlebutton.maximize,
