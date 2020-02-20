@@ -450,7 +450,7 @@ group {
          scale: 1;
          description { state: "default" 0.0;
             rel1 {
-               to_x: "title_spacer";
+               to_x: "e.event.icon";
                to_y: "btn-spacer";
                relative: 1.0 0.0;
             }
