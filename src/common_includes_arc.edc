@@ -142,7 +142,7 @@
 #include "edc/time_arc.edc"
 
 // icons
-#include "edc/icons.edc"
+//~ #include "edc/icons.edc"
 // #include "../orig-theme/edc/border-icons.edc"
 
 // port unchanged stuff so this can work as a replacement
