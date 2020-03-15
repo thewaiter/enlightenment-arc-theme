@@ -1,1 +1,56 @@
-<svg fill="#bdbdbd" height="48" version="1.1" viewBox="0 0 36 40" width="48" xmlns="http://www.w3.org/2000/svg"><path d="m29.666666 6.666667l-1.666667 0 0-3.333333-3.333333 0 0 3.333333-13.333333 0 0-3.333333-3.333333 0 0 3.333333-1.666667 0c-1.841667 0-3.316667 1.491667-3.316667 3.333333L3.000001 33.333333c0 1.841667 1.491667 3.333333 3.333333 3.333333l23.333332 0c1.841667 0 3.333333-1.491667 3.333333-3.333333l0-23.333332c0-1.841667-1.491667-3.333333-3.333333-3.333333zm0 26.666666l-23.333332 0 0-18.333333 23.333332 0 0 18.333333zM9.666667 18.333333l8.333333 0 0 8.333333-8.333333 0z" fill="#bdbdbd"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   fill="#bdbdbd"
+   height="48"
+   version="1.1"
+   viewBox="0 0 36 40"
+   width="48"
+   id="svg4"
+   sodipodi:docname="gnome-calendar-symbolic.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="796"
+     inkscape:window-height="517"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="4.9166667"
+     inkscape:cx="-1.6271186"
+     inkscape:cy="24"
+     inkscape:window-x="38"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m29.666666 6.666667l-1.666667 0 0-3.333333-3.333333 0 0 3.333333-13.333333 0 0-3.333333-3.333333 0 0 3.333333-1.666667 0c-1.841667 0-3.316667 1.491667-3.316667 3.333333L3.000001 33.333333c0 1.841667 1.491667 3.333333 3.333333 3.333333l23.333332 0c1.841667 0 3.333333-1.491667 3.333333-3.333333l0-23.333332c0-1.841667-1.491667-3.333333-3.333333-3.333333zm0 26.666666l-23.333332 0 0-18.333333 23.333332 0 0 18.333333zM9.666667 18.333333l8.333333 0 0 8.333333-8.333333 0z"
+     fill="#bdbdbd"
+     id="path2"
+     style="fill:#419236;fill-opacity:1;opacity:0.71985816" />
+</svg>
