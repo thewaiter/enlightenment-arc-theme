@@ -1095,7 +1095,7 @@ group { name: "e/modules/everything/thumbview/item/list";
                min: 0 1;
                align: 1.0 0.5;
                text_class: "ilist_item";
-               //~ ellipsis: -1; 
+               //ellipsis: -1; 
             }
          }
          description { state: "selected" 0.0;
@@ -1117,7 +1117,7 @@ group { name: "e/modules/everything/thumbview/item/list";
               min: 0 1;
               align: 1.0 0.5;
               text_class: "ilist_item";
-              ellipsis: -1; 
+              //ellipsis: -1; 
             }
             visible: 0;
          }
@@ -1140,7 +1140,7 @@ group { name: "e/modules/everything/thumbview/item/list";
                min: 0 1; 
                align: 0.0 0.5;
                text_class: "ilist_item";
-               //~ ellipsis: -1; 
+               ellipsis: -1; 
             }
          }
          description { state: "selected" 0.0;
@@ -1159,7 +1159,7 @@ group { name: "e/modules/everything/thumbview/item/list";
               text_source: "e.text.label";
               align: 0.0 0.5;
               text_class: "ilist_item";
-              //~ ellipsis: -1; 
+              ellipsis: -1; 
             }
             visible: 0;
          }
