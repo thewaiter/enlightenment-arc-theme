@@ -480,6 +480,7 @@ group {
             rel.to: "btn-spacer";
          }
       }
+      
       part { name: "btn-spacer";
          type: SPACER;
          scale: 1;
@@ -492,6 +493,7 @@ group {
             fixed: 1 1;
          }
       }
+      
       part { name: "e.event.titlebar";
          type: RECT;
          description { state: "default" 0.0;
@@ -871,6 +873,98 @@ group {
          signal: "mouse,clicked,*";
          source: "e.event.minimize";
          action: SIGNAL_EMIT "elm,action,iconify" "elm";
+      }
+   }
+}
+
+group { name: "e/widgets/border/left_controls/border";
+   inherit: "e/widgets/border/default/border";
+   parts {
+      part { name: "btn-spacer";
+         type: SPACER;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to_y: "border_shadow_spacer";
+            rel1.relative: 0.0 1.0;
+            min: (BORDER_BTN_W * 6) (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
+            max: (BORDER_BTN_W * 6) (BORDER_BTN_H + 2 * BORDER_BTN_PAD); 
+            align: 0.0 0.0;
+            fixed: 1 1;
+            //~ color: 255 255 255 255;
+         }
+      }
+      
+      group { name: "e.event.close";
+         source: "e/border/btn-close";
+         desc { "default";
+               rel1.relative: 0.0 0.0;
+               rel.to: "btn-spacer";
+               rel2.relative: 0.35 1.0;
+         }
+      }
+      
+      group { name: "e.event.maximize";
+         source: "e/border/btn-maximize";
+         desc { "default";
+               rel.to: "btn-spacer";
+               rel1.relative: 0.35 0.0;
+               rel2.relative: 0.65 1.0;
+         }
+      }
+      
+      group { name: "e.event.minimize";
+         source: "e/border/btn-minimize";
+         desc { "default";
+               rel.to: "btn-spacer";
+               rel1.relative: 1.25 0.0;
+         }
+      }
+      
+      
+      
+      part { name: "e.text.title";
+         type: TEXT;
+         mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1 {
+               to_x: "btn-spacer";
+               to_y: "btn-spacer";
+               relative: 0.0 0.0;
+            }
+            rel2 {
+               to_x: "e.event.icon";
+               relative: 0.5 1.0;
+            }
+             color_class: "win_border_title";
+            text {
+               font: FN; size: FNSIZE;
+               text_class: "title_bar";
+               align: 0.5 0.5;
+               min: 0 1;
+               // text: "MMMMMMMMMMMMMMMMM";
+               text: " ";
+            }
+           fixed: 0 1;
+         }
+         description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            color_class: "win_border_title_active";
+         }
+      }
+      
+      part { name: "e.event.icon"; type: RECT;
+         description { state: "default" 0.0;
+            fixed: 1 0;
+            rel1.relative: 1.0 0.0;
+            //~ rel1.offset: 20 0;
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -10 0;
+            //~ rel2.to_y: "top_bg";
+            align: 1.0 0.5;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
+            //~ color: 0 0 0 0;
+         }
       }
    }
 }
