@@ -890,7 +890,6 @@ group { name: "e/widgets/border/left_controls/border";
             max: (BORDER_BTN_W * 6) (BORDER_BTN_H + 2 * BORDER_BTN_PAD); 
             align: 0.0 0.0;
             fixed: 1 1;
-            //~ color: 255 255 255 255;
          }
       }
       
@@ -919,8 +918,6 @@ group { name: "e/widgets/border/left_controls/border";
                rel1.relative: 1.25 0.0;
          }
       }
-      
-      
       
       part { name: "e.text.title";
          type: TEXT;
@@ -957,13 +954,10 @@ group { name: "e/widgets/border/left_controls/border";
          description { state: "default" 0.0;
             fixed: 1 0;
             rel1.relative: 1.0 0.0;
-            //~ rel1.offset: 20 0;
             rel2.relative: 1.0 1.0;
             rel2.offset: -10 0;
-            //~ rel2.to_y: "top_bg";
             align: 1.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
-            //~ color: 0 0 0 0;
          }
       }
    }
