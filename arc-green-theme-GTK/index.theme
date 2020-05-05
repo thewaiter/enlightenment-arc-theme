@@ -1,12 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Arc-Green-Dark
-Comment=A flat theme with transparent elements
+Name=moksh-arc-green
+Comment=arc dark green default theme for Moksha desktop created in oomox tool
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Arc-Green-Dark
-MetacityTheme=Arc-Green-Dark
-IconTheme=gnome
-CursorTheme=DMZ-Black
-ButtonLayout=menu:minimize,maximize,close
+Name=arc-green
+GtkTheme=arc-green
+IconTheme=arc-green
+MetacityTheme=arc-green
