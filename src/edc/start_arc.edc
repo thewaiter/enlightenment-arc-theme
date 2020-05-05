@@ -1,80 +1,38 @@
 group { name: "e/modules/start/main";
-   alias: "e/gadget/start/main";
-   IMAGE_SET("dot-small", 4, 4)
-   max: 128 128;
-   parts {
-      rect { name: "base";
-         desc { "default";
-            color: 0 0 0 0;
-         }
-         desc { "active";
-            color_class: "button_bg_pressed";
-         }
-      }
-      part { name: "spacer";
-         type: SPACER;
+parts {	
+  images.image: "icon_enlightenment.png" COMP;
+	part { name: "icon";
          description { state: "default" 0.0;
-            rel1.offset: 0 1;
-            rel1.relative: 0.3 0.5;
-            rel2.offset: -1 0;
-            rel2.relative: 0.7 0.5;
-            aspect: 1 4;
-            align: 0.5 0.5;
-            fixed: 1 0;
+			aspect: 1 1;
+			aspect_preference: BOTH;
+            image.normal: "icon_enlightenment.png";
+            color_class: "focus";
+            max: 100 127;
+            map.on: 1;
+            map.smooth: 1;
+            map.rotation.center: "icon";
+         }
+         description { state: "spin" 0.0;
+            inherit: "default" 0.0;
+            map.rotation.y: 360;
          }
       }
-      image { name: "circle1";
-         desc { "default";
-            image.normal: "dot-small";
-            rel.to: "spacer";
-            rel1.relative: 0.0 0.0;
-            rel2.relative: 0.0 1.0;
-            align: 0.5 0.5;
-            aspect: 1 1;
-            color_class: "button_icon";
-            fixed: 0 1;
-         }
-      }
-      image { name: "circle2";
-         inherit: "circle1";
-         desc { "default";
-            align: 0.5 0.5;
-            rel1.relative: 0.5 0.0;
-            rel2.relative: 0.5 1.0;
-         }
-      }
-      image { name: "circle3";
-         inherit: "circle1";
-         desc { "default";
-            align: 0.5 0.5;
-            rel1.relative: 1.0 0.0;
-            rel2.relative: 1.0 1.0;
-         }
-      }
-      part { name: "events"; type: RECT;
-         description { state: "default" 0.0;
-            color: 0 0 0 0;
-         }
-      }
-   }
-   programs {
+     
+    }
+	programs {
       program {
          signal: "e,state,focused";
          source: "e";
-         action: STATE_SET "active" 0.0;
-         target: "base";
-         // target: "circle1";
-         // target: "circle2";
-         // target: "circle3";
+         transition: LINEAR 1.0;
+         action: STATE_SET "spin" 0.0;
+         target: "icon";
       }
       program {
          signal: "e,state,unfocused";
          source: "e";
+         transition: LINEAR 0.0;
          action: STATE_SET "default" 0.0;
-         target: "base";
-         // target: "circle1";
-         // target: "circle2";
-         // target: "circle3";
+         target: "icon";
       }
    }
 }
