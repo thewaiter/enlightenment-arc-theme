@@ -365,7 +365,7 @@ group { name: "e/fileman/default/icon/fixed";
    images.image: "bg-rounded-3px@4.png" COMP;
    styles {
       style { name: "fileman_icon_name";
-         base: "font="FN" font_size=10 text_class=fileman_icon align=center color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed align=center ellipsis=1.0";
+         base: "font="FN" font_size=10 text_class=fileman_icon align=center style=shadow shadow_color=#000 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed align=center ellipsis=1.0";
       }
       style { name: "fileman_icon_name_selected";
          base: "font="FN" font_size=10 text_class=fileman_icon align=center color="COL_FONT_BASIC_SELECTED_HEX" wrap=mixed align=center ellipsis=1.0";
