@@ -124,7 +124,7 @@
 #include "edc/systray.edc"
 // #include "../orig-theme/edc/appmenu.edc"
 #include "edc/clock_arc.edc"
-// #include "../orig-theme/edc/ibar-ibox.edc"
+#include "../orig-theme/edc/ibar-ibox.edc"
 // #include "../orig-theme/edc/colors.edc"
 // #include "../orig-theme/edc/edgebindings.edc"
 // #include "../orig-theme/edc/randr.edc"

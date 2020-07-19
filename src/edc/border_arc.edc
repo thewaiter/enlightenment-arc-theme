@@ -388,8 +388,11 @@ group {
             color_class: "win_border_base";
             fill.smooth: 0;
          }
+         description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            color_class: "col_border";
+         } 
       }
-      
        
       spacer { name: "border_shadow_spacer"; nomouse;
          scale: 1;
@@ -412,6 +415,10 @@ group {
             rel2.to: "top_bg";
             color_class: "win_border_border_shadow";
          }
+         description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            color_class: "col_active";
+         } 
       }
       image { name: "top_border"; nomouse;
          scale: 1;
@@ -424,6 +431,10 @@ group {
             rel2.to: "top_bg";
             color_class: "win_border_border";
          }
+         description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            color_class: "col_active";
+         } 
       }
       rect { name: "top_bg_maximized"; nomouse;
          desc { "default";
@@ -553,6 +564,7 @@ group {
             visible: 0;
          }
       }
+      
       part { name: "left"; nomouse;
          type: RECT; scale: 1;
          description { state: "default" 0.0;
@@ -564,14 +576,10 @@ group {
                to_y: "bottom";
                relative: 1.0 0.0;
             }
-            //color_class: "win_border_border";
-            color: 47 53 62 255;
+            color_class: "col_darker";
             align: 0.0 0.0;
             min: 3 0;
             max: BORDER_WIDTH 99999;
-         }
-         description { state: "focused" 0.0;
-            inherit: "default" 0.0;
          }
          description { state: "max";
             inherit: "default" 0.0;
@@ -589,14 +597,10 @@ group {
                to_y: "bottom";
                relative: 1.0 0.0;
             }
-            //color_class: "win_border_border";
-            color: 47 53 62 255;
+            color_class: "col_darker";
             align: 1.0 0.0;
             min: 3 0;
             max: BORDER_WIDTH 99999;
-         }
-         description { state: "focused" 0.0;
-            inherit: "default" 0.0;
          }
          description { state: "max";
             inherit: "default" 0.0;
@@ -836,12 +840,18 @@ group {
          source: "e";
          action: STATE_SET "active" 0.0;
          target: "e.text.title";
+         target: "top_border_shadow";
+         target: "top_border";
+         target: "top_bg";
       }
       program {
          signal: "e,state,unfocused";
          source: "e";
          action: STATE_SET "default" 0.0;
          target: "e.text.title";
+         target: "top_border_shadow";
+         target: "top_border";
+         target: "top_bg";
       }
 
       program {
