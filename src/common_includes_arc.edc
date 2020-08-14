@@ -130,7 +130,7 @@
 // #include "../orig-theme/edc/randr.edc"
 #include "edc/notification_arc.edc"
 #include "edc/cpufreq.edc"
-// #include "../orig-theme/edc/temperature.edc"
+#include "../orig-theme/edc/temperature.edc"
 // #include "../orig-theme/edc/backlight.edc"
 #include "edc/mixer.edc"
 #include "edc/battery.edc"
