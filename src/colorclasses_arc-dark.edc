@@ -19,7 +19,7 @@
 #define COL_BG_DARKER             47  53 62 255
 #define COL_BG_DARKER_TRANS       47  53 62 235
 #define COL_BORDER                43  46 57 255
-#define COL_BORDER_GREEN          61  112 60 255
+#define COL_BORDER_GREEN          61 112 60 255
 #define COL_BORDER_DARK           43  46 57 255
 
 #define COL_FOCUS_INLINE         135 135 135 100
