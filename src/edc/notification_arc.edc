@@ -19,6 +19,7 @@ group { name: "e/modules/notification/logo";
 		    {
 				rel1.to: "base";
 				rel2.to: "base";
+				rel2.offset: 0 1;
 		       state: "default" 0.0;
 		       color: 255 255 255 255;
 		       color3: 0 0 0 32;
@@ -28,9 +29,10 @@ group { name: "e/modules/notification/logo";
 			 {
 			    text: "";
 			    font: "Sans:style=Bold";
-			    size: 12;
+			    size: 9;
 			    min: 1 1;
-			    align: 0.5 0.5;
+			    align: 1.0 1.0;
+			    ellipsis: -1;
 			 }
 		    }
 	       }
