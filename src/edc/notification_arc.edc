@@ -171,9 +171,8 @@ group { name: "e/modules/notification/main";
          clip_to: "clip";
          type: RECT;
          description { state: "default" 0.0;
-            rel.to: "base";
             rel2.offset: -13 -13;
-            min: 220 80;
+            min: 220 100;
          }
       }
       part { name: "notification.swallow.app_icon";
