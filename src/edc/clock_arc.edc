@@ -698,7 +698,7 @@ group { name: "e/modules/clock/main";
       }
       part { name: "minutes"; mouse_events: 0;
          description { state: "default" 0.0000;
-            color: 65 146 54 255;
+            color: 91 194 76 255;
             image.normal: "tacho_hand_big";
             rel1.to: "base";
             rel2.to: "base";
@@ -726,7 +726,7 @@ group { name: "e/modules/clock/main";
       part { name: "hours"; mouse_events: 0;
          description { state: "default" 0.0;
             image.normal: "tacho_hand_small_min";
-            color: 91 194 76 255;
+            color: 65 146 54 255;
             rel1.to: "base";
             rel2.to: "base";
             map {
