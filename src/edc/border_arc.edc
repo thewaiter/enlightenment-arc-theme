@@ -335,6 +335,7 @@ group {
       image: "bg-top-rounded-3px@4.png" COMP;
       image: "border-top-rounded-3px.png" COMP;
       image: "border-top-rounded-3px@4.png" COMP;
+      image: "border-top-rounded-3px@0.png" COMP;
       // enlightenment's window shadow
       image: "win_shadow_arc.png" COMP;
    }
@@ -408,7 +409,7 @@ group {
             image.border: 12 12 12 12;
             image.border_scale: 1;
             image.border_scale_by: 0.25;
-            image.normal: "border-top-rounded-3px@4.png";
+            image.normal: "border-top-rounded-3px@0.png";
             image.middle: 0;
             rel1.to_y: "border_shadow_spacer";
             rel1.relative: 0.0 1.0;
@@ -423,7 +424,7 @@ group {
       image { name: "top_border"; nomouse;
          scale: 1;
          desc { "default";
-            image.normal: "border-top-rounded-3px@4.png";
+            image.normal: "border-top-rounded-3px@0.png";
             image.border: 12 12 12 12;
             image.border_scale: 1;
             image.border_scale_by: 0.25;
