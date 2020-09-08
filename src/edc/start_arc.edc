@@ -1,31 +1,33 @@
 group { name: "e/modules/start/main";
 parts {	
   images.image: "icon_enlightenment.png" COMP;
-	part { name: "icon";
+    part { name: "icon";
          description { state: "default" 0.0;
-			aspect: 1 1;
-			aspect_preference: BOTH;
+            aspect: 1 1;
+            aspect_preference: BOTH;
+            fill {
+                  smooth, 1;
+               } 
             image.normal: "icon_enlightenment.png";
             color_class: "focus";
             max: 100 127;
-            map.on: 1;
-            map.smooth: 1;
-            map.rotation.center: "icon";
          }
          description { state: "spin" 0.0;
             inherit: "default" 0.0;
-            map.rotation.y: 360;
+            rel1.relative: 0.1 0.1;
+            rel2.relative: 0.9 0.9;
          }
       }
      
     }
-	programs {
+    programs {
       program {
          signal: "e,state,focused";
          source: "e";
-         transition: LINEAR 1.0;
+         //~ transition: LINEAR 0.1;
          action: STATE_SET "spin" 0.0;
          target: "icon";
+         //~ after: "back";
       }
       program {
          signal: "e,state,unfocused";
