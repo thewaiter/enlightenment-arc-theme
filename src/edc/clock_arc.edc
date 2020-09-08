@@ -753,17 +753,18 @@ group { name: "e/modules/clock/main";
             max: 24 24;
          }
       }
-      part { name: "knob2";
-         description { state: "default" 0.0;
-            rel1.offset: -4 -4;
-            rel1.to: "knob";
-            rel2.offset: 3 3;
-            rel2.to: "knob";
-            min: 12 12;
-            max: 32 32;
-            image.normal: "knob";
-         }
-      }
+      //~ part { name: "knob2";
+         //~ description { state: "default" 0.0;
+             //~ color: 0 250 0 200;
+            //~ rel1.offset: -4 -4;
+            //~ rel1.to: "knob";
+            //~ rel2.offset: 3 3;
+            //~ rel2.to: "knob";
+            //~ min: 12 12;
+            //~ max: 32 32;
+            //~ image.normal: "knob";
+         //~ }
+      //~ }
    }
    programs {
       program {
