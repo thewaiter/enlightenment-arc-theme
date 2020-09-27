@@ -938,7 +938,7 @@ group { name: "e/modules/clock/calendar/day";
          scale: 1;
          effect: SHADOW;
          description { state: "default" 0.0;
-            rel1.offset: -3 -1;
+            rel1.offset: -3 1;
             rel1.to: "e.text.label";
             rel2.offset: 2 0;
             rel2.to: "e.text.label";
