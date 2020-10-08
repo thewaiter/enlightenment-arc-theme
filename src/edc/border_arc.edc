@@ -647,17 +647,6 @@ group {
          }
       }
 
-      part { name: "e.event.resize.tl"; type: RECT;
-         description { state: "default" 0.0;
-            rel1.offset: -2 -2;
-            rel2.offset: 2 2;
-            rel2.relative: 0.0 0.0;
-            min: 32 4;
-            fixed: 1 1;
-            align: 0.0 0.0;
-            color: 0 0 0 0;
-         }
-      }
       part { name: "e.event.resize.l"; type: RECT;
          description { state: "default" 0.0;
             rel1.relative: 0.0 0.0;
@@ -668,6 +657,7 @@ group {
             color: 0 0 0 0;
          }
       }
+      
       part { name: "e.event.resize.r"; type: RECT;
          description { state: "default" 0.0;
             rel1.relative: 1.0 0.0;
@@ -691,10 +681,23 @@ group {
             fixed: 0 1;
          }
       }
+      
+       part { name: "e.event.resize.tl"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.offset: -2 -2;
+            rel2.offset: 2 6;
+            rel2.relative: 0.0 0.0;
+            min: 32 4;
+            fixed: 1 1;
+            align: 0.0 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      
       part { name: "e.event.resize.tr"; type: RECT;
          description { state: "default" 0.0;
             rel1.offset: -2 -2;
-            rel2.offset: 2 2;
+            rel2.offset: 2 6;
             rel1.relative: 1.0 0.0;
             rel2.relative: 1.0 0.0;
             min: 32 4;
@@ -786,7 +789,7 @@ group {
          description { state: "default" 0.0;
             rel1.to: "icon";
             rel1.relative: 0.10 0.10;
-            rel1.offset: 3 0;
+            rel1.offset: 0 0;
             rel2.to: "icon";
             rel2.relative: 0.90 0.90;
             rel2.offset: 0 0;
@@ -797,6 +800,7 @@ group {
          description { state: "default" 0.0;
             fixed: 1 0;
             rel1.relative: 0.0 0.0;
+            rel1.offset: 5 0;
             rel2.relative: 0.0 1.0;
             rel2.to_y: "top_bg";
             align: 0.0 0.5;
