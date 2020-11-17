@@ -543,21 +543,21 @@ group {
          }
       }
       part { name: "bottom"; nomouse;
-         type: RECT; scale: 1;
+         type: RECT;
          description { state: "default" 0.0;
             //color_class: "win_border_border";
             color: 47 53 62 255;
             rel1.relative: 0.0 1.0;
-            rel2.relative: 1.0 1.0;
             rel1.offset:   0 5; 
-            rel2.offset:   0 -5;
+            rel2.relative: 1.0 1.0;
+            rel2.offset:   0 -7;
             min: 0 7;
             max: 99999 BORDER_WIDTH;
          }
          description { state: "shaded" 0.0;
             inherit: "default" 0.0;
-            min: 0 2;
-            visible: 0;
+            min: 0 0;
+            visible: 1;
          }
          description { state: "max" 0.0;
             inherit: "default" 0.0;
@@ -832,14 +832,14 @@ group {
          target: "bottom";
          //~ target: "e.text.title";
       }
-      //~ program {
-         //~ signal: "e,state,unshaded";
-         //~ source: "e";
-         //~ action: STATE_SET "unshaded" 0.0;
-         //~ target: "shadow";
-         //~ target: "bottom";
-         //~ target: "e.text.title";
-      //~ }
+      program {
+         signal: "e,state,unshaded";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "shadow";
+         target: "bottom";
+         target: "e.text.title";
+      }
       program {
          signal: "e,state,focused";
          source: "e";
