@@ -139,7 +139,7 @@ group { name: "e/modules/battery/main";
             rel2.offset: 4 4;
             image.normal: "glow_med_white.png";
             image.border: 10 10 10 10;
-            color: 51 153 255 255;
+            color: 65 146 54 255;
          }
       }
       part { name: "top-shine";
