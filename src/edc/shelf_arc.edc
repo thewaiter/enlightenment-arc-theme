@@ -60,10 +60,10 @@ group { name: "e/shelf/default/base"; nomouse;
             rel.to: "sizer";
             link.base: "e,state,visible" "e";
          }
-         desc { "hidden"; hid;
-            rel.to: "sizer";
-            link.base: "e,state,hidden" "e";
-         }
+         //~ desc { "hidden"; hid;
+            //~ rel.to: "sizer";
+            //~ link.base: "e,state,hidden" "e";
+         //~ }
       }
       rect { "events"; repeat; mouse;
          desc { color: 0 0 0 0; }
