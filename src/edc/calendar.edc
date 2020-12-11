@@ -17,12 +17,12 @@ images {
         rel1.offset: -1 -1;			\
         rel2.to: To;				\
         rel2.offset: 0 0;			\
-        color: 255 128 128 0;			\
+        color: 128 255 128 0;			\
      }						\
      description {				\
         state: "click" 0.0;			\
         inherit: "default" 0.0;			\
-        color: 255 128 128 255;			\
+        color: 128 255 128 255;			\
      }						\
   }						\
   part {					\
@@ -33,12 +33,12 @@ images {
         state: "default" 0.0;			\
         rel1.relative: X1 0.0;			\
         rel2.relative: X2 1.0;			\
-        color: 255 195 195 0;			\
+        color: 195 255 195 0;			\
      }						\
      description {				\
         state: "click" 0.0;			\
         inherit: "default" 0.0;			\
-        color: 255 195 195 255;			\
+        color: 195 255 195 255;			\
      }						\
   }
 
@@ -94,7 +94,7 @@ images {
 	    description {
 	       state: "click" 0.0;
 	       inherit: "default" 0.0;
-	       color: 255 0 0 255;
+	       color: 0 255 0 255;
 	    }
 	 }
 	 part {
@@ -136,7 +136,7 @@ images {
 	    description {
 	       state: "click" 0.0;
 	       inherit: "default" 0.0;
-	       color: 255 0 0 255;
+	       color: 0 255 0 255;
 	    }
 	 }
 	 FLASHY_RECT("year/right", 0.94, 1.0);
@@ -156,7 +156,7 @@ images {
 	    description {
 	       state: "click" 0.0;
 	       inherit: "default" 0.0;
-	       color: 255 0 0 255;
+	       color: 0 255 0 255;
 	    }
 	 }
       }
