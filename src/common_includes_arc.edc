@@ -105,6 +105,7 @@
 #include "edc/winlist_arc.edc"
 #include "edc/desklock.edc"
 #include "edc/deskmirror_arc.edc"
+#include "edc/calendar.edc"
 // #include "../orig-theme/edc/wizard.edc"
 #include "edc/init.edc"
 #include "edc/about-e_arc.edc"

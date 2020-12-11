@@ -1,0 +1,460 @@
+images {
+   image: "calendar.png" COMP;
+   image: "arrow_left.png" COMP;
+   image: "arrow_right.png" COMP;
+   image: "arrow2_left.png" COMP;
+   image: "arrow2_right.png" COMP;
+}
+
+#define FLASHY_RECT(To, X1, X2)			\
+  part {					\
+     name: To"/back";				\
+     type: RECT;				\
+     mouse_events: 1;				\
+     description {				\
+        state: "default" 0.0;			\
+        rel1.to: To;				\
+        rel1.offset: -1 -1;			\
+        rel2.to: To;				\
+        rel2.offset: 0 0;			\
+        color: 255 128 128 0;			\
+     }						\
+     description {				\
+        state: "click" 0.0;			\
+        inherit: "default" 0.0;			\
+        color: 255 128 128 255;			\
+     }						\
+  }						\
+  part {					\
+     name: To;					\
+     type: RECT;				\
+     mouse_events: 1;				\
+     description {				\
+        state: "default" 0.0;			\
+        rel1.relative: X1 0.0;			\
+        rel2.relative: X2 1.0;			\
+        color: 255 195 195 0;			\
+     }						\
+     description {				\
+        state: "click" 0.0;			\
+        inherit: "default" 0.0;			\
+        color: 255 195 195 255;			\
+     }						\
+  }
+
+
+   group {
+      name: "modules/calendar/header";
+      min: 42 20;
+      parts {	 
+	part {
+ 	    name: "base";
+	    type: RECT;
+	    mouse_events: 0;
+	    description {
+	       state: "default" 0.0;
+	       rel1 {
+                  offset: -1 -1;
+               }
+               rel2 {
+                  offset: 0 0;
+               }
+               color: 65 146 54 255; 
+	    }
+	 }
+	 FLASHY_RECT("year/left", 0.0, 0.06);
+	 part {
+ 	    name: "year/left/image";
+	    type: IMAGE;
+	    mouse_events: 0;
+	    description {
+	       state: "default" 0.0;
+	       aspect: 1.0 1.0;
+	       aspect_preference: BOTH;
+	       rel1.to: "year/left";
+	       rel2.to: "year/left";
+	       image.normal: "arrow2_left.png";
+	    }
+	 }
+
+	 FLASHY_RECT("month/left", 0.06, 0.12);
+	 part {
+ 	    name: "month/left/image";
+	    type: IMAGE;
+	    mouse_events: 0;
+	    description {
+	       state: "default" 0.0;
+	       aspect: 1.0 1.0;
+	       aspect_preference: BOTH;
+	        rel1.to: "month/left";
+	        rel2.to: "month/left";
+	       image.normal: "arrow_left.png";
+	       color: 255 255 255 255;
+	    }
+	    description {
+	       state: "click" 0.0;
+	       inherit: "default" 0.0;
+	       color: 255 0 0 255;
+	    }
+	 }
+	 part {
+	    name: "content";
+	    type: SWALLOW;
+	    mouse_events: 1;
+	    repeat_events: 0;
+	    description {
+	       state: "default" 0.0;
+	       rel1.relative: 0.105 0.0;
+	       rel2.relative: 0.895 1.0;
+	    }
+	 }
+	 part {
+	    name: "content/catcher";
+	    type: RECT;
+	    mouse_events: 1;
+	    description {
+	       state: "default" 0.0;
+	       rel1.to: "content";
+	       rel2.to: "content";
+	       color: 0 0 0 0;
+	    }
+	 }
+	 FLASHY_RECT("month/right", 0.88, 0.94);
+	 part {
+ 	    name: "month/right/image";
+	    type: IMAGE;
+	    mouse_events: 0;
+	    description {
+	       state: "default" 0.0;
+	       aspect: 1.0 1.0;
+	       aspect_preference: BOTH;
+	       rel1.to: "month/right";
+	       rel2.to: "month/right";
+	       image.normal: "arrow_right.png";
+	       color: 255 255 255 255;
+	    }
+	    description {
+	       state: "click" 0.0;
+	       inherit: "default" 0.0;
+	       color: 255 0 0 255;
+	    }
+	 }
+	 FLASHY_RECT("year/right", 0.94, 1.0);
+	 part {
+ 	    name: "year/right/image";
+	    type: IMAGE;
+	    mouse_events: 0;
+	    description {
+	       state: "default" 0.0;
+	       aspect: 1.0 1.0;
+	       aspect_preference: BOTH;
+	       rel1.to: "year/right";
+	       rel2.to: "year/right";
+	       image.normal: "arrow2_right.png";
+	       color: 255 255 255 255;
+	    }
+	    description {
+	       state: "click" 0.0;
+	       inherit: "default" 0.0;
+	       color: 255 0 0 255;
+	    }
+	 }
+      }
+      programs {
+	 program {
+	    name: "day/today/content/click";
+	    source: "content/catcher";
+	    signal: "mouse,clicked,1";
+	    after: "day/today";
+	 }
+	 program {
+	    name: "day/today";
+	    action: SIGNAL_EMIT "day" "today";
+	 }
+	 program {
+	    name: "month/plus/right/wheel";
+	    source: "month/right";
+	    signal: "mouse,wheel,0,1";
+	    after: "month/plus";
+	 }
+	 program {
+	    name: "month/plus/right/click";
+	    source: "month/right";
+	    signal: "mouse,clicked,*";
+	    after: "month/plus";
+	 }
+	 program {
+	    name: "month/plus/left/wheel";
+	    source: "month/left";
+	    signal: "mouse,wheel,0,1";
+	    after: "month/plus";
+	 }
+	 program {
+	    name: "month/plus";
+	    action: SIGNAL_EMIT "month" "plus";
+	    after: "month/plus/0";
+	 }
+	 program {
+	    name: "month/plus/0";
+	    action: STATE_SET "click" 0.0;
+	    target: "month/right";
+	    target: "month/right/back";
+	    transition: LINEAR 0.1;
+	    after: "month/plus/1";
+	 }
+	 program {
+	    name: "month/plus/1";
+	    action: STATE_SET "default" 0.0;
+	    target: "month/right";
+	    target: "month/right/back";
+	    transition: LINEAR 0.1;
+	 }
+	 program {
+	    name: "month/minus/right/wheel";
+	    source: "month/right";
+	    signal: "mouse,wheel,0,-1";
+	    after: "month/minus";
+	 }
+	 program {
+	    name: "month/minus/left/click";
+	    source: "month/left";
+	    signal: "mouse,clicked,*";
+	    after: "month/minus";
+	 }
+	 program {
+	    name: "month/minus/left/wheel";
+	    source: "month/left";
+	    signal: "mouse,wheel,0,-1";
+	    after: "month/minus";
+	 }
+	 program {
+	    name: "month/minus";
+	    action: SIGNAL_EMIT "month" "minus";
+	    after: "month/minus/0";
+	 }
+	 program {
+	    name: "month/minus/0";
+	    action: STATE_SET "click" 0.0;
+	    target: "month/left";
+	    target: "month/left/back";
+	    transition: LINEAR 0.1;
+	    after: "month/minus/1";
+	 }
+	 program {
+	    name: "month/minus/1";
+	    action: STATE_SET "default" 0.0;
+	    target: "month/left";
+	    target: "month/left/back";
+	    transition: LINEAR 0.1;
+	 }
+
+	 /* Handling year now. */
+
+	 program {
+	    name: "year/plus/right/wheel";
+	    source: "year/right";
+	    signal: "mouse,wheel,0,1";
+	    after: "year/plus";
+	 }
+	 program {
+	    name: "year/plus/right/click";
+	    source: "year/right";
+	    signal: "mouse,clicked,*";
+	    after: "year/plus";
+	 }
+	 program {
+	    name: "year/plus/left/wheel";
+	    source: "year/left";
+	    signal: "mouse,wheel,0,1";
+	    after: "year/plus";
+	 }
+	 program {
+	    name: "year/plus";
+	    action: SIGNAL_EMIT "year" "plus";
+	    after: "year/plus/0";
+	 }
+	 program {
+	    name: "year/plus/0";
+	    action: STATE_SET "click" 0.0;
+	    target: "year/right";
+	    target: "year/right/back";
+	    transition: LINEAR 0.1;
+	    after: "year/plus/1";
+	 }
+	 program {
+	    name: "year/plus/1";
+	    action: STATE_SET "default" 0.0;
+	    target: "year/right";
+	    target: "year/right/back";
+	    transition: LINEAR 0.1;
+	 }
+
+	 program {
+	    name: "year/minus/right/wheel";
+	    source: "year/right";
+	    signal: "mouse,wheel,0,-1";
+	    after: "year/minus";
+	 }
+	 program {
+	    name: "year/minus/left/click";
+	    source: "year/left";
+	    signal: "mouse,clicked,*";
+	    after: "year/minus";
+	 }
+	 program {
+	    name: "year/minus/left/wheel";
+	    source: "year/left";
+	    signal: "mouse,wheel,0,-1";
+	    after: "year/minus";
+	 }
+	 program {
+	    name: "year/minus";
+	    action: SIGNAL_EMIT "year" "minus";
+	    after: "year/minus/0";
+	 }
+	 program {
+	    name: "year/minus/0";
+	    action: STATE_SET "click" 0.0;
+	    target: "year/left";
+	    target: "year/left/back";
+	    transition: LINEAR 0.1;
+	    after: "year/minus/1";
+	 }
+	 program {
+	    name: "year/minus/1";
+	    action: STATE_SET "default" 0.0;
+	    target: "year/left";
+	    target: "year/left/back";
+	    transition: LINEAR 0.1;
+	 }
+      }
+   }
+   group {
+      name: "modules/calendar/main";
+      parts {
+         part {
+            name: "calendar";
+	    mouse_events: 1;
+            description {
+               state: "default" 0.0;
+               aspect: 1.0 1.0;
+               aspect_preference: BOTH;
+               rel1 { relative: 0.0 0.0; }
+               rel2 { relative: 1.0 1.0; }
+               image { normal: "calendar.png"; }
+            }
+         }
+         part {
+            name: "monthday";
+            type: TEXT;
+            mouse_events: 1;
+            scale: 1;
+            description {
+               state: "default" 0.0;
+               rel1 {
+                  relative: 0.1 0.1.5;
+                  offset: 0 0;
+                  to: "calendar";
+               }
+               rel2 {
+                  relative: 1.0 0.65;
+                  offset: -1 -1;
+                  to: "calendar";
+               }
+               color: 46 52 54 255 ;
+               color_class: "module_label";
+               text {
+                  text: "??";
+                  font: "Sans:style=Bold";
+                  size: 13;
+                  min: 1 1;
+                  fit: 1 1;
+                  align: 0.5 0.5; 
+                  text_class: "module_large";
+                  ellipsis: -1;
+               }
+            }
+         }
+         part {
+            name: "weekday";
+            type: TEXT;
+            mouse_events: 1;
+            scale: 1;
+            description {
+               state: "default" 0.0;
+               rel1 {
+                  relative: 0.15 0.75;
+                  offset: 0 0;
+                  to: "monthday";
+               }
+               rel2 {
+                  relative: 0.85 0.85;
+                  offset: -1 -1;
+                  to: "calendar";
+               }
+               color: 46 52 54 255;
+               color_class: "module_label";
+               text {
+                  text: "??";
+                  font: "Sans";
+                  size: 9;
+		          min: 1 0;
+                  fit: 1 1;
+                  align: 0.5 0.5;
+                  text_class: "module_large";
+                  ellipsis: -1;
+               }
+            }
+         }
+      }
+   }
+   group {
+      name: "modules/calendar/today";
+      parts {
+	 part {
+	    name: "e.rect.background";
+	    type: RECT;
+	    mouse_events: 0;
+	    description {
+	       rel1.to: "e.text.label";
+	       rel1.offset: -1 -1;
+	       rel2.to: "e.text.label";
+	       rel2.offset: 1 1;
+	       color: 65 146 54 128;
+	    }
+	 }
+	 part {
+	    name: "e.rect.light";
+	    type: RECT;
+	    mouse_events: 0;
+	    description {
+	       rel1.to: "e.text.label";
+	       rel1.offset: 0 0;
+	       rel2.to: "e.text.label";
+	       rel2.offset: 0 0;
+	       color: 65 146 54 255;
+	    }
+	 }
+         part {
+            name: "e.text.label";
+            type: TEXT;
+            mouse_events:   0;
+            scale: 1;
+            description {
+               state: "default" 0.0;
+               rel1.offset: 2 0;
+               rel2.offset: -2 0;
+               color: 25 50 25 255;
+               color_class: "label_text";
+               text {
+                  font: "Sans:style=Bold";
+                  size: 10;
+                  min: 1 1;
+                  align: 0.5 0.5;
+                  text_class: "label";
+                  ellipsis: -1;
+               }
+            }
+         }
+      }
+   }
