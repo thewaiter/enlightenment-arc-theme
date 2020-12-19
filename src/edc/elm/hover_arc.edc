@@ -895,7 +895,7 @@ group { name: "elm/hover/base/hoversel_vertical/default";
 
 group { name: "elm/hover/base/hoversel_horizontal/default";
    alias: "elm/hover/base/hoversel_horizontal/entry";
-   images.image: "button_normal.png" COMP;
+   //~ images.image: "button_normal.png" COMP;
    images.image: "bg-rounded-3px.png" COMP;
    images.image: "border-rounded-3px.png" COMP;
    data.item: "dismiss" "on";

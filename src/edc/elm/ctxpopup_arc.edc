@@ -43,7 +43,7 @@ group { name: "elm/ctxpopup/bg/default";
 
 group { name: "elm/ctxpopup/base/default";
    images.image: "win_shadow_arc.png" COMP;
-   images.image: "popup_clipper_arc.png" COMP;
+   //~ images.image: "popup_clipper_arc.png" COMP;
    images.image: "tooltip-base-border_arc.png" COMP;
    parts {
       part { name: "shadow";

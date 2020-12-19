@@ -17,7 +17,7 @@
 
 group { name: "elm/panes/vertical/default";
    IMAGE_SET("dot-small", 4, 4)
-   images.image: "holes_vert.png" COMP;
+   //~ images.image: "holes_vert.png" COMP;
    parts {
       part { name: "whole"; type: SPACER;
          description { state: "default" 0.0;
@@ -193,7 +193,7 @@ group { name: "elm/panes/vertical/default";
 }
 
 group { name: "elm/panes/horizontal/default";
-   images.image: "holes_horiz.png" COMP;
+   //~ images.image: "holes_horiz.png" COMP;
    parts {
       part { name: "whole"; type: SPACER;
          description { state: "default" 0.0;
