@@ -872,11 +872,11 @@ color_classes {
       desc: "Module/gadget plain text";
    }
    color_class { name: "module_symbol";
-      color: COL_ICON_BASIC;
+      color: CLOSE_ACTIVE;
       desc: "Module symbol color";
    }
    color_class { name: "module_symbol_hover";
-      color: 255 255 255 255;
+      color: 94 167 84 255;
       desc: "Module symbol hover color";
    }
    color_class { name: "module_symbol_pressed";

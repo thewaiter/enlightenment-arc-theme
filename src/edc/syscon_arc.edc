@@ -112,7 +112,9 @@ group { name: "e/modules/syscon/button";
          }
          description { state: "clicked" 0.0;
             inherit: "default" 0.0;
-            color_class: "module_symbol_pressed";
+            rel1.relative: 0.15 0.15;
+            rel2.relative: 0.85 0.85;
+            color_class: "module_symbol_hover";
          }
       }
    }
