@@ -19,6 +19,7 @@ group { name: "e/modules/notification/logo";
           name: "e.text.counter";
           mouse_events: 0;
           type: TEXT;
+          scale: 1;
           effect: OUTLINE_SOFT_SHADOW;
           description 
           {
