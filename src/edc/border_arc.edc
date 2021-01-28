@@ -546,7 +546,8 @@ group {
          type: RECT;
          description { state: "default" 0.0;
             //color_class: "win_border_border";
-            color: 47 53 62 255;
+            color_class: "col_darker";
+            //~ color: 47 53 62 255;
             rel1.relative: 0.0 1.0;
             rel1.offset:   0 5; 
             rel2.relative: 1.0 1.0;
@@ -563,6 +564,10 @@ group {
             inherit: "default" 0.0;
             max: 99999 0;
             visible: 0;
+         }
+          description { state: "active";
+            inherit: "default" 0.0;
+            color_class: "col_active";
          }
       }
       
@@ -587,6 +592,10 @@ group {
             min: 0 0;
             max: 0 99999;
          }
+         description { state: "active";
+            inherit: "default" 0.0;
+            color_class: "col_active";
+         }
       }
       part { name: "right"; nomouse;
          type: RECT; scale: 1;
@@ -607,6 +616,10 @@ group {
          description { state: "max";
             inherit: "default" 0.0;
             max: 0 99999;
+         }
+          description { state: "active";
+            inherit: "default" 0.0;
+            color_class: "col_active";
          }
       }
       part { name: "client_clip";
@@ -842,12 +855,16 @@ group {
          target: "e.text.title";
       }
       program {
+         name: "focused"; 
          signal: "e,state,focused";
          source: "e";
          action: STATE_SET "active" 0.0;
          target: "e.text.title";
          target: "top_border_shadow";
          target: "top_border";
+         target: "left";
+         target: "right";
+         target: "bottom";
          //~ target: "top_bg";
       }
       program {
@@ -858,6 +875,9 @@ group {
          target: "top_border_shadow";
          target: "top_border";
          target: "top_bg";
+         target: "left";
+         target: "right";
+         target: "bottom";
       }
 
       program {
@@ -884,6 +904,7 @@ group {
          target: "e.event.resize.bl";
          target: "e.event.resize.b";
          target: "e.event.resize.br";
+         after: "focused";
       }
       program {
          signal: "mouse,clicked,*";
