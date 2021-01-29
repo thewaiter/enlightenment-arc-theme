@@ -880,32 +880,33 @@ group {
          target: "bottom";
       }
 
-      program {
-         signal: "e,action,maximize*"; source: "e";
-         action: STATE_SET "max" 0.0;
-         target: "e.swallow.client";
-         target: "bottom";
-         target: "left";
-         target: "right";
-         target: "top_bg_maximized";
-         target: "e.event.resize.bl";
-         target: "e.event.resize.b";
-         target: "e.event.resize.br";
-      }
+      //~ program {
+         //~ signal: "e,action,maximize*"; source: "e";
+         //~ action: STATE_SET "max" 0.0;
+         //~ target: "e.swallow.client";
+         //~ target: "bottom";
+         //~ target: "left";
+         //~ target: "right";
+         //~ target: "top_bg_maximized";
+         //~ target: "e.event.resize.bl";
+         //~ target: "e.event.resize.b";
+         //~ target: "e.event.resize.br";
+      //~ }
 
-      program {
-         signal: "e,action,unmaximize*"; source: "e";
-         action: STATE_SET "default" 0.0;
-         target: "e.swallow.client";
-         target: "bottom";
-         target: "left";
-         target: "right";
-         target: "top_bg_maximized";
-         target: "e.event.resize.bl";
-         target: "e.event.resize.b";
-         target: "e.event.resize.br";
-         after: "focused";
-      }
+      //~ program {
+         //~ signal: "e,action,unmaximize*"; source: "e";
+         //~ action: STATE_SET "default" 0.0;
+         //~ target: "e.swallow.client";
+         //~ target: "bottom";
+         //~ target: "left";
+         //~ target: "right";
+         //~ target: "top_bg_maximized";
+         //~ target: "e.event.resize.bl";
+         //~ target: "e.event.resize.b";
+         //~ target: "e.event.resize.br";
+         //~ after: "focused";
+      //~ }
+
       program {
          signal: "mouse,clicked,*";
          source: "e.event.minimize";
