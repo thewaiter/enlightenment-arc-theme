@@ -546,9 +546,7 @@ group {
       part { name: "bottom"; nomouse;
          type: RECT; scale: 1;
          description { state: "default" 0.0;
-            //color_class: "win_border_border";
             color_class: "col_darker";
-            //~ color: 47 53 62 255;
             rel1.relative: 0.0 1.0;
             rel1.offset:   0 5; 
             rel2.relative: 1.0 1.0;
@@ -854,6 +852,7 @@ group {
          target: "shadow";
          target: "bottom";
          target: "e.text.title";
+         after:  "focused";
       }
       program {
          name: "focused"; 
@@ -866,7 +865,7 @@ group {
          target: "left";
          target: "right";
          target: "bottom";
-         //~ target: "top_bg";
+         target: "top_bg";
       }
       program {
          signal: "e,state,unfocused";
