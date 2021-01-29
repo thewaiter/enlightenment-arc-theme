@@ -553,7 +553,7 @@ group {
             rel1.offset:   0 5; 
             rel2.relative: 1.0 1.0;
             rel2.offset:   0 -7;
-            min: 0 5;
+            min: 0 3;
             max: 99999 BORDER_WIDTH;
          }
          description { state: "shaded" 0.0;
@@ -585,7 +585,7 @@ group {
             }
             color_class: "col_darker";
             align: 0.0 0.0;
-            min: 3 0;
+            min: 2 0;
             max: BORDER_WIDTH 99999;
          }
          description { state: "max";
@@ -611,7 +611,7 @@ group {
             }
             color_class: "col_darker";
             align: 1.0 0.0;
-            min: 3 0;
+            min: 2 0;
             max: BORDER_WIDTH 99999;
          }
          description { state: "max";
