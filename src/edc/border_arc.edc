@@ -403,31 +403,31 @@ group {
             align: 1.0 0.0;
          }
       }
-      image { name: "top_border_shadow"; nomouse;
-         scale: 1;
-         desc { "default";
-            image.border: 12 12 12 12;
-            image.border_scale: 1;
-            image.border_scale_by: 0.25;
-            image.normal: "border-top-rounded-3px@0.png";
-            image.middle: 0;
-            rel1.to_y: "border_shadow_spacer";
-            rel1.relative: 0.0 1.0;
-            rel2.to: "top_bg";
-            color_class: "win_border_border_shadow";
-         }
-         description { state: "active" 0.0;
-            inherit: "default" 0.0;
-            //color_class: "col_active";
-         } 
-      }
+      //~ image { name: "top_border_shadow"; nomouse;
+         //~ scale: 1;
+         //~ desc { "default";
+            //~ image.border: 12 12 12 12;
+            //~ image.border_scale: 0;
+            //~ image.border_scale_by: 0.25;
+            //~ image.normal: "border-top-rounded-3px@0.png";
+            //~ image.middle: 0;
+            //~ rel1.to_y: "border_shadow_spacer";
+            //~ rel1.relative: 0.0 1.0;
+            //~ rel2.to: "top_bg";
+            //~ color_class: "win_border_border_shadow";
+         //~ }
+         //~ description { state: "active" 0.0;
+            //~ inherit: "default" 0.0;
+            //~ //color_class: "col_active";
+         //~ } 
+      //~ }
       image { name: "top_border"; nomouse;
          scale: 1;
          desc { "default";
             image.normal: "border-top-rounded-3px@0.png";
             image.border: 12 12 12 12;
             image.border_scale: 1;
-            image.border_scale_by: 0.45;
+            //~ image.border_scale_by: 0.45;
             image.middle: 0;
             rel2.to: "top_bg";
             color_class: "win_border_border_shadow";
@@ -542,8 +542,9 @@ group {
                fixed: 1 1;
          }
       }
+      
       part { name: "bottom"; nomouse;
-         type: RECT;
+         type: RECT; scale: 1;
          description { state: "default" 0.0;
             //color_class: "win_border_border";
             color_class: "col_darker";
@@ -552,7 +553,7 @@ group {
             rel1.offset:   0 5; 
             rel2.relative: 1.0 1.0;
             rel2.offset:   0 -7;
-            min: 0 7;
+            min: 0 5;
             max: 99999 BORDER_WIDTH;
          }
          description { state: "shaded" 0.0;
@@ -576,7 +577,7 @@ group {
          description { state: "default" 0.0;
             rel1 {
                to_y: "top_bg";
-               relative: 0.0 1.0;
+               relative: 0.0 0.0;
             }
             rel2 {
                to_y: "bottom";
@@ -602,7 +603,7 @@ group {
          description { state: "default" 0.0;
             rel1 {
                to_y: "top_bg";
-               relative: 0.0 1.0;
+               relative: 0.0 0.0;
             }
             rel2 {
                to_y: "bottom";
@@ -860,7 +861,7 @@ group {
          source: "e";
          action: STATE_SET "active" 0.0;
          target: "e.text.title";
-         target: "top_border_shadow";
+         //~ target: "top_border_shadow";
          target: "top_border";
          target: "left";
          target: "right";
@@ -872,7 +873,7 @@ group {
          source: "e";
          action: STATE_SET "default" 0.0;
          target: "e.text.title";
-         target: "top_border_shadow";
+         //~ target: "top_border_shadow";
          target: "top_border";
          target: "top_bg";
          target: "left";
