@@ -64,7 +64,7 @@ group { name:"e/modules/tasks/item";
             image.middle: SOLID;
             rel.to: "sel_base";
             rel1.offset: -3 -2;
-            rel2.offset: 2 4;
+            rel2.offset:  2  1;
             fill.smooth: 0;
             color_class: "tasks_base";
          }
