@@ -49,7 +49,7 @@
 // #include "../orig-theme/edc/elm/index.edc"
 // #include "../orig-theme/edc/elm/calendar.edc"
 // #include "../orig-theme/edc/elm/layout.edc"
-#include "../orig-theme/edc/elm/progress.edc"
+// #include "../orig-theme/edc/elm/progress.edc"
 #include "edc/elm/naviframe_arc.edc"
 // #include "../orig-theme/edc/elm/panel.edc"
 #include "edc/elm/popup_arc.edc"
@@ -60,6 +60,7 @@
 // #include "../orig-theme/edc/elm/clock.edc"
 #include "edc/elm/gengrid_arc.edc"
 #include "edc/elm/hover_arc.edc"
+#include "edc/elm/progress.edc"
 // #include "../orig-theme/edc/elm/cursor.edc"
 
 
