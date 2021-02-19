@@ -124,7 +124,8 @@ group { name: "elm/progressbar/horizontal/default";
             rel2.to_x: "elm.swallow.content";
             rel2.relative: 1.0 1.0;
             rel2.offset: -1 -3;
-            color: FN_COL_DEFAULT;
+            color: 255 255 255 255; 
+            color3: 0 0 0 128;
             color_class: "progressbar_text";
             text { font: FN; size: 10;
                text_class: "progressbar";
@@ -145,7 +146,8 @@ group { name: "elm/progressbar/horizontal/default";
          description { state: "disabled_visible" 0.0;
             inherit: "visible" 0.0;
             color_class: "progressbar_text_disabled";
-            color: FN_COL_DISABLE_LIGHTER_SHADOW;
+            color: 21 21 21 255; 
+            color3: 255 255 255 15;
          }
       }
       part { name: "bg-hi";
@@ -340,7 +342,9 @@ group { name: "elm/progressbar/horizontal/default";
                text_class: "progress_status";
                align: 1.0 0.5;
             }
-            color: FN_COL_HIGHLIGHT_CLICKED;
+            color: 255 255 255 255; 
+            color2: 51 153 255 64; 
+            color3: 51 153 255 32;
             visible: 1;
          }
          description { state: "hidden" 0.0;
@@ -682,7 +686,8 @@ group { name: "elm/progressbar/vertical/default";
             rel2.to_y: "elm.swallow.content";
             rel2.relative: 1.0 1.0;
             rel2.offset: -3 -1;
-            color: FN_COL_DEFAULT;
+            color: 255 255 255 255; 
+            color3: 0 0 0 128;
             color_class: "progressbar_text";
             text { font: FN; size: 10;
                text_class: "progressbar";
@@ -703,7 +708,8 @@ group { name: "elm/progressbar/vertical/default";
          description { state: "disabled_visible" 0.0;
             inherit: "visible" 0.0;
             color_class: "progressbar_text_disabled";
-            color: FN_COL_DISABLE_LIGHTER_SHADOW;
+            color: 21 21 21 255; 
+            color3: 255 255 255 15;
          }
       }
       part { name: "bg-hi";
@@ -907,7 +913,9 @@ group { name: "elm/progressbar/vertical/default";
                text_class: "progress_status";
                align: 1.0 0.5;
             }
-            color: FN_COL_HIGHLIGHT_CLICKED;
+            color: 255 255 255 255; 
+            color2: 51 153 255 64; 
+            color3: 51 153 255 32;
             visible: 1;
             map.on: 1;
             map.smooth: 0;
