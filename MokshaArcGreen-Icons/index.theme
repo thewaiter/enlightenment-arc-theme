@@ -1,5 +1,5 @@
 [Icon Theme]
-Name=arc-green-icons-GTK
+Name=MokshaArcGreen
 Inherits=breeze,ubuntu-mono-dark,gnome,oxygen,hicolor
 Comment=Android Lollipop's material design icons for Linux.
 Directories=actions/scalable,animations/scalable,apps/scalable,apps/fixed,categories/scalable,devices/scalable,emblems/scalable,mimetypes/scalable,places/scalable,status/scalable,stock/scalable

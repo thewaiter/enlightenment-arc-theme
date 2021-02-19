@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=MokshaArcGreen
+Comment=Arc Dark Green default theme for Moksha desktop created in oomox tool
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=MokshaArcGreen
+GtkTheme=MokshaArcGreen
+IconTheme=arc-green
+MetacityTheme=arc-green

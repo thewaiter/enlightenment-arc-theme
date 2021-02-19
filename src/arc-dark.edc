@@ -8,8 +8,8 @@ externals.external: "elm";
 // theme api version. from 1.10 on we will check version to avoid
 // compat issues
 data.item: "version" "110";
-data.item: "icon-theme" "arc-green-icons-GTK";
-data.item: "gtk-theme" "MokshaArcGreen";
+data.item: "icon-theme" "MokshaArcGreen-Icons";
+data.item: "gtk-theme" "MokshaArcGreen-GTK";
 
 collections {
 #include "fonts_arc-dark.edc"
