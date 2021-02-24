@@ -70,6 +70,7 @@ group {
             clip_to: "logoclip";
             description {
                state: "default" 0.0;
+               rel1.relative: 0.125 -0.1;
                FIXED_SIZE(150, 150)
                image.normal: "moksha_logo.png";
             }
@@ -82,17 +83,20 @@ group {
                state: "default" 0.0;
                rel1 {
                   to_y: "logo";
-                  relative: 0.05 -0.5;
+                  to_x: "logo";
+                  relative: 0.0 -0.5;
                }
                rel2 {
                   to_y: "logo";
-                  relative: 0.95 -0.2;
+                  to_x: "logo";
+                  relative: 1.0 -0.2;
                }
                color: 255 255 255 0;
                text {
-				   text: "MOKSHA";
+                  text: "MOKSHA";
                   font: "Sans:style=Bold";
                   size: 16;
+                  ellipsis: -1;
                   // fit: 0 1;
                   text_class: "init_title";
                }
@@ -115,7 +119,7 @@ group {
                }
                rel2 {
                   to: "e.text.title";
-                  relative: 1.0 1.5;
+                  relative: 1.0 1.2;
                }
                color: 255 255 255 0;
                text {
@@ -123,6 +127,7 @@ group {
                   font: "Sans";
                   size: 10;
                   // fit: 0 1;
+                  ellipsis: -1;
                   text_class: "init_text";
                }
             }
@@ -155,6 +160,7 @@ group {
                   size: 8;
                   min: 1 1;
                   align: 0.0 0.0;
+                  ellipsis: -1;
                   text_class: "init_version";
                }
             }
