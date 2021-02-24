@@ -1,6 +1,6 @@
 group { name: "e/desktop/background";
 
-images { image: "bodhi-bg.jpg" LOSSY 90; 
+images { image: "bodhi-bg.png" LOSSY 90; 
          image: "table.png" COMP;
          image: "text.png" COMP;
          image: "shadow.png" COMP;
@@ -19,7 +19,7 @@ part { name: "bg"; mouse_events: 0;
                      rel1.offset: 0 0;
                      rel2.relative: 1.00 1.00;
                      rel2.offset: -1 -1;
-                    image { normal: "bodhi-bg.jpg"; 
+                    image { normal: "bodhi-bg.png"; 
                             //~ scale_hint: STATIC; 
                           }
                    } 
