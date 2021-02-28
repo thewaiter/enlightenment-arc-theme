@@ -27,7 +27,7 @@ group { name: "e/modules/notification/logo";
             rel2.to: "base";
             rel2.offset: 0 3;
             state: "default" 0.0;
-            color: 255 255 255 255;
+            color: 56 60 74 255;
             color3: 0 0 0 32;
             color_class: "module_label";
             visible: 1;
@@ -37,7 +37,7 @@ group { name: "e/modules/notification/logo";
                 font: "Sans:style=Bold";
                 size: 9;
                 min: 1 1;
-                align: 1.0 1.0;
+                align: 0.5 0.4;
                 ellipsis: -1;
              }
             }
