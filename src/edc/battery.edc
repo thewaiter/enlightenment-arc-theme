@@ -110,7 +110,7 @@ group { name: "e/modules/battery/main";
          clip_to: "pulse_clip";
          description { state: "default" 0.0;
             rel1.to: "base";
-            rel1.offset: 8 4;
+            rel1.offset: 8 1;
             rel2.to: "base";
             rel2.offset: -8 4;
             rel2.relative: 1.0 0.0;
