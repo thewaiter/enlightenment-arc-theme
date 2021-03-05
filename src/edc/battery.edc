@@ -1,12 +1,6 @@
 group { name: "e/modules/battery/main";
-   //~ images.image: "bat_shadow.png" COMP;
-   images.image: "bat_base.png" COMP;
    images.image: "bat_charge.png" COMP;
-   //~ images.image: "bat_shine.png" COMP;
-   images.image: "bat_bottom0.png" COMP;
-   //~ images.image: "bat_bottom1.png" COMP;
-   images.image: "bat_top0.png" COMP;
-   //~ images.image: "bat_top1.png" COMP;
+   images.image: "battery.png" COMP;
    images.image: "glow_med_white2.png" COMP;
    script {
       public message(Msg_Type:type, id, ...) {
@@ -85,91 +79,28 @@ group { name: "e/modules/battery/main";
             aspect: 1.0 1.0; aspect_preference: BOTH;
          }
       }
-      //~ part { name: "shadow";
-         //~ clip_to: "pulse_clip";
-         //~ description { state: "default" 0.0;
-            //~ rel1.to: "top";
-            //~ rel1.offset: -4 0;
-            //~ rel2.to: "bottom";
-            //~ rel2.offset: 3 3;
-            //~ image.normal: "bat_shadow.png";
-         //~ }
-      //~ }
       part { name: "bg";
          clip_to: "pulse_clip";
          description { state: "default" 0.0;
-            rel1.to: "top";
-            rel1.relative: 0.0 1.0;
-            rel2.to: "bottom";
-            rel2.relative: 1.0 0.0;
-            image.normal: "bat_base.png";
-            fill.smooth: 0;
-         }
-      }
-      part { name: "top";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
-            rel1.to: "base";
-            rel1.offset: 8 1;
-            rel2.to: "base";
-            rel2.offset: -8 4;
-            rel2.relative: 1.0 0.0;
-            aspect: (112/24) (112/24); aspect_preference: HORIZONTAL;
-            align: 0.5 0.0;
-            image.normal: "bat_top0.png";
-         }
-      }
-      part { name: "bottom";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
-            rel1.to: "base";
-            rel1.offset: 8 -5;
-            rel2.to: "base";
-            rel2.offset: -8 -5;
-            aspect: (112/12) (112/12); aspect_preference: HORIZONTAL;
-            align: 0.5 1.0;
-            image.normal: "bat_bottom0.png";
+            //~ rel1.to: "top";
+            rel1.relative: 0.05 0.05;
+            //~ rel2.to: "bottom";
+            rel2.relative: 0.95 0.9;
+            image.normal: "battery.png";
+            fill.smooth: 1;
          }
       }
       part { name: "fill"; mouse_events: 0;
-         clip_to: "pulse_clip";
+         //~ clip_to: "pulse_clip";
          description { state: "default" 0.0;
-            rel1.to: "fill_region";
-            rel1.offset: 2 2;
-            rel2.to: "fill_region";
-            rel2.offset: -2 -2;
+            rel1.to: "bg";
+            rel1.offset: 6  4;
+            rel2.to: "bg";
+            rel2.offset: -7 -4;
             image.normal: "glow_med_white2.png";
-            image.border: 10 10 10 10;
             color: 65 146 54 255;
          }
       }
-      //~ part { name: "top-shine";
-         //~ clip_to: "pulse_clip";
-         //~ description { state: "default" 0.0;
-            //~ rel1.to: "top";
-            //~ rel2.to: "top";
-            //~ image.normal: "bat_top1.png";
-         //~ }
-      //~ }
-      //~ part { name: "bottom-shine";
-         //~ clip_to: "pulse_clip";
-         //~ description { state: "default" 0.0;
-            //~ rel1.to: "bottom";
-            //~ rel2.to: "bottom";
-            //~ image.normal: "bat_bottom1.png";
-         //~ }
-      //~ }
-      //~ part { name: "shine";
-         //~ clip_to: "pulse_clip";
-         //~ description { state: "default" 0.0;
-            //~ rel1.to: "bg";
-            //~ rel1.offset: 0 -6;
-            //~ rel2.to: "bg";
-            //~ rel2.offset: -1 5;
-            //~ image.normal: "bat_shine.png";
-            //~ image.border: 0 0 7 7;
-         //~ }
-      //~ }
       part { name: "pwr1";
          clip_to: "pulse_clip";
          description { state: "default" 0.0;
@@ -212,9 +143,9 @@ group { name: "e/modules/battery/main";
          clip_to: "pulse_clip";
          description { state: "default" 0.0;
             rel1.to: "bg";
-            rel1.relative: 0.35 0.1;
+            rel1.relative: 0.35 0.15;
             rel2.to: "bg";
-            rel2.relative: 0.7 0.9;
+            rel2.relative: 0.7 0.85;
             image.normal: "bat_charge.png";
             //~ image.border: 10 10 1O 10;
             fill.smooth: 1;
