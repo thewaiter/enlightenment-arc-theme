@@ -94,7 +94,7 @@ group { name: "e/modules/battery/main";
          //~ clip_to: "pulse_clip";
          description { state: "default" 0.0;
             rel1.to: "bg";
-            rel1.offset: 6  4;
+            rel1.offset: 6  7;
             rel2.to: "bg";
             rel2.offset: -7 -4;
             image.normal: "glow_med_white2.png";
