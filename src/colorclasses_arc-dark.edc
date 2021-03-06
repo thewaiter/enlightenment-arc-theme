@@ -578,7 +578,7 @@ color_classes {
       desc: "Frame border of a frame widget";
    }
    color_class { name: "frame_base";
-      color: NO_COLOR;
+      color: COL_BG;
       desc: "Frame base of a frame widget";
    }
    color_class { name: "panes_dots";
