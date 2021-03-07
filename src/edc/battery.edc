@@ -85,7 +85,7 @@ group { name: "e/modules/battery/main";
             //~ rel1.to: "top";
             rel1.relative: 0.05 0.05;
             //~ rel2.to: "bottom";
-            rel2.relative: 0.95 0.9;
+            rel2.relative: 0.95 0.92;
             image.normal: "battery.png";
             fill.smooth: 1;
          }
@@ -94,7 +94,7 @@ group { name: "e/modules/battery/main";
          //~ clip_to: "pulse_clip";
          description { state: "default" 0.0;
             rel1.to: "bg";
-            rel1.offset: 6  7;
+            rel1.offset: 6  4;
             rel2.to: "bg";
             rel2.offset: -7 -4;
             image.normal: "glow_med_white2.png";
