@@ -14,7 +14,6 @@ group { name: "e/modules/battery/main";
             new lr = 255, lg = 0, lb = 0;
             
             val = getfarg(2);
-            val = 0.2;
             if (val < 0.35) {
                new Float:val1, Float:val2;
                
