@@ -596,6 +596,7 @@ group {
             rel1 {
                to_y: "top_bg";
                relative: 0.0 0.0;
+               offset: 0 2;
             }
             rel2 {
                to_y: "bottom";
@@ -622,6 +623,7 @@ group {
             rel1 {
                to_y: "top_bg";
                relative: 0.0 0.0;
+               offset: 0 2;
             }
             rel2 {
                to_y: "bottom";
