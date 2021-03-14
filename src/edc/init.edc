@@ -25,12 +25,12 @@ group {
             //~ ASPECT_FILL((1024/653))
          }
       }
-      part { name: "pat";
-         description { state: "default" 0.0;
-            image.normal: "dot_pattern.png";
-            TILED_PATTERN(256, 256)
-         }
-      }
+      //~ part { name: "pat";
+         //~ description { state: "default" 0.0;
+            //~ image.normal: "dot_pattern.png";
+            //~ TILED_PATTERN(256, 256)
+         //~ }
+      //~ }
          part {
             name: "light";
             description {
