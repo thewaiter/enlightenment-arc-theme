@@ -2,7 +2,6 @@ group { name: "e/modules/battery/main";
    images.image: "bat_charge.png" COMP;
    images.image: "battery.png" COMP;
    images.image: "glow_med_white2.png" COMP;
-   images.image: "glow_med_white.png" COMP;
    images.image: "bat_top0.png" COMP;
    images.image: "bat_bottom0.png" COMP;
    min: 16 16;
