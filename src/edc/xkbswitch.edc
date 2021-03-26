@@ -96,6 +96,7 @@ group { name: "e/modules/xkbswitch/noflag";
    images.image: "shadow_square_tiny.png" COMP;
    images.image: "bevel_out.png" COMP;
    images.image: "shine.png" COMP;
+   images.image: "flag.png" COMP;
    max: 128 128;
    parts {
       //~ part { name: "shadow";
@@ -109,24 +110,23 @@ group { name: "e/modules/xkbswitch/noflag";
             //~ fill.smooth: 0;
          //~ }
       //~ }
-      part { name: "base"; type: RECT; mouse_events: 0;
+      part { name: "base"; type: IMAGE; mouse_events: 0;
          description { state: "default" 0.0;
-            rel1.offset: 3 3;
-            rel2.offset: -4 -4;
-            aspect: 1.8 1.8; aspect_preference: BOTH;
-            color: 65 146 54 255;
+            rel1.offset: 3 6;
+            rel2.offset: -4 -6;
+            //~ aspect: 1.8 1.8; aspect_preference: BOTH;
+            image.normal: "flag.png";
+            fill.smooth: 1;
          }
       }
       part { name: "e.text.label"; type: TEXT; mouse_events: 0;
-         //~ effect: SHADOW BOTTOM;
          scale: 1;
          description { state: "default" 0.0;
             rel1.to: "base";
             rel1.relative: 0.0 0.5;
             rel2.to: "base";
             rel2.relative: 1.0 0.5;
-            color: 47 53 62 255;
-            //~ color3: 0 0 0 128;
+            color: 65 146 54 255;
             text { font: "Sans:style=Bold"; size: 9;
                min: 0 1;
                text_class: "module_small";
