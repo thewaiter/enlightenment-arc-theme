@@ -94,8 +94,8 @@ group { name: "e/modules/temperature/main";
       }
       part { name: "temp_limit"; type: SPACER;
          description { state: "default" 0.0;
-            rel1.relative: 0.0 0.1;
-            rel2.relative: 1.0 0.9;
+            rel1.relative: 0.0 0.081;
+            rel2.relative: 1.0 0.637;
          }
       }
       part { name: "over"; type: RECT;
@@ -224,8 +224,8 @@ group { name: "e/gadget/thermal/main";
          description { state: "default" 0.0;
             rel1.to_x: "base";
             rel2.to_x: "base";
-            rel1.relative: 0.0 0.1;
-            rel2.relative: 1.0 0.9;
+            rel1.relative: 0.0 0.081;
+            rel2.relative: 1.0 0.637;
          }
       }
       part { name: "over"; type: RECT;
