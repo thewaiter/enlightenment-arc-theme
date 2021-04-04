@@ -397,14 +397,14 @@ group { name: "e/modules/clock/digital";
       } \
    }
       
-      BASE ("ha", "h0-0", "digit_shadows.png")
-      BASE ("hb", "h1-0", "digit_shadows.png")
-      BASE ("ma", "m0-0", "digit_shadows.png")
-      BASE ("mb", "m1-0", "digit_shadows.png")
+      //~ BASE ("ha", "h0-0", "digit_shadows.png")
+      //~ BASE ("hb", "h1-0", "digit_shadows.png")
+      //~ BASE ("ma", "m0-0", "digit_shadows.png")
+      //~ BASE ("mb", "m1-0", "digit_shadows.png")
               
-      BASEC("sa", "secclip", "s0-0", "digit_shadows.png")
-      BASEC("sb", "secclip", "s1-0", "digit_shadows.png")
-      BASEC("aa", "ampmclip", "ap", "O/digit_nm.png")
+      //~ BASEC("sa", "secclip", "s0-0", "digit_shadows.png")
+      //~ BASEC("sb", "secclip", "s1-0", "digit_shadows.png")
+      //~ BASEC("aa", "ampmclip", "ap", "O/digit_nm.png")
         
       DIGIT ("h0", "hours1")
       DIGIT ("h1", "hours2")
