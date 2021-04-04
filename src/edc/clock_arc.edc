@@ -75,9 +75,9 @@ group { name: "e/modules/clock/digital";
             set_state(parts[i], "custom", 0.0);
          }
          if (mul == 4)
-			set_min_size(tot * mul, 16);
+           set_min_size(tot * mul, 16);
          else
-			set_min_size(tot * mul * 1.5, 16);
+           set_min_size(tot * mul * 1.5, 16);
          set_max_size(tot * 3 * mul, 128);
          emit("e,state,sizing,changed", "");
       }
@@ -384,6 +384,7 @@ group { name: "e/modules/clock/digital";
          rel2.to: _BASE; \
          image.normal: _IMG; \
          color_class: "clock_bg"; \
+         color: 255 255 255 32; \
       } \
    }
 #define BASEC(_NAME, _CLIP, _BASE, _IMG) \
@@ -394,17 +395,18 @@ group { name: "e/modules/clock/digital";
          rel2.to: _BASE; \
          image.normal: _IMG; \
          color_class: "clock_bg"; \
+         color: 255 255 255 32; \
       } \
    }
       
-      //~ BASE ("ha", "h0-0", "digit_shadows.png")
-      //~ BASE ("hb", "h1-0", "digit_shadows.png")
-      //~ BASE ("ma", "m0-0", "digit_shadows.png")
-      //~ BASE ("mb", "m1-0", "digit_shadows.png")
+      BASE ("ha", "h0-0", "digit_shadows.png")
+      BASE ("hb", "h1-0", "digit_shadows.png")
+      BASE ("ma", "m0-0", "digit_shadows.png")
+      BASE ("mb", "m1-0", "digit_shadows.png")
               
-      //~ BASEC("sa", "secclip", "s0-0", "digit_shadows.png")
-      //~ BASEC("sb", "secclip", "s1-0", "digit_shadows.png")
-      //~ BASEC("aa", "ampmclip", "ap", "O/digit_nm.png")
+      BASEC("sa", "secclip", "s0-0", "digit_shadows.png")
+      BASEC("sb", "secclip", "s1-0", "digit_shadows.png")
+      BASEC("aa", "ampmclip", "ap", "O/digit_nm.png")
         
       DIGIT ("h0", "hours1")
       DIGIT ("h1", "hours2")
