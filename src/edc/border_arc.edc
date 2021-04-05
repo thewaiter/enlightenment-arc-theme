@@ -1168,6 +1168,146 @@ group { name: "e/widgets/border/noresize_dialog/border";
       }
    }
 }
+
+group { name: "e/widgets/border/pixel/border";
+   parts {
+      part { name: "client_clip"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to_y: "e.swallow.client";
+            rel2.to_y: "e.swallow.client";
+         }
+      }
+      part { name: "e.swallow.client"; type: SWALLOW;
+         description { state: "default" 0.0;
+            rel1.offset: 3 3;
+            rel2.offset: -3 -4;
+         }
+      }
+      part { name: "top"; type: RECT;
+         description { state: "default" 0.0;
+            color:  56 60 74 255;
+            align: 0.0 0.0;
+            max: 99999 3;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 65 146 54 255;
+         }
+      }
+      part { name: "bottom"; type: RECT;
+         description { state: "default" 0.0;
+            color:  56 60 74 255;
+            align: 0.0 1.0;
+            max: 99999 3;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 65 146 54 255;
+         }
+      }
+      part { name: "left"; type: RECT;
+         description { state: "default" 0.0;
+            color:  56 60 74 255;
+            align: 0.0 0.0;
+            max: 3 99999;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 65 146 54 255;
+         }
+      }
+      part { name: "right"; type: RECT;
+         description { state: "default" 0.0;
+            color:  56 60 74 255;
+            align: 1.0 0.0;
+            max: 3 99999;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 65 146 54 255;
+         }
+      }
+      part { name: "e.event.resize.tl"; type: RECT;
+         description { state: "default" 0.0;
+            rel2.relative: 0.0 0.0;
+            min: 32 4;
+            align: 0.0 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.t"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel1.to_x: "e.event.resize.tl";
+            rel2.relative: 0.0 0.0;
+            rel2.to_x: "e.event.resize.tr";
+            min: 0 4;
+            align: 0.5 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.tr"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel2.relative: 1.0 0.0;
+            min: 32 4;
+            align: 1.0 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.bl"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 0.0 1.0;
+            rel2.relative: 0.0 1.0;
+            min: 32 5;
+            align: 0.0 1.0;
+            color: 0 0 0 0;
+            fixed: 1 1;
+         }
+      }
+      part { name: "e.event.resize.b"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 1.0;
+            rel1.to_x: "e.event.resize.tl";
+            rel2.relative: 0.0 1.0;
+            rel2.to_x: "e.event.resize.tr";
+            min: 0 5;
+            align: 0.5 1.0;
+            color: 0 0 0 0;
+            fixed: 0 1;
+         }
+      }
+      part { name: "e.event.resize.br"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 1.0;
+            rel2.relative: 1.0 1.0;
+            min: 32 5;
+            align: 1.0 1.0;
+            color: 0 0 0 0;
+            fixed: 1 1;
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "focused" 0.0;
+         target: "top";
+         target: "bottom";
+         target: "left";
+         target: "right";
+      }
+      program {
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "top";
+         target: "bottom";
+         target: "left";
+         target: "right";
+      }
+   }
+}
+
 group { name: "e/widgets/border/default/move";
    images.image: "bg-rounded-3px@4.png" COMP;
    images.image: "border-rounded-3px@4.png" COMP;
