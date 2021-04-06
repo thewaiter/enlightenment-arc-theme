@@ -679,7 +679,7 @@ group {
          description { state: "max" 0.0;
             inherit: "default" 0.0;
             rel2.relative: 1.0 1.0;
-            rel2.offset: -1 -1;
+            rel2.offset: -4 -6;
          }
       }
 
