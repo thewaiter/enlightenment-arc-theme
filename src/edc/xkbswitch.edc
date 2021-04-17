@@ -97,7 +97,7 @@ group { name: "e/modules/xkbswitch/noflag";
    images.image: "bevel_out.png" COMP;
    images.image: "shine.png" COMP;
    images.image: "flag.png" COMP;
-   max: 128 128;
+   max: 48 48;
    parts {
       //~ part { name: "shadow";
          //~ description { state: "default" 0.0;
@@ -112,9 +112,9 @@ group { name: "e/modules/xkbswitch/noflag";
       //~ }
       part { name: "base"; type: IMAGE; mouse_events: 0;
          description { state: "default" 0.0;
-            rel1.offset: 3 6;
-            rel2.offset: -4 -6;
-            //~ aspect: 1.8 1.8; aspect_preference: BOTH;
+            rel1.offset: 3 3;
+            rel2.offset: -4 -4;
+            aspect: 1.0 1.0;
             image.normal: "flag.png";
             fill.smooth: 1;
          }
@@ -122,12 +122,12 @@ group { name: "e/modules/xkbswitch/noflag";
       part { name: "e.text.label"; type: TEXT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
-            rel1.to: "base";
+            //~ rel1.to: "base";
             rel1.relative: 0.0 0.5;
-            rel2.to: "base";
+            //~ rel2.to: "base";
             rel2.relative: 1.0 0.5;
             color: 65 146 54 255;
-            text { font: "Sans:style=Bold"; size: 9;
+            text { font: "Sans:style=Bold"; size: 8;
                min: 0 1;
                text_class: "module_small";
             }
