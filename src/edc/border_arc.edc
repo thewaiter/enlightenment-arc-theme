@@ -911,7 +911,6 @@ group {
          source: "e";
          action: STATE_SET "active" 0.0;
          target: "e.text.title";
-         target: "top_border";
       }
       program {
          signal: "e,state,unfocused";
@@ -968,6 +967,18 @@ group {
          target: "e.event.resize.b";
          target: "e.event.resize.br";
          after: "focused";
+      }
+      program {
+         signal: "e,action,unmax,noframe"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.swallow.client";
+         target: "e.text.title";
+         target: "e.event.resize.t";
+         target: "e.event.resize.tl";
+         target: "e.event.resize.tr";
+         target: "e.event.resize.bl";
+         target: "e.event.resize.b";
+         target: "e.event.resize.br";
       }
       program {
          signal: "mouse,clicked,*";
