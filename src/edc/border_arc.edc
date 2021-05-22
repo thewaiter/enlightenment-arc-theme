@@ -893,6 +893,14 @@ group {
          after:  "focused";
       }
       program {
+         signal: "e,state,unshaded,noframe";
+         source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "shadow";
+         target: "bottom";
+         target: "e.text.title";
+      }
+      program {
          name: "focused"; 
          signal: "e,state,focused";
          source: "e";
