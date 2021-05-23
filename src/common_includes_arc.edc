@@ -110,6 +110,7 @@
 #include "edc/deskmirror_arc.edc"
 #include "edc/temperature_arc.edc"
 #include "edc/calendar.edc"
+#include "edc/screenshot.edc"
 //~ #include "edc/wizard.edc"
 // #include "../orig-theme/edc/wizard.edc"
 #include "edc/init.edc"
