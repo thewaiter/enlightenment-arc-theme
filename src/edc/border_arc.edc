@@ -357,6 +357,7 @@ group {
    }
 
    data.item: "shadow" "1";
+   data.item: "noframe" "1";
    parts {
       part { name: "shadow_clip";
          type: RECT;
