@@ -130,7 +130,7 @@
             }
          }
          program {
-            signal: "e,state,focused"; source: "e";
+            signal: "e,state,focused*"; source: "e";
             script {
                new m = get_int(btmode);
                m &= ~INACTIVE; set_int(btmode, m);
@@ -285,7 +285,7 @@
             }
          }
          program {
-            signal: "e,state,focused"; source: "e";
+            signal: "e,state,focused*"; source: "e";
             script {
                new m = get_int(btmode);
                m &= ~INACTIVE; set_int(btmode, m);
