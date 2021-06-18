@@ -1326,6 +1326,14 @@ group { name: "e/widgets/border/pixel/border";
          target: "right";
       }
       program {
+         signal: "e,state,focused,noframe"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "top";
+         target: "bottom";
+         target: "left";
+         target: "right";
+      }
+      program {
          signal: "e,state,unfocused"; source: "e";
          action: STATE_SET "default" 0.0;
          target: "top";
