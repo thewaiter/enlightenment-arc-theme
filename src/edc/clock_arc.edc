@@ -436,7 +436,7 @@ group { name: "e/modules/clock/digital";
                 text: "Tod, 12/30/2011";
                 min: 0 1;
                 size_range: 6 10;  
-                fit: 1 0;
+                //~ fit: 1 0;
              }
              fixed: 0 1;
           }
