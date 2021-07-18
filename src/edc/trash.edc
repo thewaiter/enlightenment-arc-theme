@@ -1,0 +1,244 @@
+ images {
+   image: "icon_can.png" COMP;
+   image: "icon_trash.png" COMP;
+   image: "icon_can_top.png" COMP;
+   image: "recycle_01.png" COMP;
+   image: "recycle_02.png" COMP;
+   image: "recycle_03.png" COMP;
+   image: "recycle_04.png" COMP;
+   image: "recycle_05.png" COMP;
+   image: "recycle_06.png" COMP;
+   image: "recycle_07.png" COMP;
+   image: "recycle_08.png" COMP;
+   image: "recycle_09.png" COMP;
+   image: "recycle_10.png" COMP;
+   image: "recycle_11.png" COMP;
+   image: "recycle_12.png" COMP;
+   image: "recycle_13.png" COMP;
+   image: "recycle_14.png" COMP;
+   image: "recycle_15.png" COMP;
+   image: "recycle_16.png" COMP;
+   image: "recycle_17.png" COMP;
+} 
+
+group
+{
+      name: "modules/trash/main";
+      min: 10 12;
+      parts {
+         /* Container */
+         part {
+            name: "container";
+            type: RECT;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 0;
+               aspect: 0.82 0.82;
+               aspect_preference: BOTH;
+            }
+            description {
+               state: "small" 0.0;
+               inherit: "default" 0.0;
+               rel1.relative: 0.1 0.1;
+               rel2.relative: 0.9 0.9;
+            }
+            description {
+               state: "big" 0.0;
+               inherit: "default" 0.0;
+               rel1.relative: -0.05 -0.05;
+               rel2.relative: 1.05 1.05;
+            }
+         }
+         /* Trashcan */
+         part {
+            name: "image";
+            mouse_events: 1;
+            type: IMAGE;
+            description {
+               state: "default" 0.0;
+               image.normal: "icon_can.png";
+               rel1.to: "container";
+               rel2.to: "container";
+            }
+         }
+         part {
+            name: "top";
+            mouse_events: 1;
+            type: IMAGE;
+            description {
+               state: "default" 0.0;
+               image.normal: "icon_can_top.png";
+               rel1.to: "container";
+               rel2.to: "container";
+            }
+            description {
+               state: "visible" 0.0;
+               image.normal: "icon_can_top.png";
+               rel1.to: "container";
+               rel2.to: "container";
+               visible: 0;
+            }
+         }
+         /* Trash paper */
+         part {
+            name: "paper";
+            mouse_events: 1;
+            type: IMAGE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 0;
+               image.normal: "icon_trash.png";
+               rel1.to: "container";
+               rel2.to: "container";
+            }
+            description {
+               state: "visible" 0.0;
+               color: 255 255 255 255;
+               image.normal: "icon_trash.png";
+               rel1.to: "container";
+               rel2.to: "container";
+            }
+         }
+         /* Recycle logo */
+         part {
+            name: "logo";
+            mouse_events: 1;
+            type: IMAGE;
+            description {
+               state: "default" 0.0;
+               image.normal: "recycle_01.png";
+               aspect: 1 1;
+               aspect_preference: BOTH;
+               rel1.to: "container";
+               rel2.to: "container";
+               rel1.relative: 0 0.35;
+               rel2.relative: 1 0.85;
+            }
+            description {
+               state: "rotate" 0.0;
+               image.normal: "recycle_01.png";
+               image.tween: "recycle_02.png";
+               image.tween: "recycle_03.png";
+               image.tween: "recycle_04.png";
+               image.tween: "recycle_05.png";
+               image.tween: "recycle_06.png";
+               image.tween: "recycle_07.png";
+               image.tween: "recycle_08.png";
+               image.tween: "recycle_09.png";
+               image.tween: "recycle_10.png";
+               image.tween: "recycle_11.png";
+               image.tween: "recycle_12.png";
+               image.tween: "recycle_13.png";
+               image.tween: "recycle_14.png";
+               image.tween: "recycle_15.png";
+               image.tween: "recycle_16.png";
+               image.tween: "recycle_17.png";
+
+               aspect: 1 1;
+               aspect_preference: BOTH;
+               rel1.to: "container";
+               rel2.to: "container";
+               rel1.relative: 0 0.35;
+               rel2.relative: 1 0.85;
+            }
+         }
+      }
+      programs {
+         /* set full or empty */
+         program{
+            name: "set_full_prog";
+            signal: "set_full";
+            source: "e";
+            action: STATE_SET "visible" 0.0;
+            transition: LINEAR 1.0;
+            target: "paper";
+            target: "top";
+         }
+         program {
+            name: "set_empty_prog1";
+            signal: "set_empty";
+            source: "e";
+            action: SIGNAL_EMIT "start_rotate" "int";
+            after: "set_empty_prog2";
+         }
+         program {
+            name: "set_empty_prog2";
+            action: STATE_SET "default" 0.0;
+            transition: LINEAR 1.5;
+            target: "paper";
+            target: "top";
+            after: "set_empty_prog3";
+         }
+         program {
+            name: "set_empty_prog3";
+            
+            action: SIGNAL_EMIT "stop_rotate" "int";
+         }
+         /* rotate */
+         program {
+            name: "on_drag_start";
+            signal: "drag_start";
+            source: "e";
+            action: STATE_SET "rotate" 0.0;
+            transition: LINEAR 0.15;
+            target: "logo";
+            after: "on_drag_start";
+         }
+         program {
+            name: "on_drag_end";
+            signal: "drag_end";
+            source: "e";
+            action: STATE_SET "default" 0.0;
+            transition: LINEAR 0.15;
+            target: "logo";
+         }
+         program {
+            name: "start_rotate";
+            signal: "start_rotate";
+            source: "int";
+            action: STATE_SET "rotate" 0.0;
+            transition: LINEAR 0.15;
+            target: "logo";
+            after: "start_rotate";
+         }
+         program {
+            name: "stop_rotate";
+            signal: "stop_rotate";
+            source: "int";
+            action: STATE_SET "default" 0.0;
+            target: "logo";
+         }
+         /* zoom */
+         program {
+            name: "zoom_start";
+            signal: "drag_start";
+            source: "e";
+            action: STATE_SET "big" 0.0;
+            transition: SINUSOIDAL 0.15;
+            target: "container";
+            after: "zoom_2";
+         }
+         program {
+            name: "zoom_2";
+            action: STATE_SET "small" 0.0;
+            transition: SINUSOIDAL 0.3;
+            target: "container";
+            after: "zoom_3";
+         }
+         program {
+            name: "zoom_3";
+            action: STATE_SET "big" 0.0;
+            transition: SINUSOIDAL 0.3;
+            target: "container";
+            after: "zoom_2";
+         }
+         program {
+            name: "zoom_end";
+            signal: "drag_end";
+            source: "e";
+            action: STATE_SET "default" 0.0;
+            transition: LINEAR 0.0;
+            target: "container";
+         }
+      }
+}
