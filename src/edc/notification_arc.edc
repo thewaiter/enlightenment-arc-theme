@@ -488,7 +488,7 @@ group { name: "e/modules/notification/main";
          name: "show";
          signal: "show";
          source: "";
-         //~ in: 0.2 0.0;
+         in: 0.2 0.0;
          after: "fade_in";
       }
 
@@ -496,7 +496,7 @@ group { name: "e/modules/notification/main";
          action: STATE_SET "visible" 0.0;
          target: "base";
          // in: 0.1 0.0;
-         //~ transition: LINEAR 0.5;
+         transition: LINEAR 0.5;
       }
    }
 }
