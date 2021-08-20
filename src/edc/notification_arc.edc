@@ -450,6 +450,7 @@ group { name: "e/modules/notification/main";
          source: "theme";
          action: STATE_SET "show" 0.0;
          target: "act1_btn";
+         target: "clip";
       }
       program {
          signal: "e,button2,show"; 
@@ -463,6 +464,7 @@ group { name: "e/modules/notification/main";
          source: "theme";
          action: STATE_SET "show" 0.0;
          target: "act3_btn";
+         target: "clip";
       }
 
       program {
