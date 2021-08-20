@@ -117,6 +117,13 @@ group { name: "e/modules/notification/main";
             color: 255 255 255 255;
             rel1.relative: 0.0 0.0;
             rel1.offset: -15 0;
+            rel2.relative: 1.0 0.75;
+            rel2.offset: 15 0;
+         }
+         desc { "show";
+            color: 255 255 255 255;
+            rel1.relative: 0.0 0.0;
+            rel1.offset: -15 0;
             rel2.relative: 1.0 1.0;
             rel2.offset: 15 0;
          }
@@ -206,11 +213,12 @@ group { name: "e/modules/notification/main";
             rel1.relative: 1.0 1.0;
             rel1.offset: 4 4;
             rel2.to: "base";
-            rel2.offset: -27 -35;
+            rel2.relative: 0.95 0.7;
+            //~ rel2.offset: -27 -45;
             color_class: "popup_text";
             text {
                style: "notification_style";
-               min: 0 1;
+               min: 0 0;
             }
             fixed: 1 1;
          }
@@ -448,6 +456,7 @@ group { name: "e/modules/notification/main";
          source: "theme";
          action: STATE_SET "show" 0.0;
          target: "act2_btn";
+         target: "clip";
       }
       program {
          signal: "e,button3,show"; 
