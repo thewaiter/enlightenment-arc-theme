@@ -202,7 +202,6 @@ group { name: "e/modules/notification/main";
       }
       part { name: "notification.textblock.message";
          scale: 1;
-         clip_to: "clip";
          type: TEXTBLOCK;
          mouse_events: 0;
          clip_to: "bodyclip";
