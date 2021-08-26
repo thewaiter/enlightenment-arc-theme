@@ -180,7 +180,7 @@ group { name: "e/modules/notification/main";
          type: RECT;
          description { state: "default" 0.0;
             rel2.offset: -13 -13;
-            min: 220 110;
+            min: 220 115;
          }
       }
       part { name: "notification.swallow.app_icon";
