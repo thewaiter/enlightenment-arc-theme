@@ -117,6 +117,7 @@
 #include "edc/about-e_arc.edc"
 #include "edc/about-theme_arc.edc"
 #include "edc/trash.edc"
+#include "edc/deskshow.edc"
 // #include "../orig-theme/edc/transitions.edc"
 
 
