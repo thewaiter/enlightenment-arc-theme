@@ -915,4 +915,12 @@ color_classes {
       color: COL_FONT_BASIC_INACTIVE;
       desc: "Calendar weekend";
    }
+   color_class { name: "mem_module_real";
+      color: 65 146 54 255; 
+      desc: "Real graph color";
+   }
+   color_class { name: "mem_module_swap";
+      color: 255 0 0 128;
+      desc: "Swap graph color";
+   }
 }
