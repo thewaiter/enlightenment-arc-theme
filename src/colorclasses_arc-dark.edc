@@ -1,3 +1,5 @@
+#define NO_COLOR                 255 255 255 0
+#define VISIBLE                  255 255 255 255
 
 #define COL_NORM                  68  74  88 255
 #define COL_HOVER                 80  86 102 255
@@ -43,13 +45,11 @@
 #define MAXIMIZE_HOVER_BACKGROUND_BORDER 38 41 50 255
 #define CLOSE_HOVER              65  146 54 255
 
-#define MINIMIZE_PRESSED         255 255 255 255
+#define MINIMIZE_PRESSED         VISIBLE
 #define MINIMIZE_PRESSED_BACKGROUND 65 146 54 255
-#define MAXIMIZE_PRESSED         255 255 255 255
+#define MAXIMIZE_PRESSED         VISIBLE
 #define MAXIMIZE_PRESSED_BACKGROUND 65 146 54 255
 #define CLOSE_PRESSED            65  220 54 255
-
-#define NO_COLOR                 255 255 255 0
 
 #define WIN_BORDER_LINE           22  27  43 255
 #define WIN_BORDER_UNDERLINE      53  59  73 255
@@ -550,7 +550,7 @@ color_classes {
       desc: "Entry cursor";
    }
    color_class { name: "entry_selection_handler";
-      color: 255 255 255 255;
+      color: VISIBLE;
       desc: "Entry selection handler";
    }
    color_class { name: "focus_outline";
@@ -590,7 +590,7 @@ color_classes {
       desc: "Scroller background";
    }
    // color_class { name: "scroller_bar";
-   //    color: 255 255 255 255;
+   //    color: VISIBLE;
    //    desc: "Bar of a scroller widget";
    // }
    color_class { name: "scroller_base";
@@ -914,5 +914,13 @@ color_classes {
    color_class { name: "calendar_weekend";
       color: COL_FONT_BASIC_INACTIVE;
       desc: "Calendar weekend";
+   }
+   color_class { name: "mem_module_real";
+      color: 65 146 54 255; 
+      desc: "Real graph color";
+   }
+   color_class { name: "mem_module_swap";
+      color: 255 0 0 128;
+      desc: "Swap graph color";
    }
 }

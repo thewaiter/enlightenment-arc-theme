@@ -1,657 +1,400 @@
+#define REAL(NAME, NUM) \
+desc { NAME NUM; color_class: "mem_module_real"; vis;			\
+	rel1.relative: 0.0 0.35;																\
+	rel1.offset: 0 0;																				\
+	rel2.relative: NUM 0.45;																\
+	rel2.offset: 0 0;																				\
+} 
 
-   color_classes {
-color_class {
-	 name: "mem_module_real";
-	 color: 65 146 54 255; 
-      }
-color_class {
-	 name: "mem_module_swap";
-	 color: 255 0 0 128;
-      }
-   }
-	group {
-		name: "modules/mem/main";
-		max: 768 768;
-		min: 12 12;
-		script {
-			
-			public message(Msg_Type:type, id, ...) 
+#define SWAP(NAME, NUM) \
+desc { state: NAME NUM; color_class: "mem_module_swap";		\
+		rel1.relative: 0.0 0.55;															\
+		rel1.offset: 0 0;																			\
+		rel2.relative: NUM 0.65;															\
+		rel2.offset: 0 0;																			\
+} 
+
+group { "modules/mem/main";
+	max: 768 768; min: 12 12;
+	script {
+		public message(Msg_Type:type, id, ...)
+		{
+			if ((type == MSG_FLOAT) && (id == 1))
 			{
-				if ((type == MSG_FLOAT) && (id == 1)) 
-				{
 				new Float:value;
 				value = getfarg(2);
-				  if(!value)
-				  {
-				    set_state(PART:"real_meter", "default" , 0.00);
-				  }else
-				  {
-				    set_state(PART:"real_meter", "default" , value);
-				  }
-				}
-				///////////////////////////////////////
-
-				if ((type == MSG_FLOAT) && (id == 2)) 
+				if (!value)
 				{
+					set_state(PART:"real_meter", "default" , 0.00);
+				} else
+				{
+					set_state(PART:"real_meter", "default" , value);
+				}
+			}
+
+			if ((type == MSG_FLOAT) && (id == 2))
+			{
 				new Float:value;
 				value = getfarg(2);
-				  if(!value)
-				  {
-				    set_state(PART:"swap_meter", "default" , 0.00);
-				  }else
-				  {
-				    set_state(PART:"swap_meter", "default" , value);
-				  }
+				if(!value)
+				{
+					set_state(PART:"swap_meter", "default" , 0.00);
+				}else
+				{
+					set_state(PART:"swap_meter", "default" , value);
 				}
-			}	     
+			}
 		}
-		parts {
-			part {
-			name: "fade_clip";
-			mouse_events: 1;
-			type: RECT;
-			description
-				{
-					state: "default" 0.0;
-					color: 255 255 255 255;
-					rel1
-					{
-						relative: 0.0 0.0;
-						offset: 0 0;
-					}
-					rel2
-					{
-						relative: 1.0 1.0;
-						offset: -1 -1;
-					}
+	}
+	parts {
+		rect { "fade_clip"; mouse;
+			desc
+				{ "default"; color: VISIBLE;
+					rel1.relative: 0.0 0.0;
+					rel1.offset: 0 0;
+					rel2.relative: 1.0 1.0;
+					rel2.offset: -1 -1;
 				}
-			}
-			part {
-			name: "wlan";
-			type: RECT;
-			mouse_events: 1;
-			clip_to: "fade_clip";
-			description
-				{
-					state:    "default" 0.0;
-					color: 255 255 255 200;
-					aspect:   1.0 1.0;
-					aspect_preference: BOTH;
-					align: 0.5 0.5;
-					rel1
-					{
-						relative: 0.0 0.0;
-						offset: 0 0;
-					}
-					rel2
-					{
-						relative: 1.0 1.0;
-						offset: -1 -1;
-					}
-					color: 255 255 255 0;
-				}
-			}
-		
-		/////////// real_meter show the color blue ////////////
-			
-			part {
-			name: "real_meter";
-			type: RECT;
-			clip_to: "fade_clip";
-
-# ifdef REAL
-# undef REAL
-# endif
-# define REAL(name, num) \
-			description \
-				{ \
-					state: name num; \
-					visible: 1; \
-					color_class: "mem_module_real"; \
-					rel1 \
-					{ \
-						relative: 0.0  0.35; \
-						offset: 0 0; \
-					} \
-					rel2 \
-					{ \
-						relative: num 0.45; \
-						offset: 0 0; \
-					} \
-				} 
-
-				REAL("default", 0.00)
-				REAL("default", 0.01)
-				REAL("default", 0.02)
-				REAL("default", 0.03)
-				REAL("default", 0.04)
-				REAL("default", 0.05)
-				REAL("default", 0.06)
-				REAL("default", 0.00)
-				REAL("default", 0.08)
-				REAL("default", 0.09)
-				REAL("default", 0.10)
-				REAL("default", 0.11)
-				REAL("default", 0.12)
-				REAL("default", 0.13)
-				REAL("default", 0.14)
-				REAL("default", 0.15)
-				REAL("default", 0.16)
-				REAL("default", 0.11)
-				REAL("default", 0.18)
-				REAL("default", 0.19)
-				REAL("default", 0.20)
-				REAL("default", 0.21)
-				REAL("default", 0.22)
-				REAL("default", 0.23)
-				REAL("default", 0.24)
-				REAL("default", 0.25)
-				REAL("default", 0.26)
-				REAL("default", 0.22)
-				REAL("default", 0.28)
-				REAL("default", 0.29)
-				REAL("default", 0.30)
-				REAL("default", 0.31)
-				REAL("default", 0.32)
-				REAL("default", 0.33)
-				REAL("default", 0.34)
-				REAL("default", 0.35)
-				REAL("default", 0.36)
-				REAL("default", 0.33)
-				REAL("default", 0.38)
-				REAL("default", 0.39)
-				REAL("default", 0.40)
-				REAL("default", 0.41)
-				REAL("default", 0.42)
-				REAL("default", 0.43)
-				REAL("default", 0.44)
-				REAL("default", 0.45)
-				REAL("default", 0.46)
-				REAL("default", 0.44)
-				REAL("default", 0.48)
-				REAL("default", 0.49)
-				REAL("default", 0.50)
-				REAL("default", 0.51)
-				REAL("default", 0.52)
-				REAL("default", 0.53)
-				REAL("default", 0.54)
-				REAL("default", 0.55)
-				REAL("default", 0.56)
-				REAL("default", 0.55)
-				REAL("default", 0.58)
-				REAL("default", 0.59)
-				REAL("default", 0.60)
-				REAL("default", 0.61)
-				REAL("default", 0.62)
-				REAL("default", 0.63)
-				REAL("default", 0.64)
-				REAL("default", 0.65)
-				REAL("default", 0.66)
-				REAL("default", 0.66)
-				REAL("default", 0.68)
-				REAL("default", 0.69)
-				REAL("default", 0.70)
-				REAL("default", 0.71)
-				REAL("default", 0.72)
-				REAL("default", 0.73)
-				REAL("default", 0.74)
-				REAL("default", 0.75)
-				REAL("default", 0.76)
-				REAL("default", 0.77)
-				REAL("default", 0.78)
-				REAL("default", 0.79)
-				REAL("default", 0.80)
-				REAL("default", 0.81)
-				REAL("default", 0.82)
-				REAL("default", 0.83)
-				REAL("default", 0.84)
-				REAL("default", 0.85)
-				REAL("default", 0.86)
-				REAL("default", 0.87)
-				REAL("default", 0.88)
-				REAL("default", 0.89)
-				REAL("default", 0.90)
-				REAL("default", 0.91)
-				REAL("default", 0.92)
-				REAL("default", 0.93)
-				REAL("default", 0.94)
-				REAL("default", 0.95)
-				REAL("default", 0.96)
-				REAL("default", 0.97)
-				REAL("default", 0.98)
-				REAL("default", 0.99)
-				REAL("default", 1.0)
-			}
-			
-		
-part {
-			name: "swap_meter";
-			type: RECT;
-			clip_to: "fade_clip";
-
-# ifdef SWAP
-#  undef SWAP
-# endif
-# define SWAP(name, num) \
-			description \
-				{ \
-					state: name num; \
-					rel1 \
-					{ \
-						relative: 0.0  0.55; \
-						offset: 0 0; \
-					} \
-					rel2 \
-					{ \
-						relative: num 0.65; \
-						offset: 0 0; \
-					} \
-					color_class: "mem_module_swap"; \
-				} 
-				SWAP("default", 0.00)
-				SWAP("default", 0.01)
-				SWAP("default", 0.02)
-				SWAP("default", 0.03)
-				SWAP("default", 0.04)
-				SWAP("default", 0.05)
-				SWAP("default", 0.06)
-				SWAP("default", 0.00)
-				SWAP("default", 0.08)
-				SWAP("default", 0.09)
-				SWAP("default", 0.10)
-				SWAP("default", 0.11)
-				SWAP("default", 0.12)
-				SWAP("default", 0.13)
-				SWAP("default", 0.14)
-				SWAP("default", 0.15)
-				SWAP("default", 0.16)
-				SWAP("default", 0.11)
-				SWAP("default", 0.18)
-				SWAP("default", 0.19)
-				SWAP("default", 0.20)
-				SWAP("default", 0.21)
-				SWAP("default", 0.22)
-				SWAP("default", 0.23)
-				SWAP("default", 0.24)
-				SWAP("default", 0.25)
-				SWAP("default", 0.26)
-				SWAP("default", 0.22)
-				SWAP("default", 0.28)
-				SWAP("default", 0.29)
-				SWAP("default", 0.30)
-				SWAP("default", 0.31)
-				SWAP("default", 0.32)
-				SWAP("default", 0.33)
-				SWAP("default", 0.34)
-				SWAP("default", 0.35)
-				SWAP("default", 0.36)
-				SWAP("default", 0.33)
-				SWAP("default", 0.38)
-				SWAP("default", 0.39)
-				SWAP("default", 0.40)
-				SWAP("default", 0.41)
-				SWAP("default", 0.42)
-				SWAP("default", 0.43)
-				SWAP("default", 0.44)
-				SWAP("default", 0.45)
-				SWAP("default", 0.46)
-				SWAP("default", 0.44)
-				SWAP("default", 0.48)
-				SWAP("default", 0.49)
-				SWAP("default", 0.50)
-				SWAP("default", 0.51)
-				SWAP("default", 0.52)
-				SWAP("default", 0.53)
-				SWAP("default", 0.54)
-				SWAP("default", 0.55)
-				SWAP("default", 0.56)
-				SWAP("default", 0.55)
-				SWAP("default", 0.58)
-				SWAP("default", 0.59)
-				SWAP("default", 0.60)
-				SWAP("default", 0.61)
-				SWAP("default", 0.62)
-				SWAP("default", 0.63)
-				SWAP("default", 0.64)
-				SWAP("default", 0.65)
-				SWAP("default", 0.66)
-				SWAP("default", 0.66)
-				SWAP("default", 0.68)
-				SWAP("default", 0.69)
-				SWAP("default", 0.70)
-				SWAP("default", 0.71)
-				SWAP("default", 0.72)
-				SWAP("default", 0.73)
-				SWAP("default", 0.74)
-				SWAP("default", 0.75)
-				SWAP("default", 0.76)
-				SWAP("default", 0.77)
-				SWAP("default", 0.78)
-				SWAP("default", 0.79)
-				SWAP("default", 0.80)
-				SWAP("default", 0.81)
-				SWAP("default", 0.82)
-				SWAP("default", 0.83)
-				SWAP("default", 0.84)
-				SWAP("default", 0.85)
-				SWAP("default", 0.86)
-				SWAP("default", 0.87)
-				SWAP("default", 0.88)
-				SWAP("default", 0.89)
-				SWAP("default", 0.90)
-				SWAP("default", 0.91)
-				SWAP("default", 0.92)
-				SWAP("default", 0.93)
-				SWAP("default", 0.94)
-				SWAP("default", 0.95)
-				SWAP("default", 0.96)
-				SWAP("default", 0.97)
-				SWAP("default", 0.98)
-				SWAP("default", 0.99)
-				SWAP("default", 1.0)
-			}
-		
-		//////////// Draw rec1 real ////////////
-			part {
-				name: "up1";
-				type: RECT;
-				mouse_events: 0;
-				description 
-					{
-						state: "default" 0.00;
-						visible: 1;
-						color: 0 0 0 255;
-						rel1 
-						{
-							relative: 0.0 0.35;
-							offset:  1 0;
-						}
-						rel2 
-						{
-							relative: 1.0 0.35;
-							offset: -1 0;
-						}
-					}
-			}
-			part {
-				name: "down1";
-				type: RECT;
-				mouse_events: 0;
-				description 
-					{
-						state: "default" 0.00;
-						visible: 1;
-						color: 0 0 0 255;
-						rel1 {
-							relative: 0.0 0.45;
-							offset: 1 0;
-						}
-						rel2 {
-							relative: 1.0 0.45;
-							offset: -1 0;
-						}
-					}
-			}
-			part {
-				name: "left1";
-				type: RECT;
-				mouse_events: 0;
-				description 
-					{
-						state: "default" 0.00;
-						visible: 1;
-						color: 0 0 0 255;
-						rel1 
-						{
-							relative: 0.0 0.35;
-							offset: 0 0;
-						}
-						rel2 
-						{
-							relative: 0.0 0.45;
-							offset: 0 0;
-						}
-					}
-			}
-			part {
-				name: "right1";
-				type: RECT;
-				mouse_events: 0;
-				description {
-					state: "default" 0.00;
-					visible: 1;
-					color: 0 0 0 255;
-					rel1 {
-						relative: 1.0 0.35;
-						offset: -1 0;
-					}
-					rel2 {
-						relative: 1.0 0.45;
-						offset: -1 0;
-					}
-				}
-			}
-		//////////// Draw rec2 swap////////////
-			part {
-				name: "up2";
-				type: RECT;
-				mouse_events: 0;
-				description 
-					{
-						state: "default" 0.00;
-						visible: 1;
-						color:  0 0 0 255;
-						rel1 
-						{
-							relative: 0.0 0.55;
-							offset: 1 0;
-						}
-						rel2 
-						{
-							relative: 1.0 0.55;
-							offset: -1 0;
-						}
-					}
-			}
-			part {
-				name: "down2";
-				type: RECT;
-				mouse_events: 0;
-				description 
-					{
-						state: "default" 0.00;
-						visible: 1;
-						color: 0 0 0 255;
-						rel1 {
-							relative: 0.0 0.65;
-							offset: 1 0;
-						}
-						rel2 {
-							relative: 1.0 0.65;
-							offset: -1 0;
-						}
-					}
-			}
-			part {
-				name: "left2";
-				type: RECT;
-				mouse_events: 0;
-				description 
-					{
-						state: "default" 0.00;
-						visible: 1;
-						color: 0 0 0 255;
-						rel1 
-						{
-							relative: 0.0 0.55;
-							offset: 0 0;
-						}
-						rel2 
-						{
-							relative: 0.0 0.65;
-							offset: 0 0;
-						}
-					}
-			}
-			part {
-				name: "right2";
-				type: RECT;
-				mouse_events: 0;
-				description {
-					state: "default" 0.00;
-					visible: 1;
-						color: 0 0 0 255;
-					rel1 {
-						relative: 1.0 0.55;
-						offset: -1 0;
-					}
-					rel2 {
-						relative: 1.0 0.65;
-						offset: -1 0;
-					}
-				}
-			}		
-		//////////// real_label ////////////
-		
-		part {
-			name: "real_label";
-			type: TEXT;
-			//clip_to: "fade_clip";
-			//~ effect: SOFT_SHADOW;
-			mouse_events: 1;
-			scale :1;
-			description 
-				{
-					state: "default" 0.0;
-					color: 255 255 255 0;
-					color3: 0 0 0 0;
-					visible: 0;
-					rel1 
-					{
-						relative: 0.05 0.05;
-						offset: 0 0;
-					}
-					rel2 
-					{
-						relative: 0.95 0.35;
-						offset: -1 -1;
-					}
-					text 
-					{
-						text: "Real: n/a";
-						font: "Sans";
-						size: 8;
-						min: 1 1;
-						align: 0.5 1;
-            ellipsis: -1; 
-						text_class: "module_small";
-					}
-				}
-			description 
-				{
-					state: "visible" 0.0;
-					inherit: "default" 0.0;
-					visible: 1;
-					color: 65 146 54 255;
-					//~ color3: 20 20 20 48;
-					//~ color_class: "module_label";
-				}
-			}
-		
-		//////////// swap_label ////////////
-		
-		part {
-			name: "swap_label";
-			type: TEXT;
-			//clip_to: "fade_clip";
-			//~ effect: SOFT_SHADOW;
-			mouse_events: 1;
-			scale: 1;
-			description 
-				{
-					state: "default" 0.0;
-					color: 255 255 255 0;
-					color3: 0 0 0 0;
-					visible: 0;
-					rel1 
-					{
-						relative: 0.05 0.7;
-						offset: 0 0;
-					}
-					rel2 
-						{
-						relative: 0.95 0.95;
-						offset: -1 -1;
-					}
-					text 
-					{
-						text: "Swap: n/a";
-						font: "Sans";
-						size: 8;
-						min: 1 1;
-						align: 0.5 0;
-            ellipsis: -1; 
-						text_class: "module_small";
-					}
-				}
-			description 
-				{
-					state: "visible" 0.0;
-					inherit: "default" 0.0;
-					visible: 1;
-					color: 65 146 54 255;
-					//~ color3: 20 20 20 0;
-					//~ color_class: "module_label";
-				}
-			}
-			part { name: "over";
-					type: RECT;
-					mouse_events: 1;
-					description { state: "default" 0.0;
-					color: 0 0 0 0;
-					}
-				}
-		
-		
 		}
-		programs {	
-		//////////// go_active ////////////
-			program 
-			{
-				name: "go_active";
-				signal: "label_active";
-				//~ signal: "mouse,in"; 
-				source: "";
-				action: STATE_SET "visible" 0.0;
-				transition: SINUSOIDAL 0.5;
-				target: "real_label";
-				target: "swap_label";
-				//target: "essid_name";
+		rect { "wlan"; mouse; clip: "fade_clip";
+			desc { "default"; color: NO_COLOR;
+				aspect: 1.0 1.0;
+				aspect_preference: BOTH;
+				align: 0.5 0.5;
+				rel1.relative: 0.0 0.0;
+				rel1.offset: 0 0;
+				rel2.relative: 1.0 1.0;
+				rel2.offset: -1 -1;
 			}
-			
-		//////////// go_passive2 ////////////
-			program 
-			{
-				name: "go_passive2";
-				//~ signal: "mouse,out"; 
-				//~ signal: "label_passive2";
-				source: "*";
-				action: ACTION_STOP;
-				target: "go_active";
+		}
+		rect { "real_meter"; clip: "fade_clip";
+			REAL("default", 0.00)
+			REAL("default", 0.01)
+			REAL("default", 0.02)
+			REAL("default", 0.03)
+			REAL("default", 0.04)
+			REAL("default", 0.05)
+			REAL("default", 0.06)
+			REAL("default", 0.00)
+			REAL("default", 0.08)
+			REAL("default", 0.09)
+			REAL("default", 0.10)
+			REAL("default", 0.11)
+			REAL("default", 0.12)
+			REAL("default", 0.13)
+			REAL("default", 0.14)
+			REAL("default", 0.15)
+			REAL("default", 0.16)
+			REAL("default", 0.11)
+			REAL("default", 0.18)
+			REAL("default", 0.19)
+			REAL("default", 0.20)
+			REAL("default", 0.21)
+			REAL("default", 0.22)
+			REAL("default", 0.23)
+			REAL("default", 0.24)
+			REAL("default", 0.25)
+			REAL("default", 0.26)
+			REAL("default", 0.22)
+			REAL("default", 0.28)
+			REAL("default", 0.29)
+			REAL("default", 0.30)
+			REAL("default", 0.31)
+			REAL("default", 0.32)
+			REAL("default", 0.33)
+			REAL("default", 0.34)
+			REAL("default", 0.35)
+			REAL("default", 0.36)
+			REAL("default", 0.33)
+			REAL("default", 0.38)
+			REAL("default", 0.39)
+			REAL("default", 0.40)
+			REAL("default", 0.41)
+			REAL("default", 0.42)
+			REAL("default", 0.43)
+			REAL("default", 0.44)
+			REAL("default", 0.45)
+			REAL("default", 0.46)
+			REAL("default", 0.44)
+			REAL("default", 0.48)
+			REAL("default", 0.49)
+			REAL("default", 0.50)
+			REAL("default", 0.51)
+			REAL("default", 0.52)
+			REAL("default", 0.53)
+			REAL("default", 0.54)
+			REAL("default", 0.55)
+			REAL("default", 0.56)
+			REAL("default", 0.55)
+			REAL("default", 0.58)
+			REAL("default", 0.59)
+			REAL("default", 0.60)
+			REAL("default", 0.61)
+			REAL("default", 0.62)
+			REAL("default", 0.63)
+			REAL("default", 0.64)
+			REAL("default", 0.65)
+			REAL("default", 0.66)
+			REAL("default", 0.66)
+			REAL("default", 0.68)
+			REAL("default", 0.69)
+			REAL("default", 0.70)
+			REAL("default", 0.71)
+			REAL("default", 0.72)
+			REAL("default", 0.73)
+			REAL("default", 0.74)
+			REAL("default", 0.75)
+			REAL("default", 0.76)
+			REAL("default", 0.77)
+			REAL("default", 0.78)
+			REAL("default", 0.79)
+			REAL("default", 0.80)
+			REAL("default", 0.81)
+			REAL("default", 0.82)
+			REAL("default", 0.83)
+			REAL("default", 0.84)
+			REAL("default", 0.85)
+			REAL("default", 0.86)
+			REAL("default", 0.87)
+			REAL("default", 0.88)
+			REAL("default", 0.89)
+			REAL("default", 0.90)
+			REAL("default", 0.91)
+			REAL("default", 0.92)
+			REAL("default", 0.93)
+			REAL("default", 0.94)
+			REAL("default", 0.95)
+			REAL("default", 0.96)
+			REAL("default", 0.97)
+			REAL("default", 0.98)
+			REAL("default", 0.99)
+			REAL("default", 1.0)
+		}
+		rect { "swap_meter"; clip: "fade_clip";
+			SWAP("default", 0.00)
+			SWAP("default", 0.01)
+			SWAP("default", 0.02)
+			SWAP("default", 0.03)
+			SWAP("default", 0.04)
+			SWAP("default", 0.05)
+			SWAP("default", 0.06)
+			SWAP("default", 0.00)
+			SWAP("default", 0.08)
+			SWAP("default", 0.09)
+			SWAP("default", 0.10)
+			SWAP("default", 0.11)
+			SWAP("default", 0.12)
+			SWAP("default", 0.13)
+			SWAP("default", 0.14)
+			SWAP("default", 0.15)
+			SWAP("default", 0.16)
+			SWAP("default", 0.11)
+			SWAP("default", 0.18)
+			SWAP("default", 0.19)
+			SWAP("default", 0.20)
+			SWAP("default", 0.21)
+			SWAP("default", 0.22)
+			SWAP("default", 0.23)
+			SWAP("default", 0.24)
+			SWAP("default", 0.25)
+			SWAP("default", 0.26)
+			SWAP("default", 0.22)
+			SWAP("default", 0.28)
+			SWAP("default", 0.29)
+			SWAP("default", 0.30)
+			SWAP("default", 0.31)
+			SWAP("default", 0.32)
+			SWAP("default", 0.33)
+			SWAP("default", 0.34)
+			SWAP("default", 0.35)
+			SWAP("default", 0.36)
+			SWAP("default", 0.33)
+			SWAP("default", 0.38)
+			SWAP("default", 0.39)
+			SWAP("default", 0.40)
+			SWAP("default", 0.41)
+			SWAP("default", 0.42)
+			SWAP("default", 0.43)
+			SWAP("default", 0.44)
+			SWAP("default", 0.45)
+			SWAP("default", 0.46)
+			SWAP("default", 0.44)
+			SWAP("default", 0.48)
+			SWAP("default", 0.49)
+			SWAP("default", 0.50)
+			SWAP("default", 0.51)
+			SWAP("default", 0.52)
+			SWAP("default", 0.53)
+			SWAP("default", 0.54)
+			SWAP("default", 0.55)
+			SWAP("default", 0.56)
+			SWAP("default", 0.55)
+			SWAP("default", 0.58)
+			SWAP("default", 0.59)
+			SWAP("default", 0.60)
+			SWAP("default", 0.61)
+			SWAP("default", 0.62)
+			SWAP("default", 0.63)
+			SWAP("default", 0.64)
+			SWAP("default", 0.65)
+			SWAP("default", 0.66)
+			SWAP("default", 0.66)
+			SWAP("default", 0.68)
+			SWAP("default", 0.69)
+			SWAP("default", 0.70)
+			SWAP("default", 0.71)
+			SWAP("default", 0.72)
+			SWAP("default", 0.73)
+			SWAP("default", 0.74)
+			SWAP("default", 0.75)
+			SWAP("default", 0.76)
+			SWAP("default", 0.77)
+			SWAP("default", 0.78)
+			SWAP("default", 0.79)
+			SWAP("default", 0.80)
+			SWAP("default", 0.81)
+			SWAP("default", 0.82)
+			SWAP("default", 0.83)
+			SWAP("default", 0.84)
+			SWAP("default", 0.85)
+			SWAP("default", 0.86)
+			SWAP("default", 0.87)
+			SWAP("default", 0.88)
+			SWAP("default", 0.89)
+			SWAP("default", 0.90)
+			SWAP("default", 0.91)
+			SWAP("default", 0.92)
+			SWAP("default", 0.93)
+			SWAP("default", 0.94)
+			SWAP("default", 0.95)
+			SWAP("default", 0.96)
+			SWAP("default", 0.97)
+			SWAP("default", 0.98)
+			SWAP("default", 0.99)
+			SWAP("default", 1.0)
+		}
+		rect { "up1"; nomouse;
+			desc { "default"; color: 0 0 0 255; vis;
+				rel1.relative: 0.0 0.35;
+				rel1.offset: 1 0;
+				rel2.relative: 1.0 0.35;
+				rel2.offset: -1 0;
 			}
-		
-		//////////// go_passive ////////////
-			program 
-			{
-				name: "go_passive";
-				signal: "label_passive";
-				//~ signal: "mouse,out"; 
-				source: "";
-				action: STATE_SET "default" 0.0;
-				transition: SINUSOIDAL 1.0;		  
-				target: "real_label";
-				target: "swap_label";
-				//target: "essid_name";
+		}
+		rect { "down1"; nomouse;
+			desc { "default"; color: 0 0 0 255; vis;
+				rel1.relative: 0.0 0.45;
+				rel1.offset: 1 0;
+				rel2.relative: 1.0 0.45;
+				rel2.offset: -1 0;
 			}
+		}
+		rect { "left1"; nomouse;
+			desc { "default"; color: 0 0 0 255;; vis;
+				rel1.relative: 0.0 0.35;
+				rel1.offset: 0 0;
+				rel2.relative: 0.0 0.45;
+				rel2.offset: 0 0;
+			}
+		}
+		rect { "right1"; nomouse;
+			desc { "default"; color: 0 0 0 255;; vis;
+				rel1.relative: 1.0 0.35;
+				rel1.offset: -1 0;
+				rel2.relative: 1.0 0.45;
+				rel2.offset: -1 0;
+			}
+		}
+		rect { "up2"; nomouse;
+			desc { "default"; color: 0 0 0 255; vis;
+					rel1.relative: 0.0 0.55;
+					rel1.offset: 1 0;
+					rel2.relative: 1.0 0.55;
+					rel2.offset: -1 0;
+				}
+		}
+		rect { "down2"; nomouse;
+			desc { "default"; color: 0 0 0 255; vis;
+					rel1.relative: 0.0 0.65;
+					rel1.offset: 1 0;
+					rel2.relative: 1.0 0.65;
+					rel2.offset: -1 0;
+				}
+		}
+		rect { "left2"; nomouse;
+			desc { "default"; color: 0 0 0 255; vis;
+				rel1.relative: 0.0 0.55;
+				rel1.offset: 0 0;
+				rel2.relative: 0.0 0.65;
+				rel2.offset: 0 0;
+			}
+		}
+		rect { "right2"; nomouse;
+			desc { "default"; color: 0 0 0 255; vis;
+				rel1.relative: 1.0 0.55;
+				rel1.offset: -1 0;
+				rel2.relative: 1.0 0.65;
+				rel2.offset: -1 0;
+			}
+		}
+	text { "real_label"; mouse; scale;
+		desc { "default"; color: NO_COLOR; hid;
+			color3: 0 0 0 0;
+			rel1.relative: 0.05 0.05;
+			rel1.offset: 0 0;
+			rel2.relative: 0.95 0.35;
+			rel2.offset: -1 -1;
+			text.text: "Real: n/a";
+			text.font: "Sans"; text.size: 8;
+			text.min: 1 1;
+			text.ellipsis: -1;
+			text.align: 0.5 1;
+			text.text_class: "module_small";
+		}
+		desc { "visible"; inherit; color: 65 146 54 255; vis; }
+	}
+	text { "swap_label"; mouse; scale;
+		desc { "default"; color: NO_COLOR; hid;
+			color3: 0 0 0 0;
+			rel1.relative: 0.05 0.7;
+			rel1.offset: 0 0;
+			rel2.relative: 0.95 0.95;
+			rel2.offset: -1 -1;
+			text.text: "Swap: n/a";
+			text.font: "Sans"; text.size: 8;
+			text.min: 1 1;
+			text.ellipsis: -1;
+			text.align: 0.5 0;
+			text.text_class: "module_small";
+		}
+		desc { "visible"; inherit; color: 65 146 54 255; vis; }
+		}
+		rect { "over"; mouse;
+			desc { "default"; color: 0 0 0 0; }
+		}
+	}
+
+	programs {
+		program { "go_active";
+			signal: "label_active";
+			source: "*";
+			action: STATE_SET "visible" 0.0;
+			transition: SINUSOIDAL 0.5;
+			target: "real_label";
+			target: "swap_label";
+		}
+		program { "go_passive2";
+			source: "*";
+			action: ACTION_STOP;
+			target: "go_active";
+		}
+		program { "go_passive";
+			signal: "label_passive";
+			source: "";
+			action: STATE_SET "default" 0.0;
+			transition: SINUSOIDAL 1.0;
+			target: "real_label";
+			target: "swap_label";
+		}
 	}
 }
