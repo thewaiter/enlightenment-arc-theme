@@ -86,6 +86,7 @@ all: ../arc.edj ../arc-dark.edj ../arc-darker.edj
 ../arc-dark.edj: $(ARC_DARK_SRC) $(ARC_COMMON_SRC)
 	$(info Building arc dark theme..)
 	$(EDJE_CC) $(EDJE_CC_FLAGS) arc-dark.edc ../MokshaArcGreen.edj
+	chmod 644 ../MokshaArcGreen.edj
 
 ../arc-darker.edj: $(ARC_DARKER_SRC) $(ARC_COMMON_SRC)
 	# $(EDJE_CC) $(EDJE_CC_FLAGS) arc-darker.edc ../arc-darker.edj
