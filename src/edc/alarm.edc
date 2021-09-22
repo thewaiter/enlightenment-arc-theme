@@ -1,0 +1,405 @@
+/* Enlightenment Alarm Module theme */
+
+images
+{
+        image: "alarm_enabled.png" COMP;
+        image: "alarm_disabled.png" COMP;
+        image: "alarm_snooze.png" COMP;
+}
+
+   group
+     {
+	name: "modules/alarm/main";
+
+        script
+        {
+                public alarm_state;
+                public alarm_ringing;
+        }
+
+	parts
+	  {
+	     part
+	       {
+		  name: "alarm_img";
+		  type: IMAGE;
+		  mouse_events: 1;
+		  description
+		    {
+		        state: "default" 0.0;
+                        aspect: 1 1;
+		        aspect_preference: BOTH;
+                        align: 0.0 0.0;
+        	        color: 255 255 255 200;
+        		rel1
+        		{
+        			relative: 0.0 0.0;
+        		}
+        		rel2
+        		{
+        			relative: 1.0 1.0;
+        		}
+                        image
+                        {
+                               normal: "alarm_disabled.png";
+        		}
+        		fill
+        		{
+        			smooth: 1;
+        		}
+                   }
+		  description
+		    {
+		        state: "enabled" 0.0;
+                        aspect: 1 1;
+		        aspect_preference: BOTH;
+                        align: 0.0 0.0;
+        	        color: 255 255 255 200;
+        		rel1
+        		{
+        			relative: 0.0 0.0;
+        		}
+        		rel2
+        		{
+        			relative: 1.0 1.0;
+        		}
+                        image
+                        {
+                               normal: "alarm_enabled.png";
+        		}
+        		fill
+        		{
+        			smooth: 1;
+        		}
+                   }
+		  description
+		    {
+		        state: "enabled_little" 0.0;
+                        inherit: "enabled" 0.0;
+        		rel1
+        		{
+        			relative: 0.3 0.3;
+        		}
+        		rel2
+        		{
+        			relative: 0.7 0.7;
+        		}
+                   }
+                }
+                part
+                {
+                	name, "alarm_txt";
+                	type: RECT;
+                	mouse_events: 0;
+                	description
+                	{
+                		state: "default" 0.0;
+                                visible: 0;
+                		rel1
+                		{
+                			relative: 1.0 0.05;
+                		}
+                		rel2
+                		{
+                			relative: 1.0 0.95;
+                		}
+        		       color: 255 255 255 255;
+        		}
+                	description
+                	{
+                		state: "enabled" 0.0;
+                                inherit: default 0.0;
+                                visible: 1;
+                		rel1
+                		{
+                			relative: 1.0 0.1;
+                                        to_x: "alarm_img";
+                                        offset: 2 0;
+                		}
+        		}
+        	}
+                part
+                {
+                	name, "alarm_txt_line";
+                	type: TEXT;
+                	effect: OUTLINE_SOFT_SHADOW;
+                	mouse_events: 0;
+                        clip_to: "alarm_txt";
+                	description
+                	{
+                		state: "default" 0.0;
+                		rel1
+                		{
+                			relative: 0.0 0.0;
+                                        to: "alarm_txt";
+                		}
+                		rel2
+                		{
+                			relative: 1.0 1.0;
+                                        to: "alarm_txt";
+                		}
+        		       color: 95 176 84 255;
+        		       color2: 0 0 0 96;
+        		       color3: 0 0 0 32;
+                		text
+                       		{
+        			text: "-- --:--";
+        			font: "Sans:style=Bold";
+        			size: 12;
+                                fit: 1 1;
+        			align: 0.0 0.5;
+			  	//~ text_class: "module_large";
+                                }
+        		}
+        	}
+	  }
+
+        programs 
+        {
+                program
+                {
+                	name:	"init";
+                	signal:	"load";
+                	source:	"";
+                	script
+                	{
+                                set_int(alarm_state, 0);
+                                set_int(alarm_ringing, 0);
+                        }
+                }
+                program
+                {
+                	name:	"alarm_img_mouse_down";
+                	signal:	"mouse,up,1";
+                	source:	"alarm_img";
+                	script
+                	{
+                  	     if (get_int(alarm_state) == 0)
+                             {
+                                  run_program(PROGRAM:"alarm_activate");
+                                  emit("state,on", "");
+                             }
+                             else
+                             {
+                                  if (get_int(alarm_ringing))
+                                  {
+                                       run_program(PROGRAM:"alarm_ring_stop");
+                                       emit("ring,stop", "");
+                                  }
+                                  else
+                                  {
+                                       run_program(PROGRAM:"alarm_deactivate");
+                                       emit("state,off", "");
+                                  }
+                             }
+                	}
+                }
+
+                program
+                {
+                	name:	"alarm_activate";
+                        signal: "state,on";
+                        source: "alarm";
+                        action: STATE_SET "enabled" 0.0;
+                	target:	"alarm_img";
+                        after:  "alarm_activate_2";
+                }
+                program
+                {
+                	name:	"alarm_activate_2";
+                        script
+                        {
+                                set_int(alarm_ringing, 0);
+                                set_int(alarm_state, 1);
+                        }
+                }
+                
+                program
+                {
+                	name:	"alarm_deactivate";
+                        signal: "state,off";
+                        source: "alarm";
+                        action: STATE_SET "default" 0.0;
+                	target:	"alarm_img";
+                        after:  "alarm_deactivate_2";
+                }
+                program
+                {
+                	name:	"alarm_deactivate_2";
+                        script
+                        {
+                                set_int(alarm_state, 0);
+                        }
+                }
+
+                program
+                {
+                	name:	"alarm_ring_go";
+                        signal: "ring,start";
+                        source: "alarm";
+                        script
+                        {
+                                set_int(alarm_ringing, 1);
+                                run_program(PROGRAM:"alarm_ring_go_1");
+                        }
+                }
+                program
+                {
+                	name:	"alarm_ring_go_1";
+                        action: STATE_SET "enabled_little" 0.0;
+                	transition: SINUSOIDAL .3;
+                	target:	"alarm_img";
+                        after: "alarm_ring_go_2";
+                }
+                program
+                {
+                	name:	"alarm_ring_go_2";
+                        action: STATE_SET "enabled" 0.0;
+                	transition: SINUSOIDAL .5;
+                	target:	"alarm_img";
+                        after: "alarm_ring_go_1";
+                }
+                program
+                {
+                        name:   "alarm_ring_stop";
+                        script
+                        {
+                                set_int(alarm_ringing, 0);
+                                set_state(PART:"alarm_img", "enabled", 0.0);
+                        }
+                }
+
+                program
+                {
+                        name: "alarm_detail_show";
+                        signal: "details,on";
+                        source: "alarm";
+                        action: STATE_SET "enabled" 0.0;
+                	target:	"alarm_txt";
+                }
+                program
+                {
+                	name:	"alarm_detail_hide";
+                        signal: "details,off";
+                        source: "alarm";
+                        action: STATE_SET "default" 0.0;
+                	target:	"alarm_txt";
+                }
+        }
+    }
+
+   group
+     {
+	name: "modules/alarm/icon/alarm/snooze";
+        parts
+        {
+               part
+	       {
+		  name: "icon";
+		  type: IMAGE;
+		  mouse_events: 1;
+		  description
+		    {
+		        state: "default" 0.0;
+                        aspect: 1 1;
+		        aspect_preference: BOTH;
+                        align: 0.0 0.0;
+        	        color: 255 255 255 200;
+        		rel1
+        		{
+        			relative: 0.0 0.0;
+                                offset: 2 2;
+        		}
+        		rel2
+        		{
+        			relative: 1.0 1.0;
+                                offset: -2 -2;
+        		}
+                        image
+                        {
+                               normal: "alarm_snooze.png";
+        		}
+        		fill
+        		{
+        			smooth: 1;
+        		}
+                   }
+             }
+         }
+     }
+
+   group
+     {
+	name: "modules/alarm/icon/alarm/on";
+        parts
+        {
+               part
+	       {
+		  name: "icon";
+		  type: IMAGE;
+		  mouse_events: 1;
+		  description
+		    {
+		        state: "default" 0.0;
+                        aspect: 1 1;
+		        aspect_preference: BOTH;
+                        align: 0.0 0.0;
+        	        color: 255 255 255 200;
+        		rel1
+        		{
+        			relative: 0.0 0.0;
+        		}
+        		rel2
+        		{
+        			relative: 1.0 1.0;
+        		}
+                        image
+                        {
+                               normal: "alarm_enabled.png";
+        		}
+        		fill
+        		{
+        			smooth: 1;
+        		}
+                   }
+             }
+         }
+     }
+
+   group
+     {
+	name: "modules/alarm/icon/alarm/off";
+        parts
+        {
+               part
+	       {
+		  name: "icon";
+		  type: IMAGE;
+		  mouse_events: 1;
+		  description
+		    {
+		        state: "default" 0.0;
+                        aspect: 1 1;
+		        aspect_preference: BOTH;
+                        align: 0.0 0.0;
+        	        color: 255 255 255 200;
+        		rel1
+        		{
+        			relative: 0.0 0.0;
+        		}
+        		rel2
+        		{
+        			relative: 1.0 1.0;
+        		}
+                        image
+                        {
+                               normal: "alarm_disabled.png";
+        		}
+        		fill
+        		{
+        			smooth: 1;
+        		}
+                   }
+             }
+         }
+     }
