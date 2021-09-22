@@ -151,6 +151,8 @@
 // #include "../orig-theme/edc/packagekit.edc"
 // #include "../orig-theme/edc/wireless.edc"
 #include "edc/time_arc.edc"
+#include "edc/alarm.edc"
+#include "edc/mail.edc"
 
 // icons
 //~ #include "edc/icons.edc"
