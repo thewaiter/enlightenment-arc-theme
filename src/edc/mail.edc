@@ -1,158 +1,82 @@
-images
-{
-   image: "mail_icon.png" COMP;
-   image: "mail_new.png" COMP;
-   image: "mail_checking.png" COMP;
-}
+images.image: "mail_icon.png" COMP;
+images.image: "mail_new.png" COMP;
+images.image: "mail_checking.png" COMP;
+group { "modules/mail/main"; min: 4 4; max: 128 128;
+	parts{
+		image { "logo"; mouse;
+			desc { "default"; color: VISIBLE; vis;
+				aspect: 1.0 1.0;
+				aspect_preference: BOTH;
+				rel1.relative: 0.0 0.0;
+				rel1.offset: 0 0;
+				rel2.relative: 1.0 1.0;
+				rel2.offset: -1 -1;
+				image.normal: "mail_icon.png";
+			}
+			desc { "new"; inherit;
+				image.normal: "mail_new.png";
+			}
+			desc { "checking"; inherit;
+				image.normal: "mail_checking.png";
+			}
+		}
+		text { "new_label"; mouse;
+			desc { "default"; color: "#2EA436"; hid;
+				rel1.relative: 0.4 0.4;
+				rel1.offset: 0 0;
+				rel1.to: "logo";
+				rel2.relative: 0.5 1.0;
+				rel2.offset: 4 -1;
+				rel2.to: "logo";
+				text.text: "";
+				text.font: "Sans:style=Bold"; text.size: 12;
+				text.min: 1 1;
+				text.align: 0.5 0.5;
+				text.text_class: "module_large";
+				text.ellipsis: -1;
+			}
+			desc { "visible"; inherit; vis; }
+		}
+	}
 
-   group
-     {
-	name: "modules/mail/main";
-	min: 4 4;
-	max: 128 128;
-	parts
-	  {
-	     part
-	       {
-		  name:          "logo";
-		  type: IMAGE;
-		  mouse_events: 1;
-		  description
-		    {
-		       state:    "default" 0.0;
-		       aspect: 1.0 1.0;
-		       aspect_preference: BOTH;
-		       visible: 1;
-		       rel1 
-			 {
-			    relative: 0.0 0.0;
-			    offset: 0 0;
-			 }
-		       rel2 
-			 {
-			    relative: 1.0 1.0;
-			    offset: -1 -1;
-			 }
-		       image 
-			 {
-			    normal: "mail_icon.png";
-			 }
-		       color: 255 255 255 255;
-		    }
-		  description 
-		    {
-		       state: "new" 0.0;
-		       inherit: "default" 0.0;
-		       image 
-			 {
-			    normal: "mail_new.png";
-			 }
-		    }
-		  description 
-		    {
-		       state: "checking" 0.0;
-		       inherit: "default" 0.0;
-		       image 
-			 {
-			    normal: "mail_checking.png";
-			 }
-		    }
-	       }
-	     part 
-	       {
-		  name: "new_label";
-		  type: TEXT;
-		  //~ effect: OUTLINE_SOFT_SHADOW;
-		  mouse_events: 1;
-		  description 
-		    {
-		       state: "default" 0.0;
-		       color: 46 164 54 255;
-		       //~ color3: 0 0 0 32;
-		       //~ color_class: "module_label";
-		       visible: 0;
-		       rel1 
-			 {
-			    relative: 0.4 0.4;
-			    offset: 0 0;
-			    to: "logo";
-			 }
-		       rel2 
-			 {
-			    relative: 0.5 1.0;
-			    offset: 4 -1;
-			    to: "logo";
-			 }
-		       text 
-			 {
-			    text: "";
-			    font: "Sans:style=Bold";
-			    size: 12;
-			    min: 1 1;
-			    align: 0.5 0.5;
-			    text_class: "module_large";
-			    ellipsis: -1;
-			 }
-		    }
-		  description 
-		    {
-		       state: "visible" 0.0;
-		       inherit: "default" 0.0;
-		       visible: 1;
-		    }
-	       }
-	  }
-	programs 
-	  {
-	     program 
-	       {
-		  name: "go_active";
-		  signal: "label_active";
-		  source: "";
-		  action: STATE_SET "visible" 0.0;
-		  transition: SINUSOIDAL 0.5;
-		  target: "new_label";
-	       }
-	     program 
-	       {
-		  name: "go_passive2";
-		  signal: "label_passive2";
-		  source: "";
-		  action: ACTION_STOP;
-		  target: "go_active";
-	       }
-	     program 
-	       {
-		  name: "go_passive";
-		  signal: "label_passive";
-		  source: "";
-		  action: STATE_SET "default" 0.0;
-		  transition: SINUSOIDAL 1.0;
-		  target: "new_label";
-	       }
-	     program 
-	       {
-		  name: "go_new";
-		  signal: "new_mail";
-		  action: STATE_SET "new" 0.0;
-		  transition: SINUSOIDAL 0.5;
-		  target: "logo";
-	       }
-	     program 
-	       {
-		  name: "go_check";
-		  signal: "check_mail";
-		  action: STATE_SET "checking" 0.0;
-		  transition: SINUSOIDAL 0.5;
-		  target: "logo";
-	       }
-	     program 
-	       {
-		  name: "go_no";
-		  signal: "no_mail";
-		  action: STATE_SET "default" 0.0;
-		  transition: SINUSOIDAL 1.0;
-		  target: "logo";
-	       }
-	  }
-     }
+	programs {
+		program { "go_active";
+			signal: "label_active";
+			source: "";
+			action: STATE_SET "visible" 0.0;
+			transition: SINUSOIDAL 0.5;
+			target: "new_label";
+		}
+		program { "go_passive2";
+			signal: "label_passive2";
+			source: "";
+			action: ACTION_STOP;
+			target: "go_active";
+		}
+		program { "go_passive";
+			signal: "label_passive";
+			source: "";
+			action: STATE_SET "default" 0.0;
+			transition: SINUSOIDAL 1.0;
+			target: "new_label";
+		}
+		program { "go_new";
+			signal: "new_mail";
+			action: STATE_SET "new" 0.0;
+			transition: SINUSOIDAL 0.5;
+			target: "logo";
+		}
+		program { "go_check";
+			signal: "check_mail";
+			action: STATE_SET "checking" 0.0;
+			transition: SINUSOIDAL 0.5;
+			target: "logo";
+		}
+		program { "go_no";
+			signal: "no_mail";
+			action: STATE_SET "default" 0.0;
+			transition: SINUSOIDAL 1.0;
+			target: "logo";
+		}
+	}
+}
