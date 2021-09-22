@@ -138,7 +138,7 @@ images
                 			relative: 1.0 1.0;
                                         to: "alarm_txt";
                 		}
-        		       color: 95 176 84 255;
+        		       color: 75 156 64 255;
         		       color2: 0 0 0 96;
         		       color3: 0 0 0 32;
                 		text
