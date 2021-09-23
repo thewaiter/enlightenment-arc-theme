@@ -1,3 +1,5 @@
+#define NO_COLOR                 255 255 255 0
+#define VISIBLE                  255 255 255 255
 
 #define COL_NORM                 251 251 252 255
 #define COL_HOVER                245 245 245 255
