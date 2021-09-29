@@ -37,19 +37,19 @@ images.image: "diskio_w.png" COMP;
 					image.normal: "diskio_w.png";
 				}
 			}
-			text { "e.text.display_name"; effect: OUTLINE_SOFT_SHADOW; nomouse;
-				desc { "default"; color: VISIBLE_COL; color_class: "module_label";
-					color2: 0 0 0 96;
-					color3: 0 0 0 32;
-					rel1.relative: 0.0 0.2;
+			text { "e.text.display_name"; effect: NONE; nomouse;
+				desc { "default"; color: "#2F353E";
+					//~ color2: 0 0 0 96;
+					//~ color3: 0 0 0 32;
+					rel1.relative: 0.05 0.2;
 					rel1.offset: 0 0;
 					rel1.to_x: "icon";
-					rel2.relative: 0.95 0.95;
+					rel2.relative: 0.95 0.90;
 					rel2.offset: -1 -1;
 					text.text: "???";
 					text.font: "Sans:style=Bold"; text.size: 8;
 					text.min: 1 1;
-					text.align: 0.5 0.5;
+					text.align: 0.25 0.4;
 					text.ellipsis: -1;
 					text.text_class: "module_small";
 				}
