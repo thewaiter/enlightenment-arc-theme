@@ -7,26 +7,24 @@ styles {
 	}
 }
 
-collections {
-	group { "modules/cpu/main";
-		parts {
-			part { "cpu";
-				desc { "default";
-					aspect: 1.0 1.0;
-					aspect_preference: BOTH;
-					align: 0.5 0.5;
-					image.normal: "cpu.png";
+group { "modules/cpu/main";
+	parts {
+		part { "cpu";
+			desc { "default";
+				aspect: 1.0 1.0;
+				aspect_preference: BOTH;
+				align: 0.5 0.5;
+				image.normal: "cpu.png";
+			}
+		}
+		textblock { "load"; effect: OUTLINE_SOFT_SHADOW; nomouse;
+			desc { "default";
+				align: 0.5 0.5;
+				rel1.to: "cpu";
+				rel2.to: "cpu";
+				text.style: "cpu_style";
+				text.min: 0 1;
 				}
 			}
-			textblock { "load"; effect: OUTLINE_SOFT_SHADOW; nomouse;
-				desc { "default";
-					align: 0.5 0.5;
-					rel1.to: "cpu";
-					rel2.to: "cpu";
-					text.style: "cpu_style";
-					text.min: 0 1;
-					}
-				}
-		}
 	}
 }
