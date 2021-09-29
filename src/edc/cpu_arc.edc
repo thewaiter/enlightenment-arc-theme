@@ -1,50 +1,32 @@
 images.image: "cpu.png" COMP;
 
-styles
-{
-   style
-     {
-        name: "cpu_style";
-        base: "font=Sans:style=Mono font_size=12 text_class=tb_plain align=center color=#ccc style=outline_soft_shadow shadow_color=#00000032 wrap=word";
-        tag:  "br" "\n";
-     }
+styles {
+	style { "cpu_style";
+		base: "font=Sans:style=Mono font_size=12 text_class=tb_plain align=center color=#ccc style=outline_soft_shadow shadow_color=#00000032 wrap=word";
+		tag:  "br" "\n";
+	}
 }
 
-group
-   {
-  name: "modules/cpu/main";
-  parts
-    {
-      part
-         {
-          name: "cpu";
-          desc
-          {
-            state: "default" 0.0;
-            aspect: 1.0 1.0;
-            aspect_preference: BOTH;
-            align: 0.5 0.5;
-            image.normal: "cpu.png";
-          }
-         }
-      part
-         {
-           name: "load";
-           type: TEXTBLOCK;
-           effect: OUTLINE_SOFT_SHADOW;
-           mouse_events: 0;
-           desc
-           {
-             state: "default" 0.0;
-             align: 0.5 0.5;
-             rel1.to: "cpu";
-             rel2.to: "cpu";
-             text
-                {
-                  style: "cpu_style";
-                  min: 0 1;
-                }
-           }
-         }
-      }
+collections {
+	group { "modules/cpu/main";
+		parts {
+			part { "cpu";
+				desc { "default";
+					aspect: 1.0 1.0;
+					aspect_preference: BOTH;
+					align: 0.5 0.5;
+					image.normal: "cpu.png";
+				}
+			}
+			textblock { "load"; effect: OUTLINE_SOFT_SHADOW; nomouse;
+				desc { "default";
+					align: 0.5 0.5;
+					rel1.to: "cpu";
+					rel2.to: "cpu";
+					text.style: "cpu_style";
+					text.min: 0 1;
+					}
+				}
+		}
+	}
 }
