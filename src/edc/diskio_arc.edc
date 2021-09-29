@@ -1,0 +1,85 @@
+#define VISIBLE_COL "#FFFFFF"
+
+images.image: "diskio.png"   COMP;
+images.image: "diskio_r.png" COMP;
+images.image: "diskio_w.png" COMP;
+
+	group  { "modules/diskio/main"; max: 128 128;
+		parts  {
+			image { "icon"; mouse;
+				desc { "default";
+					aspect: 1.0 1.0;
+					aspect_preference: BOTH;
+					image.normal: "diskio.png";
+				}
+			}
+			image { "read";
+				desc { "default"; color: "#00000000";
+					aspect: 1.0 1.0;
+					aspect_preference: BOTH;
+					image.normal: "diskio_r.png";
+				}
+				desc { "on"; color: VISIBLE;
+					aspect: 1.0 1.0;
+					aspect_preference: BOTH;
+					image.normal: "diskio_r.png";
+				}
+			}
+			image { "write";
+				desc { "default"; color: "#00000000";
+					aspect: 1.0 1.0;
+					aspect_preference: BOTH;
+					image.normal: "diskio_w.png";
+				}
+				desc { "on"; color: VISIBLE_COL;
+					aspect: 1.0 1.0;
+					aspect_preference: BOTH;
+					image.normal: "diskio_w.png";
+				}
+			}
+			text { "e.text.display_name"; effect: OUTLINE_SOFT_SHADOW; nomouse;
+				desc { "default"; color: VISIBLE_COL; color_class: "module_label";
+					color2: 0 0 0 96;
+					color3: 0 0 0 32;
+					rel1.relative: 0.0 0.2;
+					rel1.offset: 0 0;
+					rel1.to_x: "icon";
+					rel2.relative: 0.95 0.95;
+					rel2.offset: -1 -1;
+					text.text: "???";
+					text.font: "Sans:style=Bold"; text.size: 8;
+					text.min: 1 1;
+					text.align: 0.5 0.5;
+					text.ellipsis: -1;
+					text.text_class: "module_small";
+				}
+			}
+		}
+
+		programs {
+			program { "read_off";
+				signal: "read,off";
+				source: "";
+				action: STATE_SET "default" 0.0;
+				target: "read";
+			}
+			program { "read_on";
+				signal: "read,on";
+				source: "";
+				action: STATE_SET "on" 0.0;
+				target: "read";
+			}
+			program { "write_off";
+				signal: "write,off";
+				source: "";
+				action: STATE_SET "default" 0.0;
+				target: "write";
+			}
+			program { "write_on";
+				signal: "write,on";
+				source: "";
+				action: STATE_SET "on" 0.0;
+				target: "write";
+			}
+		}
+	}

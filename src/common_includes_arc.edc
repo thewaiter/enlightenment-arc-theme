@@ -121,6 +121,7 @@
 #include "edc/mem.edc"
 #include "edc/net_arc.edc"
 #include "edc/cpu_arc.edc"
+#include "edc/diskio_arc.edc"
 // #include "../orig-theme/edc/transitions.edc"
 
 
