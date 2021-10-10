@@ -861,6 +861,7 @@ group { name: "e/modules/clock/calendar/day";
          if (vv & 2)
            {
               set_state(PART:"e.text.label", "today", 0.0);
+              set_state(PART:"day", "today", 0.0);
               set_state(PART:"label2", "today", 0.0);
            }
          else if (vv & 4)
@@ -881,8 +882,6 @@ group { name: "e/modules/clock/calendar/day";
       }
    }
    
-   
-   
    parts {
       part { name: "weekend"; type: RECT;
              mouse_events: 0;
@@ -901,7 +900,7 @@ group { name: "e/modules/clock/calendar/day";
              }
              description { state: "today" 0.0;
                inherit: "default" 0.0;
-               color: 56 60 74 255;
+               color: 65 146 54 255;
              }
            }
       program { name: "date_clicked";
@@ -941,7 +940,7 @@ group { name: "e/modules/clock/calendar/day";
       }
       part { name: "label2"; type: TEXT; mouse_events: 0;
          scale: 1;
-         effect: SHADOW;
+         effect: NONE;
          description { state: "default" 0.0;
             rel1.offset: -3 0;
             rel1.to: "e.text.label";
@@ -949,7 +948,7 @@ group { name: "e/modules/clock/calendar/day";
             rel2.to: "e.text.label";
             //color_class: "calendar_today";
             color: 65 166 54 255;
-            text { font: FN; size: 10;
+            text { font: "FN:style=Bold"; size: 10;
                text_source: "e.text.label";
                min: 1 1;
                ellipsis: -1;
@@ -959,6 +958,7 @@ group { name: "e/modules/clock/calendar/day";
          }
          description { state: "today" 0.0;
             inherit: "default" 0.0;
+            color: 56 60 74 255;
             visible: 1;
          }
       }
