@@ -948,7 +948,7 @@ group { name: "e/modules/clock/calendar/day";
             rel2.to: "e.text.label";
             //color_class: "calendar_today";
             color: 65 166 54 255;
-            text { font: "FN:style=Bold"; size: 10;
+            text { font: FN; size: 10;
                text_source: "e.text.label";
                min: 1 1;
                ellipsis: -1;
