@@ -900,6 +900,7 @@ group {
          target: "shadow";
          target: "bottom";
          target: "e.text.title";
+         after:  "focused_noframe";
       }
       program {
          name: "focused"; 
