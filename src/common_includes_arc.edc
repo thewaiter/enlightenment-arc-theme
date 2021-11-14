@@ -108,6 +108,7 @@
 #include "edc/winlist_arc.edc"
 #include "edc/desklock.edc"
 #include "edc/deskmirror_arc.edc"
+#include "edc/backlight_arc.edc"
 #include "edc/temperature_arc.edc"
 #include "edc/calendar.edc"
 #include "edc/screenshot.edc"
