@@ -134,7 +134,7 @@ group { name: "e/transitions/vswipe";
          program {
             signal: "e,action,start"; source: "e";
             action: STATE_SET "done" 0.0;
-            transition: SINUSOIDAL 1.0;
+            transition: LINEAR 1.0;
             target: "bg_new_clip";
             target: "bg_prev_clip";
             after: "go2";
