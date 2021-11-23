@@ -143,6 +143,7 @@
 // #include "../orig-theme/edc/edgebindings.edc"
 // #include "../orig-theme/edc/randr.edc"
 #include "edc/notification_arc.edc"
+#include "edc/transitions_arc.edc"
 #include "edc/cpufreq.edc"
 //~ #include "../orig-theme/edc/temperature.edc"
 // #include "../orig-theme/edc/backlight.edc"
