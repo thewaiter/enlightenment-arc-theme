@@ -21,7 +21,7 @@ group { name: "e/widgets/about/main";
          tag: "br" "\n";
       }
    }
-   min: 220 260;
+   min: 420 260;
    max: 800 600;
    parts {
       part { name: "sizer"; type: SPACER;
