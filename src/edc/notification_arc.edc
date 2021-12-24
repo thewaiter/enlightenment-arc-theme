@@ -144,7 +144,7 @@ group { name: "e/modules/notification/main";
          desc {  state: "show" 0.0;
             inherit: "default";
             rel1.relative: 0.0 0.0;
-            rel2.relative: 1.0 0.7;
+            rel2.relative: 1.0 1.0;
          }
          desc { state: "fade_out" 0.0;
             inherit: "default" 0.0;
