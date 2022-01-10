@@ -69,9 +69,9 @@ group { name: "e/modules/cpufreq/main";
          custom_state(PART:"meter", "default", 0.0);
          set_state_val(PART:"meter", STATE_MAP_ROT_Z, tf);
          set_state(PART:"meter", "custom", 0.0);
-         custom_state(PART:"meter_sh", "default", 0.0);
-         set_state_val(PART:"meter_sh", STATE_MAP_ROT_Z, tf);
-         set_state(PART:"meter_sh", "custom", 0.0);
+         //~ custom_state(PART:"meter_sh", "default", 0.0);
+         //~ set_state_val(PART:"meter_sh", STATE_MAP_ROT_Z, tf);
+         //~ set_state(PART:"meter_sh", "custom", 0.0);
          
          f0 = get_int(min_freq_old);
          f1 = get_int(min_freq_new);
@@ -86,9 +86,9 @@ group { name: "e/modules/cpufreq/main";
          custom_state(PART:"meter_min", "default", 0.0);
          set_state_val(PART:"meter_min", STATE_MAP_ROT_Z, tf);
          set_state(PART:"meter_min", "custom", 0.0);
-         custom_state(PART:"meter_min_sh", "default", 0.0);
-         set_state_val(PART:"meter_min_sh", STATE_MAP_ROT_Z, tf);
-         set_state(PART:"meter_min_sh", "custom", 0.0);
+         //~ custom_state(PART:"meter_min_sh", "default", 0.0);
+         //~ set_state_val(PART:"meter_min_sh", STATE_MAP_ROT_Z, tf);
+         //~ set_state(PART:"meter_min_sh", "custom", 0.0);
          
          f0 = get_int(max_freq_old);
          f1 = get_int(max_freq_new);
@@ -103,9 +103,9 @@ group { name: "e/modules/cpufreq/main";
          custom_state(PART:"meter_max", "default", 0.0);
          set_state_val(PART:"meter_max", STATE_MAP_ROT_Z, tf);
          set_state(PART:"meter_max", "custom", 0.0);
-         custom_state(PART:"meter_max_sh", "default", 0.0);
-         set_state_val(PART:"meter_max_sh", STATE_MAP_ROT_Z, tf);
-         set_state(PART:"meter_max_sh", "custom", 0.0);
+         //~ custom_state(PART:"meter_max_sh", "default", 0.0);
+         //~ set_state_val(PART:"meter_max_sh", STATE_MAP_ROT_Z, tf);
+         //~ set_state(PART:"meter_max_sh", "custom", 0.0);
          
          if (v >= 1.0) {
             set_int(cur_freq_anim, 0);
@@ -208,18 +208,18 @@ group { name: "e/modules/cpufreq/main";
             }
          }
       }
-      part { name: "meter_min_sh"; mouse_events: 0;
-         clip_to: "fade_clip";
-         description { state: "default" 0.0;
-            image.normal: "tacho_hand_small_shadow.png";
-            rel1.to: "meter_sh";
-            rel2.to: "meter_sh";
-            map {
-               on: 1;
-               rotation.center: "meter_min_sh";
-            }
-         }
-      }
+      //~ part { name: "meter_min_sh"; mouse_events: 0;
+         //~ clip_to: "fade_clip";
+         //~ description { state: "default" 0.0;
+            //~ image.normal: "tacho_hand_small_shadow.png";
+            //~ rel1.to: "meter_sh";
+            //~ rel2.to: "meter_sh";
+            //~ map {
+               //~ on: 1;
+               //~ rotation.center: "meter_min_sh";
+            //~ }
+         //~ }
+      //~ }
       part { name: "meter_min"; mouse_events: 0;
          clip_to: "fade_clip";
          description { state: "default" 0.0;
@@ -233,18 +233,18 @@ group { name: "e/modules/cpufreq/main";
             }
          }
       }
-      part { name: "meter_max_sh"; mouse_events: 0;
-         clip_to: "fade_clip";
-         description { state: "default" 0.0;
-            image.normal: "tacho_hand_small_shadow.png";
-            rel1.to: "meter_sh";
-            rel2.to: "meter_sh";
-            map {
-               on: 1;
-               rotation.center: "meter_max_sh";
-            }
-         }
-      }
+      //~ part { name: "meter_max_sh"; mouse_events: 0;
+         //~ clip_to: "fade_clip";
+         //~ description { state: "default" 0.0;
+            //~ image.normal: "tacho_hand_small_shadow.png";
+            //~ rel1.to: "meter_sh";
+            //~ rel2.to: "meter_sh";
+            //~ map {
+               //~ on: 1;
+               //~ rotation.center: "meter_max_sh";
+            //~ }
+         //~ }
+      //~ }
       part { name: "meter_max"; mouse_events: 0;
          clip_to: "fade_clip";
          description { state: "default" 0.0;
@@ -258,22 +258,22 @@ group { name: "e/modules/cpufreq/main";
             }
          }
       }
-      part { name: "meter_sh"; mouse_events: 0;
-         clip_to: "fade_clip";
-         description { state: "default" 0.0;
-            image.normal: "tacho_hand_big_shadow.png";
-            rel1.to: "meter";
-            rel1.relative: 0.0 (15/380);
-            rel1.offset: 0 1;
-            rel2.to: "meter";
-            rel2.relative: 1.0 (395/380);
-            rel2.offset: -1 0;
-            map {
-               on: 1;
-               rotation.center: "meter_sh";
-            }
-         }
-      }
+      //~ part { name: "meter_sh"; mouse_events: 0;
+         //~ clip_to: "fade_clip";
+         //~ description { state: "default" 0.0;
+            //~ image.normal: "tacho_hand_big_shadow.png";
+            //~ rel1.to: "meter";
+            //~ rel1.relative: 0.0 (15/380);
+            //~ rel1.offset: 0 1;
+            //~ rel2.to: "meter";
+            //~ rel2.relative: 1.0 (395/380);
+            //~ rel2.offset: -1 0;
+            //~ map {
+               //~ on: 1;
+               //~ rotation.center: "meter_sh";
+            //~ }
+         //~ }
+      //~ }
       part { name: "meter"; mouse_events: 0;
          clip_to: "fade_clip";
          description { state: "default" 0.0000;
