@@ -8,7 +8,7 @@ group { name: "e/widgets/entry/scrollframe";
             rel1.offset: 1 1;
             rel2.to: "inset";
             rel2.offset: -2 -2;
-            color: 48 48 48 255;
+            color: 47 53 62 255;
          }
       }
       part { name: "clipper"; type: RECT;
@@ -55,7 +55,7 @@ group { name: "e/widgets/entry/text";
             base: "font="FN" font_size=10 color=#ffffffff style=shadow,bottom shadow_color=#00000080 text_class=entry color_class=entry_text";
          }
          style { name: "entry_textblock_disabled_style";
-            base: "font="FN" font_size=10 color=#151515 style=shadow,bottom shadow_color=#ffffff19 text_class=entry color_class=entry_text_disabled";
+            base: "font="FN" font_size=10 color=#000000 style=shadow,bottom shadow_color=#ffffff19 text_class=entry color_class=entry_text_disabled";
          }
       }
    parts {
