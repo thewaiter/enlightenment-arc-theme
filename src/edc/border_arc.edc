@@ -881,7 +881,7 @@ group {
          source: "e";
          action: STATE_SET "shaded" 0.0;
          target: "shadow";
-         target: "bottom";
+         //~ target: "bottom";
          //~ target: "e.text.title";
       }
       program {
