@@ -2,7 +2,6 @@ images.image: "device.png" COMP;
 images.image: "rx.png" COMP;
 images.image: "tx.png" COMP;
 images.image: "idle.png" COMP;
-images.image: "bd.png" COMP;
 
 group { "modules/net/main";
 	max: 128 128;
