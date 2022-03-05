@@ -100,7 +100,7 @@ group { name: "e/deskmirror/frame/default";
       part { name: "e.text.title"; type: TEXT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
-            color_class: "win_border_title";
+            color_class: "border_title";
             rel1.offset: 1 3;
             rel1.to: "spacer";
             rel2.relative: 1.0 0.0;
@@ -119,7 +119,7 @@ group { name: "e/deskmirror/frame/default";
       part { name: "title2"; type: TEXT; mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
-            color_class: "win_border_title_active";
+            color_class: "border_title_active";
             rel1.offset: 1 2;
             rel1.to: "spacer";
             rel2.relative: 1.0 0.0;
@@ -139,7 +139,7 @@ group { name: "e/deskmirror/frame/default";
 
       part { name: "top";
          description { state: "default" 0.0;
-            color_class: "win_border_base";
+            color_class: "border_base";
             image.normal: "bg-top-rounded-3px.png";
             image.border: 3 3 3 3;
 

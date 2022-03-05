@@ -457,7 +457,7 @@ group {
       rect { name: "top_bg_maximized"; nomouse;
          desc { "default";
             rel2.to: "top_bg";
-            color_class: "win_border_base";
+            color_class: "border_base";
             visible: 0;
          }
          desc { "max";
@@ -1059,7 +1059,7 @@ group { name: "e/widgets/border/left_controls/border";
                to_x: "e.event.icon";
                relative: 0.5 1.0;
             }
-             color_class: "win_border_title";
+             color_class: "border_title";
             text {
                font: FN; size: FNSIZE;
                text_class: "title_bar";
@@ -1072,7 +1072,7 @@ group { name: "e/widgets/border/left_controls/border";
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
-            color_class: "win_border_title_active";
+            color_class: "border_title_active";
          }
       }
       

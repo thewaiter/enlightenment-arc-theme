@@ -337,7 +337,7 @@ group { name: "e/modules/everything/list";
             rel1.relative: 0.0 1.0;
             align: 0.5 1.0;
             min: 32 28;
-            color_class: "win_border_base";
+            color_class: "border_base";
          }
       }
       part { name: "border";
