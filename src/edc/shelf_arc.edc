@@ -20,7 +20,7 @@ group { name: "e/shelf/default/base"; nomouse;
 
       part { name: "bg"; type: RECT;
          description { state: "default" 0.0;
-            color_class: "shelf_base_default";
+            color_class: "shelf_base";
          }
          description { state: "vert" 0.0;
             inherit: "default" 0.0;

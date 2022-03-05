@@ -403,12 +403,12 @@ group {
             image.middle: SOLID;
             rel2.to_y: "e.text.title";
             rel2.relative: 1.0 1.0;
-            color_class: "win_border_base";
+            color_class: "border_base";
             fill.smooth: 0;
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
-            color_class: "win_border_base";
+            color_class: "border_base_active";
          } 
       }
        
@@ -435,7 +435,7 @@ group {
          //~ }
          //~ description { state: "active" 0.0;
             //~ inherit: "default" 0.0;
-            //~ //color_class: "col_active";
+            //~ //color_class: "border_frame_active";
          //~ } 
       //~ }
       image { name: "top_border"; nomouse;
@@ -447,11 +447,11 @@ group {
             //~ image.border_scale_by: 0.45;
             image.middle: 0;
             rel2.to: "top_bg";
-            color_class: "win_border_border_shadow";
+            color_class: "border_frame";
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
-            color_class: "col_active";
+            color_class: "border_frame_active";
          } 
       }
       rect { name: "top_bg_maximized"; nomouse;
@@ -487,7 +487,7 @@ group {
                to: "btn-spacer";
                relative: 0.0 1.0;
             }
-            color_class: "win_border_title";
+            color_class: "border_title";
             text {
                font: FN; size: FNSIZE;
                text_class: "title_bar";
@@ -500,11 +500,11 @@ group {
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
-            color_class: "win_border_title_active";
+            color_class: "border_title_active";
          }
          description { state: "max" 0.0;
             inherit: "default" 0.0;
-            color_class: "win_border_title_active";
+            color_class: "border_title_active";
          }
       }
       rect { name: "event-dummy"; mouse_events: 1;
@@ -567,7 +567,7 @@ group {
       part { name: "bottom"; nomouse;
          type: RECT; scale: 1;
          description { state: "default" 0.0;
-            color_class: "col_darker";
+            color_class: "border_frame";
             rel1.relative: 0.0 1.0;
             rel1.offset:   0 5; 
             rel2.relative: 1.0 1.0;
@@ -587,7 +587,7 @@ group {
          }
           description { state: "active";
             inherit: "default" 0.0;
-            color_class: "col_active";
+            color_class: "border_frame_active";
          }
       }
       
@@ -603,7 +603,7 @@ group {
                to_y: "bottom";
                relative: 1.0 0.0;
             }
-            color_class: "col_darker";
+            color_class: "border_frame";
             align: 0.0 0.0;
             min: 2 0;
             max: BORDER_WIDTH 99999;
@@ -615,7 +615,7 @@ group {
          }
          description { state: "active";
             inherit: "default" 0.0;
-            color_class: "col_active";
+            color_class: "border_frame_active";
          }
       }
       part { name: "right"; nomouse;
@@ -630,7 +630,7 @@ group {
                to_y: "bottom";
                relative: 1.0 0.0;
             }
-            color_class: "col_darker";
+            color_class: "border_frame";
             align: 1.0 0.0;
             min: 2 0;
             max: BORDER_WIDTH 99999;
@@ -642,7 +642,7 @@ group {
          }
           description { state: "active";
             inherit: "default" 0.0;
-            color_class: "col_active";
+            color_class: "border_frame_active";
          }
       }
       part { name: "client_clip";
