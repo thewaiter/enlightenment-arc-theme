@@ -21,7 +21,6 @@
 #define COL_BG_DARKER             47  53 62 255
 #define COL_BG_DARKER_TRANS       47  53 62 235
 #define COL_BORDER                43  46 57 255
-#define COL_BORDER_GREEN          61 112 60 255
 #define COL_BORDER_DARK           43  46 57 255
 
 #define COL_FOCUS_INLINE         135 135 135 100
@@ -80,11 +79,7 @@ color_classes {
       color: COL_BG_DARKER;
       desc: "Dark color";
    }
-   color_class { name: "col_border";
-      color: COL_BORDER_GREEN;
-      desc: "Dark color";
-   }
-   
+  
 // wm
    color_class { name: "border_title";
       color: COL_FONT_BASIC_DISABLED;
