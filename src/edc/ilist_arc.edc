@@ -233,6 +233,19 @@ group { name: "e/widgets/ilist_odd";
             color_class: "ilist_item_odd_base";
          }
       }
+      part { name: "sel_base"; mouse_events: 0; type: RECT;
+         description { state: "default" 0.0;
+             color_class: "ilist_item_odd_base";
+         }
+         description { state: "selected";
+            inherit: "default" 0.0;
+            color_class: "ilist_item_base_selected";
+         }
+         description { state: "hover";
+            inherit: "default";
+            color_class: "ilist_item_base_hover";
+         }
+      }
    }
 }
 
@@ -289,7 +302,7 @@ group { name: "e/widgets/ilist_header_odd";
    inherit: "e/widgets/ilist_header";
      parts.part { name: "base"; type: RECT; mouse_events: 0;
          description { state: "default" 0.0;
-            color_class: "ilist_item_header_base_odd";
+            color_class: "ilist_item_header_odd_base";
          }
       }
 }

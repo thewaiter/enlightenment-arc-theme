@@ -693,7 +693,7 @@ color_classes {
       desc: "List item even background";
    }
    color_class { name: "ilist_item_odd_base";
-      color: COL_BG_DARKER;
+      color: COL_BG_DARK;
       desc: "List item odd background";
    }
    color_class { name: "ilist_item_base_selected";
@@ -736,7 +736,7 @@ color_classes {
       color: COL_BG_DARK;
       desc: "List item even background";
    }
-   color_class { name: "ilist_item_header_base_odd";
+   color_class { name: "ilist_item_header_odd_base";
       color: COL_BG_DARK;
       desc: "List item odd background";
    }
