@@ -4,7 +4,7 @@
       parts { \
          part { name: "base"; \
             description { state: "default" 0.0; \
-               color_class: "list_item_base_odd"; \
+               color_class: "ilist_item_odd_base"; \
             } \
          } \
       } \
@@ -105,7 +105,7 @@
          } \
          part { name: "base"; \
             description { state: "default" 0.0; \
-               color_class: "list_item_base_odd"; \
+               color_class: "ilist_item_odd_base"; \
             } \
          } \
       } \
@@ -151,10 +151,10 @@ group { name: "elm/list/item/default";
       }
       part { name: "base"; type: RECT; mouse_events: 0;
          description { state: "default" 0.0;
-            color_class: "list_item_base";
+            color_class: "ilist_item_base";
          }
          description { state: "odd" 0.0;
-            color_class: "list_item_base_odd";
+            color_class: "ilist_item_odd_base";
          }
       }
       program {
@@ -169,16 +169,16 @@ group { name: "elm/list/item/default";
       }
       part { name: "sel_border"; mouse_events: 0; type: RECT;
          description { state: "default" 0.0;
-            color_class: "list_item_border";
+            color_class: "ilist_item_border";
             rel.to: "sel_base";
          }
          description { state: "selected";
             inherit: "default" 0.0;
-            color_class: "list_item_border_selected";
+            color_class: "ilist_item_border_selected";
          }
          description { state: "hover";
             inherit: "default";
-            color_class: "list_item_border_hover";
+            color_class: "ilist_item_border_hover";
 
          }
       }
@@ -187,17 +187,17 @@ group { name: "elm/list/item/default";
          description { state: "default" 0.0;
             rel1.offset: 0 1;
             rel2.offset: 0 -1;
-            color_class: "list_item_base";
+            color_class: "ilist_item_base";
          }
          description { state: "selected";
             inherit: "default" 0.0;
             // color: 255 255 255 255;
-            color_class: "list_item_base_selected";
+            color_class: "ilist_item_base_selected";
          }
          description { state: "hover";
             inherit: "default";
             // color: 255 255 255 255;
-            color_class: "list_item_base_hover";
+            color_class: "ilist_item_base_hover";
 
          }
       }
@@ -272,7 +272,7 @@ group { name: "elm/list/item/default";
             rel2.offset: -3 -3;
             rel2.relative: 0.0 1.0;
             rel2.to_x: "elm.swallow.end";
-            color_class: "list_item_text";
+            color_class: "ilist_item";
             text { font: FN; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
@@ -294,7 +294,7 @@ group { name: "elm/list/item/default";
          description { state: "default" 0.0;
             rel1.to: "elm.text";
             rel2.to: "elm.text";
-            color_class: "list_item_text_disabled";
+            color_class: "ilist_item_text_disabled";
             text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.0 0.5;
@@ -316,7 +316,7 @@ group { name: "elm/list/item/default";
          description { state: "default" 0.0;
             rel1.to: "elm.text";
             rel2.to: "elm.text";
-            color_class: "list_item_text_selected";
+            color_class: "ilist_item_selected";
             text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.0 0.5;
@@ -459,10 +459,10 @@ group { name: "elm/list/h_item/default";
       }
       part { name: "base"; type: RECT; mouse_events: 0;
          description { state: "default" 0.0;
-            color_class: "list_item_base";
+            color_class: "ilist_item_base";
          }
          description { state: "odd" 0.0;
-            color_class: "list_item_base_odd";
+            color_class: "ilist_item_odd_base";
          }
       }
       program {
@@ -477,12 +477,12 @@ group { name: "elm/list/h_item/default";
       }
       part { name: "sel_border"; mouse_events: 0; type: RECT;
          description { state: "default" 0.0;
-            color_class: "list_item_base_hover";
+            color_class: "ilist_item_base_hover";
             visible: 0;
          }
          description { state: "selected";
             inherit: "default" 0.0;
-            color_class: "list_item_base_selected";
+            color_class: "ilist_item_base_selected";
             visible: 1;
          }
          description { state: "hover";
@@ -495,12 +495,12 @@ group { name: "elm/list/h_item/default";
          description { state: "default" 0.0;
             rel1.offset: 1 0;
             rel2.offset: -1 0;
-            color_class: "list_item_base_hover";
+            color_class: "ilist_item_base_hover";
             visible: 0;
          }
          description { state: "selected";
             inherit: "default" 0.0;
-            color_class: "list_item_base_selected";
+            color_class: "ilist_item_base_selected";
             visible: 1;
          }
          description { state: "hover";
@@ -561,7 +561,7 @@ group { name: "elm/list/h_item/default";
             rel2.offset: -3 -3;
             rel2.relative: 1.0 0.0;
             rel2.to_y: "elm.swallow.end";
-            color_class: "list_item_text";
+            color_class: "ilist_item";
             text { font: FN; size: FNSIZE;
                min: 1 1;
                ellipsis: -1;
@@ -583,7 +583,7 @@ group { name: "elm/list/h_item/default";
          description { state: "default" 0.0;
             rel1.to: "elm.text";
             rel2.to: "elm.text";
-            color_class: "list_item_text_disabled";
+            color_class: "ilist_item_text_disabled";
             text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.5 0.5;
@@ -607,7 +607,7 @@ group { name: "elm/list/h_item/default";
             rel1.to: "elm.text";
             rel2.offset: 1 1;
             rel2.to: "elm.text";
-            color_class: "list_item_text_selected";
+            color_class: "ilist_item_selected";
             text { font: FN; size: FNSIZE;
                text_source: "elm.text";
                align: 0.5 0.5;

@@ -305,7 +305,7 @@ group { name: "e/widgets/toolbar/item";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_base_selected";
+            color_class: "ilist_item_base_selected";
          }
       }
       part { name: "border"; mouse_events: 0;

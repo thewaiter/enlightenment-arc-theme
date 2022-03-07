@@ -1238,7 +1238,7 @@ group { name: "elm/button/base/hoversel_vertical_entry/default";
             fixed: 1 1;
             rel1.offset: -1 0;
             rel2.offset: 1 0;
-            color_class: "list_item_base_hover";
+            color_class: "ilist_item_base_hover";
             visible: 0;
          }
          desc { "hover";
@@ -1248,7 +1248,7 @@ group { name: "elm/button/base/hoversel_vertical_entry/default";
          desc { "clicked";
             inherit: "default";
             visible: 1;
-            color_class: "list_item_base_selected";
+            color_class: "ilist_item_base_selected";
          }
          desc { "pressed";
             inherit: "default" ;
@@ -2333,12 +2333,12 @@ group { name: "elm/button/base/combobox_vertical_entry/default";
    parts {
       part { name: "base"; mouse_events: 0; type: RECT;
          description { state: "default" 0.0;
-            color_class: "list_item_base_hover";
+            color_class: "ilist_item_base_hover";
             visible: 1;
          }
          description { state: "clicked";
             inherit: "default" 0.0;
-            color_class: "list_item_base_selected";
+            color_class: "ilist_item_base_selected";
             visible: 1;
          }
          description { state: "hover";

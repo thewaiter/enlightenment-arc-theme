@@ -27,11 +27,11 @@ group { "efl/list_item";
       rect { "base"; nomouse;
          desc { "default";
             color: 64 64 64 255;
-            color_class: "list_item_base";
+            color_class: "ilist_item_base";
          }
          desc { "odd";
             color: 56 56 56 255;
-            color_class: "list_item_base_odd";
+            color_class: "ilist_item_odd_base";
          }
       }
 
@@ -314,11 +314,11 @@ group { "efl/list_item:empty";
       rect { "base"; nomouse;
          desc { "default";
             color: 64 64 64 255;
-            color_class: "list_item_base";
+            color_class: "ilist_item_base";
          }
          desc { "odd";
             color: 56 56 56 255;
-            color_class: "list_item_base_odd";
+            color_class: "ilist_item_odd_base";
          }
       }
 

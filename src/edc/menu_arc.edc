@@ -135,7 +135,7 @@ group { name: "e/widgets/menu/default/item_bg";
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
-            color_class: "list_item_base_selected";
+            color_class: "ilist_item_base_selected";
          }
       }
       swallow { name: "e.swallow.content"; scale: 1;

@@ -678,63 +678,63 @@ color_classes {
       color: COL_FONT_BASIC_DISABLED;
       desc: "Slider text of a disabled slider widget's label";
    }
-   color_class { name: "list_item_base";
+   color_class { name: "ilist_item_base";
       color: COL_BG;
       desc: "List item even background";
    }
-   color_class { name: "list_item_base_odd";
+   color_class { name: "ilist_item_odd_base";
       color: COL_BG;
       desc: "List item odd background";
    }
-   color_class { name: "list_item_base_selected";
+   color_class { name: "ilist_item_base_selected";
       color: COL_ENABLE;
       desc: "List item background selected";
    }
-   color_class { name: "list_item_base_hover";
+   color_class { name: "ilist_item_base_hover";
       color: COL_HOVER;
       desc: "List item background hover";
    }
-   color_class { name: "list_item_border";
+   color_class { name: "ilist_item_border";
       color: COL_BG;
       desc: "List item even border";
    }
-   color_class { name: "list_item_border_odd";
+   color_class { name: "ilist_item_border_odd";
       color: COL_BG;
       desc: "List item odd border";
    }
-   color_class { name: "list_item_border_selected";
+   color_class { name: "ilist_item_border_selected";
       color: COL_ENABLE;
       desc: "List item border selected";
    }
-   color_class { name: "list_item_border_hover";
+   color_class { name: "ilist_item_border_hover";
       color: COL_HOVER;
       desc: "List item border hover";
    }
-   color_class { name: "list_item_text";
+   color_class { name: "ilist_item";
       color: COL_FONT_BASIC_DEFAULT;
       desc: "List item text";
    }
-   color_class { name: "list_item_text_selected";
+   color_class { name: "ilist_item_selected";
       color: COL_FONT_BASIC_SELECTED;
       desc: "List item selected text";
    }
-   color_class { name: "list_item_text_disabled";
+   color_class { name: "ilist_item_text_disabled";
       color: COL_FONT_BASIC_DISABLED;
       desc: "List item disabled text";
    }
-   color_class { name: "list_item_header_base";
+   color_class { name: "ilist_item_header_base";
       color: COL_BG_DARK;
       desc: "List item even background";
    }
-   color_class { name: "list_item_header_base_odd";
+   color_class { name: "ilist_item_header_base_odd";
       color: COL_BG_DARK;
       desc: "List item odd background";
    }
-   color_class { name: "list_item_header_text";
+   color_class { name: "ilist_item_header";
       color: COL_FONT_BASIC_DEFAULT;
       desc: "List item group/header text";
    }
-   color_class { name: "list_item_header_text_disabled";
+   color_class { name: "ilist_item_header_text_disabled";
       color: COL_FONT_BASIC_DEFAULT;
       desc: "List item group/header text disabled";
    }
