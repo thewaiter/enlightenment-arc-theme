@@ -300,6 +300,22 @@ group { name: "e/modules/battery/popup";
             align: 0.0 0.5;
          }
       }
+      part { name: "charge";
+         description { state: "default" 0.0;
+            rel1.to: "e.swallow.battery";
+            rel1.relative: 0.35 0.25;
+            rel2.to: "e.swallow.battery";
+            rel2.relative: 0.7 0.75;
+            image.normal: "bat_charge.png";
+            //~ image.border: 10 10 1O 10;
+            fill.smooth: 1;
+            visible: 0;
+         }
+         description { state: "visible" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+      }
       part { name: "e.text.title"; type: TEXT;
          effect: SHADOW BOTTOM;
          scale: 1;
@@ -330,6 +346,18 @@ group { name: "e/modules/battery/popup";
                text_class: "module_normal";
             }
          }
+      }
+   }
+   programs {
+      program {
+         signal: "e,state,charging"; source: "e";
+         action: STATE_SET "visible" 0.0;
+         target: "charge";
+      }
+      program {
+         signal: "e,state,discharging"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "charge";
       }
    }
 }
