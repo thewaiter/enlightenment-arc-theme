@@ -303,7 +303,7 @@ group { name: "e/modules/battery/popup";
       part { name: "charge";
          description { state: "default" 0.0;
             rel1.to: "e.swallow.battery";
-            rel1.relative: 0.35 0.25;
+            rel1.relative: 0.35 0.3;
             rel2.to: "e.swallow.battery";
             rel2.relative: 0.7 0.75;
             image.normal: "bat_charge.png";
