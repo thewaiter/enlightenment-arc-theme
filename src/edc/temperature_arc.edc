@@ -14,6 +14,14 @@ group { name: "e/modules/temperature/main";
     }
    }
    parts {
+      part { name: "base0"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+         description { state: "highlight" 0.0;
+            color_class: "gadget_icon_highlight";
+         }
+      }
       part { name: "shadow";
          description { state: "default" 0.0;
             aspect: 0.5 0.5; aspect_preference: BOTH;
@@ -113,6 +121,16 @@ group { name: "e/modules/temperature/main";
          action: STATE_SET "default" 0.0;
          transition: LINEAR 1.0;
          target: "e.text.reading";
+      }
+      program {
+         signal: "mouse,in"; source: "over";
+         action: STATE_SET "highlight" 0.0;
+         target: "base0";
+      }
+      program {
+         signal: "mouse,out"; source: "over";
+         action: STATE_SET "default" 0.0;
+         target: "base0";
       }
       program {
          signal: "e,state,known"; source: "e";

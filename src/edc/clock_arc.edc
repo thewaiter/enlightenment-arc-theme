@@ -159,6 +159,15 @@ group { name: "e/modules/clock/digital";
       }
    }
    parts {
+      part { name: "base0"; type: RECT;
+          mouse_events: 1;
+         description { state: "default" 0.0;
+             color: 0 0 0 0;
+         }
+         description { state: "highlight" 0.0;
+             color_class: "gadget_icon_highlight";
+         }
+      }
       part { name: "secclip"; type: RECT;
          description { state: "default" 0.0;
          }
@@ -455,6 +464,16 @@ group { name: "e/modules/clock/digital";
        }
    }
    programs {
+       program {
+         signal: "mouse,in"; source: "event";
+         action: STATE_SET "highlight" 0.0;
+         target: "base0";
+      }
+    program {
+         signal: "mouse,out"; source: "event";
+         action: STATE_SET "default" 0.0;
+         target: "base0";
+      }
       program {
          signal: "load"; source: "";
          script {
@@ -625,11 +644,14 @@ group { name: "e/modules/clock/main";
          }
    }
    parts {   
-      //~ part { name: "event"; type: RECT;
-         //~ description { state: "default" 0.0;
-            //~ color: 0 0 0 0;
-         //~ }
-      //~ }
+      part { name: "base0"; type: RECT;
+         description { state: "default" 0.0;
+             color: 0 0 0 0;
+         }
+         description { state: "highlight" 0.0;
+             color_class: "gadget_icon_highlight";
+         }
+      }
       part { name: "base-sh";
          description { state: "default" 0.0;
             rel1.to: "base";
@@ -767,8 +789,23 @@ group { name: "e/modules/clock/main";
             image.normal: "knob";
          }
       }
+       part { name: "event"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+      }
    }
    programs {
+      program {
+         signal: "mouse,in"; source: "event";
+         action: STATE_SET "highlight" 0.0;
+         target: "base0";
+      }
+      program {
+         signal: "mouse,out"; source: "event";
+         action: STATE_SET "default" 0.0;
+         target: "base0";
+      }
       program {
          signal: "load"; source: "";
          script {

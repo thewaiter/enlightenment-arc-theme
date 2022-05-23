@@ -174,6 +174,14 @@ group { name: "e/modules/cpufreq/main";
       }
    }
    parts {
+      part { name: "base0"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+         description { state: "highlight" 0.0;
+            color_class: "gadget_icon_highlight";
+         }
+      }
       part { name: "fade_clip"; type: RECT;
          description { state: "default" 0.0;
             color: 255 255 255 255;
@@ -309,8 +317,23 @@ group { name: "e/modules/cpufreq/main";
             image.normal: "knob";
          }
       }
+      part { name: "over"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+      }
    }
    programs {
+        program {
+         signal: "mouse,in"; source: "over";
+         action: STATE_SET "highlight" 0.0;
+         target: "base0";
+      }
+      program {
+         signal: "mouse,out"; source: "over";
+         action: STATE_SET "default" 0.0;
+         target: "base0";
+      }
       program {
          signal: "e,state,enabled"; source: "e";
          action: STATE_SET "default" 0.0;

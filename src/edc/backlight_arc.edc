@@ -18,6 +18,14 @@ group { name: "e/modules/backlight/main";
       }
    }
    parts {
+      part { name: "base0"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+         description { state: "highlight" 0.0;
+            color_class: "gadget_icon_highlight";
+         }
+      }
       part { name: "glow";
          description { state: "default" 0.0;
             rel1.to: "base";
@@ -62,6 +70,18 @@ group { name: "e/modules/backlight/main";
             rel2.to: "base";
             image.normal: "bulb_off.png";
          }
+      }
+   }
+   programs {
+      program {
+         signal: "mouse,in"; source: "over";
+         action: STATE_SET "highlight" 0.0;
+         target: "base0";
+      }
+      program {
+         signal: "mouse,out"; source: "over";
+         action: STATE_SET "default" 0.0;
+         target: "base0";
       }
    }
 }

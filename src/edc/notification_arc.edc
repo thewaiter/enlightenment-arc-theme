@@ -1,6 +1,14 @@
 group { name: "e/modules/notification/logo";
    images.image: "glow_exclam.png" COMP;
    parts {
+      part { name: "base0"; type: RECT;
+         description { state: "default" 0.0;
+             color: 0 0 0 0;
+         }
+         description { state: "highlight" 0.0;
+             color_class: "gadget_icon_highlight";
+         }
+      }
       part { name: "base"; mouse_events: 1;
          scale: 1;
          description { state: "default" 0.0;
@@ -44,6 +52,16 @@ group { name: "e/modules/notification/logo";
           }
    }
    programs {  
+       program {
+         signal: "mouse,in"; source: "base";
+         action: STATE_SET "highlight" 0.0;
+         target: "base0";
+      }
+    program {
+         signal: "mouse,out"; source: "base";
+         action: STATE_SET "default" 0.0;
+         target: "base0";
+      }
     program
           {
            signal: "stop";
