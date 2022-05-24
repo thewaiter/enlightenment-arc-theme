@@ -18,12 +18,15 @@ group { name: "e/modules/backlight/main";
       }
    }
    parts {
-      part { name: "base0"; type: RECT;
+      part { name: "base0";
          description { state: "default" 0.0;
-            color: 0 0 0 0;
+            image.normal: "outline_glow.png";
+            image.border: 4 4 4 4;
+            visible: 0;
          }
          description { state: "highlight" 0.0;
-            color_class: "gadget_icon_highlight";
+            inherit: "default" 0.0;
+            visible: 1;
          }
       }
       part { name: "glow";

@@ -26,6 +26,13 @@ group { "modules/net/main";
 			}
 			desc { "active"; inherit; color: VISIBLE; vis; }
 		}
+		image { "base0"; nomouse;
+			desc { "default"; hid;
+				image.normal: "outline_glow.png";
+				image.border: 4 4 4 4;
+			}
+			desc { "highlight"; inherit; vis; }
+		}
 		image { "base"; nomouse;
 			desc { "default";
 				aspect: 1.0 1.0;
@@ -88,6 +95,16 @@ group { "modules/net/main";
 			signal: "mouse,out";
 			source: "overlay";
 			action: SIGNAL_EMIT "e,action,mouse,out" "";
+		}
+		program {
+			signal: "mouse,in"; source: "overlay";
+			action: STATE_SET "highlight" 0.0;
+			target: "base0";
+		}
+		program {
+			signal: "mouse,out"; source: "overlay";
+			action: STATE_SET "default" 0.0;
+			target: "base0";
 		}
 		program { "recv";
 			signal: "e,state,receive,active";

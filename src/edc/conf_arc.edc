@@ -47,14 +47,18 @@ group { name: "e/modules/conf/main";
    min: 16 16;
    max: 80 80;
    parts {
-      part { name: "base0"; type: RECT;
+      part { name: "base0";
          description { state: "default" 0.0;
-            color: 0 0 0 0;
+            image.normal: "outline_glow.png";
+            image.border: 4 4 4 4;
+            visible: 0;
          }
          description { state: "highlight" 0.0;
-            color_class: "gadget_icon_highlight";
+            inherit: "default" 0.0;
+            visible: 1;
          }
       }
+         
       part { name: "spanner"; mouse_events: 0;
          description { state: "default" 0.0;
             aspect: 1.0 1.0; aspect_preference: BOTH;
@@ -74,6 +78,10 @@ group { name: "e/modules/conf/main";
    }
    programs {
       program {
+         signal: "mouse,clicked,1*"; source: "event";
+         action: SIGNAL_EMIT "e,action,conf" "";
+      }
+      program {
          signal: "mouse,in"; source: "event";
          action: STATE_SET "highlight" 0.0;
          target: "base0";
@@ -82,10 +90,6 @@ group { name: "e/modules/conf/main";
          signal: "mouse,out"; source: "event";
          action: STATE_SET "default" 0.0;
          target: "base0";
-      }
-      program {
-         signal: "mouse,clicked,1*"; source: "base";
-         action: SIGNAL_EMIT "e,action,conf" "";
       }
    }
 }

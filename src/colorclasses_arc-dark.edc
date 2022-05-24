@@ -400,10 +400,6 @@ color_classes {
       color: COL_FONT_BASIC_HIGHLIGHT_DISABLED;
       desc: "Button text of a disabled anchor link";
    }
-   color_class { name: "gadget_icon_highlight";
-      color: COL_HOVER;
-      desc: "gadget_icon_highlight";
-   }
    color_class { name: "seg_ctrl_base";
       color: COL_NORM;
       desc: "Segment Control background";

@@ -98,12 +98,15 @@ group { name: "e/widgets/syscon/item/button";
 group { name: "e/modules/syscon/button";
    IMAGE_SET("sym-shutdown", 16, 16)
    parts {
-      part { name: "base0"; type: RECT;
+      part { name: "base0";
          description { state: "default" 0.0;
-            color: 255 255 255 0;
+            image.normal: "outline_glow.png";
+            image.border: 4 4 4 4;
+            visible: 0;
          }
          description { state: "hilight" 0.0;
-            color_class: "gadget_icon_highlight";
+            inherit: "default" 0.0;
+            visible: 1;
          }
       }
       part { name: "base";

@@ -159,13 +159,15 @@ group { name: "e/modules/clock/digital";
       }
    }
    parts {
-      part { name: "base0"; type: RECT;
-          mouse_events: 1;
+      part { name: "base0";
          description { state: "default" 0.0;
-             color: 0 0 0 0;
+            image.normal: "outline_glow.png";
+            image.border: 4 4 4 4;
+            visible: 0;
          }
          description { state: "highlight" 0.0;
-             color_class: "gadget_icon_highlight";
+             inherit: "default" 0.0;
+             visible: 1;
          }
       }
       part { name: "secclip"; type: RECT;
@@ -644,12 +646,15 @@ group { name: "e/modules/clock/main";
          }
    }
    parts {   
-      part { name: "base0"; type: RECT;
+      part { name: "base0";
          description { state: "default" 0.0;
-             color: 0 0 0 0;
+            image.normal: "outline_glow.png";
+            image.border: 4 4 4 4;
+            visible: 0;
          }
          description { state: "highlight" 0.0;
-             color_class: "gadget_icon_highlight";
+            inherit: "default" 0.0;
+            visible: 1;
          }
       }
       part { name: "base-sh";
@@ -791,6 +796,8 @@ group { name: "e/modules/clock/main";
       }
        part { name: "event"; type: RECT;
          description { state: "default" 0.0;
+            rel1.relative: (25/380) (25/380);
+            rel2.relative: (365/380) (365/380);
             color: 0 0 0 0;
          }
       }
