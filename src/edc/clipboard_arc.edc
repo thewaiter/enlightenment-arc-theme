@@ -1,0 +1,50 @@
+  group {
+        images.image: "clipboard.png" COMP;
+        name: "e/modules/clipboard/main";
+        max:  128 128;
+        parts {
+             part { name: "base0";
+                 description { state: "default" 0.0;
+                    image.normal: "outline_glow.png";
+                    image.border: 4 4 4 4;
+                    visible: 0;
+                 }
+                 description { state: "highlight" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 1;
+                 }
+              }
+            part { name: "logo";
+                type: IMAGE;
+                description { state: "default" 0.0;
+                    aspect: 1.0 1.0;
+                    aspect_preference: BOTH;
+                    rel1.offset: 0 0;
+                    rel2.offset: -1 -1;
+                    image.normal: "clipboard.png";
+                }
+                description { state: "active" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 128;
+                }
+            }
+            part { name: "over"; type: RECT;
+                 description { state: "default" 0.0;
+                    color: 0 0 0 0;
+           }
+        }
+        programs {
+            program {
+                 signal: "mouse,in"; source: "over";
+                 action: STATE_SET "highlight" 0.0;
+                 target: "base0";
+              }
+              program {
+                 signal: "mouse,out"; source: "over";
+                 action: STATE_SET "default" 0.0;
+                 target: "base0";
+              }
+        }
+    }
+
+}
