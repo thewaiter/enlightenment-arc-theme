@@ -804,7 +804,7 @@ group { name: "e/modules/clock/main";
    }
    programs {
       program {
-         signal: "mouse,in"; source: "event";
+         signal: "e,state,mouse,in"; source: "e";
          action: STATE_SET "highlight" 0.0;
          target: "base0";
       }
