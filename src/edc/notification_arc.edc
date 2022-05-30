@@ -46,7 +46,7 @@ group { name: "e/modules/notification/logo";
                 font: "Sans:style=Bold";
                 size: 8;
                 min: 0 1;
-                align: 0.5 0.43;
+                align: 0.5 0.45;
                 ellipsis: -1;
                 text_class: "module_small";
              }
