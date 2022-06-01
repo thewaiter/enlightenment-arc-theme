@@ -158,6 +158,7 @@
 #include "edc/time_arc.edc"
 #include "edc/alarm.edc"
 #include "edc/mail.edc"
+#include "edc/slideshow_arc.edc"
 
 // icons
 //~ #include "edc/icons.edc"
