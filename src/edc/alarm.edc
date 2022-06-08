@@ -8,6 +8,13 @@ group { "modules/alarm/main";
 		public alarm_ringing;
 	}
 	parts {
+		part { "base0";
+			desc { "default"; hid;
+				image.normal: "outline_glow.png";
+				image.border: 4 4 4 4;
+			}
+			desc { "highlight"; inherit; vis; }
+		}
 		image { "alarm_img"; mouse;
 			desc { "default"; color: "#FFFFFFC8";
 				aspect: 1 1;
@@ -57,6 +64,9 @@ group { "modules/alarm/main";
 				text.align: 0.0 0.5;
 				// text.text_class: "module_large";
 			}
+		}
+		rect { "over";
+			desc { "default"; color: "#00000000"; }
 		}
 	}
 	programs {
@@ -150,6 +160,16 @@ group { "modules/alarm/main";
 			source: "alarm";
 			action: STATE_SET "default" 0.0;
 			target: "alarm_txt";
+		}
+		program {
+			signal: "mouse,in"; source: "over";
+			action: STATE_SET "highlight" 0.0;
+			target: "base0";
+		}
+		program {
+			signal: "mouse,out"; source: "over";
+			action: STATE_SET "default" 0.0;
+			target: "base0";
 		}
 	}
 }
