@@ -3,6 +3,13 @@ images.image: "mail_new.png" COMP;
 images.image: "mail_checking.png" COMP;
 group { "modules/mail/main"; min: 4 4; max: 128 128;
 	parts{
+		part { "base0";
+			desc { "default"; hid;
+				image.normal: "outline_glow.png";
+				image.border: 4 4 4 4;
+			}
+			desc { "highlight"; inherit; vis; }
+		}
 		image { "logo"; mouse;
 			desc { "default"; color: VISIBLE; vis;
 				aspect: 1.0 1.0;
@@ -37,9 +44,22 @@ group { "modules/mail/main"; min: 4 4; max: 128 128;
 			}
 			desc { "visible"; inherit; vis; }
 		}
+		rect { "over";
+			desc { "default"; color: "#00000000"; }
+		} 
 	}
 
 	programs {
+		program {
+            signal: "mouse,in"; source: "over";
+            action: STATE_SET "highlight" 0.0;
+            target: "base0";
+         }
+         program {
+            signal: "mouse,out"; source: "over";
+            action: STATE_SET "default" 0.0;
+            target: "base0";
+         }
 		program { "go_active";
 			signal: "label_active";
 			source: "";
