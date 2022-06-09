@@ -26,6 +26,17 @@ group
       name: "modules/trash/main";
       min: 10 12;
       parts {
+         part { name: "base0";
+            description { state: "default" 0.0;
+               image.normal: "outline_glow.png";
+               image.border: 4 4 4 4;
+               visible: 0;
+            }
+            description { state: "highlight" 0.0;
+               inherit: "default" 0.0;
+               visible: 1;
+            }
+         }
          /* Container */
          part {
             name: "container";
@@ -142,6 +153,12 @@ group
                rel2.relative: 1 0.85;
             }
          }
+         part { name: "over"; type: RECT;
+           description { 
+               state: "default" 0.0;
+               color:  0 0 0 0;
+           }
+         }
       }
       programs {
          /* set full or empty */
@@ -240,5 +257,15 @@ group
             transition: LINEAR 0.0;
             target: "container";
          }
+         program {
+            signal: "mouse,in"; source: "over";
+            action: STATE_SET "highlight" 0.0;
+            target: "base0";
+        }
+        program {
+            signal: "mouse,out"; source: "over";
+            action: STATE_SET "default" 0.0;
+            target: "base0";
+        }
       }
 }
