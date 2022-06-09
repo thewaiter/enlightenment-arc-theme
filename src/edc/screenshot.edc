@@ -44,6 +44,17 @@ group{
 	  }
 	parts 
 	  {
+	     part { name: "base0";
+		description { state: "default" 0.0;
+		    image.normal: "outline_glow.png";
+		    image.border: 4 4 4 4;
+		    visible: 0;
+		}
+		description { state: "highlight" 0.0;
+		    inherit: "default" 0.0;
+		    visible: 1;
+		}
+	    }
 	     part 
 	       {
 		  name: "icon";
@@ -159,7 +170,19 @@ group{
 	       }
 	  }
 	programs 
-	  {
+          {
+             program 
+               {
+                 signal: "mouse,in"; source: "event";
+                 action: STATE_SET "highlight" 0.0;
+                 target: "base0";
+               }
+             program 
+               {
+                 signal: "mouse,out"; source: "event";
+                 action: STATE_SET "default" 0.0;
+                 target: "base0";
+               }
              program 
                {
                   name: "pressed";
@@ -168,13 +191,13 @@ group{
                   action: STATE_SET "pressed" 0.0;
                   target: "icon";
                }
-	     program 
-	       {
-		  name: "mouse_up";
+             program 
+               {
+                  name: "mouse_up";
                   signal: "mouse,clicked,1";
                   source: "event";
-		  action: SIGNAL_EMIT "e,action,screenshot,start" "";
-	       }
+                  action: SIGNAL_EMIT "e,action,screenshot,start" "";
+               }
              program 
                {
                   name: "mouse_up_1";
