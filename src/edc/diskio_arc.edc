@@ -6,6 +6,13 @@ images.image: "diskio_w.png" COMP;
 
 	group  { "modules/diskio/main"; max: 128 128;
 		parts  {
+			part { "base0";
+				desc { "default"; hid;
+					image.normal: "outline_glow.png";
+					image.border: 4 4 4 4;
+				}
+				desc { "highlight"; inherit; vis; }
+			}
 			image { "icon"; mouse;
 				desc { "default";
 					aspect: 1.0 1.0;
@@ -54,6 +61,9 @@ images.image: "diskio_w.png" COMP;
 					text.text_class: "module_small";
 				}
 			}
+			rect { "over";
+				desc { "default"; color: "#00000000"; }
+			}
 		}
 
 		programs {
@@ -80,6 +90,16 @@ images.image: "diskio_w.png" COMP;
 				source: "";
 				action: STATE_SET "on" 0.0;
 				target: "write";
+			}
+			program {
+				signal: "mouse,in"; source: "over";
+				action: STATE_SET "highlight" 0.0;
+				target: "base0";
+			}
+			program {
+				signal: "mouse,out"; source: "over";
+				action: STATE_SET "default" 0.0;
+				target: "base0";
 			}
 		}
 	}
