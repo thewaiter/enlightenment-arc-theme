@@ -165,7 +165,6 @@ group { name: "e/modules/ibox/icon";
 }
 
 group { name: "e/modules/ibar/menu";
-   images.image: "darken_square.png" COMP;
    parts {
       part { name: "sizer"; type: SPACER;
          description { state: "default"; }
@@ -186,13 +185,12 @@ group { name: "e/modules/ibar/menu";
             color: 0 0 0 0;
          }
       }
-      part { name: "base"; mouse_events: 0;
+      part { name: "base"; mouse_events: 0; type: RECT;
          clip_to: "clip";
          description { state: "default" 0.0;
             rel1.to: "sizer";
             rel2.to: "sizer";
-            image.normal: "darken_square.png";
-            image.border: 6 6 6 6;
+            color_class: "shelf_base";
          }
       }
       part { name: "e.box"; type: BOX;
@@ -221,7 +219,7 @@ group { name: "e/modules/ibar/menu";
          action: STATE_SET "default" 0.0;
          target: "sizer";
          target: "clip";
-         transition: SINUSOIDAL 0.2;
+         //~ transition: SINUSOIDAL 0.2;
          after: "show2";
       }
       program { name: "show2";
@@ -232,7 +230,7 @@ group { name: "e/modules/ibar/menu";
          action: STATE_SET "hidden" 0.0;
          target: "sizer";
          target: "clip";
-         transition: SINUSOIDAL 0.2;
+         //~ transition: SINUSOIDAL 0.2;
          after: "hide2";
       }
       program { name: "hide2";
@@ -255,31 +253,31 @@ group { name: "e/modules/ibar/menu/item";
             color: 255 255 255 80;
             visible: 0;
             link.base: "e,state,unfocused" "e";
-            link.transition: ACCEL 0.1;
+            //~ link.transition: ACCEL 0.1;
          }
          description { state: "focused";
             inherit: "default" 0.0;
             visible: 1;
             link.base: "e,state,focused" "e";
-            link.transition: ACCEL 0.1;
+            //~ link.transition: ACCEL 0.1;
          }
       }
       part { name: "clip"; type: RECT;
          description { state: "default";
             link.base: "e,state,other,none" "e";
-            link.transition: ACCEL 0.1;
+            //~ link.transition: ACCEL 0.1;
          }
          description { state: "otherdesk";
             inherit: "default" 0.0;
             color: 255 255 255 160;
             link.base: "e,state,other,desk" "e";
-            link.transition: ACCEL 0.1;
+            //~ link.transition: ACCEL 0.1;
          }
          description { state: "otherscreen";
             inherit: "default" 0.0;
             color: 255 255 255 80;
             link.base: "e,state,other,screen" "e";
-            link.transition: ACCEL 0.1;
+            //~ link.transition: ACCEL 0.1;
          }
       }
       part { name: "icon"; type: SPACER;
@@ -320,7 +318,7 @@ group { name: "e/modules/ibar/menu/item";
             inherit: "default" 0.0;
             rel1.offset: -4 -4;
             rel2.offset: 3 3;
-            color: 255 255 255 255;
+            color: 255 255 255 96;
             visible: 1;
          }
       }
@@ -411,7 +409,7 @@ group { name: "e/modules/ibar/menu/item";
          target: "title2";
          target: "icon_clip";
          target: "glow";
-         transition: ACCELERATE 0.2;
+         //~ transition: ACCELERATE 0.2;
       }
       program {
          signal: "mouse,out"; source: "event";
@@ -420,7 +418,7 @@ group { name: "e/modules/ibar/menu/item";
          target: "title2";
          target: "icon_clip";
          target: "glow";
-         transition: DECELERATE 0.2;
+         //~ transition: DECELERATE 0.2;
       }
    }
 }
