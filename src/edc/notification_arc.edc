@@ -1,10 +1,10 @@
 group { name: "e/modules/notification/logo";
    images.image: "glow_exclam.png" COMP;
-   images.image: "outline_glow.png" COMP;
+   images.image: "bevel_out.png" COMP;
    parts {
       part { name: "base0";
          description { state: "default" 0.0;
-            image.normal: "outline_glow.png";
+            image.normal: "bevel_out.png";
             image.border: 4 4 4 4;
             visible: 0;
          }

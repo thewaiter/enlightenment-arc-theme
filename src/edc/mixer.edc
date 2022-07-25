@@ -39,7 +39,7 @@ group {
    parts {
       part { name: "base";
          description { state: "default" 0.0;
-            image.normal: "outline_glow.png";
+            image.normal: "bevel_out.png";
             image.border: 4 4 4 4;
             visible: 0;
          }

@@ -161,7 +161,7 @@ group { name: "e/modules/clock/digital";
    parts {
       part { name: "base0";
          description { state: "default" 0.0;
-            image.normal: "outline_glow.png";
+            image.normal: "bevel_out.png";
             image.border: 4 4 4 4;
             visible: 0;
          }
@@ -648,7 +648,7 @@ group { name: "e/modules/clock/main";
    parts {   
       part { name: "base0";
          description { state: "default" 0.0;
-            image.normal: "outline_glow.png";
+            image.normal: "bevel_out.png";
             image.border: 4 4 4 4;
             visible: 0;
          }
