@@ -28,7 +28,7 @@ group { "modules/net/main";
 		}
 		image { "base0"; nomouse;
 			desc { "default"; hid;
-				image.normal: "outline_glow.png";
+				image.normal: "bevel_out.png";
 				image.border: 4 4 4 4;
 			}
 			desc { "highlight"; inherit; vis; }

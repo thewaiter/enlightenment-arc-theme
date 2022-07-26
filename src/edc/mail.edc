@@ -5,7 +5,7 @@ group { "modules/mail/main"; min: 4 4; max: 128 128;
 	parts{
 		part { "base0";
 			desc { "default"; hid;
-				image.normal: "outline_glow.png";
+				image.normal: "bevel_out.png";
 				image.border: 4 4 4 4;
 			}
 			desc { "highlight"; inherit; vis; }
