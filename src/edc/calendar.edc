@@ -229,6 +229,13 @@ group { "modules/calendar/header"; min: 42 20;
 
 group { "modules/calendar/main";
 	parts {
+		part { "base0";
+			desc { "default"; hid;
+				image.normal: "bevel_out.png";
+				image.border: 4 4 4 4;
+			}
+			desc { "highlight"; inherit; vis; }
+		}
 		part { "calendar"; mouse;
 			desc { "default";
 				aspect: 1.0 1.0;
@@ -254,6 +261,22 @@ group { "modules/calendar/main";
 				text.text_class: "module_large";
 				text.ellipsis: -1;
 			}
+		}
+		rect { "over";
+			desc { "default"; color: "#00000000"; }
+		}
+	}
+	programs
+	{
+		program {
+			signal: "mouse,in"; source: "over";
+			action: STATE_SET "highlight" 0.0;
+			target: "base0";
+		}
+		program {
+			signal: "mouse,out"; source: "over";
+			action: STATE_SET "default" 0.0;
+			target: "base0";
 		}
 	}
 }
