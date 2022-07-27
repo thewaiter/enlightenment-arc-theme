@@ -47,6 +47,13 @@ group { "modules/mem/main";
 		}
 	}
 	parts {
+		part { "base0";
+			desc { "default"; hid;
+				image.normal: "bevel_out.png";
+				image.border: 4 4 4 4;
+			}
+			desc { "highlight"; inherit; vis; }
+		}
 		rect { "fade_clip"; mouse;
 			desc
 				{ "default"; color: VISIBLE;
@@ -375,6 +382,16 @@ group { "modules/mem/main";
 	}
 
 	programs {
+		program {
+			signal: "mouse,in"; source: "over";
+			action: STATE_SET "highlight" 0.0;
+			target: "base0";
+		}
+		program {
+			signal: "mouse,out"; source: "over";
+			action: STATE_SET "default" 0.0;
+			target: "base0";
+		}
 		program { "go_active";
 			signal: "label_active";
 			source: "*";
