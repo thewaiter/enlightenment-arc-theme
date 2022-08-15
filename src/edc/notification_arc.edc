@@ -404,29 +404,17 @@ group { name: "e/modules/notification/action";
    parts {
       group { "act_btn"; source: "e/widgets/button";
          desc { "default";
-            rel.to: "e.text.label";
-            rel1.offset: -3  22;
-            rel2.offset:  3 -22;
+            rel1.relative: 0.2 0.5;
+            rel1.offset:  10  25;
+            rel2.offset: -10 -10;
             min: SOURCE;
-            visible: 1;
          }
           description { state: "selected" 0.0;
             inherit: "default" 0.0;
          }
       }
-      part { name: "e.text.label"; type: TEXT;
-         scale: 1;
-         description { state: "default" 0.0;
-            rel1.offset: 28 4;
-            rel2.offset: -5 25;
-            color_class: "popup_text";
-            text { font: Sans; size: 10;
-               min: 1 1;
-               text_class: "notification_title";
-            }
-            offscale;
-         }
-      }
+      alias: "e.text.label" "act_btn:e.text.label";
+
       part { name: "event"; type: RECT;
          scale: 1;
          description { state: "default" 0.0;
