@@ -346,7 +346,7 @@ color_classes {
 // widgets
    
    color_class { name: "widget_bg_hover";
-      color: COL_HOVER;
+      color: COL_NORM;
       desc: "background of a hovered widget";
    }
    color_class { name: "button_bg";

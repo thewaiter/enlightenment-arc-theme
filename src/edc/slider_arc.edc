@@ -26,6 +26,7 @@ group { name: "e/widgets/slider_horizontal";
         description {
             state: "focused" 0.0;
             inherit: "default" 0.0;
+            color: 255 255 255 255;
             visible: 1;
         }
       }
