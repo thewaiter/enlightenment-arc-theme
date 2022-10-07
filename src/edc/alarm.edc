@@ -41,12 +41,12 @@ group { "modules/alarm/main";
 		}
 		rect { "alarm_txt"; nomouse;
 			desc { "default"; color: VISIBLE; hid;
-				rel1.relative: 1.0 0.05;
+				rel1.relative: 0.38 0.05;
 				rel2.relative: 1.0 0.95;
 			}
 			desc { "enabled"; inherit; vis;
-				rel1.relative: 1.0 0.1;
-				rel1.to_x: "alarm_img";
+				rel1.relative: 0.38 0.1;
+				//~ rel1.to_x: "alarm_img";
 				rel1.offset: 2 0;
 			}
 		}
