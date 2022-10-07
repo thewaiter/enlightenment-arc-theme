@@ -15,6 +15,9 @@ group { "modules/alarm/main";
 			}
 			desc { "highlight"; inherit; vis; }
 		}
+		rect { "over";
+			desc { "default"; color: "#00000000"; }
+		}
 		image { "alarm_img"; mouse;
 			desc { "default"; color: "#FFFFFFC8";
 				aspect: 1 1;
@@ -50,10 +53,8 @@ group { "modules/alarm/main";
 				rel1.offset: 2 0;
 			}
 		}
-		text { "alarm_txt_line"; effect: OUTLINE_SOFT_SHADOW; nomouse; clip: "alarm_txt";
+		text { "alarm_txt_line"; effect: NONE; nomouse; clip: "alarm_txt";
 			desc { "default"; color: "#4B9C40";
-				color2: "#00000060";
-				color3: "#00000020";
 				rel1.relative: 0.0 0.0;
 				rel1.to: "alarm_txt";
 				rel2.relative: 1.0 1.0;
@@ -62,11 +63,8 @@ group { "modules/alarm/main";
 				text.font: "Sans:style=Bold"; text.size: 12;
 				text.fit: 1 1;
 				text.align: 0.0 0.5;
-				// text.text_class: "module_large";
+				text.text_class: "module_large";
 			}
-		}
-		rect { "over";
-			desc { "default"; color: "#00000000"; }
 		}
 	}
 	programs {
