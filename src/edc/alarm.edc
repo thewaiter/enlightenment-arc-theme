@@ -35,8 +35,8 @@ group { "modules/alarm/main";
 				fill.smooth: 1;
 			}
 			desc { "enabled_little" 0.0; inherit: "enabled" 0.0;
-				rel1.relative: 0.3 0.3;
-				rel2.relative: 0.7 0.7;
+				rel1.offset:  7  7;
+				rel2.offset: -7 -7;
 			}
 		}
 		rect { "alarm_txt"; nomouse;
