@@ -15,9 +15,6 @@ group { "modules/alarm/main";
 			}
 			desc { "highlight"; inherit; vis; }
 		}
-		rect { "over";
-			desc { "default"; color: "#00000000"; }
-		}
 		image { "alarm_img"; mouse;
 			desc { "default"; color: "#FFFFFFC8";
 				aspect: 1 1;
@@ -43,7 +40,7 @@ group { "modules/alarm/main";
 			}
 		}
 		rect { "alarm_txt"; nomouse;
-			desc { "default"; color: VISIBLE; hid;;
+			desc { "default"; color: VISIBLE; hid;
 				rel1.relative: 1.0 0.05;
 				rel2.relative: 1.0 0.95;
 			}
@@ -52,6 +49,13 @@ group { "modules/alarm/main";
 				rel1.to_x: "alarm_img";
 				rel1.offset: 2 0;
 			}
+		}
+		rect { "over_text";
+			desc { "default"; color: "#00000000";
+				rel.to: "alarm_txt";
+				rel1.offset: -1 0; };
+			desc { "enabled";
+				inherit: "default" 0.0; }
 		}
 		text { "alarm_txt_line"; effect: NONE; nomouse; clip: "alarm_txt";
 			desc { "default"; color: "#4B9C40";
@@ -75,6 +79,34 @@ group { "modules/alarm/main";
 				set_int(alarm_state, 0);
 				set_int(alarm_ringing, 0);
 			}
+		}
+		program {
+			name: "mouse_in_icon";
+			signal: "mouse,in";
+			source: "alarm_img";
+			action: STATE_SET "highlight" 0.0;
+			target: "base0";
+		}
+		program {
+			name: "mouse_out_icon";
+			signal: "mouse,out";
+			source: "alarm_img";
+			action: STATE_SET "default" 0.0;
+			target: "base0";
+		}
+		program {
+			name: "mouse_in_text";
+			signal: "mouse,in";
+			source: "over_text";
+			action: STATE_SET "highlight" 0.0;
+			target: "base0";
+		}
+		program {
+			name: "mouse_out_text";
+			signal: "mouse,out";
+			source: "over_text";
+			action: STATE_SET "default" 0.0;
+			target: "base0";
 		}
 		program { "alarm_img_mouse_down";
 			signal: "mouse,up,1";
@@ -114,6 +146,7 @@ group { "modules/alarm/main";
 			source: "alarm";
 			action: STATE_SET "default" 0.0;
 			target: "alarm_img";
+			target: "base0";
 			after:  "alarm_deactivate_2";
 		}
 		program { "alarm_deactivate_2";
@@ -158,16 +191,6 @@ group { "modules/alarm/main";
 			source: "alarm";
 			action: STATE_SET "default" 0.0;
 			target: "alarm_txt";
-		}
-		program {
-			signal: "mouse,in"; source: "over";
-			action: STATE_SET "highlight" 0.0;
-			target: "base0";
-		}
-		program {
-			signal: "mouse,out"; source: "over";
-			action: STATE_SET "default" 0.0;
-			target: "base0";
 		}
 	}
 }
