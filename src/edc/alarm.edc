@@ -16,7 +16,7 @@ group { "modules/alarm/main";
 			desc { "highlight"; inherit; vis; }
 		}
 		image { "alarm_img"; mouse;
-			desc { "default"; color: "#FFFFFFC8";
+			desc { "default"; color: "#FFFFFFFF";
 				aspect: 1 1;
 				aspect_preference: BOTH;
 				align: 0.0 0.0;
@@ -25,7 +25,7 @@ group { "modules/alarm/main";
 				image.normal: "alarm_disabled.png";
 				fill.smooth: 1;
 			}
-			desc { "enabled"; color: "#FFFFFFC8";
+			desc { "enabled"; color: "#FFFFFFFF";
 				aspect: 1 1;
 				aspect_preference: BOTH;
 				align: 0.0 0.0;
