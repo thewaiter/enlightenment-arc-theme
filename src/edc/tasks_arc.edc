@@ -136,9 +136,9 @@ group { name:"e/modules/tasks/item";
          description { state: "icon_only" 0.0;
             inherit: "default" 0.0;
             align: 0.5 0.5;
-            // rel1.offset: 2 2;
+            rel1.offset: 2 2;
             rel2.relative: 1.0 1.0;
-            // rel2.offset: -3 -3;
+            rel2.offset: -3 -3;
          }
          description { state: "text_only" 0.0;
             inherit: "default" 0.0;
