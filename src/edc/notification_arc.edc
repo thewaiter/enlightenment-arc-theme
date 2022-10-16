@@ -2,37 +2,34 @@ group { name: "e/modules/notification/logo";
    images.image: "glow_exclam.png" COMP;
    images.image: "bevel_out.png" COMP;
    parts {
-      part { name: "base0";
-         description { state: "default" 0.0;
+     image { "base0";
+         desc { state: "default" 0.0;
             image.normal: "bevel_out.png";
             image.border: 4 4 4 4;
             visible: 0;
          }
-         description { state: "highlight" 0.0;
+         desc { state: "highlight" 0.0;
             inherit: "default" 0.0;
             visible: 1;
          }
       }
-      part { name: "base"; mouse_events: 1;
+      image { "base"; mouse;
          scale: 1;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             image.normal: "glow_exclam.png";
             max: 48 48;
             aspect: 1.0 1.0;
          }
-         description { state: "higher" 0.0;
+         desc { state: "higher" 0.0;
              inherit: "default" 0.0;
              rel1.relative: 0.2 0.15;
              rel2.relative: 0.8 1.15;
          }
       }
-      part 
-          {
-          name: "e.text.counter";
-          mouse_events: 0;
+      text { "e.text.counter"; nomouse;
           type: TEXT;
           scale: 1;
-          description 
+          desc 
           {
             rel1.to: "base";
             rel2.to: "base";
@@ -42,59 +39,55 @@ group { name: "e/modules/notification/logo";
             visible: 1;
             text 
             {
-                text: "";
-                font: "Sans:style=Bold";
-                size: 8;
-                min: 0 1;
-                align: 0.48 0.45;
-                ellipsis: -1;
-                text_class: "module_small";
-             }
+               text: "";
+               font: "Sans:style=Bold";
+               size: 8;
+               min: 0 1;
+               align: 0.48 0.45;
+               ellipsis: -1;
+               text_class: "module_small";
             }
           }
+       }
    }
-   programs {  
+   programs {
        program {
          signal: "mouse,in"; source: "base";
          action: STATE_SET "highlight" 0.0;
          target: "base0";
-      }
-    program {
+       }
+       program {
          signal: "mouse,out"; source: "base";
          action: STATE_SET "default" 0.0;
          target: "base0";
-      }
-    program
-          {
-           signal: "stop";
-           source: "";
-           action: STATE_SET "default" 0.0;
-           target: "base";
-          }
-    program
-          {
-           signal: "blink";
-           source: "";
-           action: STATE_SET "default" 0.0;
-           after: "big";
-           target: "base";
-          }
-    program
-          {
-           name: "normal";
-           action: STATE_SET "default" 0.0;
-           target: "base";
-           after: "big";
-           transition: DECELERATE 0.3;
-          }
-    program
-          {
-           name: "big";
-           action: STATE_SET "higher" 0.0;
-           target: "base";
-           after: "normal";
-           transition: ACCELERATE 0.1;
-          } 
+       }
+       program {
+         signal: "stop";
+         source: "";
+         action: STATE_SET "default" 0.0;
+         target: "base";
+       }
+       program {
+         signal: "blink";
+         source: "";
+         action: STATE_SET "default" 0.0;
+         after: "big";
+         target: "base";
+       }
+       program {
+         name: "normal";
+         action: STATE_SET "default" 0.0;
+         target: "base";
+         after: "big";
+         transition: DECELERATE 0.3;
+       }
+       program {
+         name: "big";
+         action: STATE_SET "higher" 0.0;
+         target: "base";
+         after: "normal";
+         transition: ACCELERATE 0.1;
+       } 
     }
 }
 
@@ -170,7 +163,7 @@ group { name: "e/modules/notification/main";
             inherit: "default" 0.0;
          }
       }
-      image { "border"; nomouse;         scale: 1;
+      image { "border"; nomouse; scale: 1;
          clip_to: "clip";
          desc { "default";
             image.normal: "border-rounded-3px@4.png";
@@ -185,7 +178,7 @@ group { name: "e/modules/notification/main";
       part { name: "titleclip";
          clip_to: "clip";
          type: RECT;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             rel1.to: "base";
             rel2.to_y: "base";
             rel2.to_x: "e.event.close";
@@ -196,7 +189,7 @@ group { name: "e/modules/notification/main";
          scale: 1;
          clip_to: "clip";
          type: RECT;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             rel2.offset: -13 -13;
             min: 220 115;
          }
@@ -206,7 +199,7 @@ group { name: "e/modules/notification/main";
          clip_to: "clip";
          type: SWALLOW;
          mouse_events: 0;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             align: 0.0 0.5;
             aspect: 1.0 1.0;
             aspect_preference: BOTH;
@@ -223,7 +216,7 @@ group { name: "e/modules/notification/main";
          type: TEXTBLOCK;
          mouse_events: 0;
          clip_to: "bodyclip";
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             align: 0.0 0.0;
             rel1.to_x: "notification.swallow.app_icon";
             rel1.to_y: "notification.text.title";
@@ -245,7 +238,7 @@ group { name: "e/modules/notification/main";
          // clip_to: "clip";
          type: TEXTBLOCK;
          mouse_events: 0;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             align: 0.0 0.0;
             max: 500 99999;
             rel1.to_x: "notification.swallow.app_icon";
@@ -265,7 +258,7 @@ group { name: "e/modules/notification/main";
       }
       part { name: "notification.swallow.desktop_icon"; type: SWALLOW; mouse_events: 0;
          scale: 1;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             align: 0.0 0.0;
             aspect: 1.0 1.0; aspect_preference: BOTH;
             rel1.to_x: "base";
@@ -284,7 +277,7 @@ group { name: "e/modules/notification/main";
          mouse_events: 0;
          clip_to: "titleclip";
          scale: 1;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             rel1.to_x: "notification.swallow.app_icon";
             rel1.to_y: "base";
             rel1.relative: 1.0 0.0;
@@ -309,7 +302,7 @@ group { name: "e/modules/notification/main";
          clip_to: "clip";
          scale: 1;
          source: "e/border/btn-close";
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             rel.to: "base";
             rel1.relative: 1.0 0.0;
             rel1.offset: -13 12;
@@ -321,7 +314,7 @@ group { name: "e/modules/notification/main";
             color: 0 0 0 0;
             fixed: 1 1;
          }
-         description { state: "selected" 0.0;
+         desc { state: "selected" 0.0;
             inherit: "default" 0.0;
             color: 255 255 255 255;
          }
@@ -330,7 +323,7 @@ group { name: "e/modules/notification/main";
       
      part { name: "notification.swallow.actions"; type: SWALLOW;
          scale: 1;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             align: 0.5 1.0;
             rel.to: "base";
             rel1.relative: 0.0 1.0;
@@ -339,7 +332,7 @@ group { name: "e/modules/notification/main";
             offscale;
             visible: 0;
          }
-         description { state: "visible" 0.0;
+         desc { state: "visible" 0.0;
             inherit: "default" 0.0;
             visible: 1;
             min: 40 20;
@@ -366,7 +359,7 @@ group { name: "e/modules/notification/main";
       }
       program { signal: "e,state,actions,hide"; source: "e";
          action: STATE_SET "default" 0.0;
-        target: "notification.swallow.actions";
+         target: "notification.swallow.actions";
       }
       program {
          signal: "mouse,clicked,1";
@@ -427,7 +420,7 @@ group { name: "e/modules/notification/action";
             min: SOURCE;
             max: 120 40;
          }
-          description { state: "selected" 0.0;
+          desc { state: "selected" 0.0;
             inherit: "default" 0.0;
          }
       }
@@ -435,7 +428,7 @@ group { name: "e/modules/notification/action";
 
       part { name: "event"; type: RECT;
          scale: 1;
-         description { state: "default" 0.0;
+         desc { state: "default" 0.0;
             rel.to: "act_btn";
             color: 0 0 0 0; // no cc
             min: 40 20;
