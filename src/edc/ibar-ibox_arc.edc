@@ -405,7 +405,7 @@ group { name: "e/modules/ibar/menu/item";
          target: "title2";
          target: "icon_clip";
          target: "glow";
-         //~ transition: ACCELERATE 0.2;
+         transition: ACCELERATE 0.2;
       }
       program {
          signal: "mouse,out"; source: "event";
@@ -414,7 +414,7 @@ group { name: "e/modules/ibar/menu/item";
          target: "title2";
          target: "icon_clip";
          target: "glow";
-         //~ transition: DECELERATE 0.2;
+         transition: DECELERATE 0.2;
       }
    }
 }
