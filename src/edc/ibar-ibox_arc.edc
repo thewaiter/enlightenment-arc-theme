@@ -363,10 +363,8 @@ group { name: "e/modules/ibar/menu/item";
             rel1.relative: 1.0 0.0;
             rel1.offset: 1 0;
             rel2.offset: -3 -2;
+            align: 0.0 0.0;
             color_class: "menu_item_active";
-            color: 255 255 255 0;
-            color2: 255 255 255 0;
-            color3: 255 255 255 0;
             min: 128 0;
             text { font: BD; size: 10;
                text_source: "e.text.title";
@@ -378,9 +376,6 @@ group { name: "e/modules/ibar/menu/item";
          }
          description { state: "focus" 0.0;
             inherit: "default" 0.0;
-            color: 255 255 255 255;
-            color2: 255 255 255 255;
-            color3: 255 255 255 255;
             visible: 1;
          }
       }
