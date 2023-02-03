@@ -13,11 +13,22 @@ group { name: "e/shelf/default/base"; nomouse;
 //      item: "instant_delay" "3.0";
    }
 
-   parts {
-      rect { "mouse"; mouse_events: 0;
-         desc { color: 0 0 0 0; }
+   script {
+      public message(Msg_Type:type, id, ...) {
+         new val = getarg(2);
+         if ((type == MSG_INT_SET) && (id == 0)) {
+            custom_state(PART:"e.swallow.content", "default", 0.0);
+         }
+         if ((type == MSG_INT_SET) && (id == 1)) {
+            custom_state(PART:"e.swallow.content", "vert", 0.0);
+         }
+         set_state_val(PART:"e.swallow.content", STATE_REL1_OFFSET, val, val);
+         set_state_val(PART:"e.swallow.content", STATE_REL2_OFFSET, 0 - val, 0 - val);
+         set_state(PART:"e.swallow.content", "custom", 0.0);
       }
+   }
 
+   parts {
       part { name: "bg"; type: RECT;
          description { state: "default" 0.0;
             color_class: "shelf_base";
@@ -36,45 +47,32 @@ group { name: "e/shelf/default/base"; nomouse;
             color_class: "shelf_border_default";
          }
       }
-      spacer { "sizer";
-         scale: 1;
+      part { name: "e.swallow.content"; type: SWALLOW; mouse;
          description { state: "default" 0.0;
             rel1.offset: 1 0;
             rel1.relative: 0.0 0.0;
-            // rel1.to_x: "dots_start";
-            rel2.offset: -2 -1;
-            // rel2.to_x: "dots_end";
+            rel1.to_x: "bg";
+            rel2.offset: 0 0;
+            rel2.to_x: "bg";
             rel2.relative: 1.0 1.0;
          }
          description { state: "vert" 0.0;
             rel1.offset: 0 1;
             rel1.relative: 0.0 0.0;
-            // rel1.to_y: "dots_start";
-            rel2.offset: -1 -2;
-            // rel2.to_y: "dots_end";
+            rel1.to_y: "bg";
+            rel2.offset: 1 0;
+            rel2.to_y: "bg";
             rel2.relative: 1.0 1.0;
          }
       }
-      part { name: "e.swallow.content"; type: SWALLOW; mouse;
-         desc {
-            rel.to: "sizer";
-            link.base: "e,state,visible" "e";
-         }
-         //~ desc { "hidden"; hid;
-            //~ rel.to: "sizer";
-            //~ link.base: "e,state,hidden" "e";
-         //~ }
-      }
-      rect { "events"; repeat; mouse;
-         desc { color: 0 0 0 0; }
-      }
+
       programs  {
 #define ORIENT_SATE(_ORIENT, _STATE) \
          program { \
             signal: "e,state,orientation,"_ORIENT; source: "e"; \
             action: STATE_SET _STATE 0.0; \
             target: "bg"; \
-            target: "sizer"; \
+            target: "e.swallow.content"; \
          }
       }
       ORIENT_SATE("top", "default")
