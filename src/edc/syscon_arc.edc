@@ -97,7 +97,7 @@ group { name: "e/widgets/syscon/item/button";
 }
 
 group { name: "e/modules/syscon/button";
-   IMAGE_SET("sym-shutdown", 16, 16)
+   images.image: "icon_system-shutdown.png" COMP;
    parts {
       part { name: "base0";
          description { state: "default" 0.0;
@@ -112,12 +112,10 @@ group { name: "e/modules/syscon/button";
       }
       part { name: "base";
          description { state: "default" 0.0;
-            image.normal: "sym-shutdown";
+            image.normal: "icon_system-shutdown.png";
             rel1.relative: 0.1 0.1;
             rel2.relative: 0.9 0.9;
-            color: 255 255 255 255;
             aspect: 1.0 1.0; aspect_preference: BOTH;
-            color_class: "module_symbol";
          }
          description { state: "hilight" 0.0;
             inherit: "default" 0.0;
