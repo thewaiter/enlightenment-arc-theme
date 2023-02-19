@@ -1,5 +1,5 @@
 group { name: "e/gadman/popup";
-   images.image: "vgrad_tall.png" COMP;
+   //images.image: "vgrad_tall.png" COMP;
    //images.image: "bevel_out.png" COMP;
    //images.image: "shine.png" COMP;
    parts {
