@@ -67,6 +67,12 @@ group { name: "e/modules/systray/main";
             }
          }
       }
+       part { name: "fake_sys"; type: RECT;
+         description { state: "default" 0.0;
+             rel.to: "e.size";
+             color: 47 53 62 255;
+         }
+      }
    }
   
    programs {
