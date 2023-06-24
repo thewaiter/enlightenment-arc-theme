@@ -3822,7 +3822,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
       color: #000000; }
     entry.error:focus,
     #XfceNotifyWindow entry.error:focus, #login_window entry.error:focus {
-      color: #000000;
+      color: #aaaaaa;
       border-color: mix(#417739,#3d3751,0.3);
       background-color: #3d3751;
       box-shadow: none; }
