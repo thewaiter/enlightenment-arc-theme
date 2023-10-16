@@ -71,18 +71,18 @@ group { name: "e/modules/notification/logo";
          signal: "blink";
          source: "";
          action: STATE_SET "default" 0.0;
-         after: "big";
+         after: "down";
          target: "base";
        }
        program {
          name: "normal";
          action: STATE_SET "default" 0.0;
          target: "base";
-         after: "big";
+         after: "down";
          transition: DECELERATE 0.3;
        }
        program {
-         name: "big";
+         name: "down";
          action: STATE_SET "move_down" 0.0;
          target: "base";
          after: "normal";
