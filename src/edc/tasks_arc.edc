@@ -202,7 +202,8 @@ group { name:"e/modules/tasks/item";
          }
          description { state: "selected" 0.0;
             inherit: "default" 0.0;
-            visible: 0;
+            color: 192 192 192 255;
+            visible: 1;
          }
          description { state: "iconic" 0.0;
             inherit: "default" 0.0;
