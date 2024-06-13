@@ -11,7 +11,7 @@ group { name: "e/widgets/check";
             color: COL_MASK_DISABLED;
          }
       }
-      part {name: "focus"; type: RECT;
+      part { name: "focus"; type: RECT;
          mouse_events: 0;
          description {
             state: "default" 0.0;
@@ -32,7 +32,7 @@ group { name: "e/widgets/check";
          description { state: "default" 0.0;
             image.normal: "check-base";
             rel1.offset: 1 1;
-            rel2.offset: -2 -2;
+            rel2.offset: -2 -3;
             min: 14 14;
             max: 14 14;
             align: 0.0 0.5;

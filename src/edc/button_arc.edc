@@ -31,7 +31,7 @@
             image.normal: "bg-rounded-3px.png";
             image.border: 4 4 3 5;
             image.middle: SOLID;
-            rel1.offset: 4 1;
+            rel1.offset: 4 6;
             rel2.offset: -5 -1;
             fill.smooth: 0;
             color_class: "button_bg";
