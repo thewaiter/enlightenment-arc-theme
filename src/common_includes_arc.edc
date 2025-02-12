@@ -89,7 +89,7 @@
 
 
 // desktop in general
-// #include "../orig-theme/edc/wallpaper.edc"
+#include "../orig-theme/edc/wallpaper.edc"
 // #include "../orig-theme/edc/comp.edc"
 // #include "../orig-theme/edc/comp_compat.edc"
 // #include "../orig-theme/edc/comp_effects.edc"
