@@ -1,39 +1,35 @@
 group { name: "e/desktop/background";
 
-images { image: "bodhi-bg.png" LOSSY 90; 
+images {
+         image: "bodhi-bg.png" LOSSY 90;
          image: "table.png" COMP;
          image: "text.png" COMP;
          image: "shadow.png" COMP;
          image: "icon_bodhi.png" COMP;
          image: "shine.png" COMP;
-       } 
-       
+       }
+
 data.item: "style" "0"; 
 //~ data.item: "noanimation" "1";
 min: 3000 1875;
 max: 3000 1875;
 parts {
 part { name: "bg"; mouse_events: 0;
-       description { state: "default" 0.0;
-                     rel1.relative: 0.00 0.00;
-                     rel1.offset: 0 0;
-                     rel2.relative: 1.00 1.00;
-                     rel2.offset: -1 -1;
-                    image { normal: "bodhi-bg.png"; 
-                            //~ scale_hint: STATIC; 
-                          }
-                   } 
+         description { state: "default" 0.0;
+            rel1.relative: 0.00 0.00;
+            rel1.offset: 0 0;
+            rel2.relative: 1.00 1.00;
+            rel2.offset: -1 -1;
+            image.normal: "bodhi-bg.png";
+         }
      }
-     
 
 part { name: "shadow"; type: IMAGE; mouse_events: 0; 
          description { state: "default" 0.0;
             rel1.relative: 0.47 0.64;
             rel2.relative: 0.87 0.74;
-             image {
-                normal: "shadow.png";
-            }
-               visible: 0;
+            image.normal: "shadow.png";
+            visible: 0;
          }
          description { state: "end" 0.0;
             inherit: "default";
@@ -41,19 +37,14 @@ part { name: "shadow"; type: IMAGE; mouse_events: 0;
             rel1.offset: 5 5;
             visible: 1;
          }
-        
-    }
-     
-part {   name: "name"; 
-         type: IMAGE; 
-         mouse_events: 0; 
+     }
+
+part { name: "name"; type: IMAGE;  mouse_events: 0;
          description { state: "default" 0.0;
             color: 65 149 54 0;
             rel1.relative: 0.47 0.75;
             rel2.relative: 0.87 0.85;
-            image {
-                normal: "text.png";
-            }
+            image.normal: "text.png";
          }
          description { state: "end" 0.0;
             inherit: "default";
@@ -66,15 +57,13 @@ part {   name: "name";
             color: 0 255 0 80;
          }
       }
-      
+
 part { name: "table"; type: IMAGE; mouse_events: 0;
-    description { state: "default" 0.0;
+         description { state: "default" 0.0;
             rel1.relative: 0.0 0.736;
             rel2.relative: 1.0 1.0;
-                image {
-                  normal: "table.png";
-                 }
-               }
+            image.normal: "table.png";
+         }
      }
 
 part { name: "icon"; type: IMAGE; 
@@ -95,7 +84,7 @@ part { name: "icon"; type: IMAGE;
             color: 65 149 54 255;
             visible: 1;
          }
-      }    
+      }
 
 part { name: "shine"; type: IMAGE; 
         description { state: "default" 0.0;
@@ -115,8 +104,7 @@ part { name: "shine"; type: IMAGE;
             color: 255 255 255 255;
             visible: 1;
          }
-      }    
-      
+      }
 
     programs {
       program {
@@ -135,7 +123,7 @@ part { name: "shine"; type: IMAGE;
          action,  STATE_SET "end" 0.0;
          target, "name";
          after, "flash";
-      }
+       }
        program {
          name,  "flash";
          signal, "NONE";
@@ -154,7 +142,7 @@ part { name: "shine"; type: IMAGE;
          target, "name";
          target, "icon";
          target, "shadow";
-      }
+       }
        program {
          name,   "shine";
          signal, "NONE";
@@ -164,7 +152,7 @@ part { name: "shine"; type: IMAGE;
          target, "name";
          target, "icon";
          target, "shadow";
-      }
-   }
- }
+       }
+    }
+  }
 }
