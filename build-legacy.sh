@@ -2,10 +2,12 @@
 # Copyright 2025 Bodhi Linux
 
 printf "\n\033[1;33mWARNING:\033[0m For use with Bodhi Linux 7 only.\n\n"
-
-sed -i 's/MokshaArcGreen/MokshaArcGreen-Icons/g' arc-dark.edc
-sed -i 's/MokshaArcGreen/MokshaArcGreen-GTK/g'   arc-dark.edc
+cd src
+sed -i \
+    -e 's/item: "gtk-theme" *"[^"]*"/item: "gtk-theme"     "MokshaArcGreen-GTK"/' \
+    -e 's/item: "icon-theme" *"[^"]*"/item: "icon-theme"    "MokshaArcGreen-Icons"/' \
+    arc-dark.edc
+cd ..
 make
-sed -i 's/MokshaArcGreen-Icons/MokshaArcGreen/g' arc-dark.edc
-sed -i 's/MokshaArcGreen-GTK/MokshaArcGreen/g'   arc-dark.edc
-
+git restore src/arc-dark.edc
+cd ..
