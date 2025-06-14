@@ -1,4 +1,5 @@
 #include "macros.edc"
+efl_version: 1 25;
 
 #define THEME_NAME_UPPER "Arc Green"
 #define THEME_NAME_LOWER "arc-green"
@@ -7,7 +8,7 @@ externals.external: "elm";
 
 // theme api version. from 1.10 on we will check version to avoid
 // compat issues
-data.item: "version" "110";
+data.item: "version" "125";
 data.item: "icon-theme" "MokshaArcGreen";
 data.item: "gtk-theme" "MokshaArcGreen";
 
