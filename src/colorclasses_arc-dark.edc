@@ -554,7 +554,7 @@ color_classes {
       desc: "Entry cursor";
    }
    color_class { name: "entry_selection_handler";
-      color: VISIBLE;
+      color: COL_ENABLE;
       desc: "Entry selection handler";
    }
    color_class { name: "focus_outline";
